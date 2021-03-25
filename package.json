@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/lsegurado/htmltype.git"
   },
-  "description": "Typescript library to build web components with decorators",
+  "description": "Strict TypeScript types for HTML and SVG attributes based on MDN data",
   "scripts": {
     "build": "tsc",
     "link": "tsc && npm link --force && tsc -w",
