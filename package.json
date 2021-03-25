@@ -2,7 +2,7 @@
   "name": "@lsegurado/htmltype",
   "author": "Lucas M. Segurado",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "baseUrl": "./src",
   "repository": {
     "type": "git",
