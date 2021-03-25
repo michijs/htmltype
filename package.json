@@ -1,0 +1,41 @@
+{
+  "name": "@lsegurado/htmltype",
+  "author": "Lucas M. Segurado",
+  "license": "MIT",
+  "version": "0.0.1",
+  "baseUrl": "./src",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lsegurado/htmltype.git"
+  },
+  "description": "Typescript library to build web components with decorators",
+  "scripts": {
+    "build": "tsc",
+    "link": "tsc && npm link --force && tsc -w",
+    "publish-patch-version": "npm version patch && npm run publish-npm",
+    "publish-npm": "npm run build && npm publish --access public"
+  },
+  "keywords": [
+    "html",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@lsegurado/eslint-config-ls-element": "0.0.4",
+    "eslint": "^7.19.0",
+    "lint-staged": "^10.5.4",
+    "simple-git-hooks": "^2.2.0",
+    "typescript": "^4.2.0"
+  },
+  "eslintConfig": {
+    "extends": "@lsegurado/eslint-config-ls-element"
+  },
+  "dependencies": {
+    "csstype": "^3.0.7"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix"
+  }
+}
