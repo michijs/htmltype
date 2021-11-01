@@ -148,6 +148,7 @@ export type ReferrerPolicy = 'no-referrer'
     | 'strict-origin'
     | 'strict-origin-when-cross-origin'
     | 'unsafe-url'
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types
 export type Rel = 'alternate' |
     'author' |
     'bookmark' |
