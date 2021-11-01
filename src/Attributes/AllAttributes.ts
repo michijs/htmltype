@@ -209,7 +209,7 @@ export interface AllAttributes extends SVGOnlyAttributes {
     /**
      * Specifies a unique id for an element
      */
-    id: string | number;
+    id: string;
     /**
      * Specifies an image as a server-side image map
      */
