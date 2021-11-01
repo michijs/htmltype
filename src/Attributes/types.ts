@@ -77,7 +77,7 @@ export type Coordinate = Length;
 export type Charset = string; //TODO: find all charset
 export type ClockValue = string; //TODO: https://developer.mozilla.org/en-US/docs/Web/SVG/Content_type#clock-value
 export type Color = `#${string}`;
-export type Crossorigin = 'anonymous' | 'use-credentials'
+export type Crossorigin = 'anonymous' | 'use-credentials' | true
 export type CSSProperties = Properties & { [selector: string]: string };
 export type Dur = ClockValue | 'media' | 'indefinite';
 export type EndValueList = string;//TODO: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/end
@@ -151,15 +151,25 @@ export type ReferrerPolicy = 'no-referrer'
 export type Rel = 'alternate' |
     'author' |
     'bookmark' |
+    'canonical' |
     'external' |
     'help' |
+    'icon' |
     'license' |
+    'manifest' |
+    'modulepreload' |
     'next' |
     'nofollow' |
     'noopener' |
     'noreferrer' |
+    'pingback' |
+    'prefetch' |
+    'preload' |
     'prev' |
     'search' |
+    'shortlink' |
+    'stylesheet' |
+    'preconnect' |
     'tag';
 export type Restart = 'always' | 'whenNotActive' | 'never';
 export type RGBA = 'R' | 'G' | 'B' | 'A';

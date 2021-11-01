@@ -1,3 +1,4 @@
+import { Rel } from '.';
 import { AllAttributes } from './AllAttributes';
 import { AllRoles } from './Roles';
 import { Length, Type } from './types';
@@ -11,6 +12,13 @@ export type GetRoles<T extends AllRoles = AllRoles> = {
 };
 
 export type GetAttributes<T extends keyof AllAttributes> = Pick<AllAttributes, T>;
+
+export type GetRel<T extends Rel> = {
+    /**
+     * Specifies the relationship between the current document and the linked document
+     */
+     rel: Extract<Rel, T>
+}
 
 export type GetType<T extends keyof Type, E extends Type[T] = Type[T]> = {
     /**

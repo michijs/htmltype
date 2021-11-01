@@ -1,4 +1,4 @@
-import { GetAttributes, GetType, GetRoles } from '../Attributes';
+import { GetAttributes, GetType, GetRoles, GetRel } from '../Attributes';
 import { GlobalAttributes } from '../Attributes/GlobalAttributes';
 
 export interface a extends Partial<
@@ -7,9 +7,23 @@ export interface a extends Partial<
         | 'href'
         | 'hreflang'
         | 'ping'
-        | 'rel'
         | 'target'
-    > & GetType<'A'>
+    > 
+    & GetType<'A'>
+    & GetRel<'alternate'
+        | 'author'
+        | 'bookmark'
+        | 'external'
+        | 'help'
+        | 'license'
+        | 'next'
+        | 'nofollow'
+        | 'noopener'
+        | 'noreferrer'
+        | 'prev'
+        | 'search'
+        | 'tag'
+    >
     & GetRoles<'button'
         | 'checkbox'
         | 'menuitem'
@@ -22,4 +36,4 @@ export interface a extends Partial<
         | 'tab'
         | 'treeitem'
     >
->{}
+> { }

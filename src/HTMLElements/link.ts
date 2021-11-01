@@ -1,4 +1,4 @@
-import { GetAttributes, GetType, GlobalAttributes } from '../Attributes';
+import { GetAttributes, GetRel, GetType, GlobalAttributes } from '../Attributes';
 
 export interface link extends Partial<
     GlobalAttributes
@@ -11,9 +11,26 @@ export interface link extends Partial<
         | 'imagesrcset'
         | 'media'
         | 'referrerpolicy'
-        | 'rel'
         | 'sizes'
         | 'title'
     >
+    & GetRel<'alternate'
+    | 'author'
+    | 'canonical'
+    | 'help'
+    | 'icon'
+    | 'license'
+    | 'manifest'
+    | 'modulepreload'
+    | 'next'
+    | 'pingback'
+    | 'preconnect'
+    | 'prefetch'
+    | 'preload'
+    | 'prev'
+    | 'search'
+    | 'shortlink'
+    | 'stylesheet'
+>
     & GetType<'Link'>
 >{}

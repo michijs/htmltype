@@ -1,5 +1,5 @@
 import { SVGOnlyAttributes } from './SVGOnlyAttributes';
-import { As, Autocapitalize, Autocomplete, Capture, Charset, Crossorigin, CSSProperties, DateTime, Decoding, Dir, Enctype, EnterKeyHint, HTTPEquiv, InputMode, Kind, Language, Length, Loading, Method, Preload, Rel, Sandbox, Scope, Shape, StringBoolean, Target, Wrap, YesNo } from './types';
+import { As, Autocapitalize, Autocomplete, Capture, Charset, Crossorigin, CSSProperties, DateTime, Decoding, Dir, Enctype, EnterKeyHint, HTTPEquiv, InputMode, Kind, Language, Length, Loading, Method, Preload, Sandbox, Scope, Shape, StringBoolean, Target, Wrap, YesNo } from './types';
 
 export interface AllAttributes extends SVGOnlyAttributes {
     /**
@@ -97,7 +97,10 @@ export interface AllAttributes extends SVGOnlyAttributes {
     /**
      * Specifies the coordinates of the area
      */
-    coords: string;// TODO: Revisar coords
+    coords: string;// TODO: Check coords
+    /**
+     * The crossorigin attribute, provides support for CORS, defining how the element handles crossorigin requests, thereby enabling the configuration of the CORS requests for the element's fetched data. Depending on the element, the attribute can be a CORS settings attribute.
+     */
     crossorigin: Crossorigin;
     /**
      * Specifies the URL of the resource to be used by the object
@@ -206,7 +209,7 @@ export interface AllAttributes extends SVGOnlyAttributes {
     /**
      * Specifies a unique id for an element
      */
-    id: string;
+    id: string | number;
     /**
      * Specifies an image as a server-side image map
      */
@@ -368,10 +371,6 @@ export interface AllAttributes extends SVGOnlyAttributes {
      */
     referrerpolicy: ReferrerPolicy;
     /**
-     * Specifies the relationship between the current document and the linked document
-     */
-    rel: Rel;
-    /**
      * Specifies that the element must be filled out before submitting the form
      */
     required: boolean;
@@ -493,3 +492,4 @@ export interface AllAttributes extends SVGOnlyAttributes {
 // "max" should be defined in each element
 // "type" should be defined in each element
 // "value" should be defined in each element
+// "rel" should be defined in each element
