@@ -1,7 +1,7 @@
 import { GetAttributes, GetRoles, GlobalAttributes } from '../Attributes';
 
 export interface video extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['video']>
     & GetAttributes<'autoplay'
         | 'controls'
         | 'crossorigin'

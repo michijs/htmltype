@@ -1,7 +1,7 @@
 import { GetAttributes, GetRel, GetRoles, GlobalAttributes } from '../Attributes';
 
 export interface form extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['form']>
     & GetAttributes<'accept-charset'
         | 'autocomplete'
         | 'name'

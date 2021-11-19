@@ -15,6 +15,6 @@ export interface radialGradient extends Partial<
     >
     & SVGAnimationTargetElementAttributes
     & SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['radialGradient']>
     & SVGPresentationAttributes
 >{}

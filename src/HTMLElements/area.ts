@@ -1,7 +1,7 @@
 import { GetAttributes, GetRel, GlobalAttributes } from '../Attributes';
 
 export interface area extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['area']>
     & GetAttributes<
         'alt'
         | 'coords'

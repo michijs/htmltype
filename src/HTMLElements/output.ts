@@ -1,7 +1,7 @@
 import { GetAttributes, GetRoles, GlobalAttributes } from '../Attributes';
 
 export interface output extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['output']>
     & GetAttributes<'for' | 'form' | 'name'>
     & GetRoles
 >{}

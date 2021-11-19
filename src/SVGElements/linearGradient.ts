@@ -12,7 +12,7 @@ export interface linearGradient extends Partial<
         | 'y2'
     >
     & SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['linearGradient']>
     & SVGPresentationAttributes
     & SVGAnimationTargetElementAttributes
 >{}

@@ -1,7 +1,7 @@
 import { GetAttributes, GetRel, GetType, GlobalAttributes } from '../Attributes';
 
 export interface link extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['link']>
     & GetAttributes<'as'
         | 'crossorigin'
         | 'disabled'

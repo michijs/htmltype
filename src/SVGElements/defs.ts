@@ -3,6 +3,6 @@ import { SVGEvents } from '../Events';
 
 export interface defs extends Partial<
     & SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['defs']>
     & SVGPresentationAttributes
 >{}

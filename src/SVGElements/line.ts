@@ -11,7 +11,7 @@ export interface line extends Partial<
     >
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['line']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

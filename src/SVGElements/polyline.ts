@@ -5,7 +5,7 @@ export interface polyline extends Partial<
     Pick<AllAttributes, 'points' | 'pathLength'>
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['polyline']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

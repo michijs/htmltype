@@ -9,7 +9,7 @@ export interface foreignObject extends Partial<
     & GetXY
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['foreignObject']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

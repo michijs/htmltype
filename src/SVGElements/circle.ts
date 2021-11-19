@@ -5,7 +5,7 @@ export interface circle extends Partial<
     Pick<AllAttributes, 'cx' | 'cy' | 'r' | 'pathLength'>
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['circle']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

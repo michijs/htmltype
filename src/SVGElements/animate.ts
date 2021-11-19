@@ -2,7 +2,7 @@ import { SVGAnimationAdditionAttributes, SVGAnimationAttributeTargetAttributes, 
 import { SVGEvents } from '../Events';
 
 export interface animate extends Partial<SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['animate']>
     & SVGAnimationAttributeTargetAttributes
     & SVGAnimationTimingAttributes
     & SVGAnimationAdditionAttributes

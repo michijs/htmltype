@@ -13,7 +13,7 @@ export interface marker extends Partial<
         | 'viewBox'
     >
     & SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['marker']>
     & SVGPresentationAttributes
     & SVGAnimationTargetElementAttributes
 >{}

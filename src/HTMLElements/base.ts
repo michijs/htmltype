@@ -1,6 +1,6 @@
 import { GetAttributes, GlobalAttributes } from '../Attributes';
 
 export interface base extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['base']>
     & GetAttributes<'href'| 'target'>
 >{}

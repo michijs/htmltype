@@ -5,5 +5,5 @@ export interface style extends Partial<
     Pick<AllAttributes, 'media' | 'title'>
     & GetType<'Style'>
     & SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['style']>
 >{}

@@ -5,7 +5,7 @@ export interface animateTransform extends Partial<
     Pick<AllAttributes, 'by' | 'from' | 'to'>
     & SVGConditionalProcessingAttributes
     & SVGCoreAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['animateTransform']>
     & SVGAnimationAttributeTargetAttributes
     & SVGAnimationTimingAttributes
     & SVGAnimationValueAttributes

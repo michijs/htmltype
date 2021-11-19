@@ -11,7 +11,7 @@ export interface svg extends Partial<
     & GetXY
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['svg']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

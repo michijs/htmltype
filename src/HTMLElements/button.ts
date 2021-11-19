@@ -1,7 +1,7 @@
 import { GetAttributes, GetType, GetValue, GetRoles, GlobalAttributes } from '../Attributes';
 
 export interface button extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['button']>
     & GetAttributes<'autofocus'
         | 'disabled'
         | 'form'

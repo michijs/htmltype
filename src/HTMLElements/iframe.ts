@@ -1,7 +1,7 @@
 import { GetAttributes, GetRoles, GlobalAttributes } from '../Attributes';
 
 export interface iframe extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['iframe']>
     & GetAttributes<'allow'
         | 'height'
         | 'name'

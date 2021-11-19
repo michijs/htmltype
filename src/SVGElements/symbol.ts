@@ -12,7 +12,7 @@ export interface _symbol extends Partial<
     >
     & GetXY
     & SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['symbol']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

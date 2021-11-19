@@ -12,7 +12,7 @@ export interface text extends Partial<
     & GetXY
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['text']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

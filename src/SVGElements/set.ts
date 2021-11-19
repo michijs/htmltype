@@ -5,6 +5,6 @@ export interface set extends Partial<
     Pick<AllAttributes, 'to'>
     & SVGAnimationTimingAttributes
     & SVGAnimationAttributeTargetAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['set']>
     & SVGGenericAttributes
 >{}

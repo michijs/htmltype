@@ -2,7 +2,7 @@ import { GetAttributes, GetType, GetRoles, GetRel } from '../Attributes';
 import { GlobalAttributes } from '../Attributes/GlobalAttributes';
 
 export interface a extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['a']>
     & GetAttributes<'download'
         | 'href'
         | 'hreflang'

@@ -1,6 +1,6 @@
 import { AllAttributes, AllRoles, GlobalAttributes, GetAttributes, GetMinAndMax, GetRoles, GetType, GetValue, Color, DateLocalString, DateString, MonthString, TimeString, Type, WeekString } from '../Attributes';
 
-type baseInput = GlobalAttributes & GetAttributes<
+type baseInput = GlobalAttributes<HTMLElementTagNameMap['input']> & GetAttributes<
     'autocomplete'
     | 'autofocus'
     | 'disabled'

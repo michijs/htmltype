@@ -12,7 +12,7 @@ export interface rect extends Partial<
     & GetXY
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['rect']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

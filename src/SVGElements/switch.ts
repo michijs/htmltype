@@ -4,6 +4,6 @@ import { SVGEvents } from '../Events';
 export interface _switch extends Partial<
     SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['switch']>
     & SVGPresentationAttributes
 >{}

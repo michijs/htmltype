@@ -1,7 +1,7 @@
 import { GetAttributes, GetMinAndMax, GetValue, GlobalAttributes } from '../Attributes';
 
 export interface meter extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['meter']>
     & GetAttributes<'high'
         | 'low'
         | 'optimum'

@@ -5,7 +5,7 @@ export interface path extends Partial<
     Pick<AllAttributes, 'd' | 'pathLength'>
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['path']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

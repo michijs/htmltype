@@ -1,7 +1,7 @@
 import { GetAttributes, GlobalAttributes } from '../Attributes';
 
 export interface textarea extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['textarea']>
     & GetAttributes<'autocapitalize'
         | 'autocomplete'
         | 'autofocus'

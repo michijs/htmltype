@@ -11,7 +11,7 @@ export interface image extends Partial<
     & GetXY
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['image']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
     & SVGAnimationTargetElementAttributes

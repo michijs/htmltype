@@ -5,7 +5,7 @@ export interface ellipse extends Partial<
     Pick<AllAttributes, 'cx' | 'cy' | 'rx' | 'ry' | 'pathLength'>
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['ellipse']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

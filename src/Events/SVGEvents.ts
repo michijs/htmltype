@@ -1,1 +1,17 @@
-export interface SVGEvents extends Omit<Partial<SVGElementEventMap & DocumentAndElementEventHandlers>, 'addEventListener' | 'removeEventListener'> { }
+import { GlobalEvents } from '.';
+import { TypedClipboardEvent } from './typedEvents/TypedClipboardEvent';
+import { TypedEvent } from './typedEvents/TypedEvent';
+
+interface TypedElementEvent<T> {
+    onfullscreenchange: TypedEvent<T>;
+    onfullscreenerror: TypedEvent<T>;
+}
+
+interface TypedDocumentAndElementEventHandlers<T> {
+    oncopy: ((ev: TypedClipboardEvent<T>) => any) | null;
+    oncut: ((ev: TypedClipboardEvent<T>) => any) | null;
+    onpaste: ((ev: TypedClipboardEvent<T>) => any) | null;
+}
+
+// Based on SVGElementEventMap
+export interface SVGEvents<T extends Element> extends GlobalEvents<T>, TypedElementEvent<T>, TypedDocumentAndElementEventHandlers<T> { }

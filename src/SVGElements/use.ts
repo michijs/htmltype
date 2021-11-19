@@ -7,7 +7,7 @@ export interface use extends Partial<
     & SVGAnimationTargetElementAttributes
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['use']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

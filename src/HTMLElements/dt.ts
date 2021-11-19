@@ -1,3 +1,3 @@
 import { GetRoles, GlobalAttributes } from '../Attributes';
 
-export interface dt extends Partial<GlobalAttributes & GetRoles<'listitem'>>{}
+export interface dt extends Partial<GlobalAttributes<HTMLElementTagNameMap['dt']> & GetRoles<'listitem'>>{}

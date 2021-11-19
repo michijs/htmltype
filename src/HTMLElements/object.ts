@@ -1,7 +1,7 @@
 import { GetAttributes, GetType, GetRoles, GlobalAttributes } from '../Attributes';
 
 type ObjectType = Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['object']>
     & GetAttributes<
         'form'
         | 'height'

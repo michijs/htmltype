@@ -5,7 +5,7 @@ export interface polygon extends Partial<
     Pick<AllAttributes, 'points' | 'pathLength'>
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['polygon']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

@@ -1,7 +1,7 @@
 import { GetAttributes, GetRoles, GlobalAttributes } from '../Attributes';
 
 type imgType = Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['img']>
     & GetAttributes<
         'alt'
         | 'crossorigin'

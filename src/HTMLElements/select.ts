@@ -1,7 +1,7 @@
 import { GetAttributes, GetRoles, GlobalAttributes } from '../Attributes';
 
 export interface select extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['select']>
     & GetAttributes<'autocomplete'
         | 'autofocus'
         | 'disabled'

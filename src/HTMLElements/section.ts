@@ -1,7 +1,7 @@
 import { GetRoles, GlobalAttributes } from '../Attributes';
 
 export interface section extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['section']>
     & GetRoles<
         'alert'
         | 'alertdialog'

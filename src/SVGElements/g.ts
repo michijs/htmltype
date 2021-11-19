@@ -4,7 +4,7 @@ import { SVGEvents } from '../Events';
 export interface g extends Partial<
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['g']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

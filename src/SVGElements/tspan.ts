@@ -12,7 +12,7 @@ export interface tspan extends Partial<
     & GetXY
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['tspan']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}

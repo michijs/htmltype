@@ -4,7 +4,7 @@ import { SVGEvents } from '../Events';
 export interface animateMotion extends Partial<
     Pick<AllAttributes, 'keyPoints' | 'path' | 'rotate'>
     & SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['animateMotion']>
     & SVGAnimationAttributeTargetAttributes
     & SVGAnimationTimingAttributes
     & SVGAnimationValueAttributes

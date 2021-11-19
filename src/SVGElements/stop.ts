@@ -4,6 +4,6 @@ import { SVGEvents } from '../Events';
 export interface stop extends Partial<
     Pick<AllAttributes, 'offset'>
     & SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['stop']>
     & SVGPresentationAttributes
 >{}

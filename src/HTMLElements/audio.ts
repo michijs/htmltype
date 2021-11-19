@@ -1,7 +1,7 @@
 import { GetAttributes, GetRoles, GlobalAttributes } from '../Attributes';
 
 export interface audio extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['audio']>
     & GetAttributes<'autoplay'
         | 'controls'
         | 'crossorigin'

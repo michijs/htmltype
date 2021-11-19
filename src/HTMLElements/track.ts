@@ -1,7 +1,7 @@
 import { GetAttributes, GlobalAttributes } from '../Attributes';
 
 export interface track extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['track']>
     & GetAttributes<'default'
         | 'kind'
         | 'label'

@@ -6,5 +6,5 @@ export interface script extends Partial<
     & GetType<'Script'>
     & SVGAnimationTargetElementAttributes
     & SVGGenericAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['script']>
 >{}

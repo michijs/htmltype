@@ -2,8 +2,8 @@ import { AriaAttributes } from './AriaAttributes';
 import { GlobalEvents } from '../Events';
 import { AllAttributes } from './AllAttributes';
 
-export interface GlobalAttributes extends AriaAttributes,
-    GlobalEvents,
+export interface GlobalAttributes<T extends Element> extends AriaAttributes,
+    GlobalEvents<T>,
     Pick<AllAttributes,
     'accessKey'
     | 'autocapitalize'

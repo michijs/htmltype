@@ -1,7 +1,7 @@
 import { GetAttributes, GetType, GlobalAttributes } from '../Attributes';
 
 export interface script extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['script']>
     & GetAttributes<'async'
         | 'crossorigin'
         | 'defer'

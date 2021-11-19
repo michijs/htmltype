@@ -4,6 +4,6 @@ import { SVGEvents } from '../Events';
 export interface view extends Partial<
     Pick<AllAttributes, 'viewBox' | 'preserveAspectRatio'>
     & SVGCoreAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['view']>
     & SVGAriaAttributes
 >{}

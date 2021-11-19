@@ -1,7 +1,7 @@
 import { GetAttributes, GetRoles, GetType, GlobalAttributes } from '../Attributes';
 
 export interface embed extends Partial<
-    GlobalAttributes
+    GlobalAttributes<HTMLElementTagNameMap['embed']>
     & GetAttributes<'height'
         | 'src'
         | 'width'

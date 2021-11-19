@@ -11,7 +11,7 @@ export interface textPath extends Partial<
     >
     & SVGGenericAttributes
     & SVGConditionalProcessingAttributes
-    & SVGEvents
+    & SVGEvents<SVGElementTagNameMap['textPath']>
     & SVGPresentationAttributes
     & SVGAriaAttributes
 >{}
