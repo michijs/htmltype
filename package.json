@@ -2,18 +2,21 @@
   "name": "@lsegurado/htmltype",
   "author": "Lucas M. Segurado",
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "baseUrl": "./src",
   "repository": {
     "type": "git",
     "url": "https://github.com/lsegurado/htmltype.git"
   },
   "files": [
-    "Attributes",
-    "Events",
-    "HTMLElements",
-    "SVGElements"
+    "dist/"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "description": "Strict TypeScript types for HTML and SVG attributes based on MDN data",
   "scripts": {
     "build": "tsc",
@@ -26,7 +29,7 @@
     "typescript"
   ],
   "devDependencies": {
-    "@lsegurado/eslint-config-ls-element": "0.0.4",
+    "@lsegurado/eslint-config-ls-element": "0.1.0",
     "eslint": "^7.19.0",
     "lint-staged": "^10.5.4",
     "simple-git-hooks": "^2.2.0",
@@ -36,7 +39,7 @@
     "extends": "@lsegurado/eslint-config-ls-element"
   },
   "dependencies": {
-    "csstype": "^3.0.7"
+    "csstype": "^3.0.10"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

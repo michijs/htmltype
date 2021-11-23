@@ -135,9 +135,9 @@ export interface AllAttributes extends SVGOnlyAttributes {
      */
     disabled: boolean;
     /**
-     * Specifies that the target will be downloaded when a user clicks on the hyperlink
+     * Specifies that the target will be downloaded when a user clicks on the hyperlink and the new filename for the downloaded file
      */
-    download: boolean;
+    download: boolean | string;
     /**
      * Specifies whether an element is draggable or not
      */
@@ -445,7 +445,7 @@ export interface AllAttributes extends SVGOnlyAttributes {
     /**
      * Specifies the legal number intervals for an input field
      */
-    step: number;
+    step: number | 'any';
     /**
      * Specifies an inline CSS style for an element
      */
