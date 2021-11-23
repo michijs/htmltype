@@ -1,4 +1,6 @@
-export * as Attributes from './Attributes';
-export * as Events from './Events';
-export * as HTMLElements from './HTMLElements';
-export * as SVGElements from './SVGElements';
+import type * as Attributes from './Attributes';
+import type * as Events from './Events';
+import type * as HTMLElements from './HTMLElements';
+import type * as SVGElements from './SVGElements';
+
+export type { Attributes, Events, HTMLElements, SVGElements };
