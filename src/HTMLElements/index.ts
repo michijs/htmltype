@@ -39,7 +39,6 @@ export * from './ol';
 export * from './optgroup';
 export * from './option';
 export * from './output';
-export * from './param';
 export * from './progress';
 export * from './q';
 export * from './script';

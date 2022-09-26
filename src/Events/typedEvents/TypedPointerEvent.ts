@@ -4,7 +4,8 @@ export interface TypedPointerEvent<T> extends TypedMouseEvent<T> {
     readonly height: number;
     readonly isPrimary: boolean;
     readonly pointerId: number;
-    readonly pointerType: string;
+    // Unofficial
+    readonly pointerType: 'mouse' | 'pen' | 'touch';
     readonly pressure: number;
     readonly tangentialPressure: number;
     readonly tiltX: number;

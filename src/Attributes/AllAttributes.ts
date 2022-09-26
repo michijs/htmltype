@@ -1,7 +1,7 @@
 import { SVGOnlyAttributes } from './SVGOnlyAttributes';
 import { As, Autocapitalize, Autocomplete, Capture, Charset, Crossorigin, CSSProperties, DateTime, Decoding, Dir, Enctype, EnterKeyHint, HTTPEquiv, InputMode, Kind, Language, Length, Loading, Method, Preload, Sandbox, Scope, Shape, StringBoolean, Target, Wrap, YesNo } from './types';
 
-export interface AllAttributes extends SVGOnlyAttributes {
+export type AllAttributes = SVGOnlyAttributes & {
     /**
      * The abbr attribute specifies a shorter version of the content in a header cell.
      */
@@ -486,6 +486,11 @@ export interface AllAttributes extends SVGOnlyAttributes {
      * Specifies the XML Namespace of the document
      */
     xmlns: string;
+} & {
+    /**
+     * The data-* global attributes form a class of attributes called custom data attributes, that allow proprietary information to be exchanged between the HTML and its DOM representation by scripts. 
+     * */
+     [k in `data-${string}`]: string;
 }
 
 // "min" should be defined in each element

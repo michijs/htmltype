@@ -30,5 +30,6 @@ export interface GlobalAttributes<T extends Element> extends AriaAttributes,
     | 'tabindex'
     | 'title'
     | 'translate'
+    | `data-${string}`
     > {
 }

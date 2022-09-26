@@ -5,7 +5,7 @@ import { AllRoles } from './Roles';
 import { Length, Type } from './types';
 import { GetRoles, GetType, GetValues, GetXY } from './Utils';
 
-export type SVGCoreAttributes = Pick<AllAttributes, 'id' | 'lang' | 'tabindex' | 'xml:base' | 'xml:lang'>;
+export type SVGCoreAttributes = Pick<AllAttributes, 'id' | 'lang' | 'tabindex' | 'xml:base' | 'xml:lang' | `data-${string}`>;
 export type SVGStylingAttributes = Pick<AllAttributes, 'style' | 'class'>;
 export type SVGConditionalProcessingAttributes = Pick<AllAttributes, 'requiredExtensions' | 'systemLanguage'>;
 export type SVGPresentationAttributes = SvgPropertiesHyphen;
