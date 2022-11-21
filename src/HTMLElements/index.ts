@@ -31,6 +31,7 @@ export * from './label';
 export * from './li';
 export * from './link';
 export * from './map';
+export * from './menu';
 export * from './meta';
 export * from './meter';
 export * from './mod';
