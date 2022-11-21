@@ -8,6 +8,7 @@ import { TypedKeyboardEvent } from './typedEvents/TypedKeyboardEvent';
 import { TypedMouseEvent } from './typedEvents/TypedMouseEvent';
 import { TypedPointerEvent } from './typedEvents/TypedPointerEvent';
 import { TypedProgressEvent } from './typedEvents/TypedProgressEvent';
+import { TypedSubmitEvent } from './typedEvents/TypedSubmitEvent';
 import { TypedTouchEvent } from './typedEvents/TypedTouchEvent';
 import { TypedTransitionEvent } from './typedEvents/TypedTransitionEvent';
 import { TypedUIEvent } from './typedEvents/TypedUIEvent';
@@ -247,7 +248,7 @@ export interface GlobalEvents<T extends Element> {
      * @param ev The event.
      */
     onstalled: ((ev: TypedEvent<T>) => any) | null;
-    onsubmit: ((ev: TypedEvent<T>) => any) | null;
+    onsubmit: ((ev: TypedSubmitEvent<T>) => any) | null;
     /**
      * Occurs if the load operation has been intentionally halted.
      * @param ev The event.
