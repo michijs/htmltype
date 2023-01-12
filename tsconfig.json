@@ -1,25 +1,26 @@
 {
-    "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
-        "allowUnreachableCode": false,
-        "declaration": true,
-        "experimentalDecorators": true,
-        "lib": [
-            "dom",
-            "es2020"
-        ],
-        "outDir": "./dist",
-        "moduleResolution": "node",
-        "module": "es2020",
-        "target": "es2019",
-        "baseUrl": "./",
-        "noUnusedLocals": true,
-        "noUnusedParameters": true
-    },
-    "include": [
-        "src"
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es2020"
     ],
-    "exclude": [
-        "node_modules"
-    ]
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "module": "es2020",
+    "target": "es2019",
+    "baseUrl": "./",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
