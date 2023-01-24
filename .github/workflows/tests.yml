@@ -28,4 +28,4 @@ jobs:
       run: npm install
 
     - name: Run Typescript tests
-      run: npm run test-tsc
+      run: npm run build
