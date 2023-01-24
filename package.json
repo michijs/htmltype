@@ -2,7 +2,7 @@
   "name": "@lsegurado/htmltype",
   "author": "Lucas M. Segurado",
   "license": "MIT",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "baseUrl": "./src",
   "repository": {
     "type": "git",
@@ -31,22 +31,18 @@
     "typescript"
   ],
   "devDependencies": {
-    "@lsegurado/eslint-config-ls-element": "0.1.0",
-    "eslint": "^7.19.0",
+    "rome": "11.0.0",
     "lint-staged": "^10.5.4",
-    "simple-git-hooks": "^2.2.0",
-    "typescript": "^4.5.2"
-  },
-  "eslintConfig": {
-    "extends": "@lsegurado/eslint-config-ls-element"
+    "simple-git-hooks": "^2.8.1",
+    "typescript": "^4.9.4"
   },
   "dependencies": {
-    "csstype": "^3.0.10"
+    "csstype": "^3.1.1"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "*.ts": "rome check --apply-suggested"
   }
 }
