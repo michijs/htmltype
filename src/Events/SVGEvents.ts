@@ -1,6 +1,6 @@
 import { GlobalEvents } from '.';
-import { TypedClipboardEvent } from './TypedEventsr/TypedClipboardEvent';
-import { TypedEvent } from './TypedEventsr/TypedEvent';
+import { TypedClipboardEvent } from './TypedEvents/TypedClipboardEvent';
+import { TypedEvent } from './TypedEvents/TypedEvent';
 
 interface TypedElementEvent<T> {
     onfullscreenchange: TypedEvent<T>;

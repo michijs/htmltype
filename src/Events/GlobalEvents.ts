@@ -1,18 +1,18 @@
 import { TypedOnErrorEventHandler } from './TypedEventHandlers/typedOnErrorEventHandler';
-import { TypedAnimationEvent } from './TypedEventsr/TypedAnimationEvent';
-import { TypedDragEvent } from './TypedEventsr/TypedDragEvent';
-import { TypedEvent } from './TypedEventsr/TypedEvent';
-import { TypedFocusEvent } from './TypedEventsr/TypedFocusEvent';
-import { TypedFormDataEvent } from './TypedEventsr/TypedFormDataEvent';
-import { TypedKeyboardEvent } from './TypedEventsr/TypedKeyboardEvent';
-import { TypedMouseEvent } from './TypedEventsr/TypedMouseEvent';
-import { TypedPointerEvent } from './TypedEventsr/TypedPointerEvent';
-import { TypedProgressEvent } from './TypedEventsr/TypedProgressEvent';
-import { TypedSubmitEvent } from './TypedEventsr/TypedSubmitEvent';
-import { TypedTouchEvent } from './TypedEventsr/TypedTouchEvent';
-import { TypedTransitionEvent } from './TypedEventsr/TypedTransitionEvent';
-import { TypedUIEvent } from './TypedEventsr/TypedUIEvent';
-import { TypedWheelEvent } from './TypedEventsr/TypedWheelEvent';
+import { TypedAnimationEvent } from './TypedEvents/TypedAnimationEvent';
+import { TypedDragEvent } from './TypedEvents/TypedDragEvent';
+import { TypedEvent } from './TypedEvents/TypedEvent';
+import { TypedFocusEvent } from './TypedEvents/TypedFocusEvent';
+import { TypedFormDataEvent } from './TypedEvents/TypedFormDataEvent';
+import { TypedKeyboardEvent } from './TypedEvents/TypedKeyboardEvent';
+import { TypedMouseEvent } from './TypedEvents/TypedMouseEvent';
+import { TypedPointerEvent } from './TypedEvents/TypedPointerEvent';
+import { TypedProgressEvent } from './TypedEvents/TypedProgressEvent';
+import { TypedSubmitEvent } from './TypedEvents/TypedSubmitEvent';
+import { TypedTouchEvent } from './TypedEvents/TypedTouchEvent';
+import { TypedTransitionEvent } from './TypedEvents/TypedTransitionEvent';
+import { TypedUIEvent } from './TypedEvents/TypedUIEvent';
+import { TypedWheelEvent } from './TypedEvents/TypedWheelEvent';
 
 export interface GlobalEvents<T extends Element> {
     /**
