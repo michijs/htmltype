@@ -1,18 +1,18 @@
-import { TypedOnErrorEventHandler } from './typedEventHandlers/typedOnErrorEventHandler';
-import { TypedAnimationEvent } from './typedEvents/TypedAnimationEvent';
-import { TypedDragEvent } from './typedEvents/TypedDragEvent';
-import { TypedEvent } from './typedEvents/TypedEvent';
-import { TypedFocusEvent } from './typedEvents/TypedFocusEvent';
-import { TypedFormDataEvent } from './typedEvents/TypedFormDataEvent';
-import { TypedKeyboardEvent } from './typedEvents/TypedKeyboardEvent';
-import { TypedMouseEvent } from './typedEvents/TypedMouseEvent';
-import { TypedPointerEvent } from './typedEvents/TypedPointerEvent';
-import { TypedProgressEvent } from './typedEvents/TypedProgressEvent';
-import { TypedSubmitEvent } from './typedEvents/TypedSubmitEvent';
-import { TypedTouchEvent } from './typedEvents/TypedTouchEvent';
-import { TypedTransitionEvent } from './typedEvents/TypedTransitionEvent';
-import { TypedUIEvent } from './typedEvents/TypedUIEvent';
-import { TypedWheelEvent } from './typedEvents/TypedWheelEvent';
+import { TypedOnErrorEventHandler } from './TypedEventHandlers/typedOnErrorEventHandler';
+import { TypedAnimationEvent } from './TypedEvents/TypedAnimationEvent';
+import { TypedDragEvent } from './TypedEvents/TypedDragEvent';
+import { TypedEvent } from './TypedEvents/TypedEvent';
+import { TypedFocusEvent } from './TypedEvents/TypedFocusEvent';
+import { TypedFormDataEvent } from './TypedEvents/TypedFormDataEvent';
+import { TypedKeyboardEvent } from './TypedEvents/TypedKeyboardEvent';
+import { TypedMouseEvent } from './TypedEvents/TypedMouseEvent';
+import { TypedPointerEvent } from './TypedEvents/TypedPointerEvent';
+import { TypedProgressEvent } from './TypedEvents/TypedProgressEvent';
+import { TypedSubmitEvent } from './TypedEvents/TypedSubmitEvent';
+import { TypedTouchEvent } from './TypedEvents/TypedTouchEvent';
+import { TypedTransitionEvent } from './TypedEvents/TypedTransitionEvent';
+import { TypedUIEvent } from './TypedEvents/TypedUIEvent';
+import { TypedWheelEvent } from './TypedEvents/TypedWheelEvent';
 
 export interface GlobalEvents<T extends Element> {
     /**

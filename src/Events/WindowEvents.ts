@@ -1,10 +1,10 @@
-import { TypedBeforeUnloadEvent } from './typedEvents/TypedBeforeUnloadEvent';
-import { TypedEvent } from './typedEvents/TypedEvent';
-import { TypedMessageEvent } from './typedEvents/TypedMessageEvent';
-import { TypedPageTransitionEvent } from './typedEvents/TypedPageTransitionEvent';
-import { TypedPopStateEvent } from './typedEvents/TypedPopStateEvent';
-import { TypedPromiseRejectionEvent } from './typedEvents/TypedPromiseRejectionEvent';
-import { TypedStorageEvent } from './typedEvents/TypedStorageEvent';
+import { TypedBeforeUnloadEvent } from './TypedEvents/TypedBeforeUnloadEvent';
+import { TypedEvent } from './TypedEvents/TypedEvent';
+import { TypedMessageEvent } from './TypedEvents/TypedMessageEvent';
+import { TypedPageTransitionEvent } from './TypedEvents/TypedPageTransitionEvent';
+import { TypedPopStateEvent } from './TypedEvents/TypedPopStateEvent';
+import { TypedPromiseRejectionEvent } from './TypedEvents/TypedPromiseRejectionEvent';
+import { TypedStorageEvent } from './TypedEvents/TypedStorageEvent';
 
 export interface WindowEvents<T> {
     onafterprint: ((ev: TypedEvent<T>) => any) | null;
