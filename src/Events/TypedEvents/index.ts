@@ -13,6 +13,7 @@ export { TypedPointerEvent } from './TypedPointerEvent';
 export { TypedPopStateEvent } from './TypedPopStateEvent';
 export { TypedProgressEvent } from './TypedProgressEvent';
 export { TypedPromiseRejectionEvent } from './TypedPromiseRejectionEvent';
+export { TypedSubmitEvent } from './TypedSubmitEvent';
 export { TypedStorageEvent } from './TypedStorageEvent';
 export { TypedTouchEvent } from './TypedTouchEvent';
 export { TypedTransitionEvent } from './TypedTransitionEvent';
