@@ -1,13 +1,15 @@
 # HTMLType
 Strict TypeScript types for HTML and SVG attributes based on MDN data
 
-![npm][github-version] [![license][github-license]][github-license-url] ![npm][npm-downloads] ![npm][repo-size]
+![npm][version] [![license][github-license]][github-license-url] ![npm][npm-downloads] ![npm][repo-size]
+  [![CodeQL](https://github.com/michijs/htmltype/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/michijs/htmltype/actions/workflows/codeql-analysis.yml)
+  [![Tests](https://github.com/michijs/htmltype/actions/workflows/tests.yml/badge.svg)](https://github.com/michijs/htmltype/actions/workflows/tests.yml)
 
 ## License
- - [MIT](https://github.com/lsegurado/htmltype/blob/master/LICENSE.md)
+ - [MIT](https://github.com/michijs/htmltype/blob/master/LICENSE.md)
 
-[repo-size]: https://img.shields.io/github/repo-size/lsegurado/htmltype
-[npm-downloads]: https://img.shields.io/npm/dt/@lsegurado/htmltype
-[github-version]: http://img.shields.io/github/package-json/v/lsegurado/htmltype/master?color=%231182c3&label=Current%20version
-[github-license]: https://img.shields.io/github/license/lsegurado/htmltype
-[github-license-url]: https://github.com/lsegurado/htmltype/blob/master/LICENSE.md
+[repo-size]: https://img.shields.io/github/repo-size/michijs/htmltype
+[npm-downloads]: https://img.shields.io/npm/dt/@michijs/htmltype
+[version]: https://img.shields.io/npm/v/@michijs/htmltype
+[github-license]: https://img.shields.io/github/license/michijs/htmltype
+[github-license-url]: https://github.com/michijs/htmltype/blob/master/LICENSE.md
