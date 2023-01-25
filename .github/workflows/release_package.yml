@@ -39,7 +39,7 @@ jobs:
         with:
           node-version: 16.17.0
           # Important!
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: npm install
@@ -62,7 +62,6 @@ jobs:
           echo "NEW_VERSION=$(npm --no-git-tag-version version $RELEASE_TYPE)" >> $GITHUB_ENV
           echo "RELEASE_TAG=latest" >> $GITHUB_ENV
 
-
       # Bump package pre-release version
       # Use tag beta for pre-release versions
       - name: Bump pre-release version
@@ -81,7 +80,6 @@ jobs:
       # Publish version to public repository
       - name: Publish
         run: npm publish --access public --tag ${{ env.RELEASE_TAG }}
-        
 
       # Push repository changes
       - name: Push changes to repository
