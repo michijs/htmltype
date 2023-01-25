@@ -1,20 +1,19 @@
 name: Release package
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       release-type:
         description: "Release type"
         required: true
-        type: string
-        # type: choice
-        # options:
-        #   - major
-        #   - minor
-        #   - patch
-        #   - premajor
-        #   - preminor
-        #   - prepatch
-        #   - prerelease
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
+          - premajor
+          - preminor
+          - prepatch
+          - prerelease
       release-notes:
         description: "Release notes"
         type: string
