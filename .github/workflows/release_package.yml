@@ -24,3 +24,6 @@ jobs:
     with:
       release-type: ${{ github.event.inputs.release-type }}
       release-notes: ${{ github.event.inputs.release-notes }}
+    secrets:
+      NPM_ACCESS_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
