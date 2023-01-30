@@ -11,9 +11,4 @@ on:
 
 jobs:
   analyze:
-    name: Analyze
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Execute CodeQL
-        uses: michijs/.github/.github/workflows/codeql-analysis.yml@main
+    uses: "michijs/.github/.github/workflows/codeql-analysis.yml@main"
