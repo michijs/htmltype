@@ -20,7 +20,7 @@ on:
 
 jobs:
   Release:
-    uses: "michijs/.github/.github/workflows/codeql-analysis.yml@main"
+    uses: "michijs/.github/.github/workflows/release_package.yml@main"
     with:
       release-type: ${{ github.event.inputs.release-type }}
       release-notes: ${{ github.event.inputs.release-notes }}
