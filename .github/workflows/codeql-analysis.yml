@@ -16,4 +16,4 @@ jobs:
 
     steps:
       - name: Execute CodeQL
-        uses: michijs/.github/.github/workflows/codeql-analysis.yml
+        uses: michijs/.github/.github/workflows/codeql-analysis.yml@main
