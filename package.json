@@ -21,7 +21,7 @@
   },
   "description": "Strict TypeScript types for HTML and SVG attributes based on MDN data",
   "scripts": {
-    "build": "tsc",
+    "dist": "tsc",
     "link": "tsc && npm link --force && tsc -w"
   },
   "keywords": [
