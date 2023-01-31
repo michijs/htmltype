@@ -10,5 +10,6 @@ on:
     - cron: "0 21 * * 1"
 
 jobs:
-  analyze:
+  call-workflow:
+    name: 'Call Workflow'
     uses: "michijs/.github/.github/workflows/codeql-analysis.yml@main"

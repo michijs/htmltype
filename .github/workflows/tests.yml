@@ -3,7 +3,7 @@ name: "Tests"
 on: [push, pull_request]
 
 jobs:
-  Run:
+  call-workflow:
     strategy:
       matrix:
         scripts: [{script: build, name: "Typescript"}]

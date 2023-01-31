@@ -19,7 +19,8 @@ on:
         type: string
 
 jobs:
-  Release:
+  call-workflow:
+    name: 'Call Workflow'
     uses: "michijs/.github/.github/workflows/release-package.yml@main"
     with:
       release-type: ${{ github.event.inputs.release-type }}
