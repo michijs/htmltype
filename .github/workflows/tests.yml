@@ -10,4 +10,4 @@ jobs:
     uses: michijs/.github/.github/workflows/execute-script.yml@main
     name: "Run ${{matrix.scripts.name}} tests"
     with:
-      target: ${{ matrix.scripts.script }}
+      script-name: ${{ matrix.scripts.script }}
