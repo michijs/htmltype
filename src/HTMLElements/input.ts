@@ -22,14 +22,14 @@ type baseInput = GlobalAttributes<HTMLElementTagNameMap['input']> & GetAttribute
 // type NumericInputFactoryWithValue<T extends Type['Input'], A extends keyof AllAttributes = 'id', R extends AllRoles = never, V = number> = InputFactoryWithValue<T, A, R, V> & Partial<GetMinAndMax<V>>
 
 
-export type input = Partial<
+export interface input extends Partial<
   baseInput &
   GetType<'Input'> &
   Pick<AllAttributes, 'accept' | 'capture' | 'alt' | 'checked' | 'indeterminate' | 'dirname' | 'multiple' | 'id' | 'step' | 'pattern' | 'placeholder' | 'size' | 'maxlength' | 'minlength' | 'formaction' | 'formenctype' | 'formmethod' | 'formnovalidate' | 'formtarget' | 'height' | 'src' | 'width'> &
   GetRoles<'button' | 'link' | 'menuitem' | 'menuitemcheckbox' | 'menuitemradio' | 'option' | 'radio' | 'switch' | 'tab' | 'combobox' | 'searchbox' | 'spinbutton'> &
-  GetValue<Color | number | DateString | DateLocalString | MonthString | TimeString | WeekString> &
-  GetMinAndMax<Color | number | DateString | DateLocalString | MonthString | TimeString | WeekString>
->
+  GetValue<string | Color | number | DateString | DateLocalString | MonthString | TimeString | WeekString> &
+  GetMinAndMax<number | DateString | DateLocalString | MonthString | TimeString | WeekString>
+> {}
 
 // export interface ImageInput extends InputFactory<'image',
 //   'alt' | 'formaction' | 'formenctype' | 'formmethod' | 'formnovalidate' | 'formtarget' | 'height' | 'src' | 'width',
