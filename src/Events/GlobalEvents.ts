@@ -1,5 +1,6 @@
 import { TypedOnErrorEventHandler } from './TypedEventHandlers/TypedOnErrorEventHandler';
-import { TypedAnimationEvent, TypedDragEvent, TypedEvent, TypedFocusEvent, TypedFormDataEvent, TypedMouseEvent, TypedKeyboardEvent, TypedPointerEvent, TypedProgressEvent, TypedSubmitEvent, TypedTouchEvent, TypedTransitionEvent, TypedWheelEvent, TypedUIEvent } from './TypedEvents';
+import { TypedAnimationEvent, TypedDragEvent, TypedEvent, TypedFocusEvent, TypedFormDataEvent, TypedMouseEvent, TypedKeyboardEvent, TypedPointerEvent, TypedProgressEvent, TypedSubmitEvent, TypedTouchEvent, TypedTransitionEvent, TypedWheelEvent, TypedUIEvent, TypedSecurityPolicyViolationEvent } from './TypedEvents';
+import { TypedInputEvent } from './TypedEvents/TypedInputEvent';
 
 export interface GlobalEvents<T extends Element> {
   /**
@@ -12,11 +13,13 @@ export interface GlobalEvents<T extends Element> {
   onanimationiteration: ((ev: TypedAnimationEvent<T>) => any) | null;
   onanimationstart: ((ev: TypedAnimationEvent<T>) => any) | null;
   onauxclick: ((ev: TypedMouseEvent<T>) => any) | null;
+  onbeforeinput: ((ev: TypedInputEvent<T>) => any) | null;
   /**
    * Fires when the object loses the input focus.
    * @param ev The focus event.
    */
   onblur: ((ev: TypedFocusEvent<T>) => any) | null;
+  oncancel: ((ev: TypedFocusEvent<T>) => any) | null;
   /**
    * Occurs when playback is possible, but would require further buffering.
    * @param ev The event.
@@ -213,6 +216,7 @@ export interface GlobalEvents<T extends Element> {
    * @param ev The event.
    */
   onscroll: ((ev: TypedEvent<T>) => any) | null;
+  onsecuritypolicyviolation: ((ev: TypedSecurityPolicyViolationEvent<T>) => any) | null;
   /**
    * Occurs when the seek operation ends.
    * @param ev The event.
@@ -230,6 +234,7 @@ export interface GlobalEvents<T extends Element> {
   onselect: ((ev: TypedEvent<T>) => any) | null;
   onselectionchange: ((ev: TypedEvent<T>) => any) | null;
   onselectstart: ((ev: TypedEvent<T>) => any) | null;
+  onslotchange: ((ev: TypedEvent<T>) => any) | null;
   /**
    * Occurs when the download has stopped.
    * @param ev The event.
