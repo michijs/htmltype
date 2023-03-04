@@ -10,21 +10,17 @@ export interface IReference {
 
 export interface JSDocInfo {
   name: string;
-  description?:
-    | string
-    | MarkupContent;
+  description?: string | MarkupContent;
   references?: IReference[];
 }
 
-export interface Attribute
-  extends JSDocInfo {
+export interface Attribute extends JSDocInfo {
   values?: {
     name: string;
   }[];
   valueSet?: string;
 }
 
-export interface ITag
-  extends JSDocInfo {
+export interface ITag extends JSDocInfo {
   attributes: Attribute[];
 }

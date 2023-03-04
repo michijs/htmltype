@@ -2,10 +2,7 @@
 // HTML Data Version 1.1
 import { ValueSets } from "./ValueSets";
 import { GlobalAttributes } from "./GlobalAttributes";
-import {
-  GlobalEvents,
-  WindowEvents,
-} from "../../Events";
+import { GlobalEvents, WindowEvents } from "../../Events";
 
 export interface HTMLElements {
   /**
@@ -26,9 +23,7 @@ export interface HTMLElements {
      */
     xmlns?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["html"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["html"]>;
 
   /**
    * The head element represents a collection of metadata for the Document.
@@ -40,18 +35,13 @@ export interface HTMLElements {
      */
     profile?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["head"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["head"]>;
 
   /**
    * The title element represents the document's title or name. Authors should use titles that identify their documents even when they are used out of context, for example in a user's history or bookmarks, or in search results. The document's title is often different from its first heading, since the first heading does not have to stand alone when taken out of context.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/title}*/
-  title: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["title"]
-    >;
+  title: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["title"]>;
 
   /**
    * The base element allows authors to specify the document base URL for the purposes of resolving relative URLs, and the name of the default browsing context for the purposes of following hyperlinks. The element does not represent any content beyond this information.
@@ -74,9 +64,7 @@ If this attribute is specified, this element must come before any other elements
 */
     target?: ValueSets["target"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["base"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["base"]>;
 
   /**
    * The link element allows authors to link their document to other resources.
@@ -158,9 +146,7 @@ If the attribute is not present, the resource is fetched without a [CORS](https:
      */
     title?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["link"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["link"]>;
 
   /**
    * The meta element represents various kinds of metadata that cannot be expressed using the title, base, link, style, and script elements.
@@ -436,9 +422,7 @@ This attribute may also have a value taken from the extended list defined on [WH
 */
     scheme?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["meta"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["meta"]>;
 
   /**
    * The style element allows authors to embed style information in their documents. The style element is one of several inputs to the styling processing model. The element does not represent content for the user.
@@ -464,17 +448,13 @@ This attribute may also have a value taken from the extended list defined on [WH
      */
     title?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["style"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["style"]>;
 
   /**
    * The body element represents the content of the document.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/body}*/
-  body: WindowEvents<
-    HTMLElementTagNameMap["body"]
-  > & {
+  body: WindowEvents<HTMLElementTagNameMap["body"]> & {
     /**
      * Color of text for hyperlinks when selected. _This method is non-conforming, use CSS [`color`](https://developer.mozilla.org/en-US/docs/Web/CSS/color "The color CSS property sets the foreground color value of an element's text and text decorations, and sets the currentcolor value.") property in conjunction with the [`:active`](https://developer.mozilla.org/en-US/docs/Web/CSS/:active "The :active CSS pseudo-class represents an element (such as a button) that is being activated by the user.") pseudo-class instead._
      */
@@ -516,135 +496,91 @@ This attribute may also have a value taken from the extended list defined on [WH
      */
     vlink?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["body"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["body"]>;
 
   /**
    * The article element represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content. Each article should be identified, typically by including a heading (h1–h6 element) as a child of the article element.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/article}*/
-  article: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["article"]
-    >;
+  article: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["article"]>;
 
   /**
    * The section element represents a generic section of a document or application. A section, in this context, is a thematic grouping of content. Each section should be identified, typically by including a heading ( h1- h6 element) as a child of the section element.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/section}*/
-  section: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["section"]
-    >;
+  section: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["section"]>;
 
   /**
    * The nav element represents a section of a page that links to other pages or to parts within the page: a section with navigation links.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/nav}*/
-  nav: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["nav"]
-    >;
+  nav: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["nav"]>;
 
   /**
    * The aside element represents a section of a page that consists of content that is tangentially related to the content around the aside element, and which could be considered separate from that content. Such sections are often represented as sidebars in printed typography.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/aside}*/
-  aside: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["aside"]
-    >;
+  aside: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["aside"]>;
 
   /**
    * The h1 element represents a section heading.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements}*/
-  h1: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["h1"]
-    >;
+  h1: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["h1"]>;
 
   /**
    * The h2 element represents a section heading.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements}*/
-  h2: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["h2"]
-    >;
+  h2: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["h2"]>;
 
   /**
    * The h3 element represents a section heading.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements}*/
-  h3: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["h3"]
-    >;
+  h3: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["h3"]>;
 
   /**
    * The h4 element represents a section heading.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements}*/
-  h4: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["h4"]
-    >;
+  h4: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["h4"]>;
 
   /**
    * The h5 element represents a section heading.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements}*/
-  h5: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["h5"]
-    >;
+  h5: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["h5"]>;
 
   /**
    * The h6 element represents a section heading.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements}*/
-  h6: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["h6"]
-    >;
+  h6: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["h6"]>;
 
   /**
    * The header element represents introductory content for its nearest ancestor sectioning content or sectioning root element. A header typically contains a group of introductory or navigational aids. When the nearest ancestor sectioning content or sectioning root element is the body element, then it applies to the whole page.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/header}*/
-  header: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["header"]
-    >;
+  header: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["header"]>;
 
   /**
    * The footer element represents a footer for its nearest ancestor sectioning content or sectioning root element. A footer typically contains information about its section such as who wrote it, links to related documents, copyright data, and the like.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/footer}*/
-  footer: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["footer"]
-    >;
+  footer: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["footer"]>;
 
   /**
    * The address element represents the contact information for its nearest article or body element ancestor. If that is the body element, then the contact information applies to the document as a whole.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/address}*/
-  address: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["address"]
-    >;
+  address: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["address"]>;
 
   /**
    * The p element represents a paragraph.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/p}*/
-  p: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["p"]
-    >;
+  p: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["p"]>;
 
   /**
    * The hr element represents a paragraph-level thematic break, e.g. a scene change in a story, or a transition to another topic within a section of a reference book.
@@ -672,9 +608,7 @@ This attribute may also have a value taken from the extended list defined on [WH
      */
     width?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["hr"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["hr"]>;
 
   /**
    * The pre element represents a block of preformatted text, in which structure is represented by typographic conventions rather than by elements.
@@ -694,9 +628,7 @@ This attribute may also have a value taken from the extended list defined on [WH
      */
     wrap?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["pre"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["pre"]>;
 
   /**
    * The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a footer or cite element, and optionally with in-line changes such as annotations and abbreviations.
@@ -708,9 +640,7 @@ This attribute may also have a value taken from the extended list defined on [WH
      */
     cite?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["blockquote"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["blockquote"]>;
 
   /**
    * The ol element represents a list of items, where the items have been intentionally ordered, such that changing the order would change the meaning of the document.
@@ -750,9 +680,7 @@ Unless the value of the list number matters (e.g. in legal or technical document
 */
     compact?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["ol"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["ol"]>;
 
   /**
    * The ul element represents a list of items, where the order of the items is not important — that is, where changing the order would not materially change the meaning of the document.
@@ -766,9 +694,7 @@ Unless the value of the list number matters (e.g. in legal or technical document
 */
     compact?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["ul"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["ul"]>;
 
   /**
    * The li element represents a list item. If its parent element is an ol, ul, or menu element, then the element is an item of the parent element's list, as defined for those elements. Otherwise, the list item has no defined list-related relationship to any other li element.
@@ -798,27 +724,19 @@ This type overrides the one used by its parent [`<ol>`](https://developer.mozill
 */
     type?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["li"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["li"]>;
 
   /**
    * The dl element represents an association list consisting of zero or more name-value groups (a description list). A name-value group consists of one or more names (dt elements) followed by one or more values (dd elements), ignoring any nodes other than dt and dd elements. Within a single dl element, there should not be more than one dt element for each name.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/dl}*/
-  dl: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["dl"]
-    >;
+  dl: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["dl"]>;
 
   /**
    * The dt element represents the term, or name, part of a term-description group in a description list (dl element).
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/dt}*/
-  dt: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["dt"]
-    >;
+  dt: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["dt"]>;
 
   /**
    * The dd element represents the description, definition, or value, part of a term-description group in a description list (dl element).
@@ -830,45 +748,32 @@ This type overrides the one used by its parent [`<ol>`](https://developer.mozill
      */
     nowrap?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["dd"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["dd"]>;
 
   /**
    * The figure element represents some flow content, optionally with a caption, that is self-contained (like a complete sentence) and is typically referenced as a single unit from the main flow of the document.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/figure}*/
-  figure: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["figure"]
-    >;
+  figure: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["figure"]>;
 
   /**
    * The figcaption element represents a caption or legend for the rest of the contents of the figcaption element's parent figure element, if any.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/figcaption}*/
   figcaption: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["figcaption"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["figcaption"]>;
 
   /**
    * The main element represents the main content of the body of a document or application. The main content area consists of content that is directly related to or expands upon the central topic of a document or central functionality of an application.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/main}*/
-  main: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["main"]
-    >;
+  main: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["main"]>;
 
   /**
    * The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/div}*/
-  div: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["div"]
-    >;
+  div: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["div"]>;
 
   /**
    * If the a element has an href attribute, then it represents a hyperlink (a hypertext anchor) labeled by its contents.
@@ -934,54 +839,37 @@ A URL fragment is a name preceded by a hash mark (`#`), which specifies an inter
 */
     referrerpolicy?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["a"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["a"]>;
 
   /**
    * The em element represents stress emphasis of its contents.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/em}*/
-  em: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["em"]
-    >;
+  em: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["em"]>;
 
   /**
    * The strong element represents strong importance, seriousness, or urgency for its contents.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/strong}*/
-  strong: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["strong"]
-    >;
+  strong: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["strong"]>;
 
   /**
    * The small element represents side comments such as small print.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/small}*/
-  small: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["small"]
-    >;
+  small: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["small"]>;
 
   /**
    * The s element represents contents that are no longer accurate or no longer relevant.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/s}*/
-  s: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["s"]
-    >;
+  s: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["s"]>;
 
   /**
    * The cite element represents a reference to a creative work. It must include the title of the work or the name of the author(person, people or organization) or an URL reference, or a reference in abbreviated form as per the conventions used for the addition of citation metadata.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/cite}*/
-  cite: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["cite"]
-    >;
+  cite: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["cite"]>;
 
   /**
    * The q element represents some phrasing content quoted from another source.
@@ -993,54 +881,37 @@ A URL fragment is a name preceded by a hash mark (`#`), which specifies an inter
      */
     cite?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["q"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["q"]>;
 
   /**
    * The dfn element represents the defining instance of a term. The paragraph, description list group, or section that is the nearest ancestor of the dfn element must also contain the definition(s) for the term given by the dfn element.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/dfn}*/
-  dfn: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["dfn"]
-    >;
+  dfn: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["dfn"]>;
 
   /**
    * The abbr element represents an abbreviation or acronym, optionally with its expansion. The title attribute may be used to provide an expansion of the abbreviation. The attribute, if specified, must contain an expansion of the abbreviation, and nothing else.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/abbr}*/
-  abbr: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["abbr"]
-    >;
+  abbr: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["abbr"]>;
 
   /**
    * The ruby element allows one or more spans of phrasing content to be marked with ruby annotations. Ruby annotations are short runs of text presented alongside base text, primarily used in East Asian typography as a guide for pronunciation or to include other annotations. In Japanese, this form of typography is also known as furigana. Ruby text can appear on either side, and sometimes both sides, of the base text, and it is possible to control its position using CSS. A more complete introduction to ruby can be found in the Use Cases & Exploratory Approaches for Ruby Markup document as well as in CSS Ruby Module Level 1. [RUBY-UC] [CSSRUBY]
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/ruby}*/
-  ruby: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["ruby"]
-    >;
+  ruby: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["ruby"]>;
 
   /**
    * The rt element marks the ruby text component of a ruby annotation. When it is the child of a ruby element or of an rtc element that is itself the child of a ruby element, it doesn't represent anything itself, but its ancestor ruby element uses it as part of determining what it represents.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/rt}*/
-  rt: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["rt"]
-    >;
+  rt: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["rt"]>;
 
   /**
    * The rp element is used to provide fallback text to be shown by user agents that don't support ruby annotations. One widespread convention is to provide parentheses around the ruby text component of a ruby annotation.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/rp}*/
-  rp: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["rp"]
-    >;
+  rp: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["rp"]>;
 
   /**
    * The time element represents its contents, along with a machine-readable form of those contents in the datetime attribute. The kind of content is limited to various kinds of dates, times, time-zone offsets, and durations, as described below.
@@ -1052,108 +923,73 @@ A URL fragment is a name preceded by a hash mark (`#`), which specifies an inter
      */
     datetime?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["time"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["time"]>;
 
   /**
    * The code element represents a fragment of computer code. This could be an XML element name, a file name, a computer program, or any other string that a computer would recognize.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/code}*/
-  code: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["code"]
-    >;
+  code: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["code"]>;
 
   /**
    * The var element represents a variable. This could be an actual variable in a mathematical expression or programming context, an identifier representing a constant, a symbol identifying a physical quantity, a function parameter, or just be a term used as a placeholder in prose.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/var}*/
-  var: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["var"]
-    >;
+  var: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["var"]>;
 
   /**
    * The samp element represents sample or quoted output from another program or computing system.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/samp}*/
-  samp: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["samp"]
-    >;
+  samp: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["samp"]>;
 
   /**
    * The kbd element represents user input (typically keyboard input, although it may also be used to represent other input, such as voice commands).
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/kbd}*/
-  kbd: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["kbd"]
-    >;
+  kbd: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["kbd"]>;
 
   /**
    * The sub element represents a subscript.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/sub}*/
-  sub: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["sub"]
-    >;
+  sub: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["sub"]>;
 
   /**
    * The sup element represents a superscript.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/sup}*/
-  sup: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["sup"]
-    >;
+  sup: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["sup"]>;
 
   /**
    * The i element represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose in a manner indicating a different quality of text, such as a taxonomic designation, a technical term, an idiomatic phrase from another language, transliteration, a thought, or a ship name in Western texts.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/i}*/
-  i: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["i"]
-    >;
+  i: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["i"]>;
 
   /**
    * The b element represents a span of text to which attention is being drawn for utilitarian purposes without conveying any extra importance and with no implication of an alternate voice or mood, such as key words in a document abstract, product names in a review, actionable words in interactive text-driven software, or an article lede.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/b}*/
-  b: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["b"]
-    >;
+  b: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["b"]>;
 
   /**
    * The u element represents a span of text with an unarticulated, though explicitly rendered, non-textual annotation, such as labeling the text as being a proper name in Chinese text (a Chinese proper name mark), or labeling the text as being misspelt.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/u}*/
-  u: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["u"]
-    >;
+  u: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["u"]>;
 
   /**
    * The mark element represents a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context. When used in a quotation or other block of text referred to from the prose, it indicates a highlight that was not originally present but which has been added to bring the reader's attention to a part of the text that might not have been considered important by the original author when the block was originally written, but which is now under previously unexpected scrutiny. When used in the main prose of a document, it indicates a part of the document that has been highlighted due to its likely relevance to the user's current activity.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/mark}*/
-  mark: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["mark"]
-    >;
+  mark: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["mark"]>;
 
   /**
    * The bdi element represents a span of text that is to be isolated from its surroundings for the purposes of bidirectional text formatting. [BIDI]
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/bdi}*/
-  bdi: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["bdi"]
-    >;
+  bdi: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["bdi"]>;
 
   /**
    * The bdo element represents explicit text directionality formatting control for its children. It allows authors to override the Unicode bidirectional algorithm by explicitly specifying a direction override. [BIDI]
@@ -1168,18 +1004,13 @@ A URL fragment is a name preceded by a hash mark (`#`), which specifies an inter
 */
     dir?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["bdo"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["bdo"]>;
 
   /**
    * The span element doesn't mean anything on its own, but can be useful when used together with the global attributes, e.g. class, lang, or dir. It represents its children.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/span}*/
-  span: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["span"]
-    >;
+  span: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["span"]>;
 
   /**
    * The br element represents a line break.
@@ -1191,18 +1022,13 @@ A URL fragment is a name preceded by a hash mark (`#`), which specifies an inter
      */
     clear?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["br"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["br"]>;
 
   /**
    * The wbr element represents a line break opportunity.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/wbr}*/
-  wbr: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["wbr"]
-    >;
+  wbr: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["wbr"]>;
 
   /**
    * The ins element represents an addition to the document.
@@ -1218,9 +1044,7 @@ A URL fragment is a name preceded by a hash mark (`#`), which specifies an inter
      */
     datetime?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["ins"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["ins"]>;
 
   /**
    * The del element represents a removal from the document.
@@ -1236,18 +1060,13 @@ A URL fragment is a name preceded by a hash mark (`#`), which specifies an inter
      */
     datetime?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["del"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["del"]>;
 
   /**
    * The picture element is a container which provides multiple sources to its contained img element to allow authors to declaratively control or give hints to the user agent about which image resource to use, based on the screen pixel density, viewport size, image format, and other factors. It represents its children.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/picture}*/
-  picture: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["picture"]
-    >;
+  picture: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["picture"]>;
 
   /**
    * An img element represents an image.
@@ -1359,9 +1178,7 @@ Source size values specify the intended display size of the image. User agents u
      */
     intrinsicsize?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["img"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["img"]>;
 
   /**
    * The iframe element represents a nested browsing context.
@@ -1460,9 +1277,7 @@ The resource should be downloaded after other higher-priority page resources.
 */
     referrerpolicy?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["iframe"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["iframe"]>;
 
   /**
    * The embed element provides an integration point for an external (typically non-HTML) application or interactive content.
@@ -1486,9 +1301,7 @@ The resource should be downloaded after other higher-priority page resources.
      */
     height?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["embed"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["embed"]>;
 
   /**
    * The object element can represent an external resource, which, depending on the type of the resource, will either be treated as an image, as a nested browsing context, or as an external resource to be processed by a plugin.
@@ -1560,9 +1373,7 @@ The resource should be downloaded after other higher-priority page resources.
      */
     tabindex?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["object"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["object"]>;
 
   /**
    * A video element is used for playing videos or movies, and audio files with captions.
@@ -1598,9 +1409,7 @@ In some browsers (e.g. Chrome 70.0) autoplay is not working if no `muted` attrib
 
     height?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["video"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["video"]>;
 
   /**
    * An audio element represents a sound or audio stream.
@@ -1662,9 +1471,7 @@ If not set, `preload`'s default value is browser-defined (i.e. each browser may 
      */
     controls?: ValueSets["v"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["audio"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["audio"]>;
 
   /**
    * The source element allows authors to specify multiple alternative media resources for media elements. It does not represent anything on its own.
@@ -1701,9 +1508,7 @@ The `srcset` attribute has an effect only when the [`<source>`](https://develope
      */
     media?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["source"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["source"]>;
 
   /**
    * The track element allows authors to specify explicit external timed text tracks for media elements. It does not represent anything on its own.
@@ -1746,9 +1551,7 @@ The `srcset` attribute has an effect only when the [`<source>`](https://develope
      */
     srclang?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["track"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["track"]>;
 
   /**
    * The map element, in conjunction with an img element and any area element descendants, defines an image map. The element represents its children.
@@ -1760,9 +1563,7 @@ The `srcset` attribute has an effect only when the [`<source>`](https://develope
      */
     name?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["map"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["map"]>;
 
   /**
    * The area element represents either a hyperlink with some text and a corresponding area on an image map, or a dead area on an image map.
@@ -1793,9 +1594,7 @@ The `srcset` attribute has an effect only when the [`<source>`](https://develope
      */
     accesskey?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["area"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["area"]>;
 
   /**
    * The table element represents data with more than one dimension, in the form of a table.
@@ -1817,9 +1616,7 @@ The `srcset` attribute has an effect only when the [`<source>`](https://develope
 */
     align?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["table"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["table"]>;
 
   /**
    * The caption element represents the title of the table that is its parent, if it has a parent and that is a table element.
@@ -1849,9 +1646,7 @@ The caption is displayed below the table.
 */
     align?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["caption"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["caption"]>;
 
   /**
    * The colgroup element represents a group of one or more columns in the table that is its parent, if it has a parent and that is a table element.
@@ -1880,9 +1675,7 @@ If this attribute is not set, the `left` value is assumed. The descendant [`<col
 */
     align?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["colgroup"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["colgroup"]>;
 
   /**
    * If a col element has a parent and that is a colgroup element that itself has a parent that is a table element, then the col element represents one or more columns in the column group represented by that colgroup.
@@ -1911,9 +1704,7 @@ If this attribute is not set, its value is inherited from the [`align`](https://
 */
     align?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["col"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["col"]>;
 
   /**
    * The tbody element represents a block of rows that consist of a body of data for the parent table element, if the tbody element has a parent and it is a table.
@@ -1938,9 +1729,7 @@ If this attribute is not set, the `left` value is assumed.
 */
     align?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["tbody"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["tbody"]>;
 
   /**
    * The thead element represents the block of rows that consist of the column labels (headers) for the parent table element, if the thead element has a parent and it is a table.
@@ -1965,9 +1754,7 @@ If this attribute is not set, the `left` value is assumed.
 */
     align?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["thead"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["thead"]>;
 
   /**
    * The tfoot element represents the block of rows that consist of the column summaries (footers) for the parent table element, if the tfoot element has a parent and it is a table.
@@ -1992,9 +1779,7 @@ If this attribute is not set, the `left` value is assumed.
 */
     align?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["tfoot"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["tfoot"]>;
 
   /**
    * The tr element represents a row of cells in a table.
@@ -2030,9 +1815,7 @@ Instead of using the obsolete `align` attribute, you should instead use the CSS 
 */
     align?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["tr"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["tr"]>;
 
   /**
    * The td element represents a data cell in a table.
@@ -2144,9 +1927,7 @@ The default value when this attribute is not specified is `left`.
 */
     bgcolor?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["td"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["td"]>;
 
   /**
    * The th element represents a header cell in a table.
@@ -2260,9 +2041,7 @@ The default value when this attribute is not specified is `left`.
 */
     bgcolor?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["th"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["th"]>;
 
   /**
    * The form element represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server for processing.
@@ -2346,9 +2125,7 @@ HTML5: This value can be overridden by a [`formtarget`](https://developer.mozill
 */
     autocapitalize?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["form"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["form"]>;
 
   /**
    * The label element represents a caption in a user interface. The caption can be associated with a specific form control, known as the label element's labeled control, either using the for attribute, or by putting the form control inside the label element itself.
@@ -2366,9 +2143,7 @@ HTML5: This value can be overridden by a [`formtarget`](https://developer.mozill
 */
     for?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["label"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["label"]>;
 
   /**
    * The input element represents a typed data field, usually with a form control to allow the user to edit the data.
@@ -2439,9 +2214,7 @@ HTML5: This value can be overridden by a [`formtarget`](https://developer.mozill
 
     width?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["input"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["input"]>;
 
   /**
    * The button element represents a button labeled by its contents.
@@ -2519,9 +2292,7 @@ If specified, this attribute overrides the [`method`](https://developer.mozilla.
      */
     autocomplete?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["button"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["button"]>;
 
   /**
    * The select element represents a control for selecting amongst a set of options.
@@ -2563,18 +2334,13 @@ If specified, this attribute overrides the [`method`](https://developer.mozilla.
 */
     size?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["select"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["select"]>;
 
   /**
    * The datalist element represents a set of option elements that represent predefined options for other controls. In the rendering, the datalist element represents nothing and it, along with its children, should be hidden.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/datalist}*/
-  datalist: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["datalist"]
-    >;
+  datalist: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["datalist"]>;
 
   /**
    * The optgroup element represents a group of option elements with a common label.
@@ -2590,9 +2356,7 @@ If specified, this attribute overrides the [`method`](https://developer.mozilla.
      */
     label?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["optgroup"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["optgroup"]>;
 
   /**
    * The option element represents an option in a select element or as part of a list of suggestions in a datalist element.
@@ -2616,9 +2380,7 @@ If specified, this attribute overrides the [`method`](https://developer.mozilla.
      */
     value?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["option"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["option"]>;
 
   /**
    * The textarea element represents a multiline plain text edit control for the element's raw value. The contents of the control represent the control's default value.
@@ -2714,9 +2476,7 @@ If this attribute is not specified, `soft` is its default value.
 */
     spellcheck?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["textarea"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["textarea"]>;
 
   /**
    * The output element represents the result of a calculation performed by the application, or the result of a user action.
@@ -2736,9 +2496,7 @@ If this attribute is not specified, `soft` is its default value.
      */
     name?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["output"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["output"]>;
 
   /**
    * The progress element represents the completion progress of a task. The progress is either indeterminate, indicating that progress is being made but that it is not clear how much more work remains to be done before the task is complete (e.g. because the task is waiting for a remote host to respond), or the progress is a number in the range zero to a maximum, giving the fraction of work that has so far been completed.
@@ -2754,9 +2512,7 @@ If this attribute is not specified, `soft` is its default value.
      */
     max?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["progress"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["progress"]>;
 
   /**
    * The meter element represents a scalar measurement within a known range, or a fractional value; for example disk usage, the relevance of a query result, or the fraction of a voting population to have selected a particular candidate.
@@ -2794,9 +2550,7 @@ If this attribute is not specified, `soft` is its default value.
      */
     form?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["meter"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["meter"]>;
 
   /**
    * The fieldset element represents a set of form controls optionally grouped under a common name.
@@ -2818,18 +2572,13 @@ If this attribute is not specified, `soft` is its default value.
 */
     name?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["fieldset"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["fieldset"]>;
 
   /**
    * The legend element represents a caption for the rest of the contents of the legend element's parent fieldset element, if any.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/legend}*/
-  legend: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["legend"]
-    >;
+  legend: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["legend"]>;
 
   /**
    * The details element represents a disclosure widget from which the user can obtain additional information or controls.
@@ -2841,18 +2590,13 @@ If this attribute is not specified, `soft` is its default value.
      */
     open?: ValueSets["v"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["details"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["details"]>;
 
   /**
    * The summary element represents a summary, caption, or legend for the rest of the contents of the summary element's parent details element, if any.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/summary}*/
-  summary: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["summary"]
-    >;
+  summary: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["summary"]>;
 
   /**
    * The dialog element represents a part of an application that a user interacts with to perform a task, for example a dialog box, inspector, or window.
@@ -2864,9 +2608,7 @@ If this attribute is not specified, `soft` is its default value.
      */
     open?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["dialog"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["dialog"]>;
 
   /**
    * The script element allows authors to include dynamic script and data blocks in their documents. The element does not represent content for the user.
@@ -2949,27 +2691,19 @@ To achieve a similar effect for dynamically inserted scripts use `async="false"`
      */
     text?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["script"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["script"]>;
 
   /**
    * The noscript element represents nothing if scripting is enabled, and represents its children if scripting is disabled. It is used to present different markup to user agents that support scripting and those that don't support scripting, by affecting how the document is parsed.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/noscript}*/
-  noscript: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["noscript"]
-    >;
+  noscript: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["noscript"]>;
 
   /**
    * The template element is used to declare fragments of HTML that can be cloned and inserted in the document by script.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/template}*/
-  template: GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["template"]
-    >;
+  template: GlobalAttributes & GlobalEvents<HTMLElementTagNameMap["template"]>;
 
   /**
    * The canvas element provides scripts with a resolution-dependent bitmap canvas, which can be used for rendering graphs, game graphics, art, or other visual images on the fly.
@@ -2989,7 +2723,5 @@ To achieve a similar effect for dynamically inserted scripts use `async="false"`
      */
     ["moz-opaque"]?: ValueSets["default"];
   } & GlobalAttributes &
-    GlobalEvents<
-      HTMLElementTagNameMap["canvas"]
-    >;
+    GlobalEvents<HTMLElementTagNameMap["canvas"]>;
 }

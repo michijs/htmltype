@@ -2,44 +2,17 @@
 // SVG Data Version 1.1
 
 export interface SVGValueSets {
-  default:
-    | string
-    | number;
-  [0]:
-    | "true"
-    | "false";
-  [1]:
-    | "CSS"
-    | "XML"
-    | "auto";
+  default: string | number;
+  [0]: "true" | "false";
+  [1]: "CSS" | "XML" | "auto";
   [2]: "indefinite";
-  [3]:
-    | "default"
-    | "preserve";
-  [4]:
-    | "always"
-    | "whenNotActive"
-    | "never";
-  [5]:
-    | "remove"
-    | "freeze";
-  [6]:
-    | "discrete"
-    | "linear"
-    | "paced"
-    | "spline";
-  [7]:
-    | "replace"
-    | "sum";
-  [8]:
-    | "none"
-    | "sum";
-  [9]:
-    | "translate"
-    | "scale"
-    | "rotate"
-    | "skewX"
-    | "skewY";
+  [3]: "default" | "preserve";
+  [4]: "always" | "whenNotActive" | "never";
+  [5]: "remove" | "freeze";
+  [6]: "discrete" | "linear" | "paced" | "spline";
+  [7]: "replace" | "sum";
+  [8]: "none" | "sum";
+  [9]: "translate" | "scale" | "rotate" | "skewX" | "skewY";
   [10]:
     | "auto"
     | "baseline"
@@ -54,29 +27,11 @@ export interface SVGValueSets {
     | "hanging"
     | "mathematical"
     | "inherit";
-  [11]:
-    | "auto"
-    | "baseline"
-    | "super"
-    | "sub"
-    | "inherit";
-  [12]:
-    | "none"
-    | "inherit";
-  [13]:
-    | "nonzero"
-    | "evenodd"
-    | "inherit";
-  [14]:
-    | "auto"
-    | "sRGB"
-    | "linearRGB"
-    | "inherit";
-  [15]:
-    | "auto"
-    | "optimizeSpeed"
-    | "optimizeQuality"
-    | "inherit";
+  [11]: "auto" | "baseline" | "super" | "sub" | "inherit";
+  [12]: "none" | "inherit";
+  [13]: "nonzero" | "evenodd" | "inherit";
+  [14]: "auto" | "sRGB" | "linearRGB" | "inherit";
+  [15]: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
   [16]:
     | "auto"
     | "crosshair"
@@ -94,10 +49,7 @@ export interface SVGValueSets {
     | "wait"
     | "help"
     | "inherit";
-  [17]:
-    | "ltr"
-    | "rtl"
-    | "inherit";
+  [17]: "ltr" | "rtl" | "inherit";
   [18]:
     | "inline"
     | "block"
@@ -131,9 +83,7 @@ export interface SVGValueSets {
     | "text-after-edge"
     | "text-before-edge"
     | "inherit";
-  [20]:
-    | "currentColor"
-    | "inherit";
+  [20]: "currentColor" | "inherit";
   [21]:
     | "normal"
     | "wider"
@@ -147,15 +97,8 @@ export interface SVGValueSets {
     | "extra-expanded"
     | "ultra-expanded"
     | "inherit";
-  [22]:
-    | "normal"
-    | "italic"
-    | "oblique"
-    | "inherit";
-  [23]:
-    | "normal"
-    | "small-caps"
-    | "inherit";
+  [22]: "normal" | "italic" | "oblique" | "inherit";
+  [23]: "normal" | "small-caps" | "inherit";
   [24]:
     | "normal"
     | "bold"
@@ -171,12 +114,7 @@ export interface SVGValueSets {
     | "800"
     | "900"
     | "inherit";
-  [25]:
-    | "visible"
-    | "hidden"
-    | "scroll"
-    | "auto"
-    | "inherit";
+  [25]: "visible" | "hidden" | "scroll" | "auto" | "inherit";
   [26]:
     | "visiblePainted"
     | "visibleFill"
@@ -194,21 +132,9 @@ export interface SVGValueSets {
     | "crispEdges"
     | "geometricPrecision"
     | "inherit";
-  [28]:
-    | "butt"
-    | "round"
-    | "square"
-    | "inherit";
-  [29]:
-    | "miter"
-    | "round"
-    | "bevel"
-    | "inherit";
-  [30]:
-    | "start"
-    | "middle"
-    | "end"
-    | "inherit";
+  [28]: "butt" | "round" | "square" | "inherit";
+  [29]: "miter" | "round" | "bevel" | "inherit";
+  [30]: "start" | "middle" | "end" | "inherit";
   [31]:
     | "none"
     | "underline"
@@ -228,22 +154,9 @@ export interface SVGValueSets {
     | "non-scaling-size"
     | "non-rotation"
     | "fixed-position";
-  [34]:
-    | "visible"
-    | "hidden"
-    | "collapse"
-    | "inherit";
-  [35]:
-    | "lr-tb"
-    | "rl-tb"
-    | "tb-rl"
-    | "lr"
-    | "rl"
-    | "tb"
-    | "inherit";
-  [36]:
-    | "userSpaceOnUse"
-    | "objectBoundingBox";
+  [34]: "visible" | "hidden" | "collapse" | "inherit";
+  [35]: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
+  [36]: "userSpaceOnUse" | "objectBoundingBox";
   [37]:
     | "SourceGraphic"
     | "SourceAlpha"
@@ -251,48 +164,15 @@ export interface SVGValueSets {
     | "BackgroundAlpha"
     | "FillPaint"
     | "StrokePaint";
-  [38]:
-    | "normal"
-    | "multiply"
-    | "screen"
-    | "darken"
-    | "lighten";
-  [39]:
-    | "matrix"
-    | "saturate"
-    | "hueRotate"
-    | "luminanceToAlpha";
-  [40]:
-    | "over"
-    | "in"
-    | "out"
-    | "atop"
-    | "xor"
-    | "arithmetic";
-  [41]:
-    | "duplicate"
-    | "wrap"
-    | "none";
-  [42]:
-    | "identity"
-    | "table"
-    | "discrete"
-    | "linear"
-    | "gamma";
-  [43]:
-    | "R"
-    | "G"
-    | "B"
-    | "A";
-  [44]:
-    | "noStitch"
-    | "stitch";
-  [45]:
-    | "fractalNoise"
-    | "turbulence";
-  [46]:
-    | "userSpaceOnUse"
-    | "strokeWidth";
+  [38]: "normal" | "multiply" | "screen" | "darken" | "lighten";
+  [39]: "matrix" | "saturate" | "hueRotate" | "luminanceToAlpha";
+  [40]: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
+  [41]: "duplicate" | "wrap" | "none";
+  [42]: "identity" | "table" | "discrete" | "linear" | "gamma";
+  [43]: "R" | "G" | "B" | "A";
+  [44]: "noStitch" | "stitch";
+  [45]: "fractalNoise" | "turbulence";
+  [46]: "userSpaceOnUse" | "strokeWidth";
   [47]: "http://www.w3.org/2000/svg";
   [48]: "http://www.w3.org/1999/xlink";
 }

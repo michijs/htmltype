@@ -1,191 +1,76 @@
-import {
-  mkdirSync,
-  writeFileSync,
-} from "fs";
+import { mkdirSync, writeFileSync } from "fs";
 import htmlData from "@vscode/web-custom-data/data/browsers.html-data.json";
-import {
-  Attribute,
-  ITag,
-} from "./types";
-import {
-  DEFAULT_VALUE_SET,
-  getJSDoc,
-  getPropertyName,
-} from "./shared";
+import { Attribute, ITag } from "./types";
+import { DEFAULT_VALUE_SET, getJSDoc, getPropertyName } from "./shared";
 
-const getPropertyValue =
-  (
-    property: Attribute,
-  ) =>
-    property.name ===
-    "style"
-      ? "CSSProperties"
-      : `ValueSets['${
-          property.valueSet ??
-          DEFAULT_VALUE_SET.key
-        }']`;
+const getPropertyValue = (property: Attribute) =>
+  property.name === "style"
+    ? "CSSProperties"
+    : `ValueSets['${property.valueSet ?? DEFAULT_VALUE_SET.key}']`;
 
-const getAttribute =
-  (
-    currentValue: Attribute,
-  ) => `${getJSDoc(
-    currentValue,
-  )}
-${getPropertyName(
-  currentValue.name,
-)}?: ${getPropertyValue(
-    currentValue,
-  )};`;
+const getAttribute = (currentValue: Attribute) => `${getJSDoc(currentValue)}
+${getPropertyName(currentValue.name)}?: ${getPropertyValue(currentValue)};`;
 
-const getTagAttributes =
-  (
-    currentValue: ITag,
-  ) =>
-    currentValue
-      .attributes
-      ?.length >
-    0
-      ? `{
+const getTagAttributes = (currentValue: ITag) =>
+  currentValue.attributes?.length > 0
+    ? `{
   ${currentValue.attributes
     .filter(
-      (
-        value,
-        index,
-        self,
-      ) =>
+      (value, index, self) =>
         // Removing duplicateds
-        index ===
-          self.findIndex(
-            (
-              t,
-            ) =>
-              t.name ===
-              value.name,
-          ) &&
-        !value.name.startsWith(
-          "on",
-        ),
+        index === self.findIndex((t) => t.name === value.name) &&
+        !value.name.startsWith("on"),
     )
-    .map(
-      (
-        x,
-      ) =>
-        getAttribute(
-          x,
-        ),
-    )
-    .join(
-      "\n",
-    )}
+    .map((x) => getAttribute(x))
+    .join("\n")}
 } & GlobalAttributes`
-      : "GlobalAttributes";
+    : "GlobalAttributes";
 
-const valueSets =
-  htmlData.valueSets?.reduce(
-    (
-      previousValue,
-      currentValue,
-    ) => {
-      return `${previousValue}
-  ${getPropertyName(
-    currentValue.name,
-  )}: ${currentValue.values
-        .filter(
-          (
-            x,
-          ) =>
-            x.name !==
-            "undefined",
-        )
-        .map(
-          (
-            x,
-          ) =>
-            `"${x.name}"`,
-        )
-        .join(
-          " | ",
-        )};`;
-    },
-    `${DEFAULT_VALUE_SET.key}: ${DEFAULT_VALUE_SET.value};
+const valueSets = htmlData.valueSets?.reduce(
+  (previousValue, currentValue) => {
+    return `${previousValue}
+  ${getPropertyName(currentValue.name)}: ${currentValue.values
+      .filter((x) => x.name !== "undefined")
+      .map((x) => `"${x.name}"`)
+      .join(" | ")};`;
+  },
+  `${DEFAULT_VALUE_SET.key}: ${DEFAULT_VALUE_SET.value};
   v: true | false;`,
-  );
+);
 
-const globalAttributes =
-  htmlData.globalAttributes
-    ?.filter(
-      (
-        x,
-      ) =>
-        !x.name.startsWith(
-          "on",
-        ),
-    )
-    .reduce(
-      (
-        previousValue,
-        currentValue,
-      ) => {
-        return `${previousValue}
+const globalAttributes = htmlData.globalAttributes
+  ?.filter((x) => !x.name.startsWith("on"))
+  .reduce((previousValue, currentValue) => {
+    return `${previousValue}
 
-${getAttribute(
-  currentValue,
-)}`;
-      },
-      "",
-    );
+${getAttribute(currentValue)}`;
+  }, "");
 
-const NotSupportedHTMLTags =
-  [
-    "rb",
-    "param",
-  ];
+const NotSupportedHTMLTags = ["rb", "param"];
 
-const htmlElements =
-  htmlData.tags
-    ?.filter(
-      (
-        x,
-      ) =>
-        !NotSupportedHTMLTags.includes(
-          x.name,
-        ),
-    )
-    .reduce(
-      (
-        previousValue,
-        currentValue,
-      ) => {
-        return `${previousValue}
+const htmlElements = htmlData.tags
+  ?.filter((x) => !NotSupportedHTMLTags.includes(x.name))
+  .reduce((previousValue, currentValue) => {
+    return `${previousValue}
 
-${getJSDoc(
-  currentValue,
-)}
+${getJSDoc(currentValue)}
 ${getPropertyName(
   currentValue.name,
 )}: ${
-          currentValue.name ===
-          "body"
-            ? `WindowEvents<HTMLElementTagNameMap['${currentValue.name}']> &`
-            : ""
-        }${getTagAttributes(
-          currentValue,
-        )} & GlobalEvents<HTMLElementTagNameMap['${
-          currentValue.name
-        }']>;`;
-      },
-      "",
-    );
+      currentValue.name === "body"
+        ? `WindowEvents<HTMLElementTagNameMap['${currentValue.name}']> &`
+        : ""
+    }${getTagAttributes(
+      currentValue,
+    )} & GlobalEvents<HTMLElementTagNameMap['${currentValue.name}']>;`;
+  }, "");
 
 // TODO: import GlobalEvents
 // TODO: style
 
-mkdirSync(
-  "./src/generated/HTMLElements",
-  {
-    recursive: true,
-  },
-);
+mkdirSync("./src/generated/HTMLElements", {
+  recursive: true,
+});
 
 writeFileSync(
   "./src/generated/HTMLElements/ValueSets.ts",

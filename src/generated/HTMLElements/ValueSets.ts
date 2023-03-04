@@ -2,43 +2,17 @@
 // HTML Data Version 1.1
 
 export interface ValueSets {
-  default:
-    | string
-    | number;
-  v:
-    | true
-    | false;
-  b:
-    | "true"
-    | "false";
-  u:
-    | "true"
-    | "false";
-  o:
-    | "on"
-    | "off";
-  y:
-    | "yes"
-    | "no";
-  w:
-    | "soft"
-    | "hard";
-  d:
-    | "ltr"
-    | "rtl"
-    | "auto";
-  m:
-    | "get"
-    | "post"
-    | "dialog";
-  fm:
-    | "get"
-    | "post";
-  s:
-    | "row"
-    | "col"
-    | "rowgroup"
-    | "colgroup";
+  default: string | number;
+  v: true | false;
+  b: "true" | "false";
+  u: "true" | "false";
+  o: "on" | "off";
+  y: "yes" | "no";
+  w: "soft" | "hard";
+  d: "ltr" | "rtl" | "auto";
+  m: "get" | "post" | "dialog";
+  fm: "get" | "post";
+  s: "row" | "col" | "rowgroup" | "colgroup";
   t:
     | "hidden"
     | "text"
@@ -76,51 +50,19 @@ export interface ValueSets {
     | "tel"
     | "email"
     | "url";
-  bt:
-    | "button"
-    | "submit"
-    | "reset"
-    | "menu";
-  lt:
-    | "1"
-    | "a"
-    | "A"
-    | "i"
-    | "I";
-  mt:
-    | "context"
-    | "toolbar";
-  mit:
-    | "command"
-    | "checkbox"
-    | "radio";
+  bt: "button" | "submit" | "reset" | "menu";
+  lt: "1" | "a" | "A" | "i" | "I";
+  mt: "context" | "toolbar";
+  mit: "command" | "checkbox" | "radio";
   et:
     | "application/x-www-form-urlencoded"
     | "multipart/form-data"
     | "text/plain";
-  tk:
-    | "subtitles"
-    | "captions"
-    | "descriptions"
-    | "chapters"
-    | "metadata";
-  pl:
-    | "none"
-    | "metadata"
-    | "auto";
-  sh:
-    | "circle"
-    | "default"
-    | "poly"
-    | "rect";
-  xo:
-    | "anonymous"
-    | "use-credentials";
-  target:
-    | "_self"
-    | "_blank"
-    | "_parent"
-    | "_top";
+  tk: "subtitles" | "captions" | "descriptions" | "chapters" | "metadata";
+  pl: "none" | "metadata" | "auto";
+  sh: "circle" | "default" | "poly" | "rect";
+  xo: "anonymous" | "use-credentials";
+  target: "_self" | "_blank" | "_parent" | "_top";
   sb:
     | "allow-forms"
     | "allow-modals"
@@ -130,10 +72,7 @@ export interface ValueSets {
     | "allow-same-origin"
     | "allow-scripts"
     | "allow-top-navigation";
-  tristate:
-    | "true"
-    | "false"
-    | "mixed";
+  tristate: "true" | "false" | "mixed";
   inputautocomplete:
     | "additional-name"
     | "address-level1"
@@ -197,49 +136,14 @@ export interface ValueSets {
     | "url"
     | "username"
     | "work";
-  autocomplete:
-    | "inline"
-    | "list"
-    | "both"
-    | "none";
-  current:
-    | "page"
-    | "step"
-    | "location"
-    | "date"
-    | "time"
-    | "true"
-    | "false";
-  dropeffect:
-    | "copy"
-    | "move"
-    | "link"
-    | "execute"
-    | "popup"
-    | "none";
-  invalid:
-    | "grammar"
-    | "false"
-    | "spelling"
-    | "true";
-  live:
-    | "off"
-    | "polite"
-    | "assertive";
-  orientation:
-    | "vertical"
-    | "horizontal";
-  relevant:
-    | "additions"
-    | "removals"
-    | "text"
-    | "all"
-    | "additions text";
-  sort:
-    | "ascending"
-    | "descending"
-    | "none"
-    | "other";
+  autocomplete: "inline" | "list" | "both" | "none";
+  current: "page" | "step" | "location" | "date" | "time" | "true" | "false";
+  dropeffect: "copy" | "move" | "link" | "execute" | "popup" | "none";
+  invalid: "grammar" | "false" | "spelling" | "true";
+  live: "off" | "polite" | "assertive";
+  orientation: "vertical" | "horizontal";
+  relevant: "additions" | "removals" | "text" | "all" | "additions text";
+  sort: "ascending" | "descending" | "none" | "other";
   roles:
     | "alert"
     | "alertdialog"
@@ -363,21 +267,9 @@ export interface ValueSets {
     | "robots"
     | "theme-color"
     | "viewport";
-  haspopup:
-    | "false"
-    | "true"
-    | "menu"
-    | "listbox"
-    | "tree"
-    | "grid"
-    | "dialog";
-  decoding:
-    | "sync"
-    | "async"
-    | "auto";
-  loading:
-    | "eager"
-    | "lazy";
+  haspopup: "false" | "true" | "menu" | "listbox" | "tree" | "grid" | "dialog";
+  decoding: "sync" | "async" | "auto";
+  loading: "eager" | "lazy";
   referrerpolicy:
     | "no-referrer"
     | "no-referrer-when-downgrade"

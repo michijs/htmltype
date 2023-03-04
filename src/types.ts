@@ -1,9 +1,5 @@
 import { Properties } from "csstype";
 
-export type CSSProperties =
-  Properties & {
-    [k in
-      `--${string}`]?:
-      | string
-      | number;
-  };
+export type CSSProperties = Properties & {
+  [k in `--${string}`]?: string | number;
+};
