@@ -21,8 +21,10 @@
   },
   "description": "Strict TypeScript types for HTML and SVG attributes based on MDN data",
   "scripts": {
-    "start": "ts-node --project tasks.tsconfig.json ./tasks/generateTypes.ts && rome check --apply-suggested ./src/generated && rome format --write ./src/generated",
+    "lint-generated": "rome check --apply-suggested ./src/generated && rome format --write ./src/generated",
+    "start": "ts-node --project tasks.tsconfig.json ./tasks/generateTypes.ts",
     "dist": "npm run start && tsc",
+    "test-tsc": "tsc",
     "link": "npm run dist && npm link --force && tsc -w"
   },
   "keywords": [
