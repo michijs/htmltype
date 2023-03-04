@@ -22,8 +22,8 @@
   "description": "Strict TypeScript types for HTML and SVG attributes based on MDN data",
   "scripts": {
     "start": "ts-node --project tasks.tsconfig.json ./tasks/generateTypes.ts && rome check --apply-suggested ./src/generated && rome format --write ./src/generated",
-    "dist": "tsc",
-    "link": "tsc && npm link --force && tsc -w"
+    "dist": "npm run start && tsc",
+    "link": "npm run dist && npm link --force && tsc -w"
   },
   "keywords": [
     "html",
