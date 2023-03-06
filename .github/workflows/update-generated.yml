@@ -37,7 +37,7 @@ jobs:
       - name: Commit changes
         run: |
           git add .
-          git diff --quiet && git diff --staged --quiet || git commit -am 'chore: updated generated types'
+          git commit -m 'chore: updated generated types' || echo "No changes to commit"
       # Push repository changes
       - name: Push changes to repository
         run: |
