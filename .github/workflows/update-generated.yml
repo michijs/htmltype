@@ -37,7 +37,7 @@ jobs:
       - name: Commit changes
         run: |
           git add .
-          git commit --allow-empty -m "chore: updated generated types"
+          git diff --staged --quiet || git commit -m "chore: updated generated types"
       # Push repository changes
       - name: Push changes to repository
         run: |
