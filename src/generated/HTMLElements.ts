@@ -1,8 +1,8 @@
 // file generated from @vscode/web-custom-data NPM package
 // Data Version 1.1)
 import { AllAttributes } from "./AllAttributes";
-import { GlobalEvents, WindowEvents } from "src/Events";
-import { DataGlobalAttributes } from "src/types";
+import { GlobalEvents, WindowEvents } from "../Events";
+import { DataGlobalAttributes } from "../types";
 
 type GlobalAttributes = Pick<
   AllAttributes,

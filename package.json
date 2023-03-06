@@ -23,7 +23,7 @@
   "scripts": {
     "lint-generated": "rome check --apply-suggested ./src/generated && rome format --write ./src/generated",
     "start": "ts-node --project tasks.tsconfig.json ./tasks/generateTypes.ts",
-    "dist": "npm run start && tsc",
+    "dist": "tsc",
     "test-tsc": "tsc",
     "link": "npm run dist && npm link --force && tsc -w"
   },

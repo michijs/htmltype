@@ -1,3 +1,5 @@
+/// <reference lib="esNext" />
+// TODO: fix this
 import { JSDocInfo, MarkupContent } from "./types";
 
 const getReferences = (currentValue: JSDocInfo) =>
@@ -14,7 +16,7 @@ const getDescription = (currentValue: JSDocInfo) => {
   return description
     ? `* ${description
         .replace("🧧 *Provide by SVG extension.*\n\n", "")
-        .replace("\n", "\n*")
+        .replaceAll("\n", "\n* ")
         .replace("\n[MDN", "\n* [MDN")}`
     : "";
 };

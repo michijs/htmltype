@@ -1,4 +1,4 @@
-import { TypesFactory } from "./typesFactory";
+import { TypesFactory } from "./TypesFactory";
 import htmlData from "@vscode/web-custom-data/data/browsers.html-data.json";
 import svgData from "svg/html.html-data.json";
 
@@ -136,8 +136,8 @@ factory.addTypesFrom({
   src: "@vscode/web-custom-data NPM package",
   documentationSrc: htmlData,
   additionalImports: [
-    'import { GlobalEvents, WindowEvents } from "src/Events"',
-    'import { DataGlobalAttributes } from "src/types"',
+    'import { GlobalEvents, WindowEvents } from "../Events"',
+    'import { DataGlobalAttributes } from "../types"',
   ],
   getAdditionalElementAttributes: (el) => {
     const attributeSets = [
@@ -159,8 +159,8 @@ factory.addTypesFrom({
   documentationSrc: svgData,
   attributesAlias: svgAttributeAlias,
   additionalImports: [
-    'import { SVGEvents } from "src/Events"',
-    'import { DataGlobalAttributes } from "src/types"',
+    'import { SVGEvents } from "../Events"',
+    'import { DataGlobalAttributes } from "../types"',
   ],
   getAdditionalElementAttributes: (el) => {
     return ["DataGlobalAttributes", `SVGEvents<SVGElementTagNameMap['${el}']>`];

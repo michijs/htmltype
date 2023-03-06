@@ -1,8 +1,8 @@
 // file generated from github:lishu/vscode-svg2
 // Data Version 1.1)
 import { AllAttributes } from "./AllAttributes";
-import { SVGEvents } from "src/Events";
-import { DataGlobalAttributes } from "src/types";
+import { SVGEvents } from "../Events";
+import { DataGlobalAttributes } from "../types";
 
 type SVGCoreAttributes = Pick<
   AllAttributes,
