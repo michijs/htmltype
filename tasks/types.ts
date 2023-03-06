@@ -1,6 +1,12 @@
 export interface MarkupContent {
-  kind: string;
-  value: string;
+  kind?: string;
+  value?: string;
+}
+export interface Value {
+  name: string;
+  values: {
+    name: string;
+  }[];
 }
 
 export interface IReference {
@@ -23,4 +29,11 @@ export interface Attribute extends JSDocInfo {
 
 export interface ITag extends JSDocInfo {
   attributes: Attribute[];
+  void?: boolean;
+}
+
+export interface Documentation {
+  tags: ITag[];
+  version: number;
+  valueSets?: Value[];
 }

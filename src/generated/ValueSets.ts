@@ -1,11 +1,6 @@
-// file generated from @vscode/web-custom-data NPM package
-// HTML Data Version 1.1
-
 export interface ValueSets {
   default: string | number;
-  v: true | false;
   b: "true" | "false";
-  u: "true" | "false";
   o: "on" | "off";
   y: "yes" | "no";
   w: "soft" | "hard";
@@ -279,4 +274,165 @@ export interface ValueSets {
     | "strict-origin"
     | "strict-origin-when-cross-origin"
     | "unsafe-url";
+  v: boolean;
+  39: "CSS" | "XML" | "auto";
+  40: "indefinite";
+  41: "default" | "preserve";
+  42: "always" | "whenNotActive" | "never";
+  43: "remove" | "freeze";
+  44: "discrete" | "linear" | "paced" | "spline";
+  45: "replace" | "sum";
+  46: "none" | "sum";
+  47:
+    | "auto"
+    | "baseline"
+    | "before-edge"
+    | "text-before-edge"
+    | "middle"
+    | "central"
+    | "after-edge"
+    | "text-after-edge"
+    | "ideographic"
+    | "alphabetic"
+    | "hanging"
+    | "mathematical"
+    | "inherit";
+  48: "auto" | "baseline" | "super" | "sub" | "inherit";
+  49: "none" | "inherit";
+  50: "nonzero" | "evenodd" | "inherit";
+  51: "auto" | "sRGB" | "linearRGB" | "inherit";
+  52: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
+  53:
+    | "auto"
+    | "crosshair"
+    | "default"
+    | "pointer"
+    | "move"
+    | "e-resize"
+    | "ne-resize"
+    | "nw-resize"
+    | "n-resize"
+    | "se-resize"
+    | "sw-resize"
+    | "s-resize"
+    | "w-resize| text"
+    | "wait"
+    | "help"
+    | "inherit";
+  54: "ltr" | "rtl" | "inherit";
+  55:
+    | "inline"
+    | "block"
+    | "list-item"
+    | "run-in"
+    | "compact"
+    | "marker"
+    | "table"
+    | "inline-table"
+    | "table-row-group"
+    | "table-header-group"
+    | "table-footer-group"
+    | "table-row"
+    | "table-column-group"
+    | "table-column"
+    | "table-cell"
+    | "table-caption"
+    | "none"
+    | "inherit";
+  56:
+    | "	auto"
+    | "use-script"
+    | "no-change"
+    | "reset-size"
+    | "ideographic"
+    | "alphabetic"
+    | "hanging"
+    | "mathematical"
+    | "central"
+    | "middle"
+    | "text-after-edge"
+    | "text-before-edge"
+    | "inherit";
+  57: "currentColor" | "inherit";
+  58:
+    | "normal"
+    | "wider"
+    | "narrower"
+    | "ultra-condensed"
+    | "extra-condensed"
+    | "condensed"
+    | "semi-condensed"
+    | "semi-expanded"
+    | "expanded"
+    | "extra-expanded"
+    | "ultra-expanded"
+    | "inherit";
+  59: "normal" | "italic" | "oblique" | "inherit";
+  60: "normal" | "small-caps" | "inherit";
+  61:
+    | "normal"
+    | "bold"
+    | "bolder"
+    | "lighter"
+    | "100"
+    | "200"
+    | "300"
+    | "400"
+    | "500"
+    | "600"
+    | "700"
+    | "800"
+    | "900"
+    | "inherit";
+  62: "visible" | "hidden" | "scroll" | "auto" | "inherit";
+  63:
+    | "visiblePainted"
+    | "visibleFill"
+    | "visibleStroke"
+    | "visible"
+    | "painted"
+    | "fill"
+    | "stroke"
+    | "all"
+    | "none"
+    | "inherit";
+  64:
+    | "auto"
+    | "optimizeSpeed"
+    | "crispEdges"
+    | "geometricPrecision"
+    | "inherit";
+  65: "butt" | "round" | "square" | "inherit";
+  66: "miter" | "round" | "bevel" | "inherit";
+  67: "start" | "middle" | "end" | "inherit";
+  68: "none" | "underline" | "overline" | "line-through" | "blink" | "inherit";
+  69:
+    | "auto"
+    | "optimizeSpeed"
+    | "optimizeLegibility"
+    | "geometricPrecision"
+    | "inherit";
+  70:
+    | "none"
+    | "non-scaling-stroke"
+    | "non-scaling-size"
+    | "non-rotation"
+    | "fixed-position";
+  71: "visible" | "hidden" | "collapse" | "inherit";
+  72: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
+  73: "userSpaceOnUse" | "objectBoundingBox";
+  74:
+    | "SourceGraphic"
+    | "SourceAlpha"
+    | "BackgroundImage"
+    | "BackgroundAlpha"
+    | "FillPaint"
+    | "StrokePaint";
+  75: "normal" | "multiply" | "screen" | "darken" | "lighten";
+  76: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
+  77: "duplicate" | "wrap" | "none";
+  78: "R" | "G" | "B" | "A";
+  79: "noStitch" | "stitch";
+  80: "userSpaceOnUse" | "strokeWidth";
+  81: "http://www.w3.org/1999/xlink";
 }

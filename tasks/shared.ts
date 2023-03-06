@@ -8,20 +8,30 @@ const getReferences = (currentValue: JSDocInfo) =>
       )}`
     : "";
 
+const getDescription = (currentValue: JSDocInfo) => {
+  const description = ((currentValue?.description as MarkupContent)?.value ??
+    currentValue?.description) as string | undefined;
+  return description
+    ? `* ${description
+        .replace("🧧 *Provide by SVG extension.*\n\n", "")
+        .replace("\n", "\n*")
+        .replace("\n[MDN", "\n* [MDN")}`
+    : "";
+};
+
 export const getJSDoc = (currentValue: JSDocInfo) =>
   currentValue?.description || currentValue.references
     ? `/**
-* ${(
-        (currentValue?.description as MarkupContent)?.value ??
-        currentValue?.description ??
-        ""
-      ).replace("🧧 *Provide by SVG extension.*\n\n", "")}
-${getReferences(currentValue)}*/`
+${getDescription(currentValue)}${
+  currentValue?.description && currentValue.references ? "\n" : ""
+}${getReferences(currentValue)}*/
+`
     : "";
-export const getPropertyName = (property: string) =>
-  /-|.:/.test(property) ? `["${property}"]` : property;
+
+export const getPropertyName = (property: string | number) =>
+  /-|.:/.test(property.toString()) ? `["${property}"]` : property;
 
 export const DEFAULT_VALUE_SET = {
   key: "default",
-  value: "string | number",
+  value: ["string", "number"],
 };
