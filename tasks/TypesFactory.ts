@@ -3,14 +3,14 @@ import { DEFAULT_VALUE_SET, getJSDoc, getPropertyName } from "./shared";
 import { Attribute, Documentation, ITag, JSDocInfo } from "./types";
 
 interface AttributeType extends Omit<JSDocInfo, "name"> {
-  valueSet: string;
+  valueSets: Set<string>;
 }
 interface ElementType extends Omit<JSDocInfo, "name"> {
   types: string[];
 }
 
 interface AddTypesFromProps {
-  attributesAlias: Record<string, string[]>;
+  attributesAlias?: Record<string, string[]>;
   name: string;
   documentationSrc: Documentation;
   src: string;
@@ -44,7 +44,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       if (!valueSetIndexFound) {
         const newValueSetIndex =
           this.valueSets.set(this.valueSets.size, newValueSet).size - 1;
-        return `ValueSets[${newValueSetIndex}]`;
+        return `ValueSets['${newValueSetIndex}']`;
       }
       return `ValueSets['${valueSetIndexFound}']`;
     }
@@ -53,11 +53,16 @@ export type { AllAttributes } from "./AllAttributes";\n`,
 
   addAttributes(attributes: Attribute[]) {
     attributes.forEach((x) => {
-      if (!this.attributes.has(x.name))
+      const attributeFound = this.attributes.get(x.name);
+      const newValueSet = this.getValueSet(x);
+
+      if (attributeFound) {
+        attributeFound.valueSets.add(newValueSet);
+      } else
         this.attributes.set(x.name, {
           description: x.description,
           references: x.references,
-          valueSet: this.getValueSet(x),
+          valueSets: new Set([newValueSet]),
         });
     });
   }
@@ -83,16 +88,17 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         let attributesPick = attributes.map((x) => x.name);
         const attributesAliases = new Array<string>();
 
-        Object.entries(props.attributesAlias).forEach(
-          ([alias, attributesInAlias]) => {
-            if (attributesInAlias.every((x) => attributesPick.includes(x))) {
-              attributesPick = attributesPick.filter(
-                (x) => !attributesInAlias.includes(x),
-              );
-              attributesAliases.push(alias);
-            }
-          },
-        );
+        if (props.attributesAlias)
+          Object.entries(props.attributesAlias).forEach(
+            ([alias, attributesInAlias]) => {
+              if (attributesInAlias.every((x) => attributesPick.includes(x))) {
+                attributesPick = attributesPick.filter(
+                  (x) => !attributesInAlias.includes(x),
+                );
+                attributesAliases.push(alias);
+              }
+            },
+          );
 
         const types = props.getAdditionalElementAttributes?.(x.name) ?? [];
 
@@ -117,16 +123,18 @@ export type { AllAttributes } from "./AllAttributes";\n`,
        // Data Version ${props.documentationSrc.version})
        import { AllAttributes } from './AllAttributes';
        ${props.additionalImports?.join("\n")}
-
-       ${Object.entries(props.attributesAlias)
-         .map(
-           ([key, value]) =>
-             `type ${key} = Pick<AllAttributes, ${value
-               .map((x) => `"${x}"`)
-               .join("|")}>;`,
-         )
-         .join("\n")}
-
+       ${
+         props.attributesAlias
+           ? `\n\n${Object.entries(props.attributesAlias)
+                .map(
+                  ([key, value]) =>
+                    `type ${key} = Pick<AllAttributes, ${value
+                      .map((x) => `"${x}"`)
+                      .join("|")}>;`,
+                )
+                .join("\n")}`
+           : ""
+       }
        export interface ${props.name} {
          ${Array.from(elements.entries())
            .map(
@@ -154,9 +162,9 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         ${Array.from(this.attributes.entries())
           .map(
             ([key, value]) =>
-              `${getJSDoc({ name: key, ...value })}${getPropertyName(key)}?: ${
-                value.valueSet
-              };`,
+              `${getJSDoc({ name: key, ...value })}${getPropertyName(
+                key,
+              )}?: ${Array.from(value.valueSets.values()).join(" | ")};`,
           )
           .join("\n")}
       }`,

@@ -82,7 +82,6 @@ type GlobalAttributes = Pick<
   | "aria-details"
   | "aria-keyshortcuts"
 >;
-
 export interface HTMLElements {
   /**
    * The html element represents the root of an HTML document.

@@ -274,16 +274,19 @@ export interface ValueSets {
     | "strict-origin"
     | "strict-origin-when-cross-origin"
     | "unsafe-url";
+  38: "block" | "inline";
+  39: "http://www.w3.org/1998/Math/MathML";
   v: boolean;
-  39: "CSS" | "XML" | "auto";
-  40: "indefinite";
-  41: "default" | "preserve";
-  42: "always" | "whenNotActive" | "never";
-  43: "remove" | "freeze";
-  44: "discrete" | "linear" | "paced" | "spline";
-  45: "replace" | "sum";
-  46: "none" | "sum";
-  47:
+  41: "CSS" | "XML" | "auto";
+  42: "indefinite";
+  43: "default" | "preserve";
+  44: "always" | "whenNotActive" | "never";
+  45: "remove" | "freeze";
+  46: "discrete" | "linear" | "paced" | "spline";
+  47: "replace" | "sum";
+  48: "none" | "sum";
+  49: "translate" | "scale" | "rotate" | "skewX" | "skewY";
+  50:
     | "auto"
     | "baseline"
     | "before-edge"
@@ -297,12 +300,12 @@ export interface ValueSets {
     | "hanging"
     | "mathematical"
     | "inherit";
-  48: "auto" | "baseline" | "super" | "sub" | "inherit";
-  49: "none" | "inherit";
-  50: "nonzero" | "evenodd" | "inherit";
-  51: "auto" | "sRGB" | "linearRGB" | "inherit";
-  52: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
-  53:
+  51: "auto" | "baseline" | "super" | "sub" | "inherit";
+  52: "none" | "inherit";
+  53: "nonzero" | "evenodd" | "inherit";
+  54: "auto" | "sRGB" | "linearRGB" | "inherit";
+  55: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
+  56:
     | "auto"
     | "crosshair"
     | "default"
@@ -319,8 +322,8 @@ export interface ValueSets {
     | "wait"
     | "help"
     | "inherit";
-  54: "ltr" | "rtl" | "inherit";
-  55:
+  57: "ltr" | "rtl" | "inherit";
+  58:
     | "inline"
     | "block"
     | "list-item"
@@ -339,7 +342,7 @@ export interface ValueSets {
     | "table-caption"
     | "none"
     | "inherit";
-  56:
+  59:
     | "	auto"
     | "use-script"
     | "no-change"
@@ -353,8 +356,8 @@ export interface ValueSets {
     | "text-after-edge"
     | "text-before-edge"
     | "inherit";
-  57: "currentColor" | "inherit";
-  58:
+  60: "currentColor" | "inherit";
+  61:
     | "normal"
     | "wider"
     | "narrower"
@@ -367,9 +370,9 @@ export interface ValueSets {
     | "extra-expanded"
     | "ultra-expanded"
     | "inherit";
-  59: "normal" | "italic" | "oblique" | "inherit";
-  60: "normal" | "small-caps" | "inherit";
-  61:
+  62: "normal" | "italic" | "oblique" | "inherit";
+  63: "normal" | "small-caps" | "inherit";
+  64:
     | "normal"
     | "bold"
     | "bolder"
@@ -384,8 +387,8 @@ export interface ValueSets {
     | "800"
     | "900"
     | "inherit";
-  62: "visible" | "hidden" | "scroll" | "auto" | "inherit";
-  63:
+  65: "visible" | "hidden" | "scroll" | "auto" | "inherit";
+  66:
     | "visiblePainted"
     | "visibleFill"
     | "visibleStroke"
@@ -396,43 +399,47 @@ export interface ValueSets {
     | "all"
     | "none"
     | "inherit";
-  64:
+  67:
     | "auto"
     | "optimizeSpeed"
     | "crispEdges"
     | "geometricPrecision"
     | "inherit";
-  65: "butt" | "round" | "square" | "inherit";
-  66: "miter" | "round" | "bevel" | "inherit";
-  67: "start" | "middle" | "end" | "inherit";
-  68: "none" | "underline" | "overline" | "line-through" | "blink" | "inherit";
-  69:
+  68: "butt" | "round" | "square" | "inherit";
+  69: "miter" | "round" | "bevel" | "inherit";
+  70: "start" | "middle" | "end" | "inherit";
+  71: "none" | "underline" | "overline" | "line-through" | "blink" | "inherit";
+  72:
     | "auto"
     | "optimizeSpeed"
     | "optimizeLegibility"
     | "geometricPrecision"
     | "inherit";
-  70:
+  73:
     | "none"
     | "non-scaling-stroke"
     | "non-scaling-size"
     | "non-rotation"
     | "fixed-position";
-  71: "visible" | "hidden" | "collapse" | "inherit";
-  72: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
-  73: "userSpaceOnUse" | "objectBoundingBox";
-  74:
+  74: "visible" | "hidden" | "collapse" | "inherit";
+  75: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
+  76: "userSpaceOnUse" | "objectBoundingBox";
+  77:
     | "SourceGraphic"
     | "SourceAlpha"
     | "BackgroundImage"
     | "BackgroundAlpha"
     | "FillPaint"
     | "StrokePaint";
-  75: "normal" | "multiply" | "screen" | "darken" | "lighten";
-  76: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
-  77: "duplicate" | "wrap" | "none";
-  78: "R" | "G" | "B" | "A";
-  79: "noStitch" | "stitch";
-  80: "userSpaceOnUse" | "strokeWidth";
-  81: "http://www.w3.org/1999/xlink";
+  78: "normal" | "multiply" | "screen" | "darken" | "lighten";
+  79: "matrix" | "saturate" | "hueRotate" | "luminanceToAlpha";
+  80: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
+  81: "duplicate" | "wrap" | "none";
+  82: "identity" | "table" | "discrete" | "linear" | "gamma";
+  83: "R" | "G" | "B" | "A";
+  84: "noStitch" | "stitch";
+  85: "fractalNoise" | "turbulence";
+  86: "userSpaceOnUse" | "strokeWidth";
+  87: "http://www.w3.org/2000/svg";
+  88: "http://www.w3.org/1999/xlink";
 }

@@ -1,6 +1,7 @@
 import { TypesFactory } from "./TypesFactory";
 import htmlData from "@vscode/web-custom-data/data/browsers.html-data.json";
 import svgData from "svg/html.html-data.json";
+import mathmlData from "mathml/dist/mathml.json";
 
 const factory = new TypesFactory();
 htmlData.valueSets = htmlData.valueSets.filter((x) => x.name !== "u");
@@ -151,6 +152,18 @@ factory.addTypesFrom({
   },
   attributesAlias: htmlAttributesAlias,
   notSupportedTags: ["rb", "param"],
+});
+factory.addTypesFrom({
+  name: "MathMLElements",
+  src: "github:michijs/vscode-mathml",
+  documentationSrc: mathmlData,
+  additionalImports: [
+    'import { MathMLEvents } from "../Events"',
+    'import { DataGlobalAttributes } from "../types"',
+  ],
+  getAdditionalElementAttributes: () => {
+    return ["DataGlobalAttributes", "MathMLEvents<MathMLElement>"];
+  },
 });
 factory.valueSets.set("v", ["boolean"]);
 factory.addTypesFrom({

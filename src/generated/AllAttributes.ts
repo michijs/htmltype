@@ -403,7 +403,7 @@ export interface AllAttributes {
   version?: ValueSets["default"];
   /**
    * Specifies the XML Namespace of the document. Default value is `"http://www.w3.org/1999/xhtml"`. This is required in documents parsed with XML parsers, and optional in text/html documents.*/
-  xmlns?: ValueSets["default"];
+  xmlns?: ValueSets["default"] | ValueSets["39"] | ValueSets["87"];
   /**
    * The URIs of one or more metadata profiles, separated by white space.*/
   profile?: ValueSets["default"];
@@ -449,7 +449,12 @@ export interface AllAttributes {
   hreflang?: ValueSets["default"];
   /**
    * This attribute is used to define the type of the content linked to. The value of the attribute should be a MIME type such as **text/html**, **text/css**, and so on. The common use of this attribute is to define the type of stylesheet being referenced (such as **text/css**), but given that CSS is the only stylesheet language used on the web, not only is it possible to omit the `type` attribute, but is actually now recommended practice. It is also used on `rel="preload"` link types, to make sure the browser only downloads file types that it supports.*/
-  type?: ValueSets["default"];
+  type?:
+    | ValueSets["default"]
+    | ValueSets["49"]
+    | ValueSets["79"]
+    | ValueSets["82"]
+    | ValueSets["85"];
   /**
    * This attribute defines the sizes of the icons for visual media contained in the resource. It must be present only if the [`rel`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-rel) contains a value of `icon` or a non-standard type such as Apple's `apple-touch-icon`. It may have the following values:
    *
@@ -834,7 +839,7 @@ export interface AllAttributes {
   align?: ValueSets["default"];
   /**
    * Sets the color of the rule through color name or hexadecimal value.*/
-  color?: ValueSets["default"];
+  color?: ValueSets["default"] | ValueSets["50"];
   /**
    * Sets the rule to have no shading.*/
   noshade?: ValueSets["default"];
@@ -1190,6 +1195,106 @@ export interface AllAttributes {
    * Lets the canvas know whether or not translucency will be a factor. If the canvas knows there's no translucency, painting performance can be optimized. This is only supported by Mozilla-based browsers; use the standardized [`canvas.getContext('2d', { alpha: false })`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext "The HTMLCanvasElement.getContext() method returns a drawing context on the canvas, or null if the context identifier is not supported.") instead.*/
   ["moz-opaque"]?: ValueSets["default"];
   /**
+   * Specifies the rendering mode. The values `block` and `inline` are allowed.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  display?: ValueSets["38"] | ValueSets["58"];
+  /**
+   * A `<length-percentage>` indicating the thickness of the horizontal fraction line.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  linethickness?: ValueSets["default"];
+  /**
+   * A `<boolean>` indicating whether the operator is a fence (such as parentheses). There is no visual effect for this attribute.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  fence?: ValueSets["b"];
+  /**
+   * A `<boolean>` indicating whether the operator should be drawn bigger when math-style is set to normal.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  largeop?: ValueSets["b"];
+  /**
+   * A `<length-percentage>` indicating the amount of space before the operator.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  lspace?: ValueSets["default"];
+  /**
+   * A `<length-percentage>` indicating the maximum size of the operator when it is stretchy.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  maxsize?: ValueSets["default"];
+  /**
+   * A `<length-percentage>` indicating the minimum size of the operator when it is stretchy.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  minsize?: ValueSets["default"];
+  /**
+   * A `<boolean>` indicating whether attached under- and overscripts move to sub- and superscript positions when math-style is set to compact.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  movablelimits?: ValueSets["b"];
+  /**
+   * A `<length-percentage>` indicating the amount of space after the operator.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  rspace?: ValueSets["default"];
+  /**
+   * A `<boolean>` indicating whether the operator is a separator (such as commas). There is no visual effect for this attribute.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  separator?: ValueSets["b"];
+  /**
+   * A `<boolean>` indicating whether the operator stretches to the size of the adjacent element.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  stretchy?: ValueSets["b"];
+  /**
+   * A `<boolean>` indicating whether a stretchy operator should be vertically symmetric around the imaginary math axis (centered fraction line).
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  symmetric?: ValueSets["b"];
+  /**
+   * A `<boolean>` indicating whether the over script should be treated as an accent (i.e. drawn bigger and closer to the base expression).
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  accent?: ValueSets["b"];
+  /**
+   * A `<length-percentage>` indicating the desired depth (below the baseline) of the element.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  depth?: ValueSets["default"];
+  /**
+   * A `<length-percentage>` indicating the vertical location of the positioning point of the child content with respect to the positioning point of the element.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  voffset?: ValueSets["default"];
+  /**
+   * The opening quote to enclose the content.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  lquote?: ValueSets["default"];
+  /**
+   * The closing quote to enclose the content.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  rquote?: ValueSets["default"];
+  /**
+   * The encoding of the semantic information in the annotation.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  encoding?: ValueSets["default"];
+  /**
+   * A non-negative integer value that indicates on how many columns does the cell extend.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  columnspan?: ValueSets["default"];
+  /**
+   * A `<boolean>` indicating whether the under script should be treated as an accent (i.e. drawn bigger and closer to the base expression).
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute}*/
+  accentunder?: ValueSets["b"];
+  /**
    * Documents often reference and use the contents of other files (and other Web resources) as part of their rendering. In some cases, authors want to specify that particular resources are required for a document to be considered correct.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/externalResourcesRequired)*/
@@ -1203,7 +1308,7 @@ export interface AllAttributes {
    * This attribute specifies the namespace in which the target attribute and its associated values are defined.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/attributeType)*/
-  attributeType?: ValueSets[39];
+  attributeType?: ValueSets["41"];
   /**
    * This attribute indicates the initial value of the attribute that will be modified during the animation. When used with the to attribute, the animation will change the modified attribute from the from value to the to value.
    *
@@ -1218,12 +1323,12 @@ export interface AllAttributes {
    * This attribute indicates the simple duration of the animation.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dur)*/
-  dur?: ValueSets[40];
+  dur?: ValueSets["42"];
   /**
    * This attribute indicates the number of time the animation will take place.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/repeatCount)*/
-  repeatCount?: ValueSets["40"];
+  repeatCount?: ValueSets["42"];
   /**
    * This attribute takes a list of feature strings, with the individual strings separated by white space. It determines whether or not all of the named features are supported by the browser; if all of them are supported, the attribute evaluates to true end the element is rendered; otherwise, the attribute evaluates to false and the current element and its children are skipped and thus will not be rendered. This provides a way to design SVG that gracefully falls back when features aren't available.
    *
@@ -1238,7 +1343,7 @@ export interface AllAttributes {
    * This attribute influences how browsers parse text content and therefore changes the way the DOM is built. Therefore, changing this attributeʼs value through the DOM API may have no effect.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xml:space)*/
-  ["xml:space"]?: ValueSets[41];
+  ["xml:space"]?: ValueSets["43"];
   /**
    * The xlink:href attribute defines a link to a resource as a reference <IRI>.
    *
@@ -1268,22 +1373,22 @@ export interface AllAttributes {
    * This attribute indicates when animation can or can not restart.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/restart)*/
-  restart?: ValueSets[42];
+  restart?: ValueSets["44"];
   /**
    * This attribute specifies the total duration for repeat.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/repeatDur)*/
-  repeatDur?: ValueSets["40"];
+  repeatDur?: ValueSets["42"];
   /**
    * The fill attribute has two meanings based on the context it's used.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill)*/
-  fill?: ValueSets[43];
+  fill?: ValueSets["45"];
   /**
    * This attribute specifies the interpolation mode for the animation. The default mode is linear, however if the attribute does not support linear interpolation (e.g. for strings), the calcMode attribute is ignored and discrete interpolation is used.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/calcMode)*/
-  calcMode?: ValueSets[44];
+  calcMode?: ValueSets["46"];
   /**
    * The keyTimes attribute is a semicolon-separated list of time values used to control the pacing of the animation. Each time in the list corresponds to a value in the values attribute list, and defines when the value is used in the animation. Each time value in the keyTimes list is specified as a floating point value between 0 and 1 (inclusive), representing a proportional offset into the duration of the animation element.
    *
@@ -1298,12 +1403,12 @@ export interface AllAttributes {
    * This attribute controls whether or not the animation is additive.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/additive)*/
-  additive?: ValueSets[45];
+  additive?: ValueSets["47"];
   /**
    * This attribute controls whether or not the animation is cumulative.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/accumulate)*/
-  accumulate?: ValueSets[46];
+  accumulate?: ValueSets["48"];
   /**
    * The transform attribute defines a list of transform definitions that are applied to an element and the element's children. The items in the transform list are separated by whitespace and/or commas, and are applied from right to left.
    *
@@ -1330,197 +1435,192 @@ export interface AllAttributes {
    * The alignment-baseline attribute specifies how an object is aligned with respect to its parent. This property specifies which baseline of this element is to be aligned with the corresponding baseline of the parent. For example, this allows alphabetic baselines in Roman text to stay aligned across font size changes. It defaults to the baseline with the same name as the computed value of the alignment-baseline property.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/alignment-baseline)*/
-  ["alignment-baseline"]?: ValueSets[47];
+  ["alignment-baseline"]?: ValueSets["50"];
   /**
    * The baseline-shift attribute allows repositioning of the dominant-baseline relative to the dominant-baseline of the parent text content element. The shifted object might be a sub- or superscript.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/baseline-shift)*/
-  ["baseline-shift"]?: ValueSets[48];
+  ["baseline-shift"]?: ValueSets["51"];
   /**
    * The clip attribute has the same parameter values as defined for the css clip property. Unitless values, which indicate current user coordinates, are permitted on the coordinate values on the <shape>. The value of auto defines a clipping path along the bounds of the viewport created by the given element.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip)*/
-  clip?: ValueSets["47"];
+  clip?: ValueSets["50"];
   /**
    * The clip-path attribute binds the element it is applied to with a given <clipPath> element
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-path)*/
-  ["clip-path"]?: ValueSets[49];
+  ["clip-path"]?: ValueSets["52"];
   /**
    * The clip-rule attribute only applies to graphics elements that are contained within a <clipPath> element. The clip-rule attribute basically works as the fill-rule attribute, except that it applies to <clipPath> definitions.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-rule)*/
-  ["clip-rule"]?: ValueSets[50];
+  ["clip-rule"]?: ValueSets["53"];
   /**
    * The color-interpolation attribute specifies the color space for gradient interpolations, color animations, and alpha compositing.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation)*/
-  ["color-interpolation"]?: ValueSets[51];
+  ["color-interpolation"]?: ValueSets["54"];
   /**
    * The color-interpolation-filters attribute specifies the color space for imaging operations performed via filter effects.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation-filters)*/
-  ["color-interpolation-filters"]?: ValueSets["51"];
+  ["color-interpolation-filters"]?: ValueSets["54"];
   /**
    * The color-profile attribute is used to define which color profile a raster image included through the <image> element should use.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-profile)*/
-  ["color-profile"]?: ValueSets["51"];
+  ["color-profile"]?: ValueSets["54"];
   /**
    * The color-rendering attribute provides a hint to the SVG user agent about how to optimize its color interpolation and compositing operations.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-rendering)*/
-  ["color-rendering"]?: ValueSets[52];
+  ["color-rendering"]?: ValueSets["55"];
   /**
    * The cursor attribute specifies the mouse cursor displayed when the mouse pointer is over an element.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/cursor)*/
-  cursor?: ValueSets[53];
+  cursor?: ValueSets["56"];
   /**
    * The direction attribute specifies the base writing direction of text and the direction of embeddings and overrides (see unicode-bidi) for the Unicode bidirectional algorithm. For the direction attribute to have any effect on an element that does not by itself establish a new text chunk (such as a <tspan> element without absolute position adjustments due to x or y attributes), the unicode-bidi property's value must be embed or bidi-override.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/direction)*/
-  direction?: ValueSets[54];
-  /**
-   * The display attribute lets you control the rendering of graphical or container elements.
-   *
-   * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display)*/
-  display?: ValueSets[55];
+  direction?: ValueSets["57"];
   /**
    * The dominant-baseline attribute is used to determine or re-determine a scaled-baseline-table. A scaled-baseline-table is a compound value with three components: a baseline-identifier for the dominant-baseline, a baseline-table and a baseline-table font-size. Some values of the property re-determine all three values; other only re-establish the baseline-table font-size. When the initial value, auto, would give an undesired result, this property can be used to explicitly set the desire scaled-baseline-table.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline)*/
-  ["dominant-baseline"]?: ValueSets[56];
+  ["dominant-baseline"]?: ValueSets["59"];
   /**
    * This attribute specifies the opacity of the color or the content the current object is filled with.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-opacity)*/
-  ["fill-opacity"]?: ValueSets["47"];
+  ["fill-opacity"]?: ValueSets["50"];
   /**
    * The fill-rule attribute indicates how to determine what side of a path is inside a shape, to determine how the fill property paints the shape. For a simple, non-intersecting path, it is intuitively clear what region lies "inside"; however, for a more complex path, such as a path that intersects itself or where one subpath encloses another, the interpretation of "inside" is not so obvious.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule)*/
-  ["fill-rule"]?: ValueSets["50"];
+  ["fill-rule"]?: ValueSets["53"];
   /**
    * The filter attribute defines the filter effects define by the <filter> element that shall be applied to its element.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/filter)*/
-  filter?: ValueSets["49"];
+  filter?: ValueSets["52"];
   /**
    * The flood-color attribute indicates what color to use to flood the current filter primitive subregion defined through the <feflood> element. The keyword currentColor and ICC colors can be specified in the same manner as within a <paint> specification for the fill and stroke attributes.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-color)*/
-  ["flood-color"]?: ValueSets[57];
+  ["flood-color"]?: ValueSets["60"];
   /**
    * The flood-opacity attribute indicates the opacity value to use across the current filter primitive subregion defined through the <feflood> element.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/flood-opacity)*/
-  ["flood-opacity"]?: ValueSets["47"];
+  ["flood-opacity"]?: ValueSets["50"];
   /**
    * The font-family attribute indicates which font family will be used to render the text, specified as a prioritized list of font family names and/or generic family names.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-family)*/
-  ["font-family"]?: ValueSets["47"];
+  ["font-family"]?: ValueSets["50"];
   /**
    * The font-size attribute refers to the size of the font from baseline to baseline when multiple lines of text are set solid in a multiline layout environment. For SVG, if a <length> is provided without a unit identifier (e.g., an unqualified number such as 128), the browser processes the <length> as a height value in the current user coordinate system.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-size)*/
-  ["font-size"]?: ValueSets["47"];
+  ["font-size"]?: ValueSets["50"];
   /**
    * The font-size-adjust attribute allows authors to specify an aspect value for an element that will preserve the x-height of the first choice font in a substitute font.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-size-adjust)*/
-  ["font-size-adjust"]?: ValueSets["49"];
+  ["font-size-adjust"]?: ValueSets["52"];
   /**
    * The font-stretch attribute indicates the desired amount of condensing or expansion in the glyphs used to render the text.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-stretch)*/
-  ["font-stretch"]?: ValueSets[58];
+  ["font-stretch"]?: ValueSets["61"];
   /**
    * The font-style attribute specifies whether the text is to be rendered using a normal, italic or oblique face.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-style)*/
-  ["font-style"]?: ValueSets[59];
+  ["font-style"]?: ValueSets["62"];
   /**
    * The font-variant attribute indicates whether the text is to be rendered using the normal glyphs for lowercase characters or using small-caps glyphs for lowercase characters.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-variant)*/
-  ["font-variant"]?: ValueSets[60];
+  ["font-variant"]?: ValueSets["63"];
   /**
    * The font-weight attribute refers to the boldness or lightness of the glyphs used to render the text, relative to other fonts in the same font family.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/font-weight)*/
-  ["font-weight"]?: ValueSets[61];
+  ["font-weight"]?: ValueSets["64"];
   /**
    * The image-rendering attribute provides a hint to the browser about how to make speed vs. quality tradeoffs as it performs image processing.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/image-rendering)*/
-  ["image-rendering"]?: ValueSets["52"];
+  ["image-rendering"]?: ValueSets["55"];
   /**
    * The kerning attribute indicates whether the browser should adjust inter-glyph spacing based on kerning tables that are included in the relevant font (i.e., enable auto-kerning) or instead disable auto-kerning and instead set inter-character spacing to a specific length (typically, zero).
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/kerning)*/
-  kerning?: ValueSets["47"];
+  kerning?: ValueSets["50"];
   /**
    * The letter-spacing attribute specifies spacing behavior between text characters supplemental to any spacing due to the kerning attribute.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/letter-spacing)*/
-  ["letter-spacing"]?: ValueSets["58"];
+  ["letter-spacing"]?: ValueSets["61"];
   /**
    * The lighting-color attribute defines the color of the light source for filter primitives elements <fediffuselighting> and <fespecularlighting>.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lighting-color)*/
-  ["lighting-color"]?: ValueSets["57"];
+  ["lighting-color"]?: ValueSets["60"];
   /**
    * The marker-end defines the arrowhead or polymarker that will be drawn at the final vertex of the given <path> element or basic shape. Note that for a <path> element which ends with a closed sub-path, the last vertex is the same as the initial vertex on the given sub-path. In this case, if marker-end does not equal none, then it is possible that two markers will be rendered on the given vertex. One way to prevent this is to set marker-end to none. (Note that the same comment applies to <polygon> elements.)
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-end)*/
-  ["marker-end"]?: ValueSets["49"];
+  ["marker-end"]?: ValueSets["52"];
   /**
    * The marker-mid defines the arrowhead or polymarker that shall be drawn at every vertex other than the first and last vertex of the given <path> element or basic shape.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-mid)*/
-  ["marker-mid"]?: ValueSets["49"];
+  ["marker-mid"]?: ValueSets["52"];
   /**
    * The marker-start attribute defines the arrowhead or polymarker that will be drawn at the first vertex of the given <path> element or basic shape.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/marker-start)*/
-  ["marker-start"]?: ValueSets["49"];
+  ["marker-start"]?: ValueSets["52"];
   /**
    * The mask attribute binds the element it is applied to with a given <mask> element.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/mask)*/
-  mask?: ValueSets["49"];
+  mask?: ValueSets["52"];
   /**
    * The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/opacity)*/
-  opacity?: ValueSets["47"];
+  opacity?: ValueSets["50"];
   /**
    * The overflow attribute has the same parameter values as defined for the css overflow property.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/overflow)*/
-  overflow?: ValueSets[62];
+  overflow?: ValueSets["65"];
   /**
    * The pointer-events attribute allows authors to control whether or when an element may be the target of a mouse event. This attribute is used to specify under which circumstance (if any) a mouse event should go "through" an element and target whatever is "underneath" that element instead.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/pointer-events)*/
-  ["pointer-events"]?: ValueSets[63];
+  ["pointer-events"]?: ValueSets["66"];
   /**
    * The creator of SVG content might want to provide a hint about what tradeoffs to make as the browser renders <path> element or basic shapes. The shape-rendering attribute provides these hints.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering)*/
-  ["shape-rendering"]?: ValueSets[64];
+  ["shape-rendering"]?: ValueSets["67"];
   /**
    * The stop-color attribute indicates what color to use at that gradient stop. The keyword currentColor and ICC colors can be specified in the same manner as within a <paint> specification for the fill and stroke attributes.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-color)*/
-  ["stop-color"]?: ValueSets["57"];
+  ["stop-color"]?: ValueSets["60"];
   /**
    * The stop-opacity attribute defines the opacity of a given gradient stop.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stop-opacity)*/
-  ["stop-opacity"]?: ValueSets["47"];
+  ["stop-opacity"]?: ValueSets["50"];
   /**
    * The stroke attribute defines the color of the outline on a given graphical element. The default value for the stroke attribute is none.
    *
@@ -1530,77 +1630,77 @@ export interface AllAttributes {
    * the stroke-dasharray attribute controls the pattern of dashes and gaps used to stroke paths.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray)*/
-  ["stroke-dasharray"]?: ValueSets["49"];
+  ["stroke-dasharray"]?: ValueSets["52"];
   /**
    * the stroke-dashoffset attribute specifies the distance into the dash pattern to start the dash.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dashoffset)*/
-  ["stroke-dashoffset"]?: ValueSets["47"];
+  ["stroke-dashoffset"]?: ValueSets["50"];
   /**
    * the stroke-linecap attribute specifies the shape to be used at the end of open subpaths when they are stroked.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap)*/
-  ["stroke-linecap"]?: ValueSets[65];
+  ["stroke-linecap"]?: ValueSets["68"];
   /**
    * the stroke-linejoin attribute specifies the shape to be used at the corners of paths or basic shapes when they are stroked.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin)*/
-  ["stroke-linejoin"]?: ValueSets[66];
+  ["stroke-linejoin"]?: ValueSets["69"];
   /**
    * When two line segments meet at a sharp angle and miter joins have been specified for stroke-linejoin, it is possible for the miter to extend far beyond the thickness of the line stroking the path. The stroke-miterlimit imposes a limit on the ratio of the miter length to the stroke-width. When the limit is exceeded, the join is converted from a miter to a bevel.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-miterlimit)*/
-  ["stroke-miterlimit"]?: ValueSets["47"];
+  ["stroke-miterlimit"]?: ValueSets["50"];
   /**
    * the stroke-opacity attribute specifies the opacity of the outline on the current object. Its default value is 1.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-opacity)*/
-  ["stroke-opacity"]?: ValueSets["47"];
+  ["stroke-opacity"]?: ValueSets["50"];
   /**
    * the stroke-width attribute specifies the width of the outline on the current object. Its default value is 1. If a <percentage> is used, the value represents a percentage of the current viewport. If a value of 0 is used the outline will never be drawn.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width)*/
-  ["stroke-width"]?: ValueSets["47"];
+  ["stroke-width"]?: ValueSets["50"];
   /**
    * The text-anchor attribute is used to align (start-, middle- or end-alignment) a string of text relative to a given point.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor)*/
-  ["text-anchor"]?: ValueSets[67];
+  ["text-anchor"]?: ValueSets["70"];
   /**
    * The text-decoration attribute works exactly like the css text decoration property except that it's an attribute. See css text decoration for further information.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-decoration)*/
-  ["text-decoration"]?: ValueSets[68];
+  ["text-decoration"]?: ValueSets["71"];
   /**
    * The creator of SVG content might want to provide a hint about what tradeoffs to make as the browser renders text. The text-rendering attribute provides these hints.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering)*/
-  ["text-rendering"]?: ValueSets[69];
+  ["text-rendering"]?: ValueSets["72"];
   /**
    * The vector-effect property specifies the vector effect to use when drawing an object. Vector effects are applied before any of the other compositing operations, i.e. filters, masks and clips.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/vector-effect)*/
-  ["vector-effect"]?: ValueSets[70];
+  ["vector-effect"]?: ValueSets["73"];
   /**
    * Depending on the value of attribute pointer-events, graphics elements which have their visibility attribute set to hidden still might receive events.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/visibility)*/
-  visibility?: ValueSets[71];
+  visibility?: ValueSets["74"];
   /**
    * The word-spacing attribute specifies spacing behavior between words.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/word-spacing)*/
-  ["word-spacing"]?: ValueSets["58"];
+  ["word-spacing"]?: ValueSets["61"];
   /**
    * The writing-mode attribute specifies whether the initial inline-progression-direction for a <text> element shall be left-to-right, right-to-left, or top-to-bottom. The writing-mode attribute applies only to <text> elements; the attribute is ignored for <tspan>, <tref>, <altGlyph> and <textPath> sub-elements. (Note that the inline-progression-direction can change within a <text> element due to the Unicode bidirectional algorithm and properties direction and unicode-bidi.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/writing-mode)*/
-  ["writing-mode"]?: ValueSets[72];
+  ["writing-mode"]?: ValueSets["75"];
   /**
    * The clipPathUnits attribute defines the coordinate system for the contents of the <clippath> element.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clipPathUnits)*/
-  clipPathUnits?: ValueSets[73];
+  clipPathUnits?: ValueSets["76"];
   /**
    * For the <ellipse> element, this attribute defines the x-radius of the element. A value of zero disables rendering of the element.
    *
@@ -1615,17 +1715,17 @@ export interface AllAttributes {
    * The in attribute identifies input for the given filter primitive.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/in)*/
-  in?: ValueSets[74];
+  in?: ValueSets["77"];
   /**
    * The in2 attribute identifies the second input for the given filter primitive. It works exactly like the in attribute.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/in2)*/
-  in2?: ValueSets["74"];
+  in2?: ValueSets["77"];
   /**
    * The mode attribute defines the blending mode on the <feblend> filter primitive.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/mode)*/
-  mode?: ValueSets[75];
+  mode?: ValueSets["78"];
   /**
    * The result attribute defines the assigned name for this filter primitive. If supplied, then graphics that result from processing this filter primitive can be referenced by an in attribute on a subsequent filter primitive within the same <filter> element. If no value is provided, the output will only be available for re-use as the implicit input into the next filter primitive if that filter primitive provides no value for its in attribute.
    *
@@ -1645,7 +1745,7 @@ export interface AllAttributes {
    * The operator attribute as two meaning based on the context it's used.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/operator)*/
-  operator?: ValueSets[76];
+  operator?: ValueSets["80"];
   /**
    * The k1 attribute defines one of the value to be used within the the arithmetic operation of the <fecomposite> filter primitive. If this attribute is not set, its default value is 0.
    *
@@ -1700,7 +1800,7 @@ export interface AllAttributes {
    * The edgeMode attribute determines how to extend the input image as necessary with color values so that the matrix operations can be applied when the kernel is positioned at or near the edge of the input image.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/edgeMode)*/
-  edgeMode?: ValueSets[77];
+  edgeMode?: ValueSets["81"];
   /**
    * The kernelUnitLength attribute has two meaning based on the context it's used.
    *
@@ -1730,12 +1830,12 @@ export interface AllAttributes {
    * For a <fedisplacementmap> filter primitive, The xChannelSelector attribute indicates which channel from in2 to use to displace the pixels in in along the x-axis. If attribute xChannelSelector is not specified, then the effect is as if a value of A were specified.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xChannelSelector)*/
-  xChannelSelector?: ValueSets[78];
+  xChannelSelector?: ValueSets["83"];
   /**
    * For a <fedisplacementmap> filter primitive, The xChannelSelector attribute indicates which channel from in2 to use to displace the pixels in in along the y-axis. If attribute yChannelSelector is not specified, then the effect is as if a value of A were specified.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/yChannelSelector)*/
-  yChannelSelector?: ValueSets["78"];
+  yChannelSelector?: ValueSets["83"];
   /**
    * The azimuth attribute represent the direction angle for the light source on the XY plane (clockwise), in degrees from the x axis.
    *
@@ -1825,7 +1925,7 @@ export interface AllAttributes {
    * The stitchTiles attribute defines how the Perlin tiles behave at the border.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stitchTiles)*/
-  stitchTiles?: ValueSets[79];
+  stitchTiles?: ValueSets["84"];
   /**
    * A <filter> element can define a region to which a given filter effect applies and can provide a resolution for any intermediate continuous tone images used to process any raster-based filter primitives.
    *
@@ -1835,12 +1935,12 @@ export interface AllAttributes {
    * The filterUnits attribute defines the coordinate system for attributes x, y, width and height.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/filterUnits)*/
-  filterUnits?: ValueSets["73"];
+  filterUnits?: ValueSets["76"];
   /**
    * The primitiveUnits attribute specifies the coordinate system for the various length values within the filter primitives and for the attributes that define the filter primitive subregion.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/primitiveUnits)*/
-  primitiveUnits?: ValueSets["73"];
+  primitiveUnits?: ValueSets["76"];
   /**
    * define the 1 x-axis coordinate
    *
@@ -1865,7 +1965,7 @@ export interface AllAttributes {
    * The gradientUnits attribute defines the coordinate system for attributes x1, y1, x2 and y2 on the <lineargradient> element or for attributes cx, cy, r, fx, and fy on the <radialgradient>.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/gradientUnits)*/
-  gradientUnits?: ValueSets["73"];
+  gradientUnits?: ValueSets["76"];
   /**
    * The gradientTransform attribute contains the definition of an optional additional transformation from the gradient coordinate system onto the target coordinate system (i.e., userSpaceOnUse or objectBoundingBox). This allows for things such as skewing the gradient. This additional transformation matrix is post-multiplied to (i.e., inserted to the right of) any previously defined transformations, including the implicit transformation necessary to convert from object bounding box units to user space.
    *
@@ -1880,7 +1980,7 @@ export interface AllAttributes {
    * The markerUnits attribute defines the coordinate system for the attributes markerWidth, markerHeight and the contents of the <marker>.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/markerUnits)*/
-  markerUnits?: ValueSets[80];
+  markerUnits?: ValueSets["86"];
   /**
    * The markerWidth represents the width of the viewport into which the <marker> is to be fitted when it is rendered.
    *
@@ -1905,12 +2005,12 @@ export interface AllAttributes {
    * The patternUnits attribute defines the coordinate system for attributes x, y, width and height.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/patternUnits)*/
-  patternUnits?: ValueSets["73"];
+  patternUnits?: ValueSets["76"];
   /**
    * The patternContentUnits attribute defines the coordinate system for the contents of the <pattern>. Note that this attribute has no effect if attribute viewBox is specified on the <pattern> element.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/patternContentUnits)*/
-  patternContentUnits?: ValueSets["73"];
+  patternContentUnits?: ValueSets["76"];
   /**
    * The patternTransform attribute contains the definition of an optional additional transformation from the pattern coordinate system onto the target coordinate system. This allows for things such as skewing the pattern tiles. This additional transformation matrix is post-multiplied to (i.e., inserted to the right of) any previously defined transformations, including the implicit transformation necessary to convert from object bounding box units to user space.
    *
@@ -1950,7 +2050,7 @@ export interface AllAttributes {
    * The XLink namespace, attached to the `xlink` prefix.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xmlns:xlink)*/
-  ["xmlns:xlink"]?: ValueSets[81];
+  ["xmlns:xlink"]?: ValueSets["88"];
   /**
    * The textLength attribute is intended to preserve a span of SVG text's display width across a variety of conditions, such as webfonts not loading. It can be applied to either the <text> or <tspan> elements.
    *

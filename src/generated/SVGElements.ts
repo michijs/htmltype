@@ -101,7 +101,6 @@ type SVGAnimationValueAttributes = Pick<
   AllAttributes,
   "calcMode" | "keyTimes" | "keySplines" | "from" | "to"
 >;
-
 export interface SVGElements {
   /**
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate)*/
