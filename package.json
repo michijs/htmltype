@@ -24,6 +24,8 @@
     "lint-generated": "rome check --apply-suggested ./src/generated && rome format --write ./src/generated",
     "start": "ts-node --project tasks.tsconfig.json ./tasks/generateTypes.ts",
     "dist": "tsc",
+    "publish-prerelease-version": "npm version prerelease && npm run publish-npm",
+    "publish-npm": "npm run dist && npm publish --access public",
     "link": "npm run dist && npm link --force && tsc -w"
   },
   "keywords": [
