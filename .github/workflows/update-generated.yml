@@ -3,18 +3,32 @@ name: "Update generated"
 on: [push, pull_request]
 
 jobs:
-  call-workflow:
-    strategy:
-      matrix:
-        scripts: [{script: start, name: "Generate types"}]
-    uses: michijs/.github/.github/workflows/execute-script.yml@main
-    name: "Run ${{matrix.scripts.name}}"
-    with:
-      script-name: ${{ matrix.scripts.script }}
   submit-changes: 
     runs-on: ubuntu-latest
     needs: call-workflow
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          # We must fetch at least the immediate parents so that if this is
+          # a pull request then we can checkout the head.
+          fetch-depth: 2
+
+        # Setup Node.js environment
+      - name: Set up Node.js 16.17.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.17.0
+          # Important!
+          registry-url: 'https://registry.npmjs.org'
+          always-auth: true
+
+      - name: Install dependencies
+        run: npm install
+
+      # Execute task
+      - name: Execute task
+        run: npm run start
       # Configure Git
       - name: Git configuration
         run: |
