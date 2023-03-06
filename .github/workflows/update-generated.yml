@@ -1,6 +1,6 @@
 name: "Update generated"
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   submit-changes: 

@@ -1,9 +1,6 @@
 name: "Tests"
-on:
-  workflow_run:
-    workflows: ["update-generated"]
-    types: 
-      - completed
+
+on: [push, pull_request]
 
 jobs:
   call-workflow:
