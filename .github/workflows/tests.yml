@@ -1,7 +1,7 @@
 name: "Tests"
 on:
   workflow_run:
-    workflows: ["Update generated"]
+    workflows: ["update-generated"]
     types: 
       - completed
 
