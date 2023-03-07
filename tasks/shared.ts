@@ -26,7 +26,7 @@ export const getJSDoc = (currentValue: JSDocInfo) =>
     ? `/**
 ${getDescription(currentValue)}${
   currentValue?.description && currentValue.references ? "\n" : ""
-}${getReferences(currentValue)}*/
+}${getReferences(currentValue)} */
 `
     : "";
 
@@ -35,5 +35,5 @@ export const getPropertyName = (property: string | number) =>
 
 export const DEFAULT_VALUE_SET = {
   key: "default",
-  value: ["string", "number"],
+  value: ["string", "number", "boolean"],
 };

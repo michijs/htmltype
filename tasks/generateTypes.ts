@@ -4,13 +4,11 @@ import svgData from "svg/html.html-data.json";
 import mathmlData from "mathml/dist/mathml.json";
 
 const factory = new TypesFactory();
-htmlData.valueSets = htmlData.valueSets.filter((x) => x.name !== "u");
 
 const globalAttributes = htmlData.globalAttributes.filter(
   (x) => !x.name.startsWith("on"),
 );
 
-factory.addAttributes(globalAttributes);
 const htmlAttributesAlias = {
   GlobalAttributes: globalAttributes.map((x) => x.name),
 };
@@ -132,6 +130,9 @@ const svgAttributeAlias = {
   ],
 };
 
+factory.valueSets.set("v", ["boolean"]);
+
+factory.addAttributes(globalAttributes);
 factory.addTypesFrom({
   name: "HTMLElements",
   src: "@vscode/web-custom-data NPM package",
@@ -162,10 +163,9 @@ factory.addTypesFrom({
     'import { DataGlobalAttributes } from "../types"',
   ],
   getAdditionalElementAttributes: () => {
-    return ["DataGlobalAttributes", "MathMLEvents<MathMLElement>"];
+    return ["DataGlobalAttributes", "MathMLEvents"];
   },
 });
-factory.valueSets.set("v", ["boolean"]);
 factory.addTypesFrom({
   name: "SVGElements",
   src: "github:lishu/vscode-svg2",

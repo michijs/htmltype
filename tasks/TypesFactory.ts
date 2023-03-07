@@ -36,6 +36,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
 
   getValueSet = (property: Attribute) => {
     if (property.name === "style") return "CSSProperties";
+    if (property.valueSet) return `ValueSets['${property.valueSet}']`;
     if (property.values) {
       const newValueSet = property.values.map((x) => `"${x.name}"`);
       const valueSetIndexFound = Array.from(this.valueSets.keys()).find(
@@ -58,6 +59,10 @@ export type { AllAttributes } from "./AllAttributes";\n`,
 
       if (attributeFound) {
         attributeFound.valueSets.add(newValueSet);
+        if (attributeFound.valueSets.size > 1)
+          attributeFound.valueSets.delete(
+            `ValueSets['${DEFAULT_VALUE_SET.key}']`,
+          );
       } else
         this.attributes.set(x.name, {
           description: x.description,
@@ -137,6 +142,16 @@ export type { AllAttributes } from "./AllAttributes";\n`,
        }
        export interface ${props.name} {
          ${Array.from(elements.entries())
+           .sort((a, b) => {
+             if (a[0] > b[0]) {
+               return 1;
+             }
+             if (a[0] < b[0]) {
+               return -1;
+             }
+             // a must be equal to b
+             return 0;
+           })
            .map(
              ([key, value]) =>
                `${getJSDoc({ name: key, ...value })}${getPropertyName(
@@ -160,6 +175,16 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       import { CSSProperties } from '../types'
       export interface AllAttributes {
         ${Array.from(this.attributes.entries())
+          .sort((a, b) => {
+            if (a[0] > b[0]) {
+              return 1;
+            }
+            if (a[0] < b[0]) {
+              return -1;
+            }
+            // a must be equal to b
+            return 0;
+          })
           .map(
             ([key, value]) =>
               `${getJSDoc({ name: key, ...value })}${getPropertyName(
