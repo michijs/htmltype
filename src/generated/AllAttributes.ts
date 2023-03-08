@@ -1395,62 +1395,6 @@ export interface AllAttributes {
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/offset) */
   offset?: ValueSets["default"];
   /**
-   * Function to call after the user has printed the document. */
-  onafterprint?: ValueSets["default"];
-  /**
-   * Function to call when the user requests printing of the document. */
-  onbeforeprint?: ValueSets["default"];
-  /**
-   * Function to call when the document is about to be unloaded. */
-  onbeforeunload?: ValueSets["default"];
-  /**
-   * Function to call when the document loses focus. */
-  onblur?: ValueSets["default"];
-  /**
-   * Function to call when the document fails to load properly. */
-  onerror?: ValueSets["default"];
-  /**
-   * Function to call when the document receives focus. */
-  onfocus?: ValueSets["default"];
-  /**
-   * Function to call when the fragment identifier part (starting with the hash (`'#'`) character) of the document's current address has changed. */
-  onhashchange?: ValueSets["default"];
-  /**
-   * Function to call when the preferred languages changed. */
-  onlanguagechange?: ValueSets["default"];
-  /**
-   * Function to call when the document has finished loading. */
-  onload?: ValueSets["default"];
-  /**
-   * Function to call when the document has received a message. */
-  onmessage?: ValueSets["default"];
-  /**
-   * Function to call when network communication has failed. */
-  onoffline?: ValueSets["default"];
-  /**
-   * Function to call when network communication has been restored. */
-  ononline?: ValueSets["default"];
-  onpagehide?: ValueSets["default"];
-  onpageshow?: ValueSets["default"];
-  /**
-   * Function to call when the user has navigated session history. */
-  onpopstate?: ValueSets["default"];
-  /**
-   * Function to call when the user has moved forward in undo transaction history. */
-  onredo?: ValueSets["default"];
-  /**
-   * Function to call when the document has been resized. */
-  onresize?: ValueSets["default"];
-  /**
-   * Function to call when the storage area has changed. */
-  onstorage?: ValueSets["default"];
-  /**
-   * Function to call when the user has moved backward in undo transaction history. */
-  onundo?: ValueSets["default"];
-  /**
-   * Function to call when the document is going away. */
-  onunload?: ValueSets["default"];
-  /**
    * The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/opacity) */

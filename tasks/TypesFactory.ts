@@ -20,6 +20,9 @@ interface AddTypesFromProps {
   getAttributes?: (tag: ITag) => ITag["attributes"];
 }
 
+const getInterfaceHelperName = (props: AddTypesFromProps, key: string) =>
+  `${props.name.slice(0, -1)}${key.charAt(0).toUpperCase()}${key.slice(1)}`;
+
 export class TypesFactory {
   valueSets = new Map<string | number, string[]>();
   private attributes = new Map<string, AttributeType>();
@@ -91,7 +94,9 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     props.documentationSrc.tags
       .filter((x) => !props.notSupportedTags?.includes(x.name))
       .forEach((x) => {
-        const attributes = props.getAttributes?.(x) ?? x.attributes;
+        const attributes = (props.getAttributes?.(x) ?? x.attributes).filter(
+          (x) => !x.name.startsWith("on"),
+        );
         this.addAttributes(attributes);
         let attributesPick = attributes.map((x) => x.name);
         const attributesAliases = new Array<string>();
@@ -151,23 +156,25 @@ export type { AllAttributes } from "./AllAttributes";\n`,
                 .join("\n")}`
            : ""
        }
+       ${Array.from(elements)
+         .sort()
+         .map(
+           ([key, value]) =>
+             `export interface ${getInterfaceHelperName(
+               props,
+               key,
+             )} extends ${value.types.join(", ")} {};`,
+         )
+         .join("\n")}
        export interface ${props.name} {
-         ${Array.from(elements.entries())
-           .sort((a, b) => {
-             if (a[0] > b[0]) {
-               return 1;
-             }
-             if (a[0] < b[0]) {
-               return -1;
-             }
-             // a must be equal to b
-             return 0;
-           })
+         ${Array.from(elements)
+           .sort()
            .map(
              ([key, value]) =>
-               `${getJSDoc({ name: key, ...value })}${getPropertyName(
-                 key,
-               )}: ${value.types.join(" & ")};`,
+               `${getJSDoc({
+                 name: key,
+                 ...value,
+               })}${key}: ${getInterfaceHelperName(props, key)};`,
            )
            .join("\n")}
        }
@@ -185,17 +192,8 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       `import { ValueSets } from "./ValueSets"
       import { CSSProperties } from '../types'
       export interface AllAttributes {
-        ${Array.from(this.attributes.entries())
-          .sort((a, b) => {
-            if (a[0] > b[0]) {
-              return 1;
-            }
-            if (a[0] < b[0]) {
-              return -1;
-            }
-            // a must be equal to b
-            return 0;
-          })
+        ${Array.from(this.attributes)
+          .sort()
           .map(
             ([key, value]) =>
               `${getJSDoc({ name: key, ...value })}${getPropertyName(
@@ -209,6 +207,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       "./src/generated/ValueSets.ts",
       `export interface ValueSets {
         ${Array.from(this.valueSets.entries())
+          .sort()
           .map(
             ([name, value]) =>
               `${getPropertyName(name)}: ${value.join(" | ")};`,
