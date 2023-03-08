@@ -18,6 +18,10 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.js"
+    },
+    "./supported": {
+      "import": "./supported/index.js",
+      "require": "./supported/index.js"
     }
   },
   "description": "Strict TypeScript types for HTML and SVG attributes based on MDN data",

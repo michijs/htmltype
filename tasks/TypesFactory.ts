@@ -28,6 +28,7 @@ export class TypesFactory {
     rmSync("./src/generated", { recursive: true, force: true });
     rmSync("./supported", { recursive: true, force: true });
     mkdirSync("./supported");
+    writeFileSync("./supported/index.js", "");
     mkdirSync("./src/generated");
     writeFileSync(
       "./src/generated/index.ts",
@@ -127,6 +128,10 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     writeFileSync(
       `./supported/${props.name}.json`,
       JSON.stringify(Array.from(elements.keys()), null, 2),
+    );
+    appendFileSync(
+      "./supported/index.js",
+      `export { default as supported${props.name} } from "./${props.name}.json";\n`,
     );
     writeFileSync(
       `./src/generated/${props.name}.ts`,
