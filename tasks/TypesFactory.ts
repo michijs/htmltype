@@ -131,7 +131,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     );
     appendFileSync(
       "./supported/index.js",
-      `export { default as supported${props.name} } from "./${props.name}.json";\n`,
+      `exports.supported${props.name} = require("./${props.name}.json");\n`,
     );
     writeFileSync(
       `./src/generated/${props.name}.ts`,
