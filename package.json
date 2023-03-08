@@ -9,7 +9,8 @@
     "url": "https://github.com/michijs/htmltype.git"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "supported/"
   ],
   "main": "dist/index.js",
   "module": "dist/index.js",

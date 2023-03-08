@@ -1,4 +1,4 @@
-import { appendFileSync, mkdirSync, rmdirSync, writeFileSync } from "fs";
+import { appendFileSync, mkdirSync, rmSync, writeFileSync } from "fs";
 import { DEFAULT_VALUE_SET, getJSDoc, getPropertyName } from "./shared";
 import { Attribute, Documentation, ITag, JSDocInfo } from "./types";
 
@@ -25,7 +25,9 @@ export class TypesFactory {
   private attributes = new Map<string, AttributeType>();
 
   constructor() {
-    rmdirSync("./src/generated", { recursive: true });
+    rmSync("./src/generated", { recursive: true, force: true });
+    rmSync("./supported", { recursive: true, force: true });
+    mkdirSync("./supported");
     mkdirSync("./src/generated");
     writeFileSync(
       "./src/generated/index.ts",
@@ -122,6 +124,10 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         });
       });
 
+    writeFileSync(
+      `./supported/${props.name}.json`,
+      JSON.stringify(Array.from(elements.keys()), null, 2),
+    );
     writeFileSync(
       `./src/generated/${props.name}.ts`,
       `// file generated from ${props.src}
