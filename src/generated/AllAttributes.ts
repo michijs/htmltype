@@ -510,6 +510,14 @@ export interface AllAttributes {
    * This attribute contains the value for the [`http-equiv`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv) or [`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-name) attribute, depending on which is used. */
   content?: ValueSets["default"];
   /**
+   * An enumerated attribute indicating if the element should be editable by the user. If so, the browser modifies its widget to allow editing. The attribute must take one of the following values:
+   *
+   * *   `true` or the _empty string_, which indicates that the element must be editable;
+   * *   `false`, which indicates that the element must not be editable.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Global_attributes/contenteditable} */
+  contenteditable?: ValueSets["default"];
+  /**
    * The contentScriptType attribute on the <svg> element specifies the default scripting language for the given document fragment.
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/contentScriptType) */
@@ -519,14 +527,6 @@ export interface AllAttributes {
    *
    * [MDN References](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/contentStyleType) */
   contentStyleType?: ValueSets["default"];
-  /**
-   * An enumerated attribute indicating if the element should be editable by the user. If so, the browser modifies its widget to allow editing. The attribute must take one of the following values:
-   *
-   * *   `true` or the _empty string_, which indicates that the element must be editable;
-   * *   `false`, which indicates that the element must not be editable.
-   *
-   * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Global_attributes/contenteditable} */
-  contenteditable?: ValueSets["default"];
   /**
    * The `[**id**](#attr-id)` of a [`<menu>`](https://developer.mozilla.org/docs/Web/HTML/Element/menu "The HTML <menu> element represents a group of commands that a user can perform or activate. This includes both list menus, which might appear across the top of a screen, as well as context menus, such as those that might appear underneath a button after it has been clicked.") to use as the contextual menu for this element.
    *

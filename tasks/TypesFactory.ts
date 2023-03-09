@@ -157,7 +157,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
            : ""
        }
        ${Array.from(elements)
-         .sort()
+         .sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
          .map(
            ([key, value]) =>
              `export interface ${getInterfaceHelperName(
@@ -168,7 +168,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
          .join("\n")}
        export interface ${props.name} {
          ${Array.from(elements)
-           .sort()
+           .sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
            .map(
              ([key, value]) =>
                `${getJSDoc({
@@ -193,7 +193,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       import { CSSProperties } from '../types'
       export interface AllAttributes {
         ${Array.from(this.attributes)
-          .sort()
+          .sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
           .map(
             ([key, value]) =>
               `${getJSDoc({ name: key, ...value })}${getPropertyName(
@@ -207,7 +207,12 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       "./src/generated/ValueSets.ts",
       `export interface ValueSets {
         ${Array.from(this.valueSets.entries())
-          .sort()
+          .sort((a, b) =>
+            a[0]
+              .toString()
+              .toLowerCase()
+              .localeCompare(b[0].toString().toLowerCase()),
+          )
           .map(
             ([name, value]) =>
               `${getPropertyName(name)}: ${value.join(" | ")};`,
