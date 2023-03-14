@@ -1,138 +1,50 @@
 import { TypesFactory } from "./TypesFactory";
 import htmlData from "@vscode/web-custom-data/data/browsers.html-data.json";
-import svgData from "svg/html.html-data.json";
-import mathmlData from "mathml/dist/mathml.json";
+import svgData from "@michijs/vscode-svg/dist/svg.json";
+import svgAttributeSets from "@michijs/vscode-svg/dist/attributeSets.json";
+import mathmlData from "@michijs/vscode-mathml/dist/mathml.json";
+
+htmlData.tags.push(
+  ...([
+    {
+      name: "slot",
+      description:
+        "The slot element is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.",
+      attributes: [
+        {
+          name: "name",
+        },
+      ],
+    },
+    {
+      name: "data",
+      description:
+        "The data element links a given piece of content with a machine-readable translation.",
+      attributes: [
+        {
+          name: "value",
+        },
+      ],
+    },
+    {
+      name: "hgroup",
+      description:
+        "The hgroup element represents a heading and related content. It groups a single h1–h6 element with one or more p.",
+      attributes: [],
+    },
+    {
+      name: "menu",
+      description:
+        "The menu element represents an unordered list of interactive items.",
+      attributes: [],
+    },
+  ] as any),
+);
 
 const factory = new TypesFactory();
 
-const globalAttributes = htmlData.globalAttributes.filter(
-  (x) => !x.name.startsWith("on"),
-);
-
-const htmlAttributesAlias = {
-  GlobalAttributes: globalAttributes.map((x) => x.name),
-};
-
-const svgAttributeAlias = {
-  SVGCoreAttributes: [
-    "id",
-    // 'lang',
-    "tabindex",
-    // 'xml:base',
-    "xml:lang",
-    "xml:space",
-  ],
-  StyleAttributes: ["style", "class"],
-  // SVGConditionalProcessingAttributes: ['requiredExtensions', 'systemLanguage'],
-  SVGPresentationAttributes: [
-    "alignment-baseline",
-    "baseline-shift",
-    "clip",
-    "clip-path",
-    "clip-rule",
-    "color",
-    "color-interpolation",
-    "color-interpolation-filters",
-    "color-profile",
-    "color-rendering",
-    "cursor",
-    "direction",
-    "display",
-    "dominant-baseline",
-    // enable-background
-    "fill",
-    "fill-opacity",
-    "fill-rule",
-    "filter",
-    "flood-color",
-    "flood-opacity",
-    "font-family",
-    "font-size",
-    "font-size-adjust",
-    "font-stretch",
-    "font-style",
-    "font-variant",
-    "font-weight",
-    // "glyph-orientation-horizontal",
-    // "glyph-orientation-vertical",
-    "image-rendering",
-    "kerning",
-    "letter-spacing",
-    "lighting-color",
-    // "line-height",
-    // "marker",
-    "marker-end",
-    "marker-mid",
-    "marker-start",
-    "mask",
-    "opacity",
-    "overflow",
-    // "paint-order",
-    "pointer-events",
-    "shape-rendering",
-    "stop-color",
-    "stop-opacity",
-    "stroke",
-    "stroke-dasharray",
-    "stroke-dashoffset",
-    "stroke-linecap",
-    "stroke-linejoin",
-    "stroke-miterlimit",
-    "stroke-opacity",
-    "stroke-width",
-    "text-anchor",
-    "text-decoration",
-    "text-rendering",
-    "transform",
-    // "transform-origin",
-    // "unicode-bidi",
-    "vector-effect",
-    "visibility",
-    // "white-space",
-    "word-spacing",
-    "writing-mode",
-  ],
-  XLinkAttributes: [
-    "xlink:href",
-    // 'xlink:type',
-    // 'xlink:role',
-    // 'xlink:arcrole',
-    "xlink:title",
-    "xlink:show",
-    // 'xlink:actuate'
-  ],
-  AnimationAttributeTargetAttributes: ["attributeType", "attributeName"],
-  SVGFilterPrimitiveAttributes: ["x", "y", "height", "result", "width"],
-  // SVGTransferFunctionAttributes: ['type',
-  // 'tableValues',
-  // 'intercept',
-  // 'amplitude',
-  // 'exponent'],
-  SVGAnimationTimingAttributes: [
-    "begin",
-    "dur",
-    "end",
-    "min",
-    "max",
-    "restart",
-    "repeatCount",
-    "repeatDur",
-    "fill",
-  ],
-  SVGAnimationAdditionAttributes: ["additive", "accumulate"],
-  SVGAnimationValueAttributes: [
-    "calcMode",
-    "keyTimes",
-    "keySplines",
-    "from",
-    "to",
-    // 'by'
-  ],
-};
-
 factory.valueSets.set("v", ["boolean"]);
 
-factory.addAttributes(globalAttributes);
 factory.addTypesFrom({
   name: "HTMLElements",
   src: "@vscode/web-custom-data NPM package",
@@ -141,18 +53,18 @@ factory.addTypesFrom({
     'import { GlobalEvents, WindowEvents } from "../Events"',
     'import { DataGlobalAttributes } from "../types"',
   ],
-  getAdditionalElementAttributes: (el) => {
+  getElementInterface: (el) =>
+    ["param", "rb"].includes(el)
+      ? "HTMLElement"
+      : `HTMLElementTagNameMap['${el}']`,
+  getAdditionalElementAttributes: (el, elementInterface) => {
     const attributeSets = [
       "DataGlobalAttributes",
-      `GlobalEvents<HTMLElementTagNameMap['${el}']>`,
-      "GlobalAttributes",
+      `GlobalEvents<${elementInterface}>`,
     ];
-    if (el === "body")
-      attributeSets.push(`WindowEvents<HTMLElementTagNameMap['${el}']>`);
+    if (el === "body") attributeSets.push(`WindowEvents<${elementInterface}>`);
     return attributeSets;
   },
-  attributesAlias: htmlAttributesAlias,
-  notSupportedTags: ["rb", "param"],
 });
 factory.addTypesFrom({
   name: "MathMLElements",
@@ -162,46 +74,30 @@ factory.addTypesFrom({
     'import { MathMLEvents } from "../Events"',
     'import { DataGlobalAttributes } from "../types"',
   ],
-  getAdditionalElementAttributes: () => {
-    return ["DataGlobalAttributes", "MathMLEvents"];
+  getElementInterface: () => "MathMLEvents",
+  getAdditionalElementAttributes: (_el, elementInterface) => {
+    return ["DataGlobalAttributes", elementInterface];
   },
 });
 factory.addTypesFrom({
   name: "SVGElements",
   src: "github:lishu/vscode-svg2",
   documentationSrc: svgData,
-  attributesAlias: svgAttributeAlias,
+  attributesAlias: Object.entries(svgAttributeSets).reduce(
+    (previousValue, [key, value]) => {
+      previousValue[key] = value.map((x) => x.name);
+      return previousValue;
+    },
+    {} as Record<string, string[]>,
+  ),
   additionalImports: [
     'import { SVGEvents } from "../Events"',
     'import { DataGlobalAttributes } from "../types"',
   ],
-  getAdditionalElementAttributes: (el) => {
-    return ["DataGlobalAttributes", `SVGEvents<SVGElementTagNameMap['${el}']>`];
+  getElementInterface: (el) =>
+    ["discard"].includes(el) ? "SVGElement" : `SVGElementTagNameMap['${el}']`,
+  getAdditionalElementAttributes: (_el, elementInterface) => {
+    return ["DataGlobalAttributes", `SVGEvents<${elementInterface}>`];
   },
-  getAttributes(tag) {
-    // Patch for transform not beign present on SVGPresentationAttributes
-    if (tag.attributes.find((x) => x.name === "alignment-baseline"))
-      if (!tag.attributes.find((x) => x.name === "transform"))
-        tag.attributes.push({
-          name: "transform",
-        });
-    // Patch for result not beign present on SVGFilterPrimitiveAttributes
-    if (tag.attributes.find((x) => x.name === "x"))
-      if (!tag.attributes.find((x) => x.name === "result"))
-        tag.attributes.push({
-          name: "result",
-        });
-
-    return tag.attributes;
-  },
-  notSupportedTags: [
-    "animateColor",
-    "color-profile",
-    "discard",
-    "font",
-    "glyph",
-    "hatch",
-    "hatchpath",
-  ],
 });
 factory.generateAttributesAndValueSets();

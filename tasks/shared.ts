@@ -13,12 +13,7 @@ const getReferences = (currentValue: JSDocInfo) =>
 const getDescription = (currentValue: JSDocInfo) => {
   const description = ((currentValue?.description as MarkupContent)?.value ??
     currentValue?.description) as string | undefined;
-  return description
-    ? `* ${description
-        .replace("🧧 *Provide by SVG extension.*\n\n", "")
-        .replaceAll("\n", "\n* ")
-        .replace("\n[MDN", "\n* [MDN")}`
-    : "";
+  return description ? `* ${description.replaceAll("\n", "\n* ")}` : "";
 };
 
 export const getJSDoc = (currentValue: JSDocInfo) =>

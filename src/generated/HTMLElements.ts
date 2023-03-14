@@ -4,84 +4,85 @@ import { AllAttributes } from "./AllAttributes";
 import { GlobalEvents, WindowEvents } from "../Events";
 import { DataGlobalAttributes } from "../types";
 
-type GlobalAttributes = Pick<
-  AllAttributes,
-  | "accesskey"
-  | "autocapitalize"
-  | "class"
-  | "contenteditable"
-  | "contextmenu"
-  | "dir"
-  | "draggable"
-  | "dropzone"
-  | "exportparts"
-  | "hidden"
-  | "id"
-  | "inputmode"
-  | "is"
-  | "itemid"
-  | "itemprop"
-  | "itemref"
-  | "itemscope"
-  | "itemtype"
-  | "lang"
-  | "part"
-  | "role"
-  | "slot"
-  | "spellcheck"
-  | "style"
-  | "tabindex"
-  | "title"
-  | "translate"
-  | "aria-activedescendant"
-  | "aria-atomic"
-  | "aria-autocomplete"
-  | "aria-busy"
-  | "aria-checked"
-  | "aria-colcount"
-  | "aria-colindex"
-  | "aria-colspan"
-  | "aria-controls"
-  | "aria-current"
-  | "aria-describedby"
-  | "aria-disabled"
-  | "aria-dropeffect"
-  | "aria-errormessage"
-  | "aria-expanded"
-  | "aria-flowto"
-  | "aria-grabbed"
-  | "aria-haspopup"
-  | "aria-hidden"
-  | "aria-invalid"
-  | "aria-label"
-  | "aria-labelledby"
-  | "aria-level"
-  | "aria-live"
-  | "aria-modal"
-  | "aria-multiline"
-  | "aria-multiselectable"
-  | "aria-orientation"
-  | "aria-owns"
-  | "aria-placeholder"
-  | "aria-posinset"
-  | "aria-pressed"
-  | "aria-readonly"
-  | "aria-relevant"
-  | "aria-required"
-  | "aria-roledescription"
-  | "aria-rowcount"
-  | "aria-rowindex"
-  | "aria-rowspan"
-  | "aria-selected"
-  | "aria-setsize"
-  | "aria-sort"
-  | "aria-valuemax"
-  | "aria-valuemin"
-  | "aria-valuenow"
-  | "aria-valuetext"
-  | "aria-details"
-  | "aria-keyshortcuts"
->;
+interface GlobalAttributes
+  extends Pick<
+    AllAttributes,
+    | "accesskey"
+    | "autocapitalize"
+    | "class"
+    | "contenteditable"
+    | "contextmenu"
+    | "dir"
+    | "draggable"
+    | "dropzone"
+    | "exportparts"
+    | "hidden"
+    | "id"
+    | "inputmode"
+    | "is"
+    | "itemid"
+    | "itemprop"
+    | "itemref"
+    | "itemscope"
+    | "itemtype"
+    | "lang"
+    | "part"
+    | "role"
+    | "slot"
+    | "spellcheck"
+    | "style"
+    | "tabindex"
+    | "title"
+    | "translate"
+    | "aria-activedescendant"
+    | "aria-atomic"
+    | "aria-autocomplete"
+    | "aria-busy"
+    | "aria-checked"
+    | "aria-colcount"
+    | "aria-colindex"
+    | "aria-colspan"
+    | "aria-controls"
+    | "aria-current"
+    | "aria-describedby"
+    | "aria-disabled"
+    | "aria-dropeffect"
+    | "aria-errormessage"
+    | "aria-expanded"
+    | "aria-flowto"
+    | "aria-grabbed"
+    | "aria-haspopup"
+    | "aria-hidden"
+    | "aria-invalid"
+    | "aria-label"
+    | "aria-labelledby"
+    | "aria-level"
+    | "aria-live"
+    | "aria-modal"
+    | "aria-multiline"
+    | "aria-multiselectable"
+    | "aria-orientation"
+    | "aria-owns"
+    | "aria-placeholder"
+    | "aria-posinset"
+    | "aria-pressed"
+    | "aria-readonly"
+    | "aria-relevant"
+    | "aria-required"
+    | "aria-roledescription"
+    | "aria-rowcount"
+    | "aria-rowindex"
+    | "aria-rowspan"
+    | "aria-selected"
+    | "aria-setsize"
+    | "aria-sort"
+    | "aria-valuemax"
+    | "aria-valuemin"
+    | "aria-valuenow"
+    | "aria-valuetext"
+    | "aria-details"
+    | "aria-keyshortcuts"
+  > {}
 export interface HTMLElementA
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["a"]>,
@@ -172,8 +173,8 @@ export interface HTMLElementBlockquote
 export interface HTMLElementBody
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["body"]>,
-    GlobalAttributes,
     WindowEvents<HTMLElementTagNameMap["body"]>,
+    GlobalAttributes,
     Pick<
       AllAttributes,
       | "alink"
@@ -239,6 +240,11 @@ export interface HTMLElementColgroup
     GlobalEvents<HTMLElementTagNameMap["colgroup"]>,
     GlobalAttributes,
     Pick<AllAttributes, "span" | "align"> {}
+export interface HTMLElementData
+  extends DataGlobalAttributes,
+    GlobalEvents<HTMLElementTagNameMap["data"]>,
+    GlobalAttributes,
+    Pick<AllAttributes, "value"> {}
 export interface HTMLElementDatalist
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["datalist"]>,
@@ -354,6 +360,10 @@ export interface HTMLElementHead
 export interface HTMLElementHeader
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["header"]>,
+    GlobalAttributes {}
+export interface HTMLElementHgroup
+  extends DataGlobalAttributes,
+    GlobalEvents<HTMLElementTagNameMap["hgroup"]>,
     GlobalAttributes {}
 export interface HTMLElementHr
   extends DataGlobalAttributes,
@@ -507,6 +517,10 @@ export interface HTMLElementMark
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["mark"]>,
     GlobalAttributes {}
+export interface HTMLElementMenu
+  extends DataGlobalAttributes,
+    GlobalEvents<HTMLElementTagNameMap["menu"]>,
+    GlobalAttributes {}
 export interface HTMLElementMeta
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["meta"]>,
@@ -578,6 +592,11 @@ export interface HTMLElementP
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["p"]>,
     GlobalAttributes {}
+export interface HTMLElementParam
+  extends DataGlobalAttributes,
+    GlobalEvents<HTMLElement>,
+    GlobalAttributes,
+    Pick<AllAttributes, "name" | "value" | "type" | "valuetype"> {}
 export interface HTMLElementPicture
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["picture"]>,
@@ -597,6 +616,10 @@ export interface HTMLElementQ
     GlobalEvents<HTMLElementTagNameMap["q"]>,
     GlobalAttributes,
     Pick<AllAttributes, "cite"> {}
+export interface HTMLElementRb
+  extends DataGlobalAttributes,
+    GlobalEvents<HTMLElement>,
+    GlobalAttributes {}
 export interface HTMLElementRp
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["rp"]>,
@@ -654,6 +677,11 @@ export interface HTMLElementSelect
       | "required"
       | "size"
     > {}
+export interface HTMLElementSlot
+  extends DataGlobalAttributes,
+    GlobalEvents<HTMLElementTagNameMap["slot"]>,
+    GlobalAttributes,
+    Pick<AllAttributes, "name"> {}
 export interface HTMLElementSmall
   extends DataGlobalAttributes,
     GlobalEvents<HTMLElementTagNameMap["small"]>,
@@ -921,6 +949,9 @@ export interface HTMLElements {
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/colgroup} */
   colgroup: HTMLElementColgroup;
   /**
+   * The data element links a given piece of content with a machine-readable translation. */
+  data: HTMLElementData;
+  /**
    * The datalist element represents a set of option elements that represent predefined options for other controls. In the rendering, the datalist element represents nothing and it, along with its children, should be hidden.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/datalist} */
@@ -1041,6 +1072,9 @@ export interface HTMLElements {
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/header} */
   header: HTMLElementHeader;
   /**
+   * The hgroup element represents a heading and related content. It groups a single h1–h6 element with one or more p. */
+  hgroup: HTMLElementHgroup;
+  /**
    * The hr element represents a paragraph-level thematic break, e.g. a scene change in a story, or a transition to another topic within a section of a reference book.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/hr} */
@@ -1116,6 +1150,9 @@ export interface HTMLElements {
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/mark} */
   mark: HTMLElementMark;
   /**
+   * The menu element represents an unordered list of interactive items. */
+  menu: HTMLElementMenu;
+  /**
    * The meta element represents various kinds of metadata that cannot be expressed using the title, base, link, style, and script elements.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/meta} */
@@ -1166,6 +1203,11 @@ export interface HTMLElements {
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/p} */
   p: HTMLElementP;
   /**
+   * The param element defines parameters for plugins invoked by object elements. It does not represent anything on its own.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/param} */
+  param: HTMLElementParam;
+  /**
    * The picture element is a container which provides multiple sources to its contained img element to allow authors to declaratively control or give hints to the user agent about which image resource to use, based on the screen pixel density, viewport size, image format, and other factors. It represents its children.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/picture} */
@@ -1185,6 +1227,11 @@ export interface HTMLElements {
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/q} */
   q: HTMLElementQ;
+  /**
+   * The rb element marks the base text component of a ruby annotation. When it is the child of a ruby element, it doesn't represent anything itself, but its parent ruby element uses it as part of determining what it represents.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/rb} */
+  rb: HTMLElementRb;
   /**
    * The rp element is used to provide fallback text to be shown by user agents that don't support ruby annotations. One widespread convention is to provide parentheses around the ruby text component of a ruby annotation.
    *
@@ -1225,6 +1272,9 @@ export interface HTMLElements {
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/select} */
   select: HTMLElementSelect;
+  /**
+   * The slot element is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together. */
+  slot: HTMLElementSlot;
   /**
    * The small element represents side comments such as small print.
    *

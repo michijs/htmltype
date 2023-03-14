@@ -15,8 +15,11 @@ interface AddTypesFromProps {
   documentationSrc: Documentation;
   src: string;
   additionalImports?: string[];
-  notSupportedTags?: string[];
-  getAdditionalElementAttributes?: (tag: string) => string[];
+  getElementInterface: (tag: string) => string;
+  getAdditionalElementAttributes?: (
+    tag: string,
+    elementInterface: string,
+  ) => string[];
   getAttributes?: (tag: ITag) => ITag["attributes"];
 }
 
@@ -79,6 +82,19 @@ export type { AllAttributes } from "./AllAttributes";\n`,
   }
 
   addTypesFrom(props: AddTypesFromProps) {
+    const globalAttributes = props.documentationSrc.globalAttributes.filter(
+      (x) => !x.name.startsWith("on"),
+    );
+
+    const globalAttributesAlias = {
+      GlobalAttributes: globalAttributes.map((x) => x.name),
+    };
+    props.attributesAlias = {
+      ...globalAttributesAlias,
+      ...props.attributesAlias,
+    };
+    this.addAttributes(globalAttributes);
+
     const elements = new Map<string, ElementType>();
     this.valueSets.set(DEFAULT_VALUE_SET.key, DEFAULT_VALUE_SET.value);
     if (props.documentationSrc.valueSets) {
@@ -91,48 +107,58 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         );
       });
     }
-    props.documentationSrc.tags
-      .filter((x) => !props.notSupportedTags?.includes(x.name))
-      .forEach((x) => {
-        const attributes = (props.getAttributes?.(x) ?? x.attributes).filter(
-          (x) => !x.name.startsWith("on"),
+    props.documentationSrc.tags.forEach((x) => {
+      const attributes = (props.getAttributes?.(x) ?? x.attributes).filter(
+        (x) => !x.name.startsWith("on"),
+      );
+      this.addAttributes(attributes);
+      let attributesPick = attributes.map((x) => x.name);
+      const attributesAliases = new Array<string>();
+
+      if (props.attributesAlias)
+        Object.entries(props.attributesAlias).forEach(
+          ([alias, attributesInAlias]) => {
+            if (attributesInAlias.every((x) => attributesPick.includes(x))) {
+              attributesPick = attributesPick.filter(
+                (x) => !attributesInAlias.includes(x),
+              );
+              attributesAliases.push(alias);
+            }
+          },
         );
-        this.addAttributes(attributes);
-        let attributesPick = attributes.map((x) => x.name);
-        const attributesAliases = new Array<string>();
 
-        if (props.attributesAlias)
-          Object.entries(props.attributesAlias).forEach(
-            ([alias, attributesInAlias]) => {
-              if (attributesInAlias.every((x) => attributesPick.includes(x))) {
-                attributesPick = attributesPick.filter(
-                  (x) => !attributesInAlias.includes(x),
-                );
-                attributesAliases.push(alias);
-              }
-            },
-          );
+      const types = (
+        props.getAdditionalElementAttributes?.(
+          x.name,
+          props.getElementInterface(x.name),
+        ) ?? []
+      ).concat("GlobalAttributes");
 
-        const types = props.getAdditionalElementAttributes?.(x.name) ?? [];
+      if (attributesPick.length > 0)
+        types.push(
+          `Pick<AllAttributes, ${attributesPick
+            .map((x) => `"${x}"`)
+            .join("|")}>`,
+        );
+      if (attributesAliases.length > 0) types.push(...attributesAliases);
 
-        if (attributesPick.length > 0)
-          types.push(
-            `Pick<AllAttributes, ${attributesPick
-              .map((x) => `"${x}"`)
-              .join("|")}>`,
-          );
-        if (attributesAliases.length > 0) types.push(...attributesAliases);
-
-        elements.set(x.name, {
-          description: x.description,
-          references: x.references,
-          types,
-        });
+      elements.set(x.name, {
+        description: x.description,
+        references: x.references,
+        types,
       });
+    });
 
     writeFileSync(
       `./supported/${props.name}.json`,
-      JSON.stringify(Array.from(elements.keys()), null, 2),
+      JSON.stringify(
+        Array.from(elements.keys()).map((tagName) => ({
+          tagName,
+          elementInterface: props.getElementInterface(tagName),
+        })),
+        null,
+        2,
+      ),
     );
     appendFileSync(
       "./supported/index.js",
@@ -149,9 +175,9 @@ export type { AllAttributes } from "./AllAttributes";\n`,
            ? `\n\n${Object.entries(props.attributesAlias)
                 .map(
                   ([key, value]) =>
-                    `type ${key} = Pick<AllAttributes, ${value
+                    `interface ${key} extends Pick<AllAttributes, ${value
                       .map((x) => `"${x}"`)
-                      .join("|")}>;`,
+                      .join("|")}> {};`,
                 )
                 .join("\n")}`
            : ""

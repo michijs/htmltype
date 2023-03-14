@@ -1,62 +1,258 @@
 [
-  "animate",
-  "animateMotion",
-  "animateTransform",
-  "circle",
-  "clipPath",
-  "defs",
-  "desc",
-  "ellipse",
-  "feBlend",
-  "feColorMatrix",
-  "feComponentTransfer",
-  "feComposite",
-  "feConvolveMatrix",
-  "feDiffuseLighting",
-  "feDisplacementMap",
-  "feDistantLight",
-  "feDropShadow",
-  "feFlood",
-  "feFuncA",
-  "feFuncB",
-  "feFuncG",
-  "feFuncR",
-  "feGaussianBlur",
-  "feImage",
-  "feMerge",
-  "feMergeNode",
-  "feMorphology",
-  "feOffset",
-  "fePointLight",
-  "feSpecularLighting",
-  "feSpotLight",
-  "feTile",
-  "feTurbulence",
-  "filter",
-  "foreignObject",
-  "g",
-  "image",
-  "line",
-  "linearGradient",
-  "marker",
-  "metadata",
-  "mpath",
-  "path",
-  "pattern",
-  "polygon",
-  "polyline",
-  "radialGradient",
-  "rect",
-  "script",
-  "set",
-  "stop",
-  "style",
-  "svg",
-  "switch",
-  "symbol",
-  "text",
-  "textPath",
-  "title",
-  "use",
-  "view"
+  {
+    "tagName": "a",
+    "elementInterface": "SVGElementTagNameMap['a']"
+  },
+  {
+    "tagName": "animate",
+    "elementInterface": "SVGElementTagNameMap['animate']"
+  },
+  {
+    "tagName": "animateMotion",
+    "elementInterface": "SVGElementTagNameMap['animateMotion']"
+  },
+  {
+    "tagName": "animateTransform",
+    "elementInterface": "SVGElementTagNameMap['animateTransform']"
+  },
+  {
+    "tagName": "circle",
+    "elementInterface": "SVGElementTagNameMap['circle']"
+  },
+  {
+    "tagName": "clipPath",
+    "elementInterface": "SVGElementTagNameMap['clipPath']"
+  },
+  {
+    "tagName": "defs",
+    "elementInterface": "SVGElementTagNameMap['defs']"
+  },
+  {
+    "tagName": "desc",
+    "elementInterface": "SVGElementTagNameMap['desc']"
+  },
+  {
+    "tagName": "discard",
+    "elementInterface": "SVGElement"
+  },
+  {
+    "tagName": "ellipse",
+    "elementInterface": "SVGElementTagNameMap['ellipse']"
+  },
+  {
+    "tagName": "feBlend",
+    "elementInterface": "SVGElementTagNameMap['feBlend']"
+  },
+  {
+    "tagName": "feColorMatrix",
+    "elementInterface": "SVGElementTagNameMap['feColorMatrix']"
+  },
+  {
+    "tagName": "feComponentTransfer",
+    "elementInterface": "SVGElementTagNameMap['feComponentTransfer']"
+  },
+  {
+    "tagName": "feComposite",
+    "elementInterface": "SVGElementTagNameMap['feComposite']"
+  },
+  {
+    "tagName": "feConvolveMatrix",
+    "elementInterface": "SVGElementTagNameMap['feConvolveMatrix']"
+  },
+  {
+    "tagName": "feDiffuseLighting",
+    "elementInterface": "SVGElementTagNameMap['feDiffuseLighting']"
+  },
+  {
+    "tagName": "feDisplacementMap",
+    "elementInterface": "SVGElementTagNameMap['feDisplacementMap']"
+  },
+  {
+    "tagName": "feDistantLight",
+    "elementInterface": "SVGElementTagNameMap['feDistantLight']"
+  },
+  {
+    "tagName": "feDropShadow",
+    "elementInterface": "SVGElementTagNameMap['feDropShadow']"
+  },
+  {
+    "tagName": "feFlood",
+    "elementInterface": "SVGElementTagNameMap['feFlood']"
+  },
+  {
+    "tagName": "feFuncA",
+    "elementInterface": "SVGElementTagNameMap['feFuncA']"
+  },
+  {
+    "tagName": "feFuncB",
+    "elementInterface": "SVGElementTagNameMap['feFuncB']"
+  },
+  {
+    "tagName": "feFuncG",
+    "elementInterface": "SVGElementTagNameMap['feFuncG']"
+  },
+  {
+    "tagName": "feFuncR",
+    "elementInterface": "SVGElementTagNameMap['feFuncR']"
+  },
+  {
+    "tagName": "feGaussianBlur",
+    "elementInterface": "SVGElementTagNameMap['feGaussianBlur']"
+  },
+  {
+    "tagName": "feImage",
+    "elementInterface": "SVGElementTagNameMap['feImage']"
+  },
+  {
+    "tagName": "feMerge",
+    "elementInterface": "SVGElementTagNameMap['feMerge']"
+  },
+  {
+    "tagName": "feMergeNode",
+    "elementInterface": "SVGElementTagNameMap['feMergeNode']"
+  },
+  {
+    "tagName": "feMorphology",
+    "elementInterface": "SVGElementTagNameMap['feMorphology']"
+  },
+  {
+    "tagName": "feOffset",
+    "elementInterface": "SVGElementTagNameMap['feOffset']"
+  },
+  {
+    "tagName": "fePointLight",
+    "elementInterface": "SVGElementTagNameMap['fePointLight']"
+  },
+  {
+    "tagName": "feSpecularLighting",
+    "elementInterface": "SVGElementTagNameMap['feSpecularLighting']"
+  },
+  {
+    "tagName": "feSpotLight",
+    "elementInterface": "SVGElementTagNameMap['feSpotLight']"
+  },
+  {
+    "tagName": "feTile",
+    "elementInterface": "SVGElementTagNameMap['feTile']"
+  },
+  {
+    "tagName": "feTurbulence",
+    "elementInterface": "SVGElementTagNameMap['feTurbulence']"
+  },
+  {
+    "tagName": "filter",
+    "elementInterface": "SVGElementTagNameMap['filter']"
+  },
+  {
+    "tagName": "foreignObject",
+    "elementInterface": "SVGElementTagNameMap['foreignObject']"
+  },
+  {
+    "tagName": "g",
+    "elementInterface": "SVGElementTagNameMap['g']"
+  },
+  {
+    "tagName": "image",
+    "elementInterface": "SVGElementTagNameMap['image']"
+  },
+  {
+    "tagName": "line",
+    "elementInterface": "SVGElementTagNameMap['line']"
+  },
+  {
+    "tagName": "linearGradient",
+    "elementInterface": "SVGElementTagNameMap['linearGradient']"
+  },
+  {
+    "tagName": "marker",
+    "elementInterface": "SVGElementTagNameMap['marker']"
+  },
+  {
+    "tagName": "mask",
+    "elementInterface": "SVGElementTagNameMap['mask']"
+  },
+  {
+    "tagName": "metadata",
+    "elementInterface": "SVGElementTagNameMap['metadata']"
+  },
+  {
+    "tagName": "mpath",
+    "elementInterface": "SVGElementTagNameMap['mpath']"
+  },
+  {
+    "tagName": "path",
+    "elementInterface": "SVGElementTagNameMap['path']"
+  },
+  {
+    "tagName": "pattern",
+    "elementInterface": "SVGElementTagNameMap['pattern']"
+  },
+  {
+    "tagName": "polygon",
+    "elementInterface": "SVGElementTagNameMap['polygon']"
+  },
+  {
+    "tagName": "polyline",
+    "elementInterface": "SVGElementTagNameMap['polyline']"
+  },
+  {
+    "tagName": "radialGradient",
+    "elementInterface": "SVGElementTagNameMap['radialGradient']"
+  },
+  {
+    "tagName": "rect",
+    "elementInterface": "SVGElementTagNameMap['rect']"
+  },
+  {
+    "tagName": "script",
+    "elementInterface": "SVGElementTagNameMap['script']"
+  },
+  {
+    "tagName": "set",
+    "elementInterface": "SVGElementTagNameMap['set']"
+  },
+  {
+    "tagName": "stop",
+    "elementInterface": "SVGElementTagNameMap['stop']"
+  },
+  {
+    "tagName": "style",
+    "elementInterface": "SVGElementTagNameMap['style']"
+  },
+  {
+    "tagName": "svg",
+    "elementInterface": "SVGElementTagNameMap['svg']"
+  },
+  {
+    "tagName": "switch",
+    "elementInterface": "SVGElementTagNameMap['switch']"
+  },
+  {
+    "tagName": "symbol",
+    "elementInterface": "SVGElementTagNameMap['symbol']"
+  },
+  {
+    "tagName": "text",
+    "elementInterface": "SVGElementTagNameMap['text']"
+  },
+  {
+    "tagName": "textPath",
+    "elementInterface": "SVGElementTagNameMap['textPath']"
+  },
+  {
+    "tagName": "title",
+    "elementInterface": "SVGElementTagNameMap['title']"
+  },
+  {
+    "tagName": "tspan",
+    "elementInterface": "SVGElementTagNameMap['tspan']"
+  },
+  {
+    "tagName": "use",
+    "elementInterface": "SVGElementTagNameMap['use']"
+  },
+  {
+    "tagName": "view",
+    "elementInterface": "SVGElementTagNameMap['view']"
+  }
 ]

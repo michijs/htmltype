@@ -36,4 +36,5 @@ export interface Documentation {
   tags: ITag[];
   version: number;
   valueSets?: Value[];
+  globalAttributes: Attribute[];
 }

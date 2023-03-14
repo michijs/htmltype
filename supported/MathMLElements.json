@@ -1,27 +1,102 @@
 [
-  "math",
-  "merror",
-  "mfrac",
-  "mi",
-  "mmultiscripts",
-  "mn",
-  "mo",
-  "mover",
-  "mpadded",
-  "mphantom",
-  "mroot",
-  "mrow",
-  "ms",
-  "semantics",
-  "mspace",
-  "msqrt",
-  "mstyle",
-  "msub",
-  "msubsup",
-  "mtable",
-  "mtd",
-  "mtext",
-  "mtr",
-  "munder",
-  "munderover"
+  {
+    "tagName": "math",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "merror",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mfrac",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mi",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mmultiscripts",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mn",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mo",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mover",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mpadded",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mphantom",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mroot",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mrow",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "ms",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "semantics",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mspace",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "msqrt",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mstyle",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "msub",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "msubsup",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mtable",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mtd",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mtext",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "mtr",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "munder",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "munderover",
+    "elementInterface": "MathMLEvents"
+  }
 ]

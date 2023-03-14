@@ -4,25 +4,41 @@ import { AllAttributes } from "./AllAttributes";
 import { MathMLEvents } from "../Events";
 import { DataGlobalAttributes } from "../types";
 
+interface GlobalAttributes
+  extends Pick<
+    AllAttributes,
+    "dir" | "displaystyle" | "href" | "id" | "mathvariant" | "scriptlevel"
+  > {}
 export interface MathMLElementMath
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "display" | "xmlns"> {}
 export interface MathMLElementMerror
   extends DataGlobalAttributes,
-    MathMLEvents {}
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMfrac
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "linethickness"> {}
-export interface MathMLElementMi extends DataGlobalAttributes, MathMLEvents {}
+export interface MathMLElementMi
+  extends DataGlobalAttributes,
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMmultiscripts
   extends DataGlobalAttributes,
-    MathMLEvents {}
-export interface MathMLElementMn extends DataGlobalAttributes, MathMLEvents {}
+    MathMLEvents,
+    GlobalAttributes {}
+export interface MathMLElementMn
+  extends DataGlobalAttributes,
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMo
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<
       AllAttributes,
       | "fence"
@@ -39,58 +55,82 @@ export interface MathMLElementMo
 export interface MathMLElementMover
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "accent"> {}
 export interface MathMLElementMpadded
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "depth" | "height" | "lspace" | "voffset" | "width"> {}
 export interface MathMLElementMphantom
   extends DataGlobalAttributes,
-    MathMLEvents {}
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMroot
   extends DataGlobalAttributes,
-    MathMLEvents {}
-export interface MathMLElementMrow extends DataGlobalAttributes, MathMLEvents {}
+    MathMLEvents,
+    GlobalAttributes {}
+export interface MathMLElementMrow
+  extends DataGlobalAttributes,
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMs
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "lquote" | "rquote"> {}
 export interface MathMLElementMspace
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "depth" | "height" | "width"> {}
 export interface MathMLElementMsqrt
   extends DataGlobalAttributes,
-    MathMLEvents {}
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMstyle
   extends DataGlobalAttributes,
-    MathMLEvents {}
-export interface MathMLElementMsub extends DataGlobalAttributes, MathMLEvents {}
+    MathMLEvents,
+    GlobalAttributes {}
+export interface MathMLElementMsub
+  extends DataGlobalAttributes,
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMsubsup
   extends DataGlobalAttributes,
-    MathMLEvents {}
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMtable
   extends DataGlobalAttributes,
-    MathMLEvents {}
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMtd
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "columnspan" | "rowspan"> {}
 export interface MathMLElementMtext
   extends DataGlobalAttributes,
-    MathMLEvents {}
-export interface MathMLElementMtr extends DataGlobalAttributes, MathMLEvents {}
+    MathMLEvents,
+    GlobalAttributes {}
+export interface MathMLElementMtr
+  extends DataGlobalAttributes,
+    MathMLEvents,
+    GlobalAttributes {}
 export interface MathMLElementMunder
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "accentunder"> {}
 export interface MathMLElementMunderover
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "accent" | "accentunder"> {}
 export interface MathMLElementSemantics
   extends DataGlobalAttributes,
     MathMLEvents,
+    GlobalAttributes,
     Pick<AllAttributes, "encoding"> {}
 export interface MathMLElements {
   /**

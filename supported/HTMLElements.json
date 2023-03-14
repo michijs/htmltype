@@ -1,109 +1,454 @@
 [
-  "html",
-  "head",
-  "title",
-  "base",
-  "link",
-  "meta",
-  "style",
-  "body",
-  "article",
-  "section",
-  "nav",
-  "aside",
-  "h1",
-  "h2",
-  "h3",
-  "h4",
-  "h5",
-  "h6",
-  "header",
-  "footer",
-  "address",
-  "p",
-  "hr",
-  "pre",
-  "blockquote",
-  "ol",
-  "ul",
-  "li",
-  "dl",
-  "dt",
-  "dd",
-  "figure",
-  "figcaption",
-  "main",
-  "div",
-  "a",
-  "em",
-  "strong",
-  "small",
-  "s",
-  "cite",
-  "q",
-  "dfn",
-  "abbr",
-  "ruby",
-  "rt",
-  "rp",
-  "time",
-  "code",
-  "var",
-  "samp",
-  "kbd",
-  "sub",
-  "sup",
-  "i",
-  "b",
-  "u",
-  "mark",
-  "bdi",
-  "bdo",
-  "span",
-  "br",
-  "wbr",
-  "ins",
-  "del",
-  "picture",
-  "img",
-  "iframe",
-  "embed",
-  "object",
-  "video",
-  "audio",
-  "source",
-  "track",
-  "map",
-  "area",
-  "table",
-  "caption",
-  "colgroup",
-  "col",
-  "tbody",
-  "thead",
-  "tfoot",
-  "tr",
-  "td",
-  "th",
-  "form",
-  "label",
-  "input",
-  "button",
-  "select",
-  "datalist",
-  "optgroup",
-  "option",
-  "textarea",
-  "output",
-  "progress",
-  "meter",
-  "fieldset",
-  "legend",
-  "details",
-  "summary",
-  "dialog",
-  "script",
-  "noscript",
-  "template",
-  "canvas"
+  {
+    "tagName": "html",
+    "elementInterface": "HTMLElementTagNameMap['html']"
+  },
+  {
+    "tagName": "head",
+    "elementInterface": "HTMLElementTagNameMap['head']"
+  },
+  {
+    "tagName": "title",
+    "elementInterface": "HTMLElementTagNameMap['title']"
+  },
+  {
+    "tagName": "base",
+    "elementInterface": "HTMLElementTagNameMap['base']"
+  },
+  {
+    "tagName": "link",
+    "elementInterface": "HTMLElementTagNameMap['link']"
+  },
+  {
+    "tagName": "meta",
+    "elementInterface": "HTMLElementTagNameMap['meta']"
+  },
+  {
+    "tagName": "style",
+    "elementInterface": "HTMLElementTagNameMap['style']"
+  },
+  {
+    "tagName": "body",
+    "elementInterface": "HTMLElementTagNameMap['body']"
+  },
+  {
+    "tagName": "article",
+    "elementInterface": "HTMLElementTagNameMap['article']"
+  },
+  {
+    "tagName": "section",
+    "elementInterface": "HTMLElementTagNameMap['section']"
+  },
+  {
+    "tagName": "nav",
+    "elementInterface": "HTMLElementTagNameMap['nav']"
+  },
+  {
+    "tagName": "aside",
+    "elementInterface": "HTMLElementTagNameMap['aside']"
+  },
+  {
+    "tagName": "h1",
+    "elementInterface": "HTMLElementTagNameMap['h1']"
+  },
+  {
+    "tagName": "h2",
+    "elementInterface": "HTMLElementTagNameMap['h2']"
+  },
+  {
+    "tagName": "h3",
+    "elementInterface": "HTMLElementTagNameMap['h3']"
+  },
+  {
+    "tagName": "h4",
+    "elementInterface": "HTMLElementTagNameMap['h4']"
+  },
+  {
+    "tagName": "h5",
+    "elementInterface": "HTMLElementTagNameMap['h5']"
+  },
+  {
+    "tagName": "h6",
+    "elementInterface": "HTMLElementTagNameMap['h6']"
+  },
+  {
+    "tagName": "header",
+    "elementInterface": "HTMLElementTagNameMap['header']"
+  },
+  {
+    "tagName": "footer",
+    "elementInterface": "HTMLElementTagNameMap['footer']"
+  },
+  {
+    "tagName": "address",
+    "elementInterface": "HTMLElementTagNameMap['address']"
+  },
+  {
+    "tagName": "p",
+    "elementInterface": "HTMLElementTagNameMap['p']"
+  },
+  {
+    "tagName": "hr",
+    "elementInterface": "HTMLElementTagNameMap['hr']"
+  },
+  {
+    "tagName": "pre",
+    "elementInterface": "HTMLElementTagNameMap['pre']"
+  },
+  {
+    "tagName": "blockquote",
+    "elementInterface": "HTMLElementTagNameMap['blockquote']"
+  },
+  {
+    "tagName": "ol",
+    "elementInterface": "HTMLElementTagNameMap['ol']"
+  },
+  {
+    "tagName": "ul",
+    "elementInterface": "HTMLElementTagNameMap['ul']"
+  },
+  {
+    "tagName": "li",
+    "elementInterface": "HTMLElementTagNameMap['li']"
+  },
+  {
+    "tagName": "dl",
+    "elementInterface": "HTMLElementTagNameMap['dl']"
+  },
+  {
+    "tagName": "dt",
+    "elementInterface": "HTMLElementTagNameMap['dt']"
+  },
+  {
+    "tagName": "dd",
+    "elementInterface": "HTMLElementTagNameMap['dd']"
+  },
+  {
+    "tagName": "figure",
+    "elementInterface": "HTMLElementTagNameMap['figure']"
+  },
+  {
+    "tagName": "figcaption",
+    "elementInterface": "HTMLElementTagNameMap['figcaption']"
+  },
+  {
+    "tagName": "main",
+    "elementInterface": "HTMLElementTagNameMap['main']"
+  },
+  {
+    "tagName": "div",
+    "elementInterface": "HTMLElementTagNameMap['div']"
+  },
+  {
+    "tagName": "a",
+    "elementInterface": "HTMLElementTagNameMap['a']"
+  },
+  {
+    "tagName": "em",
+    "elementInterface": "HTMLElementTagNameMap['em']"
+  },
+  {
+    "tagName": "strong",
+    "elementInterface": "HTMLElementTagNameMap['strong']"
+  },
+  {
+    "tagName": "small",
+    "elementInterface": "HTMLElementTagNameMap['small']"
+  },
+  {
+    "tagName": "s",
+    "elementInterface": "HTMLElementTagNameMap['s']"
+  },
+  {
+    "tagName": "cite",
+    "elementInterface": "HTMLElementTagNameMap['cite']"
+  },
+  {
+    "tagName": "q",
+    "elementInterface": "HTMLElementTagNameMap['q']"
+  },
+  {
+    "tagName": "dfn",
+    "elementInterface": "HTMLElementTagNameMap['dfn']"
+  },
+  {
+    "tagName": "abbr",
+    "elementInterface": "HTMLElementTagNameMap['abbr']"
+  },
+  {
+    "tagName": "ruby",
+    "elementInterface": "HTMLElementTagNameMap['ruby']"
+  },
+  {
+    "tagName": "rb",
+    "elementInterface": "HTMLElement"
+  },
+  {
+    "tagName": "rt",
+    "elementInterface": "HTMLElementTagNameMap['rt']"
+  },
+  {
+    "tagName": "rp",
+    "elementInterface": "HTMLElementTagNameMap['rp']"
+  },
+  {
+    "tagName": "time",
+    "elementInterface": "HTMLElementTagNameMap['time']"
+  },
+  {
+    "tagName": "code",
+    "elementInterface": "HTMLElementTagNameMap['code']"
+  },
+  {
+    "tagName": "var",
+    "elementInterface": "HTMLElementTagNameMap['var']"
+  },
+  {
+    "tagName": "samp",
+    "elementInterface": "HTMLElementTagNameMap['samp']"
+  },
+  {
+    "tagName": "kbd",
+    "elementInterface": "HTMLElementTagNameMap['kbd']"
+  },
+  {
+    "tagName": "sub",
+    "elementInterface": "HTMLElementTagNameMap['sub']"
+  },
+  {
+    "tagName": "sup",
+    "elementInterface": "HTMLElementTagNameMap['sup']"
+  },
+  {
+    "tagName": "i",
+    "elementInterface": "HTMLElementTagNameMap['i']"
+  },
+  {
+    "tagName": "b",
+    "elementInterface": "HTMLElementTagNameMap['b']"
+  },
+  {
+    "tagName": "u",
+    "elementInterface": "HTMLElementTagNameMap['u']"
+  },
+  {
+    "tagName": "mark",
+    "elementInterface": "HTMLElementTagNameMap['mark']"
+  },
+  {
+    "tagName": "bdi",
+    "elementInterface": "HTMLElementTagNameMap['bdi']"
+  },
+  {
+    "tagName": "bdo",
+    "elementInterface": "HTMLElementTagNameMap['bdo']"
+  },
+  {
+    "tagName": "span",
+    "elementInterface": "HTMLElementTagNameMap['span']"
+  },
+  {
+    "tagName": "br",
+    "elementInterface": "HTMLElementTagNameMap['br']"
+  },
+  {
+    "tagName": "wbr",
+    "elementInterface": "HTMLElementTagNameMap['wbr']"
+  },
+  {
+    "tagName": "ins",
+    "elementInterface": "HTMLElementTagNameMap['ins']"
+  },
+  {
+    "tagName": "del",
+    "elementInterface": "HTMLElementTagNameMap['del']"
+  },
+  {
+    "tagName": "picture",
+    "elementInterface": "HTMLElementTagNameMap['picture']"
+  },
+  {
+    "tagName": "img",
+    "elementInterface": "HTMLElementTagNameMap['img']"
+  },
+  {
+    "tagName": "iframe",
+    "elementInterface": "HTMLElementTagNameMap['iframe']"
+  },
+  {
+    "tagName": "embed",
+    "elementInterface": "HTMLElementTagNameMap['embed']"
+  },
+  {
+    "tagName": "object",
+    "elementInterface": "HTMLElementTagNameMap['object']"
+  },
+  {
+    "tagName": "param",
+    "elementInterface": "HTMLElement"
+  },
+  {
+    "tagName": "video",
+    "elementInterface": "HTMLElementTagNameMap['video']"
+  },
+  {
+    "tagName": "audio",
+    "elementInterface": "HTMLElementTagNameMap['audio']"
+  },
+  {
+    "tagName": "source",
+    "elementInterface": "HTMLElementTagNameMap['source']"
+  },
+  {
+    "tagName": "track",
+    "elementInterface": "HTMLElementTagNameMap['track']"
+  },
+  {
+    "tagName": "map",
+    "elementInterface": "HTMLElementTagNameMap['map']"
+  },
+  {
+    "tagName": "area",
+    "elementInterface": "HTMLElementTagNameMap['area']"
+  },
+  {
+    "tagName": "table",
+    "elementInterface": "HTMLElementTagNameMap['table']"
+  },
+  {
+    "tagName": "caption",
+    "elementInterface": "HTMLElementTagNameMap['caption']"
+  },
+  {
+    "tagName": "colgroup",
+    "elementInterface": "HTMLElementTagNameMap['colgroup']"
+  },
+  {
+    "tagName": "col",
+    "elementInterface": "HTMLElementTagNameMap['col']"
+  },
+  {
+    "tagName": "tbody",
+    "elementInterface": "HTMLElementTagNameMap['tbody']"
+  },
+  {
+    "tagName": "thead",
+    "elementInterface": "HTMLElementTagNameMap['thead']"
+  },
+  {
+    "tagName": "tfoot",
+    "elementInterface": "HTMLElementTagNameMap['tfoot']"
+  },
+  {
+    "tagName": "tr",
+    "elementInterface": "HTMLElementTagNameMap['tr']"
+  },
+  {
+    "tagName": "td",
+    "elementInterface": "HTMLElementTagNameMap['td']"
+  },
+  {
+    "tagName": "th",
+    "elementInterface": "HTMLElementTagNameMap['th']"
+  },
+  {
+    "tagName": "form",
+    "elementInterface": "HTMLElementTagNameMap['form']"
+  },
+  {
+    "tagName": "label",
+    "elementInterface": "HTMLElementTagNameMap['label']"
+  },
+  {
+    "tagName": "input",
+    "elementInterface": "HTMLElementTagNameMap['input']"
+  },
+  {
+    "tagName": "button",
+    "elementInterface": "HTMLElementTagNameMap['button']"
+  },
+  {
+    "tagName": "select",
+    "elementInterface": "HTMLElementTagNameMap['select']"
+  },
+  {
+    "tagName": "datalist",
+    "elementInterface": "HTMLElementTagNameMap['datalist']"
+  },
+  {
+    "tagName": "optgroup",
+    "elementInterface": "HTMLElementTagNameMap['optgroup']"
+  },
+  {
+    "tagName": "option",
+    "elementInterface": "HTMLElementTagNameMap['option']"
+  },
+  {
+    "tagName": "textarea",
+    "elementInterface": "HTMLElementTagNameMap['textarea']"
+  },
+  {
+    "tagName": "output",
+    "elementInterface": "HTMLElementTagNameMap['output']"
+  },
+  {
+    "tagName": "progress",
+    "elementInterface": "HTMLElementTagNameMap['progress']"
+  },
+  {
+    "tagName": "meter",
+    "elementInterface": "HTMLElementTagNameMap['meter']"
+  },
+  {
+    "tagName": "fieldset",
+    "elementInterface": "HTMLElementTagNameMap['fieldset']"
+  },
+  {
+    "tagName": "legend",
+    "elementInterface": "HTMLElementTagNameMap['legend']"
+  },
+  {
+    "tagName": "details",
+    "elementInterface": "HTMLElementTagNameMap['details']"
+  },
+  {
+    "tagName": "summary",
+    "elementInterface": "HTMLElementTagNameMap['summary']"
+  },
+  {
+    "tagName": "dialog",
+    "elementInterface": "HTMLElementTagNameMap['dialog']"
+  },
+  {
+    "tagName": "script",
+    "elementInterface": "HTMLElementTagNameMap['script']"
+  },
+  {
+    "tagName": "noscript",
+    "elementInterface": "HTMLElementTagNameMap['noscript']"
+  },
+  {
+    "tagName": "template",
+    "elementInterface": "HTMLElementTagNameMap['template']"
+  },
+  {
+    "tagName": "canvas",
+    "elementInterface": "HTMLElementTagNameMap['canvas']"
+  },
+  {
+    "tagName": "slot",
+    "elementInterface": "HTMLElementTagNameMap['slot']"
+  },
+  {
+    "tagName": "data",
+    "elementInterface": "HTMLElementTagNameMap['data']"
+  },
+  {
+    "tagName": "hgroup",
+    "elementInterface": "HTMLElementTagNameMap['hgroup']"
+  },
+  {
+    "tagName": "menu",
+    "elementInterface": "HTMLElementTagNameMap['menu']"
+  }
 ]

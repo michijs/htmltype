@@ -1,16 +1,7 @@
 export interface ValueSets {
   40: "block" | "inline";
   41: "http://www.w3.org/1998/Math/MathML";
-  42: "CSS" | "XML" | "auto";
-  43: "indefinite";
-  44: "default" | "preserve";
-  45: "always" | "whenNotActive" | "never";
-  46: "remove" | "freeze";
-  47: "discrete" | "linear" | "paced" | "spline";
-  48: "replace" | "sum";
-  49: "none" | "sum";
-  50: "translate" | "scale" | "rotate" | "skewX" | "skewY";
-  51:
+  43:
     | "auto"
     | "baseline"
     | "before-edge"
@@ -24,12 +15,11 @@ export interface ValueSets {
     | "hanging"
     | "mathematical"
     | "inherit";
-  52: "auto" | "baseline" | "super" | "sub" | "inherit";
-  53: "none" | "inherit";
-  54: "nonzero" | "evenodd" | "inherit";
-  55: "auto" | "sRGB" | "linearRGB" | "inherit";
-  56: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
-  57:
+  44: "none" | "inherit";
+  45: "nonzero" | "evenodd" | "inherit";
+  46: "auto" | "sRGB" | "linearRGB" | "inherit";
+  47: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
+  48:
     | "auto"
     | "crosshair"
     | "default"
@@ -46,8 +36,8 @@ export interface ValueSets {
     | "wait"
     | "help"
     | "inherit";
-  58: "ltr" | "rtl" | "inherit";
-  59:
+  49: "ltr" | "rtl" | "inherit";
+  50:
     | "inline"
     | "block"
     | "list-item"
@@ -66,22 +56,19 @@ export interface ValueSets {
     | "table-caption"
     | "none"
     | "inherit";
-  60:
-    | "	auto"
-    | "use-script"
-    | "no-change"
-    | "reset-size"
-    | "ideographic"
+  51:
+    | "auto"
+    | "text-bottom"
     | "alphabetic"
-    | "hanging"
-    | "mathematical"
-    | "central"
+    | "ideographic"
     | "middle"
-    | "text-after-edge"
-    | "text-before-edge"
-    | "inherit";
-  61: "currentColor" | "inherit";
-  62:
+    | "central"
+    | "mathematical"
+    | "hanging"
+    | "text-top";
+  52: "remove" | "freeze";
+  53: "currentColor" | "inherit";
+  54:
     | "normal"
     | "wider"
     | "narrower"
@@ -94,9 +81,9 @@ export interface ValueSets {
     | "extra-expanded"
     | "ultra-expanded"
     | "inherit";
-  63: "normal" | "italic" | "oblique" | "inherit";
-  64: "normal" | "small-caps" | "inherit";
-  65:
+  55: "normal" | "italic" | "oblique" | "inherit";
+  56: "normal" | "small-caps" | "inherit";
+  57:
     | "normal"
     | "bold"
     | "bolder"
@@ -111,8 +98,8 @@ export interface ValueSets {
     | "800"
     | "900"
     | "inherit";
-  66: "visible" | "hidden" | "scroll" | "auto" | "inherit";
-  67:
+  58: "visible" | "hidden" | "scroll" | "auto" | "inherit";
+  59:
     | "visiblePainted"
     | "visibleFill"
     | "visibleStroke"
@@ -123,49 +110,98 @@ export interface ValueSets {
     | "all"
     | "none"
     | "inherit";
-  68:
+  60:
+    | "none meet"
+    | "none slice"
+    | "xMinYMin meet"
+    | "xMinYMin slice"
+    | "xMidYMin meet"
+    | "xMidYMin slice"
+    | "xMaxYMin meet"
+    | "xMaxYMin slice"
+    | "xMinYMid meet"
+    | "xMinYMid slice"
+    | "xMidYMid meet"
+    | "xMidYMid slice"
+    | "xMaxYMid meet"
+    | "xMaxYMid slice"
+    | "xMinYMax meet"
+    | "xMinYMax slice"
+    | "xMidYMax meet"
+    | "xMidYMax slice"
+    | "xMaxYMax meet"
+    | "xMaxYMax slice";
+  61:
     | "auto"
     | "optimizeSpeed"
     | "crispEdges"
     | "geometricPrecision"
     | "inherit";
-  69: "butt" | "round" | "square" | "inherit";
-  70: "miter" | "round" | "bevel" | "inherit";
-  71: "start" | "middle" | "end" | "inherit";
-  72: "none" | "underline" | "overline" | "line-through" | "blink" | "inherit";
-  73:
+  62: "butt" | "round" | "square" | "inherit";
+  63: "miter" | "round" | "bevel" | "inherit";
+  64: "start" | "middle" | "end" | "inherit";
+  65: "none" | "underline" | "overline" | "line-through" | "blink" | "inherit";
+  66:
     | "auto"
     | "optimizeSpeed"
     | "optimizeLegibility"
     | "geometricPrecision"
     | "inherit";
-  74:
+  67:
     | "none"
     | "non-scaling-stroke"
     | "non-scaling-size"
     | "non-rotation"
     | "fixed-position";
-  75: "visible" | "hidden" | "collapse" | "inherit";
-  76: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
-  77: "userSpaceOnUse" | "objectBoundingBox";
-  78:
+  68: "visible" | "hidden" | "collapse" | "inherit";
+  69: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
+  70: "none" | "sum";
+  71: "replace" | "sum";
+  72: "CSS" | "XML" | "auto";
+  73: "discrete" | "linear" | "paced" | "spline";
+  74: "indefinite";
+  75: "always" | "whenNotActive" | "never";
+  76: "userSpaceOnUse" | "objectBoundingBox";
+  77:
     | "SourceGraphic"
     | "SourceAlpha"
     | "BackgroundImage"
     | "BackgroundAlpha"
     | "FillPaint"
     | "StrokePaint";
-  79: "normal" | "multiply" | "screen" | "darken" | "lighten";
-  80: "matrix" | "saturate" | "hueRotate" | "luminanceToAlpha";
-  81: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
-  82: "duplicate" | "wrap" | "none";
-  83: "identity" | "table" | "discrete" | "linear" | "gamma";
-  84: "R" | "G" | "B" | "A";
-  85: "noStitch" | "stitch";
-  86: "fractalNoise" | "turbulence";
+  78: "normal" | "multiply" | "screen" | "darken" | "lighten";
+  79: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
+  80: "duplicate" | "wrap" | "none";
+  81: "R" | "G" | "B" | "A";
+  82: "identity" | "table" | "discrete" | "linear" | "gamma";
+  83:
+    | "none"
+    | "xMinYMin meet"
+    | "xMinYMin slice"
+    | "xMinYMid meet"
+    | "xMinYMid slice"
+    | "xMinYMax meet"
+    | "xMinYMax slice"
+    | "xMidYMin meet"
+    | "xMidYMin slice"
+    | "xMidYMid meet"
+    | "xMidYMid slice"
+    | "xMidYMax meet"
+    | "xMidYMax slice"
+    | "xMaxYMin meet"
+    | "xMaxYMin slice"
+    | "xMaxYMid meet"
+    | "xMaxYMid slice"
+    | "xMaxYMax meet"
+    | "xMaxYMax slice";
+  84: "noStitch" | "stitch";
+  85: "fractalNoise" | "turbulence";
+  86: "pad" | "reflect" | "repeat";
   87: "userSpaceOnUse" | "strokeWidth";
   88: "http://www.w3.org/2000/svg";
-  89: "http://www.w3.org/1999/xlink";
+  89: "spacing" | "spacingAndGlyphs";
+  90: "alignt" | "stretch";
+  91: "auto" | "exact";
   autocomplete: "inline" | "list" | "both" | "none";
   b: "true" | "false";
   bt: "button" | "submit" | "reset" | "menu";
@@ -278,6 +314,15 @@ export interface ValueSets {
   o: "on" | "off";
   orientation: "vertical" | "horizontal";
   pl: "none" | "metadata" | "auto";
+  referrerpoliciy:
+    | "no-referrer"
+    | "no-referrer-when-downgrade"
+    | "origin"
+    | "origin-when-cross-origin"
+    | "same-origin"
+    | "strict-origin"
+    | "strict-origin-when-cross-origin"
+    | "unsafe-url";
   referrerpolicy:
     | "no-referrer"
     | "no-referrer-when-downgrade"
