@@ -7,90 +7,12 @@ import { DataGlobalAttributes } from "../types";
 interface GlobalAttributes
   extends Pick<
     AllAttributes,
-    "class" | "id" | "lang" | "style" | "systemLanguage" | "tabindex"
+    "id" | "lang" | "tabindex" | "class" | "style" | "systemLanguage"
   > {}
-interface AnimationAdditionAttributes
-  extends Pick<AllAttributes, "accumulate" | "additive"> {}
-interface AnimationAttributeTargetAttributes
-  extends Pick<AllAttributes, "attributeName" | "attributeType"> {}
-interface AnimationTargetElementAttributes
-  extends Pick<AllAttributes, "href"> {}
-interface AnimationTimingAttributes
-  extends Pick<
-    AllAttributes,
-    | "begin"
-    | "dur"
-    | "end"
-    | "fill"
-    | "max"
-    | "min"
-    | "repeatCount"
-    | "repeatDur"
-    | "restart"
-  > {}
-interface AnimationValueAttributes
-  extends Pick<
-    AllAttributes,
-    "by" | "calcMode" | "from" | "keySplines" | "keyTimes" | "to" | "values"
-  > {}
-interface AriaAttributes
-  extends Pick<
-    AllAttributes,
-    | "aria-activedescendant"
-    | "aria-atomic"
-    | "aria-autocomplete"
-    | "aria-busy"
-    | "aria-checked"
-    | "aria-colcount"
-    | "aria-colindex"
-    | "aria-colspan"
-    | "aria-controls"
-    | "aria-current"
-    | "aria-describedby"
-    | "aria-details"
-    | "aria-disabled"
-    | "aria-dropeffect"
-    | "aria-errormessage"
-    | "aria-expanded"
-    | "aria-flowto"
-    | "aria-grabbed"
-    | "aria-haspopup"
-    | "aria-hidden"
-    | "aria-invalid"
-    | "aria-keyshortcuts"
-    | "aria-label"
-    | "aria-labelledby"
-    | "aria-level"
-    | "aria-live"
-    | "aria-modal"
-    | "aria-multiline"
-    | "aria-multiselectable"
-    | "aria-orientation"
-    | "aria-owns"
-    | "aria-placeholder"
-    | "aria-posinset"
-    | "aria-pressed"
-    | "aria-readonly"
-    | "aria-relevant"
-    | "aria-required"
-    | "aria-roledescription"
-    | "aria-rowcount"
-    | "aria-rowindex"
-    | "aria-rowspan"
-    | "aria-selected"
-    | "aria-setsize"
-    | "aria-sort"
-    | "aria-valuemax"
-    | "aria-valuemin"
-    | "aria-valuenow"
-    | "aria-valuetext"
-    | "role"
-  > {}
-interface FilterPrimitiveAttributes
-  extends Pick<AllAttributes, "height" | "result" | "width" | "x" | "y"> {}
 interface PresentationAttributes
   extends Pick<
     AllAttributes,
+    | "transform"
     | "alignment-baseline"
     | "baseline-shift"
     | "clip"
@@ -143,21 +65,99 @@ interface PresentationAttributes
     | "text-anchor"
     | "text-decoration"
     | "text-rendering"
-    | "transform"
     | "vector-effect"
     | "visibility"
     | "word-spacing"
     | "writing-mode"
   > {}
+interface FilterPrimitiveAttributes
+  extends Pick<AllAttributes, "height" | "width" | "x" | "y" | "result"> {}
 interface TransferFunctionAttributes
   extends Pick<
     AllAttributes,
-    | "amplitude"
+    | "type"
+    | "tableValues"
+    | "intercept"
     | "amplitude"
     | "exponent"
-    | "intercept"
-    | "tableValues"
-    | "type"
+    | "amplitude"
+  > {}
+interface AnimationTargetElementAttributes
+  extends Pick<AllAttributes, "href"> {}
+interface AnimationAttributeTargetAttributes
+  extends Pick<AllAttributes, "attributeName" | "attributeType"> {}
+interface AnimationTimingAttributes
+  extends Pick<
+    AllAttributes,
+    | "dur"
+    | "repeatCount"
+    | "begin"
+    | "end"
+    | "min"
+    | "max"
+    | "restart"
+    | "repeatDur"
+    | "fill"
+  > {}
+interface AnimationValueAttributes
+  extends Pick<
+    AllAttributes,
+    "from" | "to" | "by" | "calcMode" | "keyTimes" | "keySplines" | "values"
+  > {}
+interface AnimationAdditionAttributes
+  extends Pick<AllAttributes, "additive" | "accumulate"> {}
+interface AriaAttributes
+  extends Pick<
+    AllAttributes,
+    | "role"
+    | "aria-activedescendant"
+    | "aria-atomic"
+    | "aria-autocomplete"
+    | "aria-busy"
+    | "aria-checked"
+    | "aria-colcount"
+    | "aria-colindex"
+    | "aria-colspan"
+    | "aria-controls"
+    | "aria-current"
+    | "aria-describedby"
+    | "aria-disabled"
+    | "aria-dropeffect"
+    | "aria-errormessage"
+    | "aria-expanded"
+    | "aria-flowto"
+    | "aria-grabbed"
+    | "aria-haspopup"
+    | "aria-hidden"
+    | "aria-invalid"
+    | "aria-label"
+    | "aria-labelledby"
+    | "aria-level"
+    | "aria-live"
+    | "aria-modal"
+    | "aria-multiline"
+    | "aria-multiselectable"
+    | "aria-orientation"
+    | "aria-owns"
+    | "aria-placeholder"
+    | "aria-posinset"
+    | "aria-pressed"
+    | "aria-readonly"
+    | "aria-relevant"
+    | "aria-required"
+    | "aria-roledescription"
+    | "aria-rowcount"
+    | "aria-rowindex"
+    | "aria-rowspan"
+    | "aria-selected"
+    | "aria-setsize"
+    | "aria-sort"
+    | "aria-valuemax"
+    | "aria-valuemin"
+    | "aria-valuenow"
+    | "aria-valuetext"
+    | "aria-details"
+    | "aria-keyshortcuts"
   > {}
 export interface SVGElementA
   extends DataGlobalAttributes,
@@ -167,45 +167,45 @@ export interface SVGElementA
       AllAttributes,
       "download" | "hreflang" | "referrerpolicy" | "rel" | "target"
     >,
-    AnimationTargetElementAttributes,
-    FilterPrimitiveAttributes,
     PresentationAttributes,
-    TransferFunctionAttributes {}
+    FilterPrimitiveAttributes,
+    TransferFunctionAttributes,
+    AnimationTargetElementAttributes {}
 export interface SVGElementAnimate
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["animate"]>,
     GlobalAttributes,
-    AnimationAdditionAttributes,
-    AnimationAttributeTargetAttributes,
     AnimationTargetElementAttributes,
+    AnimationAttributeTargetAttributes,
     AnimationTimingAttributes,
-    AnimationValueAttributes {}
+    AnimationValueAttributes,
+    AnimationAdditionAttributes {}
 export interface SVGElementAnimateMotion
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["animateMotion"]>,
     GlobalAttributes,
     Pick<AllAttributes, "keyPoints" | "path" | "rotate">,
-    AnimationAdditionAttributes,
-    AnimationAttributeTargetAttributes,
     AnimationTargetElementAttributes,
+    AnimationAttributeTargetAttributes,
     AnimationTimingAttributes,
-    AnimationValueAttributes {}
+    AnimationValueAttributes,
+    AnimationAdditionAttributes {}
 export interface SVGElementAnimateTransform
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["animateTransform"]>,
     GlobalAttributes,
-    AnimationAdditionAttributes,
-    AnimationAttributeTargetAttributes,
     AnimationTargetElementAttributes,
+    AnimationAttributeTargetAttributes,
     AnimationTimingAttributes,
-    AnimationValueAttributes {}
+    AnimationValueAttributes,
+    AnimationAdditionAttributes {}
 export interface SVGElementCircle
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["circle"]>,
     GlobalAttributes,
     Pick<AllAttributes, "cx" | "cy" | "pathLength" | "r">,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementClipPath
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["clipPath"]>,
@@ -231,65 +231,65 @@ export interface SVGElementEllipse
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["ellipse"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "cx" | "cy" | "pathLength" | "rx" | "ry">,
-    AriaAttributes,
-    PresentationAttributes {}
+    Pick<AllAttributes, "cx" | "cy" | "rx" | "ry" | "pathLength">,
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementFeBlend
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feBlend"]>,
     GlobalAttributes,
     Pick<AllAttributes, "in" | "in2" | "mode">,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeColorMatrix
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feColorMatrix"]>,
     GlobalAttributes,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeComponentTransfer
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feComponentTransfer"]>,
     GlobalAttributes,
     Pick<AllAttributes, "in">,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeComposite
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feComposite"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "in" | "in2" | "k1" | "k2" | "k3" | "k4" | "operator">,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    Pick<AllAttributes, "in" | "in2" | "operator" | "k1" | "k2" | "k3" | "k4">,
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeConvolveMatrix
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feConvolveMatrix"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      | "bias"
-      | "divisor"
-      | "edgeMode"
       | "in"
-      | "kernelMatrix"
-      | "kernelUnitLength"
       | "order"
-      | "preserveAlpha"
+      | "kernelMatrix"
+      | "divisor"
+      | "bias"
       | "targetX"
       | "targetY"
+      | "edgeMode"
+      | "kernelUnitLength"
+      | "preserveAlpha"
     >,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeDiffuseLighting
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feDiffuseLighting"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      "diffuseConstant" | "in" | "kernelUnitLength" | "surfaceScale"
+      "type" | "in" | "surfaceScale" | "kernelUnitLength" | "diffuseConstant"
     >,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeDisplacementMap
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feDisplacementMap"]>,
@@ -298,8 +298,8 @@ export interface SVGElementFeDisplacementMap
       AllAttributes,
       "in" | "in2" | "scale" | "xChannelSelector" | "yChannelSelector"
     >,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeDistantLight
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feDistantLight"]>,
@@ -309,15 +309,15 @@ export interface SVGElementFeDropShadow
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feDropShadow"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "dx" | "dy" | "in" | "stdDeviation">,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    Pick<AllAttributes, "in" | "stdDeviation" | "dx" | "dy">,
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeFlood
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feFlood"]>,
     GlobalAttributes,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeFuncA
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feFuncA"]>,
@@ -342,22 +342,22 @@ export interface SVGElementFeGaussianBlur
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feGaussianBlur"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "edgeMode" | "in" | "stdDeviation">,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    Pick<AllAttributes, "in" | "stdDeviation" | "edgeMode">,
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeImage
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feImage"]>,
     GlobalAttributes,
     Pick<AllAttributes, "preserveAspectRatio">,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeMerge
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feMerge"]>,
     GlobalAttributes,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeMergeNode
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feMergeNode"]>,
@@ -368,20 +368,20 @@ export interface SVGElementFeMorphology
     SVGEvents<SVGElementTagNameMap["feMorphology"]>,
     GlobalAttributes,
     Pick<AllAttributes, "in" | "operator" | "radius">,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeOffset
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feOffset"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "dx" | "dy" | "in">,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    Pick<AllAttributes, "in" | "dx" | "dy">,
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFePointLight
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["fePointLight"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "result" | "x" | "y" | "z"> {}
+    Pick<AllAttributes, "x" | "y" | "z" | "result"> {}
 export interface SVGElementFeSpecularLighting
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feSpecularLighting"]>,
@@ -389,45 +389,45 @@ export interface SVGElementFeSpecularLighting
     Pick<
       AllAttributes,
       | "in"
+      | "surfaceScale"
       | "kernelUnitLength"
       | "specularConstant"
       | "specularExponent"
-      | "surfaceScale"
     >,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeSpotLight
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feSpotLight"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      | "limitingConeAngle"
-      | "pointsAtX"
-      | "pointsAtY"
-      | "pointsAtZ"
-      | "result"
       | "x"
       | "y"
       | "z"
+      | "result"
+      | "pointsAtX"
+      | "pointsAtY"
+      | "pointsAtZ"
+      | "limitingConeAngle"
     > {}
 export interface SVGElementFeTile
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feTile"]>,
     GlobalAttributes,
     Pick<AllAttributes, "in">,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFeTurbulence
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["feTurbulence"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      "baseFrequency" | "numOctaves" | "seed" | "stitchTiles" | "type"
+      "type" | "baseFrequency" | "numOctaves" | "seed" | "stitchTiles"
     >,
-    FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    FilterPrimitiveAttributes {}
 export interface SVGElementFilter
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["filter"]>,
@@ -438,70 +438,70 @@ export interface SVGElementForeignObject
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["foreignObject"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "height" | "width" | "x" | "y">,
-    AriaAttributes,
-    PresentationAttributes {}
+    Pick<AllAttributes, "x" | "y" | "width" | "height">,
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementG
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["g"]>,
     GlobalAttributes,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementImage
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["image"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "crossorigin" | "preserveAspectRatio">,
-    AnimationTargetElementAttributes,
+    Pick<AllAttributes, "preserveAspectRatio" | "crossorigin">,
+    PresentationAttributes,
     FilterPrimitiveAttributes,
-    PresentationAttributes {}
+    AnimationTargetElementAttributes {}
 export interface SVGElementLine
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["line"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "pathLength" | "x1" | "x2" | "y1" | "y2">,
-    AriaAttributes,
-    PresentationAttributes {}
+    Pick<AllAttributes, "x1" | "x2" | "y1" | "y2" | "pathLength">,
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementLinearGradient
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["linearGradient"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      | "gradientTransform"
-      | "gradientUnits"
-      | "spreadMethod"
       | "x1"
       | "x2"
       | "y1"
       | "y2"
+      | "gradientTransform"
+      | "gradientUnits"
+      | "spreadMethod"
     >,
-    AnimationTargetElementAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AnimationTargetElementAttributes {}
 export interface SVGElementMarker
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["marker"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      | "markerHeight"
-      | "markerUnits"
-      | "markerWidth"
-      | "orient"
-      | "preserveAspectRatio"
       | "refX"
       | "refY"
+      | "orient"
+      | "preserveAspectRatio"
       | "viewBox"
+      | "markerUnits"
+      | "markerWidth"
+      | "markerHeight"
     >,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementMask
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["mask"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      "height" | "maskContentUnits" | "maskUnits" | "width" | "x" | "y"
+      "x" | "y" | "width" | "height" | "maskContentUnits" | "maskUnits"
     >,
     PresentationAttributes {}
 export interface SVGElementMetadata
@@ -516,70 +516,70 @@ export interface SVGElementPath
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["path"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "d" | "pathLength">,
-    AriaAttributes,
-    PresentationAttributes {}
+    Pick<AllAttributes, "pathLength" | "d">,
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementPattern
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["pattern"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      | "height"
-      | "patternContentUnits"
-      | "patternTransform"
-      | "patternUnits"
-      | "preserveAspectRatio"
-      | "viewBox"
-      | "width"
       | "x"
       | "y"
+      | "width"
+      | "height"
+      | "viewBox"
+      | "preserveAspectRatio"
+      | "patternUnits"
+      | "patternContentUnits"
+      | "patternTransform"
     >,
-    AnimationTargetElementAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AnimationTargetElementAttributes {}
 export interface SVGElementPolygon
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["polygon"]>,
     GlobalAttributes,
     Pick<AllAttributes, "pathLength" | "points">,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementPolyline
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["polyline"]>,
     GlobalAttributes,
     Pick<AllAttributes, "pathLength" | "points">,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementRadialGradient
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["radialGradient"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
+      | "gradientUnits"
+      | "gradientTransform"
       | "cx"
       | "cy"
+      | "pathLength"
+      | "spreadMethod"
+      | "r"
       | "fr"
       | "fx"
       | "fy"
-      | "gradientTransform"
-      | "gradientUnits"
-      | "pathLength"
-      | "r"
-      | "spreadMethod"
     >,
-    AnimationTargetElementAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AnimationTargetElementAttributes {}
 export interface SVGElementRect
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["rect"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      "height" | "pathLength" | "rx" | "ry" | "width" | "x" | "y"
+      "x" | "y" | "width" | "height" | "rx" | "ry" | "pathLength"
     >,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementScript
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["script"]>,
@@ -602,23 +602,23 @@ export interface SVGElementStyle
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["style"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "media" | "type"> {}
+    Pick<AllAttributes, "type" | "media"> {}
 export interface SVGElementSvg
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["svg"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      | "height"
-      | "preserveAspectRatio"
-      | "viewBox"
-      | "width"
-      | "x"
       | "xmlns"
+      | "preserveAspectRatio"
+      | "width"
+      | "height"
+      | "viewBox"
+      | "x"
       | "y"
     >,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementSwitch
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["switch"]>,
@@ -630,35 +630,35 @@ export interface SVGElementSymbol
     GlobalAttributes,
     Pick<
       AllAttributes,
-      | "height"
+      | "viewBox"
       | "preserveAspectRatio"
       | "refX"
       | "refY"
-      | "viewBox"
+      | "height"
       | "width"
       | "x"
       | "y"
     >,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementText
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["text"]>,
     GlobalAttributes,
     Pick<
       AllAttributes,
-      "dx" | "dy" | "lengthAdjust" | "rotate" | "textLength" | "x" | "y"
+      "dx" | "dy" | "x" | "y" | "rotate" | "lengthAdjust" | "textLength"
     >,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementTextPath
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["textPath"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "lengthAdjust" | "method" | "spacing" | "textLength">,
+    Pick<AllAttributes, "method" | "lengthAdjust" | "spacing" | "textLength">,
+    PresentationAttributes,
     AnimationTargetElementAttributes,
-    AriaAttributes,
-    PresentationAttributes {}
+    AriaAttributes {}
 export interface SVGElementTitle
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["title"]>,
@@ -669,23 +669,23 @@ export interface SVGElementTspan
     GlobalAttributes,
     Pick<
       AllAttributes,
-      "dx" | "dy" | "lengthAdjust" | "rotate" | "textLength" | "x" | "y"
+      "dx" | "dy" | "x" | "y" | "rotate" | "lengthAdjust" | "textLength"
     >,
-    AriaAttributes,
-    PresentationAttributes {}
+    PresentationAttributes,
+    AriaAttributes {}
 export interface SVGElementUse
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["use"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "height" | "width" | "x" | "y">,
+    Pick<AllAttributes, "x" | "y" | "height" | "width">,
+    PresentationAttributes,
     AnimationTargetElementAttributes,
-    AriaAttributes,
-    PresentationAttributes {}
+    AriaAttributes {}
 export interface SVGElementView
   extends DataGlobalAttributes,
     SVGEvents<SVGElementTagNameMap["view"]>,
     GlobalAttributes,
-    Pick<AllAttributes, "preserveAspectRatio" | "viewBox">,
+    Pick<AllAttributes, "viewBox" | "preserveAspectRatio">,
     AriaAttributes {}
 export interface SVGElements {
   /**
