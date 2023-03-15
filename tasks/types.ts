@@ -1,40 +1,42 @@
-export interface MarkupContent {
-  kind?: string;
-  value?: string;
+import {
+  IAttributeData,
+  ITagData,
+  HTMLDataV1,
+  IValueData,
+} from "vscode-html-languageservice";
+
+export interface AttributeSet {
+  [key: string]: IAttributeData[];
 }
-export interface Value {
+
+export interface JSDocInfo
+  extends Pick<IValueData, "description" | "references"> {}
+
+export interface InterfaceFactoryCommonAttrs {
   name: string;
-  values: {
-    name: string;
-  }[];
+  extends: {
+    pickFromAllAttributes: string[];
+    otherClasses: string[];
+  };
 }
 
-export interface IReference {
+export interface InterfaceFactory extends InterfaceFactoryCommonAttrs {
+  attributes: Omit<IAttributeData, "values">[];
+}
+export interface ValueSetInterfaceFactory extends InterfaceFactoryCommonAttrs {
+  attributes: Omit<IAttributeData, "valueSet">[];
+}
+
+export interface AddTypesFromProps {
+  attributeSet?: AttributeSet;
   name: string;
-  url: string;
-}
-
-export interface JSDocInfo {
-  name: string;
-  description?: string | MarkupContent;
-  references?: IReference[];
-}
-
-export interface Attribute extends JSDocInfo {
-  values?: {
-    name: string;
-  }[];
-  valueSet?: string;
-}
-
-export interface ITag extends JSDocInfo {
-  attributes: Attribute[];
-  void?: boolean;
-}
-
-export interface Documentation {
-  tags: ITag[];
-  version: number;
-  valueSets?: Value[];
-  globalAttributes: Attribute[];
+  documentationSrc: HTMLDataV1;
+  src: string;
+  additionalImports?: string[];
+  getElementInterface: (tag: string) => string;
+  getAdditionalElementExtendsInterfaces?: (
+    tag: string,
+    elementInterface: string,
+  ) => string[];
+  getAttributes?: (tag: ITagData) => ITagData["attributes"];
 }

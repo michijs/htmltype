@@ -1,35 +1,55 @@
 import { appendFileSync, mkdirSync, rmSync, writeFileSync } from "fs";
-import { DEFAULT_VALUE_SET, getJSDoc, getPropertyName } from "./shared";
-import { Attribute, Documentation, ITag, JSDocInfo } from "./types";
+import { DEFAULT_VALUE_SET, generateInterface, sortByName } from "./shared";
+import { IAttributeData } from "vscode-html-languageservice";
+import {
+  AddTypesFromProps,
+  AttributeSet,
+  InterfaceFactory,
+  ValueSetInterfaceFactory,
+} from "./types";
 
-interface AttributeType extends Omit<JSDocInfo, "name"> {
-  valueSets: Set<string>;
-}
-interface ElementType extends Omit<JSDocInfo, "name"> {
-  types: string[];
-}
+const getInterfaceHelperName = (
+  props: AddTypesFromProps,
+  elementName: string,
+) =>
+  `${props.name.slice(0, -1)}${elementName
+    .charAt(0)
+    .toUpperCase()}${elementName.slice(1)}`;
 
-interface AddTypesFromProps {
-  attributesAlias?: Record<string, string[]>;
-  name: string;
-  documentationSrc: Documentation;
-  src: string;
-  additionalImports?: string[];
-  getElementInterface: (tag: string) => string;
-  getAdditionalElementAttributes?: (
-    tag: string,
-    elementInterface: string,
-  ) => string[];
-  getAttributes?: (tag: ITag) => ITag["attributes"];
-}
-
-const getInterfaceHelperName = (props: AddTypesFromProps, key: string) =>
-  `${props.name.slice(0, -1)}${key.charAt(0).toUpperCase()}${key.slice(1)}`;
+export const valueSets: ValueSetInterfaceFactory = {
+  name: "ValueSets",
+  extends: {
+    pickFromAllAttributes: [],
+    otherClasses: [],
+  },
+  attributes: [
+    {
+      name: DEFAULT_VALUE_SET.key,
+      values: DEFAULT_VALUE_SET.value.map((x) => ({
+        name: x,
+      })),
+    },
+    // Because of HTML types
+    {
+      name: "v",
+      values: [{ name: "boolean" }],
+    },
+    {
+      name: "style",
+      values: [{ name: "CSSProperties" }],
+    },
+  ],
+};
+export const allAttributes: InterfaceFactory = {
+  name: "AllAttributes",
+  extends: {
+    pickFromAllAttributes: [],
+    otherClasses: [],
+  },
+  attributes: [],
+};
 
 export class TypesFactory {
-  valueSets = new Map<string | number, string[]>();
-  private attributes = new Map<string, AttributeType>();
-
   constructor() {
     rmSync("./src/generated", { recursive: true, force: true });
     rmSync("./supported", { recursive: true, force: true });
@@ -43,118 +63,184 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     );
   }
 
-  getValueSet = (property: Attribute) => {
-    if (property.name === "style") return "CSSProperties";
-    if (property.valueSet) return `ValueSets['${property.valueSet}']`;
-    if (property.values) {
-      const newValueSet = property.values.map((x) => `"${x.name}"`);
-      const valueSetIndexFound = Array.from(this.valueSets.keys()).find(
-        (key) => newValueSet.every((y) => this.valueSets.get(key)?.includes(y)),
+  getValueSet = (property: IAttributeData) => {
+    if (property.name === "style") return "style";
+    let valueSetKey = DEFAULT_VALUE_SET.key;
+    if (property.valueSet) valueSetKey = property.valueSet;
+    else if (property.values) {
+      const newValueSet = property.values.map((x) => ({
+        ...x,
+        name: `"${x.name}"`,
+      }));
+      const valueSetIndexFound = valueSets.attributes?.find((attribute) =>
+        newValueSet.every((y) =>
+          attribute.values?.map((x) => x.name).includes(y.name),
+        ),
       );
-      if (!valueSetIndexFound) {
-        const newValueSetIndex =
-          this.valueSets.set(this.valueSets.size, newValueSet).size - 1;
-        return `ValueSets['${newValueSetIndex}']`;
+      if (valueSetIndexFound) valueSetKey = valueSetIndexFound.name;
+      else {
+        valueSetKey = (valueSets.attributes?.length ?? 0).toString();
+        valueSets.attributes?.push({
+          name: valueSetKey,
+          values: newValueSet,
+        });
       }
-      return `ValueSets['${valueSetIndexFound}']`;
     }
-    return `ValueSets['${DEFAULT_VALUE_SET.key}']`;
+    return valueSetKey;
   };
 
-  addAttributes(attributes: Attribute[]) {
-    attributes.forEach((x) => {
-      const attributeFound = this.attributes.get(x.name);
-      const newValueSet = this.getValueSet(x);
+  addAttributes(
+    el: InterfaceFactory,
+    attributes: IAttributeData[],
+    attributeSets?: AttributeSet,
+  ) {
+    // Attribute sets
+    let filteredAttributes = attributes;
+    if (attributeSets)
+      Object.entries(attributeSets).forEach(([name, attributeSet]) => {
+        const containsAttributeSet = attributeSet.every((attr) =>
+          attributes.find(
+            (x) =>
+              x.name === attr.name &&
+              (x.valueSet ?? this.getValueSet(x)) ===
+                (attr.valueSet ?? this.getValueSet(attr)),
+          ),
+        );
 
-      if (attributeFound) {
-        attributeFound.valueSets.add(newValueSet);
-        if (attributeFound.valueSets.size > 1)
-          attributeFound.valueSets.delete(
-            `ValueSets['${DEFAULT_VALUE_SET.key}']`,
+        if (containsAttributeSet) {
+          const attributeSetMap = attributeSet.map((x) => x.name);
+          el.extends.otherClasses.push(name);
+          filteredAttributes = filteredAttributes.filter(
+            (attr) => !attributeSetMap.includes(attr.name),
           );
-      } else
-        this.attributes.set(x.name, {
-          description: x.description,
-          references: x.references,
-          valueSets: new Set([newValueSet]),
-        });
-    });
+        }
+      });
+    // Removing events
+    filteredAttributes
+      .filter((x) => !x.name.startsWith("on"))
+      .forEach((attribute) => {
+        const attributeFound = allAttributes.attributes?.find(
+          (x) => attribute.name === x.name,
+        );
+        const newValueSet = this.getValueSet(attribute);
+        const newAttribute: InterfaceFactory["attributes"][number] = {
+          ...attribute,
+          valueSet: newValueSet,
+        };
+
+        // Attribute was added before to AllAttributes
+        if (attributeFound) {
+          const isSameValueSet = attributeFound.valueSet === newValueSet;
+          // If its the same I get the data from all attributes
+          if (isSameValueSet)
+            el.extends.pickFromAllAttributes.push(newAttribute.name);
+          // If is not the same value set I add the attribute to the interface
+          else el.attributes.push(newAttribute);
+        } else {
+          // If the attribute was not found on AllAttributes I add the value
+          allAttributes.attributes?.push(newAttribute);
+          el.extends.pickFromAllAttributes.push(newAttribute.name);
+        }
+      });
   }
 
-  addTypesFrom(props: AddTypesFromProps) {
-    const globalAttributes = props.documentationSrc.globalAttributes.filter(
-      (x) => !x.name.startsWith("on"),
-    );
+  async addTypesFrom(props: AddTypesFromProps) {
+    const elementsInterfaces: InterfaceFactory[] = [];
 
-    const globalAttributesAlias = {
-      GlobalAttributes: globalAttributes.map((x) => x.name),
-    };
-    props.attributesAlias = {
-      ...globalAttributesAlias,
-      ...props.attributesAlias,
-    };
-    this.addAttributes(globalAttributes);
-
-    const elements = new Map<string, ElementType>();
-    this.valueSets.set(DEFAULT_VALUE_SET.key, DEFAULT_VALUE_SET.value);
+    // Default value sets
     if (props.documentationSrc.valueSets) {
-      props.documentationSrc.valueSets.forEach((x) => {
-        this.valueSets.set(
-          x.name,
-          x.values
-            .filter((x) => x.name !== "undefined")
-            .map((x) => `"${x.name}"`),
-        );
-      });
-    }
-    props.documentationSrc.tags.forEach((x) => {
-      const attributes = (props.getAttributes?.(x) ?? x.attributes).filter(
-        (x) => !x.name.startsWith("on"),
+      valueSets.attributes.push(
+        ...props.documentationSrc.valueSets
+          .filter((x) => x.name !== "undefined")
+          .map((x) => ({
+            ...x,
+            values: x.values.map((y) => ({
+              ...y,
+              name: `"${y.name}"`,
+            })),
+          })),
       );
-      this.addAttributes(attributes);
-      let attributesPick = attributes.map((x) => x.name);
-      const attributesAliases = new Array<string>();
+      // Removing repeated attributes
+      // TODO: if values are different add with |
+      valueSets.attributes = [
+        ...new Map(valueSets.attributes.map((m) => [m.name, m])).values(),
+      ];
+    }
+    const attributeSets: InterfaceFactory[] | undefined = props.attributeSet
+      ? Object.entries(props.attributeSet).map(([name, attributeSet]) => {
+          const attributeSetInterface = {
+            name,
+            extends: {
+              pickFromAllAttributes: [],
+              otherClasses: [],
+            },
+            attributes: [],
+          };
+          this.addAttributes(attributeSetInterface, attributeSet);
+          return attributeSetInterface;
+        })
+      : undefined;
+    // Elements
+    const elements: InterfaceFactory = {
+      name: props.name,
+      extends: {
+        pickFromAllAttributes: [],
+        otherClasses: [],
+      },
+      attributes: props.documentationSrc.tags!.map((x) => ({
+        ...x,
+        // Element interface is the only value
+        values: [getInterfaceHelperName(props, x.name)].map((name) => ({
+          name,
+        })),
+      })),
+    };
 
-      if (props.attributesAlias)
-        Object.entries(props.attributesAlias).forEach(
-          ([alias, attributesInAlias]) => {
-            if (attributesInAlias.every((x) => attributesPick.includes(x))) {
-              attributesPick = attributesPick.filter(
-                (x) => !attributesInAlias.includes(x),
-              );
-              attributesAliases.push(alias);
-            }
-          },
-        );
+    let globalAttributes: InterfaceFactory | undefined;
+    // Global attributes
+    if (props.documentationSrc.globalAttributes) {
+      globalAttributes = {
+        name: "GlobalAttributes",
+        extends: {
+          pickFromAllAttributes: [],
+          otherClasses: [],
+        },
+        attributes: [],
+      };
+      this.addAttributes(
+        globalAttributes,
+        props.documentationSrc.globalAttributes,
+      );
+    }
 
-      const types = (
-        props.getAdditionalElementAttributes?.(
-          x.name,
-          props.getElementInterface(x.name),
-        ) ?? []
-      ).concat("GlobalAttributes");
+    // tags
+    props.documentationSrc.tags!.forEach((x) => {
+      const elementInterface: InterfaceFactory = {
+        name: getInterfaceHelperName(props, x.name),
+        extends: {
+          pickFromAllAttributes: [],
+          otherClasses:
+            props.getAdditionalElementExtendsInterfaces?.(
+              x.name,
+              props.getElementInterface(x.name),
+            ) ?? [],
+        },
+        attributes: [],
+      };
+      this.addAttributes(elementInterface, x.attributes, props.attributeSet);
 
-      if (attributesPick.length > 0)
-        types.push(
-          `Pick<AllAttributes, ${attributesPick
-            .map((x) => `"${x}"`)
-            .join("|")}>`,
-        );
-      if (attributesAliases.length > 0) types.push(...attributesAliases);
-
-      elements.set(x.name, {
-        description: x.description,
-        references: x.references,
-        types,
-      });
+      if (globalAttributes)
+        elementInterface.extends.otherClasses.push(globalAttributes.name);
+      elementsInterfaces.push(elementInterface);
     });
 
+    // JSON with supported elements and their interfaces
     writeFileSync(
       `./supported/${props.name}.json`,
       JSON.stringify(
-        Array.from(elements.keys()).map((tagName) => ({
-          tagName,
-          elementInterface: props.getElementInterface(tagName),
+        props.documentationSrc.tags?.map((el) => ({
+          tagName: el.name,
+          elementInterface: props.getElementInterface(el.name),
         })),
         null,
         2,
@@ -164,47 +250,29 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       "./supported/index.js",
       `exports.supported${props.name} = require("./${props.name}.json");\n`,
     );
+    const srcVersion = (await import(`${props.src}/package.json`)).version;
+    // Elements file
     writeFileSync(
       `./src/generated/${props.name}.ts`,
-      `// file generated from ${props.src}
-       // Data Version ${props.documentationSrc.version})
+      `// file generated from ${props.src} ${srcVersion}
+       // HTML Data Version ${props.documentationSrc.version}
        import { AllAttributes } from './AllAttributes';
+       import { ValueSets } from "./ValueSets"
        ${props.additionalImports?.join("\n")}
+       ${globalAttributes ? generateInterface(globalAttributes) : ""}
        ${
-         props.attributesAlias
-           ? `\n\n${Object.entries(props.attributesAlias)
-                .map(
-                  ([key, value]) =>
-                    `interface ${key} extends Pick<AllAttributes, ${value
-                      .map((x) => `"${x}"`)
-                      .join("|")}> {};`,
-                )
-                .join("\n")}`
+         attributeSets && attributeSets.length > 0
+           ? attributeSets
+                .sort(sortByName)
+                .map((x) => generateInterface(x))
+                .join("\n")
            : ""
        }
-       ${Array.from(elements)
-         .sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
-         .map(
-           ([key, value]) =>
-             `export interface ${getInterfaceHelperName(
-               props,
-               key,
-             )} extends ${value.types.join(", ")} {};`,
-         )
+       ${elementsInterfaces
+         .sort(sortByName)
+         .map((x) => generateInterface(x))
          .join("\n")}
-       export interface ${props.name} {
-         ${Array.from(elements)
-           .sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
-           .map(
-             ([key, value]) =>
-               `${getJSDoc({
-                 name: key,
-                 ...value,
-               })}${key}: ${getInterfaceHelperName(props, key)};`,
-           )
-           .join("\n")}
-       }
-       `,
+       ${generateInterface(elements)}`,
     );
     appendFileSync(
       "./src/generated/index.ts",
@@ -213,38 +281,17 @@ export type { AllAttributes } from "./AllAttributes";\n`,
   }
 
   generateAttributesAndValueSets() {
+    // Attributes
     writeFileSync(
       "./src/generated/AllAttributes.ts",
       `import { ValueSets } from "./ValueSets"
-      import { CSSProperties } from '../types'
-      export interface AllAttributes {
-        ${Array.from(this.attributes)
-          .sort((a, b) => a[0].toLowerCase().localeCompare(b[0].toLowerCase()))
-          .map(
-            ([key, value]) =>
-              `${getJSDoc({ name: key, ...value })}${getPropertyName(
-                key,
-              )}?: ${Array.from(value.valueSets.values()).join(" | ")};`,
-          )
-          .join("\n")}
-      }`,
+      ${generateInterface(allAttributes)}`,
     );
+    // ValueSets
     writeFileSync(
       "./src/generated/ValueSets.ts",
-      `export interface ValueSets {
-        ${Array.from(this.valueSets.entries())
-          .sort((a, b) =>
-            a[0]
-              .toString()
-              .toLowerCase()
-              .localeCompare(b[0].toString().toLowerCase()),
-          )
-          .map(
-            ([name, value]) =>
-              `${getPropertyName(name)}: ${value.join(" | ")};`,
-          )
-          .join("\n")}
-      }`,
+      `import { CSSProperties } from '../types'
+      ${generateInterface(valueSets)}`,
     );
   }
 }

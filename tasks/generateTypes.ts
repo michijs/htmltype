@@ -1,10 +1,16 @@
 import { TypesFactory } from "./TypesFactory";
-import htmlData from "@vscode/web-custom-data/data/browsers.html-data.json";
-import svgData from "@michijs/vscode-svg/dist/svg.json";
-import svgAttributeSets from "@michijs/vscode-svg/dist/attributeSets.json";
-import mathmlData from "@michijs/vscode-mathml/dist/mathml.json";
+import htmlDataImport from "@vscode/web-custom-data/data/browsers.html-data.json";
+import svgDataImport from "@michijs/vscode-svg/dist/svg.json";
+import svgAttributeSet from "@michijs/vscode-svg/dist/attributeSets.json";
+import mathmlDataImport from "@michijs/vscode-mathml/dist/mathml.json";
+import { HTMLDataV1 } from "vscode-html-languageservice";
+import { AttributeSet } from "./types";
 
-htmlData.tags.push(
+let htmlData = htmlDataImport as HTMLDataV1;
+const svgData = svgDataImport as HTMLDataV1;
+const mathmlData = mathmlDataImport as HTMLDataV1;
+
+htmlData.tags!.push(
   ...([
     {
       name: "slot",
@@ -41,63 +47,83 @@ htmlData.tags.push(
   ] as any),
 );
 
-const factory = new TypesFactory();
-
-factory.valueSets.set("v", ["boolean"]);
-
-factory.addTypesFrom({
-  name: "HTMLElements",
-  src: "@vscode/web-custom-data NPM package",
-  documentationSrc: htmlData,
-  additionalImports: [
-    'import { GlobalEvents, WindowEvents } from "../Events"',
-    'import { DataGlobalAttributes } from "../types"',
-  ],
-  getElementInterface: (el) =>
-    ["param", "rb"].includes(el)
-      ? "HTMLElement"
-      : `HTMLElementTagNameMap['${el}']`,
-  getAdditionalElementAttributes: (el, elementInterface) => {
-    const attributeSets = [
-      "DataGlobalAttributes",
-      `GlobalEvents<${elementInterface}>`,
-    ];
-    if (el === "body") attributeSets.push(`WindowEvents<${elementInterface}>`);
-    return attributeSets;
-  },
+htmlData.tags = htmlData.tags!.map((x) => {
+  if (["bdo", "textarea"].includes(x.name))
+    return {
+      ...x,
+      attributes: x.attributes.filter(
+        (x) => x.name !== "dir" && x.name !== "spellcheck",
+      ),
+    };
+  if (["button"].includes(x.name))
+    return {
+      ...x,
+      attributes: x.attributes.map((x) =>
+        x.name === "autocomplete"
+          ? {
+              ...x,
+              valueSet: "o",
+            }
+          : x,
+      ),
+    };
+  return x;
 });
-factory.addTypesFrom({
-  name: "MathMLElements",
-  src: "github:michijs/vscode-mathml",
-  documentationSrc: mathmlData,
-  additionalImports: [
-    'import { MathMLEvents } from "../Events"',
-    'import { DataGlobalAttributes } from "../types"',
-  ],
-  getElementInterface: () => "MathMLEvents",
-  getAdditionalElementAttributes: (_el, elementInterface) => {
-    return ["DataGlobalAttributes", elementInterface];
-  },
-});
-factory.addTypesFrom({
-  name: "SVGElements",
-  src: "github:lishu/vscode-svg2",
-  documentationSrc: svgData,
-  attributesAlias: Object.entries(svgAttributeSets).reduce(
-    (previousValue, [key, value]) => {
-      previousValue[key] = value.map((x) => x.name);
-      return previousValue;
+
+async function main() {
+  const factory = new TypesFactory();
+
+  await factory.addTypesFrom({
+    name: "HTMLElements",
+    src: "@vscode/web-custom-data",
+    documentationSrc: htmlData,
+    additionalImports: [
+      'import { GlobalEvents, WindowEvents } from "../Events"',
+      'import { DataGlobalAttributes } from "../types"',
+    ],
+    getElementInterface: (el) =>
+      ["param", "rb"].includes(el)
+        ? "HTMLElement"
+        : `HTMLElementTagNameMap['${el}']`,
+    getAdditionalElementExtendsInterfaces: (el, elementInterface) => {
+      const attributeSets = [
+        "DataGlobalAttributes",
+        `GlobalEvents<${elementInterface}>`,
+      ];
+      if (el === "body")
+        attributeSets.push(`WindowEvents<${elementInterface}>`);
+      return attributeSets;
     },
-    {} as Record<string, string[]>,
-  ),
-  additionalImports: [
-    'import { SVGEvents } from "../Events"',
-    'import { DataGlobalAttributes } from "../types"',
-  ],
-  getElementInterface: (el) =>
-    ["discard"].includes(el) ? "SVGElement" : `SVGElementTagNameMap['${el}']`,
-  getAdditionalElementAttributes: (_el, elementInterface) => {
-    return ["DataGlobalAttributes", `SVGEvents<${elementInterface}>`];
-  },
-});
-factory.generateAttributesAndValueSets();
+  });
+  await factory.addTypesFrom({
+    name: "MathMLElements",
+    src: "@michijs/vscode-mathml",
+    documentationSrc: mathmlData,
+    additionalImports: [
+      'import { MathMLEvents } from "../Events"',
+      'import { DataGlobalAttributes } from "../types"',
+    ],
+    getElementInterface: () => "MathMLEvents",
+    getAdditionalElementExtendsInterfaces: (_el, elementInterface) => {
+      return ["DataGlobalAttributes", elementInterface];
+    },
+  });
+  await factory.addTypesFrom({
+    name: "SVGElements",
+    src: "@michijs/vscode-svg",
+    documentationSrc: svgData,
+    attributeSet: svgAttributeSet as AttributeSet,
+    additionalImports: [
+      'import { SVGEvents } from "../Events"',
+      'import { DataGlobalAttributes } from "../types"',
+    ],
+    getElementInterface: (el) =>
+      ["discard"].includes(el) ? "SVGElement" : `SVGElementTagNameMap['${el}']`,
+    getAdditionalElementExtendsInterfaces: (_el, elementInterface) => [
+      "DataGlobalAttributes",
+      `SVGEvents<${elementInterface}>`,
+    ],
+  });
+  factory.generateAttributesAndValueSets();
+}
+main();

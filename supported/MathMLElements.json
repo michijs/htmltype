@@ -52,10 +52,6 @@
     "elementInterface": "MathMLEvents"
   },
   {
-    "tagName": "semantics",
-    "elementInterface": "MathMLEvents"
-  },
-  {
     "tagName": "mspace",
     "elementInterface": "MathMLEvents"
   },
@@ -97,6 +93,10 @@
   },
   {
     "tagName": "munderover",
+    "elementInterface": "MathMLEvents"
+  },
+  {
+    "tagName": "semantics",
     "elementInterface": "MathMLEvents"
   }
 ]

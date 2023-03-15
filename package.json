@@ -47,8 +47,9 @@
     "simple-git-hooks": "2.8.1",
     "ts-node": "10.9.1",
     "typescript": "4.9.5",
-    "@michijs/vscode-svg": "2.0.4",
-    "@michijs/vscode-mathml": "1.0.0"
+    "@michijs/vscode-svg": "2.0.5",
+    "vscode-html-languageservice": "5.0.4",
+    "@michijs/vscode-mathml": "1.0.2"
   },
   "dependencies": {
     "csstype": "3.1.1"
