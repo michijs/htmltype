@@ -12,9 +12,9 @@ const getInterfaceHelperName = (
   props: AddTypesFromProps,
   elementName: string,
 ) =>
-  `${props.name.slice(0, -1)}${elementName
+  `${props.name.slice(0, -8)}${elementName
     .charAt(0)
-    .toUpperCase()}${elementName.slice(1)}`;
+    .toUpperCase()}${elementName.slice(1)}Attributes`;
 
 export const valueSets: ValueSetInterfaceFactory = {
   name: "ValueSets",
