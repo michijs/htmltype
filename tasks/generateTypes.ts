@@ -103,9 +103,9 @@ async function main() {
       'import { MathMLEvents } from "../Events"',
       'import { DataGlobalAttributes } from "../types"',
     ],
-    getElementInterface: () => "MathMLEvents",
-    getAdditionalElementExtendsInterfaces: (_el, elementInterface) => {
-      return ["DataGlobalAttributes", elementInterface];
+    getElementInterface: () => "MathMLElement",
+    getAdditionalElementExtendsInterfaces: (_el) => {
+      return ["DataGlobalAttributes", "MathMLEvents"];
     },
   });
   await factory.addTypesFrom({

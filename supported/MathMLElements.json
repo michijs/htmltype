@@ -1,102 +1,102 @@
 [
   {
     "tagName": "math",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "merror",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mfrac",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mi",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mmultiscripts",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mn",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mo",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mover",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mpadded",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mphantom",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mroot",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mrow",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "ms",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mspace",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "msqrt",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mstyle",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "msub",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "msubsup",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mtable",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mtd",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mtext",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "mtr",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "munder",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "munderover",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   },
   {
     "tagName": "semantics",
-    "elementInterface": "MathMLEvents"
+    "elementInterface": "MathMLElement"
   }
 ]
