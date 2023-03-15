@@ -18,6 +18,7 @@ const getInterfaceHelperName = (
 
 export const valueSets: ValueSetInterfaceFactory = {
   name: "ValueSets",
+  export: true,
   extends: {
     pickFromAllAttributes: [],
     otherClasses: [],
@@ -42,6 +43,7 @@ export const valueSets: ValueSetInterfaceFactory = {
 };
 export const allAttributes: InterfaceFactory = {
   name: "AllAttributes",
+  export: true,
   extends: {
     pickFromAllAttributes: [],
     otherClasses: [],
@@ -67,15 +69,17 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     if (property.name === "style") return "style";
     let valueSetKey = DEFAULT_VALUE_SET.key;
     if (property.valueSet) valueSetKey = property.valueSet;
-    else if (property.values) {
+    else if (property.values && property.values.length > 0) {
       const newValueSet = property.values.map((x) => ({
         ...x,
         name: `"${x.name}"`,
       }));
-      const valueSetIndexFound = valueSets.attributes?.find((attribute) =>
-        newValueSet.every((y) =>
-          attribute.values?.map((x) => x.name).includes(y.name),
-        ),
+      const valueSetIndexFound = valueSets.attributes?.find(
+        (attribute) =>
+          attribute.values?.length === newValueSet.length &&
+          newValueSet.every((y) =>
+            attribute.values?.map((x) => x.name).includes(y.name),
+          ),
       );
       if (valueSetIndexFound) valueSetKey = valueSetIndexFound.name;
       else {
@@ -183,6 +187,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     // Elements
     const elements: InterfaceFactory = {
       name: props.name,
+      export: true,
       extends: {
         pickFromAllAttributes: [],
         otherClasses: [],
@@ -217,6 +222,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     props.documentationSrc.tags!.forEach((x) => {
       const elementInterface: InterfaceFactory = {
         name: getInterfaceHelperName(props, x.name),
+        export: true,
         extends: {
           pickFromAllAttributes: [],
           otherClasses:

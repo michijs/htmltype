@@ -77,6 +77,6 @@ export const sortByName = (a: { name: string }, b: { name: string }) =>
 export const generateInterface = (
   factory: InterfaceFactory | ValueSetInterfaceFactory,
 ) =>
-  `export interface ${factory.name} ${getExtends(factory)}{${getAttributes(
+  `${factory.export ? "export " : ""}interface ${factory.name} ${getExtends(
     factory,
-  )}}`;
+  )}{${getAttributes(factory)}}`;
