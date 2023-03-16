@@ -188,6 +188,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     const elements: InterfaceFactory = {
       name: props.name,
       export: true,
+      requiredAttributes: true,
       extends: {
         pickFromAllAttributes: [],
         otherClasses: [],

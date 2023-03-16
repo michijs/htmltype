@@ -62,7 +62,9 @@ export const getAttributes = (
     .sort(sortByName)
     .map(
       (attr: IAttributeData) =>
-        `${getJSDoc(attr)}${getPropertyName(attr.name)}?: ${
+        `${getJSDoc(attr)}${getPropertyName(attr.name)}${
+          factory.requiredAttributes ? "" : "?"
+        }: ${
           attr.valueSet
             ? `ValueSets['${attr.valueSet}']`
             : attr.values?.map((x) => x.name).join(" | ")

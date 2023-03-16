@@ -15,6 +15,7 @@ export interface JSDocInfo
 export interface InterfaceFactoryCommonAttrs {
   name: string;
   export?: boolean;
+  requiredAttributes?: boolean;
   extends: {
     pickFromAllAttributes: string[];
     otherClasses: string[];
