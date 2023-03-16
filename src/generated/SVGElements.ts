@@ -1,4 +1,4 @@
-// file generated from @michijs/vscode-svg 2.0.5
+// file generated from @michijs/vscode-svg 2.0.6
 // HTML Data Version 1.1
 import { AllAttributes } from "./AllAttributes";
 import { ValueSets } from "./ValueSets";
@@ -93,9 +93,9 @@ interface PresentationAttributes
     AllAttributes,
     | "alignment-baseline"
     | "baseline-shift"
-    | "clip"
     | "clip-path"
     | "clip-rule"
+    | "color"
     | "color-interpolation"
     | "color-interpolation-filters"
     | "color-profile"
@@ -148,15 +148,10 @@ interface PresentationAttributes
     | "writing-mode"
   > {
   /**
-   * The color attribute is used to provide a potential indirect value (currentColor) for the fill, stroke, stop-color, flood-color and lighting-color attributes.
-   *
-   * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color} */
-  color?: ValueSets["57"];
-  /**
    * The display attribute lets you control the rendering of graphical or container elements.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display} */
-  display?: ValueSets["63"];
+  display?: ValueSets["59"];
 }
 interface TransferFunctionAttributes
   extends Pick<
@@ -167,7 +162,7 @@ interface TransferFunctionAttributes
    * Is a generic attribute and it has different meaning based on the context in which it's used.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type} */
-  type?: ValueSets["82"];
+  type?: ValueSets["75"];
 }
 export interface SVGAAttributes
   extends Pick<
@@ -459,7 +454,7 @@ export interface SVGFeTurbulenceAttributes
    * Is a generic attribute and it has different meaning based on the context in which it's used.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type} */
-  type?: ValueSets["91"];
+  type?: ValueSets["84"];
 }
 export interface SVGFilterAttributes
   extends Pick<AllAttributes, "filterUnits" | "primitiveUnits">,
@@ -650,7 +645,7 @@ export interface SVGSvgAttributes
    * Specifies the XML Namespace of the document.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xmlns} */
-  xmlns?: ValueSets["94"];
+  xmlns?: ValueSets["87"];
 }
 export interface SVGSwitchAttributes
   extends DataGlobalAttributes,
@@ -696,7 +691,7 @@ export interface SVGTextPathAttributes
    * Which method to render individual glyphs along the path.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/method} */
-  method?: ValueSets["96"];
+  method?: ValueSets["89"];
 }
 export interface SVGTitleAttributes
   extends DataGlobalAttributes,
