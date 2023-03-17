@@ -1,0 +1,102 @@
+[
+  {
+    "tagName": "math",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "merror",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mfrac",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mi",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mmultiscripts",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mn",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mo",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mover",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mpadded",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mphantom",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mroot",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mrow",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "ms",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mspace",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "msqrt",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mstyle",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "msub",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "msubsup",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mtable",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mtd",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mtext",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "mtr",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "munder",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "munderover",
+    "elementInterface": "MathMLElement"
+  },
+  {
+    "tagName": "semantics",
+    "elementInterface": "MathMLElement"
+  }
+]

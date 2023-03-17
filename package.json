@@ -2,14 +2,15 @@
   "name": "@michijs/htmltype",
   "author": "Lucas M. Segurado",
   "license": "MIT",
-  "version": "0.1.14",
+  "version": "0.1.14-beta.1",
   "baseUrl": "./src",
   "repository": {
     "type": "git",
     "url": "https://github.com/michijs/htmltype.git"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "supported/"
   ],
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -17,22 +18,38 @@
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.js"
+    },
+    "./supported": {
+      "import": "./supported/index.js",
+      "require": "./supported/index.js"
     }
   },
-  "description": "Strict TypeScript types for HTML and SVG attributes based on MDN data",
+  "description": "Strict TypeScript types for HTML, SVG and MATHML attributes based on MDN data.",
   "scripts": {
+    "lint-generated": "rome check --apply-suggested ./src/generated && rome format --write ./src/generated",
+    "start": "ts-node --project tasks.tsconfig.json ./tasks/generateTypes.ts",
     "dist": "tsc",
-    "link": "tsc && npm link --force && tsc -w"
+    "publish-prerelease-version": "npm version prerelease && npm run publish-npm",
+    "publish-npm": "npm run dist && npm publish --access public",
+    "link": "npm run dist && npm link --force && tsc -w"
   },
   "keywords": [
     "html",
+    "svg",
+    "mathml",
     "typescript"
   ],
   "devDependencies": {
-    "rome": "11.0.0",
+    "@types/node": "18.14.2",
+    "@vscode/web-custom-data": "0.4.5",
     "lint-staged": "13.2.0",
+    "rome": "11.0.0",
     "simple-git-hooks": "2.8.1",
-    "typescript": "4.9.5"
+    "ts-node": "10.9.1",
+    "typescript": "4.9.5",
+    "@michijs/vscode-svg": "2.0.6",
+    "vscode-html-languageservice": "5.0.4",
+    "@michijs/vscode-mathml": "1.0.2"
   },
   "dependencies": {
     "csstype": "3.1.1"
@@ -41,6 +58,9 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*.ts": "rome check --apply-suggested"
+    "*.ts": [
+      "rome check --apply-suggested",
+      "rome format --write"
+    ]
   }
 }

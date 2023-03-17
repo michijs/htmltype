@@ -7,12 +7,12 @@
     "experimentalDecorators": true,
     "lib": [
       "dom",
-      "es2020"
+      "esnext"
     ],
     "outDir": "./dist",
     "moduleResolution": "node",
-    "module": "es2020",
-    "target": "es2019",
+    "module": "ESNext",
+    "target": "ESNext",
     "baseUrl": "./",
     "noUnusedLocals": true,
     "noUnusedParameters": true
