@@ -40,7 +40,7 @@
     "typescript"
   ],
   "devDependencies": {
-    "@types/node": "18.14.2",
+    "@types/node": "18.15.3",
     "@vscode/web-custom-data": "0.4.5",
     "lint-staged": "13.2.0",
     "rome": "11.0.0",
