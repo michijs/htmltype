@@ -3,7 +3,7 @@ import htmlDataImport from "@vscode/web-custom-data/data/browsers.html-data.json
 import svgDataImport from "@michijs/vscode-svg/dist/svg.json";
 import svgAttributeSet from "@michijs/vscode-svg/dist/attributeSets.json";
 import mathmlDataImport from "@michijs/vscode-mathml/dist/mathml.json";
-import { HTMLDataV1 } from "vscode-html-languageservice";
+import { HTMLDataV1, ITagData } from "vscode-html-languageservice";
 import { AttributeSet } from "./types";
 
 let htmlData = htmlDataImport as HTMLDataV1;
@@ -44,7 +44,7 @@ htmlData.tags!.push(
         "The menu element represents an unordered list of interactive items.",
       attributes: [],
     },
-  ] as any),
+  ] as ITagData[]),
 );
 
 htmlData.tags = htmlData.tags!.map((x) => {
