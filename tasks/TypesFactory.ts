@@ -188,6 +188,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     const elements: InterfaceFactory = {
       name: props.name,
       export: true,
+      generics: "I extends Record<string, {}> = Record<string, {}>",
       requiredAttributes: true,
       extends: {
         pickFromAllAttributes: [],
@@ -197,7 +198,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         ...x,
         // Element interface is the only value
         values: [getInterfaceHelperName(props, x.name)].map((name) => ({
-          name,
+          name: `${name}<I>`,
         })),
       })),
     };
@@ -224,6 +225,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       const elementInterface: InterfaceFactory = {
         name: getInterfaceHelperName(props, x.name),
         export: true,
+        generics: "I extends Record<string, {}>",
         extends: {
           pickFromAllAttributes: [],
           otherClasses:

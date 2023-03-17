@@ -88,10 +88,12 @@ async function main() {
     getAdditionalElementExtendsInterfaces: (el, elementInterface) => {
       const attributeSets = [
         "DataGlobalAttributes",
-        `GlobalEvents<${elementInterface}>`,
+        `GlobalEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
       ];
       if (el === "body")
-        attributeSets.push(`WindowEvents<${elementInterface}>`);
+        attributeSets.push(
+          `WindowEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
+        );
       return attributeSets;
     },
   });
@@ -104,9 +106,10 @@ async function main() {
       'import { DataGlobalAttributes } from "../types"',
     ],
     getElementInterface: () => "MathMLElement",
-    getAdditionalElementExtendsInterfaces: (_el) => {
-      return ["DataGlobalAttributes", "MathMLEvents"];
-    },
+    getAdditionalElementExtendsInterfaces: (el, elementInterface) => [
+      "DataGlobalAttributes",
+      `MathMLEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
+    ],
   });
   await factory.addTypesFrom({
     name: "SVGElements",
@@ -119,9 +122,9 @@ async function main() {
     ],
     getElementInterface: (el) =>
       ["discard"].includes(el) ? "SVGElement" : `SVGElementTagNameMap['${el}']`,
-    getAdditionalElementExtendsInterfaces: (_el, elementInterface) => [
+    getAdditionalElementExtendsInterfaces: (el, elementInterface) => [
       "DataGlobalAttributes",
-      `SVGEvents<${elementInterface}>`,
+      `SVGEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
     ],
   });
   factory.generateAttributesAndValueSets();

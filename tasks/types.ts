@@ -16,6 +16,7 @@ export interface InterfaceFactoryCommonAttrs {
   name: string;
   export?: boolean;
   requiredAttributes?: boolean;
+  generics?: string;
   extends: {
     pickFromAllAttributes: string[];
     otherClasses: string[];
