@@ -917,9 +917,7 @@ export interface SVGViewAttributes<I extends Record<string, {}>>
     >,
     AriaAttributes,
     GlobalAttributes {}
-export interface SVGElements<
-  I extends Record<string, {}> = Record<string, {}>,
-> {
+export interface SVGElements<I extends {} = {}> {
   /**
    * The `<a>` SVG element creates a hyperlink to other web pages, files, locations in the same page, email addresses, or any other URL.
    *

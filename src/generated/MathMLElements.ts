@@ -154,9 +154,7 @@ export interface MathMLSemanticsAttributes<I extends Record<string, {}>>
       I["semantics"] extends Element ? I["semantics"] : MathMLElement
     >,
     GlobalAttributes {}
-export interface MathMLElements<
-  I extends Record<string, {}> = Record<string, {}>,
-> {
+export interface MathMLElements<I extends {} = {}> {
   /**
    * The `<math>` MathML element is the top-level MathML element, used to write a single mathematical formula. It can be placed in HTML content where flow content is permitted.
    *

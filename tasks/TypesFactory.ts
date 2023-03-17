@@ -188,7 +188,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     const elements: InterfaceFactory = {
       name: props.name,
       export: true,
-      generics: "I extends Record<string, {}> = Record<string, {}>",
+      generics: "I extends {} = {}",
       requiredAttributes: true,
       extends: {
         pickFromAllAttributes: [],

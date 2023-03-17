@@ -1172,9 +1172,7 @@ export interface HTMLWbrAttributes<I extends Record<string, {}>>
       I["wbr"] extends Element ? I["wbr"] : HTMLElementTagNameMap["wbr"]
     >,
     GlobalAttributes {}
-export interface HTMLElements<
-  I extends Record<string, {}> = Record<string, {}>,
-> {
+export interface HTMLElements<I extends {} = {}> {
   /**
    * If the a element has an href attribute, then it represents a hyperlink (a hypertext anchor) labeled by its contents.
    *
