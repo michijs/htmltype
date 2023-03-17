@@ -1,6 +1,6 @@
 import { TypedEvent } from "./TypedEvents/TypedEvent";
 
 export interface TypedElementEvent<T> {
-  onfullscreenchange?: TypedEvent<T>;
-  onfullscreenerror?: TypedEvent<T>;
+  onfullscreenchange?(ev: TypedEvent<T>): unknown;
+  onfullscreenerror?(ev: TypedEvent<T>): unknown;
 }

@@ -7,22 +7,22 @@ import { TypedPromiseRejectionEvent } from "./TypedEvents/TypedPromiseRejectionE
 import { TypedStorageEvent } from "./TypedEvents/TypedStorageEvent";
 
 export interface WindowEvents<T> {
-  onafterprint?: (ev: TypedEvent<T>) => any;
-  onbeforeprint?: (ev: TypedEvent<T>) => any;
-  onbeforeunload?: (ev: TypedBeforeUnloadEvent<T>) => any;
-  ongamepadconnected?: (ev: TypedEvent<T>) => any;
-  ongamepaddisconnected?: (ev: TypedEvent<T>) => any;
-  onhashchange?: (ev: TypedEvent<T>) => any;
-  onlanguagechange?: (ev: TypedEvent<T>) => any;
-  onmessage?: (ev: TypedMessageEvent<T>) => any;
-  onmessageerror?: (ev: TypedMessageEvent<T>) => any;
-  onoffline?: (ev: TypedEvent<T>) => any;
-  ononline?: (ev: TypedEvent<T>) => any;
-  onpagehide?: (ev: TypedPageTransitionEvent<T>) => any;
-  onpageshow?: (ev: TypedPageTransitionEvent<T>) => any;
-  onpopstate?: (ev: TypedPopStateEvent<T>) => any;
-  onrejectionhandled?: (ev: TypedPromiseRejectionEvent<T>) => any;
-  onstorage?: (ev: TypedStorageEvent<T>) => any;
-  onunhandledrejection?: (ev: TypedPromiseRejectionEvent<T>) => any;
-  onunload?: (ev: TypedEvent<T>) => any;
+  onafterprint?(ev: TypedEvent<T>): unknown;
+  onbeforeprint?(ev: TypedEvent<T>): unknown;
+  onbeforeunload?(ev: TypedBeforeUnloadEvent<T>): unknown;
+  ongamepadconnected?(ev: TypedEvent<T>): unknown;
+  ongamepaddisconnected?(ev: TypedEvent<T>): unknown;
+  onhashchange?(ev: TypedEvent<T>): unknown;
+  onlanguagechange?(ev: TypedEvent<T>): unknown;
+  onmessage?(ev: TypedMessageEvent<T>): unknown;
+  onmessageerror?(ev: TypedMessageEvent<T>): unknown;
+  onoffline?(ev: TypedEvent<T>): unknown;
+  ononline?(ev: TypedEvent<T>): unknown;
+  onpagehide?(ev: TypedPageTransitionEvent<T>): unknown;
+  onpageshow?(ev: TypedPageTransitionEvent<T>): unknown;
+  onpopstate?(ev: TypedPopStateEvent<T>): unknown;
+  onrejectionhandled?(ev: TypedPromiseRejectionEvent<T>): unknown;
+  onstorage?(ev: TypedStorageEvent<T>): unknown;
+  onunhandledrejection?(ev: TypedPromiseRejectionEvent<T>): unknown;
+  onunload?(ev: TypedEvent<T>): unknown;
 }
