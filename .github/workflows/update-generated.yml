@@ -41,4 +41,4 @@ jobs:
       # Push repository changes
       - name: Push changes to repository
         run: |
-          git push origin
+          git push origin || echo "No changes to push"
