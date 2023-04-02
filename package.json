@@ -26,7 +26,7 @@
   },
   "description": "Strict TypeScript types for HTML, SVG and MATHML attributes based on MDN data.",
   "scripts": {
-    "lint-generated": "rome check --apply-suggested ./src/generated && rome format --write ./src/generated",
+    "lint-generated": "rome check --apply ./src/generated && rome format --write ./src/generated",
     "start": "ts-node --project tasks.tsconfig.json ./tasks/generateTypes.ts",
     "dist": "tsc",
     "publish-prerelease-version": "npm version prerelease && npm run publish-npm",
@@ -43,7 +43,7 @@
     "@types/node": "18.15.10",
     "@vscode/web-custom-data": "0.4.5",
     "lint-staged": "13.2.0",
-    "rome": "11.0.0",
+    "rome": "12.0.0",
     "simple-git-hooks": "2.8.1",
     "ts-node": "10.9.1",
     "typescript": "5.0.2",
@@ -58,8 +58,8 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*.ts": [
-      "rome check --apply-suggested",
+    "*.{js,jsx,ts,tsx}": [
+      "rome check --apply",
       "rome format --write"
     ]
   }
