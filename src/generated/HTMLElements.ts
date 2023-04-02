@@ -1,249 +1,249 @@
 // file generated from @vscode/web-custom-data 0.4.5
 // HTML Data Version 1.1
-import { AllAttributes } from "./AllAttributes";
-import { ValueSets } from "./ValueSets";
-import { GlobalEvents, WindowEvents } from "../Events";
-import { DataGlobalAttributes } from "../types";
+import { AllAttributes } from './AllAttributes';
+import { ValueSets } from './ValueSets';
+import { GlobalEvents, WindowEvents } from '../Events';
+import { DataGlobalAttributes } from '../types';
 type GlobalAttributes = Pick<
   AllAttributes,
-  | "accesskey"
-  | "autocapitalize"
-  | "class"
-  | "contenteditable"
-  | "contextmenu"
-  | "dir"
-  | "draggable"
-  | "dropzone"
-  | "exportparts"
-  | "hidden"
-  | "id"
-  | "inputmode"
-  | "is"
-  | "itemid"
-  | "itemprop"
-  | "itemref"
-  | "itemscope"
-  | "itemtype"
-  | "lang"
-  | "part"
-  | "role"
-  | "slot"
-  | "spellcheck"
-  | "style"
-  | "tabindex"
-  | "title"
-  | "translate"
-  | "aria-activedescendant"
-  | "aria-atomic"
-  | "aria-autocomplete"
-  | "aria-busy"
-  | "aria-checked"
-  | "aria-colcount"
-  | "aria-colindex"
-  | "aria-colspan"
-  | "aria-controls"
-  | "aria-current"
-  | "aria-describedby"
-  | "aria-disabled"
-  | "aria-dropeffect"
-  | "aria-errormessage"
-  | "aria-expanded"
-  | "aria-flowto"
-  | "aria-grabbed"
-  | "aria-haspopup"
-  | "aria-hidden"
-  | "aria-invalid"
-  | "aria-label"
-  | "aria-labelledby"
-  | "aria-level"
-  | "aria-live"
-  | "aria-modal"
-  | "aria-multiline"
-  | "aria-multiselectable"
-  | "aria-orientation"
-  | "aria-owns"
-  | "aria-placeholder"
-  | "aria-posinset"
-  | "aria-pressed"
-  | "aria-readonly"
-  | "aria-relevant"
-  | "aria-required"
-  | "aria-roledescription"
-  | "aria-rowcount"
-  | "aria-rowindex"
-  | "aria-rowspan"
-  | "aria-selected"
-  | "aria-setsize"
-  | "aria-sort"
-  | "aria-valuemax"
-  | "aria-valuemin"
-  | "aria-valuenow"
-  | "aria-valuetext"
-  | "aria-details"
-  | "aria-keyshortcuts"
+  | 'accesskey'
+  | 'autocapitalize'
+  | 'class'
+  | 'contenteditable'
+  | 'contextmenu'
+  | 'dir'
+  | 'draggable'
+  | 'dropzone'
+  | 'exportparts'
+  | 'hidden'
+  | 'id'
+  | 'inputmode'
+  | 'is'
+  | 'itemid'
+  | 'itemprop'
+  | 'itemref'
+  | 'itemscope'
+  | 'itemtype'
+  | 'lang'
+  | 'part'
+  | 'role'
+  | 'slot'
+  | 'spellcheck'
+  | 'style'
+  | 'tabindex'
+  | 'title'
+  | 'translate'
+  | 'aria-activedescendant'
+  | 'aria-atomic'
+  | 'aria-autocomplete'
+  | 'aria-busy'
+  | 'aria-checked'
+  | 'aria-colcount'
+  | 'aria-colindex'
+  | 'aria-colspan'
+  | 'aria-controls'
+  | 'aria-current'
+  | 'aria-describedby'
+  | 'aria-disabled'
+  | 'aria-dropeffect'
+  | 'aria-errormessage'
+  | 'aria-expanded'
+  | 'aria-flowto'
+  | 'aria-grabbed'
+  | 'aria-haspopup'
+  | 'aria-hidden'
+  | 'aria-invalid'
+  | 'aria-label'
+  | 'aria-labelledby'
+  | 'aria-level'
+  | 'aria-live'
+  | 'aria-modal'
+  | 'aria-multiline'
+  | 'aria-multiselectable'
+  | 'aria-orientation'
+  | 'aria-owns'
+  | 'aria-placeholder'
+  | 'aria-posinset'
+  | 'aria-pressed'
+  | 'aria-readonly'
+  | 'aria-relevant'
+  | 'aria-required'
+  | 'aria-roledescription'
+  | 'aria-rowcount'
+  | 'aria-rowindex'
+  | 'aria-rowspan'
+  | 'aria-selected'
+  | 'aria-setsize'
+  | 'aria-sort'
+  | 'aria-valuemax'
+  | 'aria-valuemin'
+  | 'aria-valuenow'
+  | 'aria-valuetext'
+  | 'aria-details'
+  | 'aria-keyshortcuts'
 >;
 
 export interface HTMLAAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "href"
-      | "target"
-      | "download"
-      | "ping"
-      | "rel"
-      | "hreflang"
-      | "type"
-      | "referrerpolicy"
+      | 'href'
+      | 'target'
+      | 'download'
+      | 'ping'
+      | 'rel'
+      | 'hreflang'
+      | 'type'
+      | 'referrerpolicy'
     >,
     DataGlobalAttributes,
-    GlobalEvents<I["a"] extends Element ? I["a"] : HTMLElementTagNameMap["a"]>,
+    GlobalEvents<I['a'] extends Element ? I['a'] : HTMLElementTagNameMap['a']>,
     GlobalAttributes {}
 export interface HTMLAbbrAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["abbr"] extends Element ? I["abbr"] : HTMLElementTagNameMap["abbr"]
+      I['abbr'] extends Element ? I['abbr'] : HTMLElementTagNameMap['abbr']
     >,
     GlobalAttributes {}
 export interface HTMLAddressAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["address"] extends Element
-        ? I["address"]
-        : HTMLElementTagNameMap["address"]
+      I['address'] extends Element
+        ? I['address']
+        : HTMLElementTagNameMap['address']
     >,
     GlobalAttributes {}
 export interface HTMLAreaAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "alt"
-      | "coords"
-      | "shape"
-      | "href"
-      | "target"
-      | "download"
-      | "ping"
-      | "rel"
-      | "hreflang"
-      | "type"
-      | "accesskey"
+      | 'alt'
+      | 'coords'
+      | 'shape'
+      | 'href'
+      | 'target'
+      | 'download'
+      | 'ping'
+      | 'rel'
+      | 'hreflang'
+      | 'type'
+      | 'accesskey'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["area"] extends Element ? I["area"] : HTMLElementTagNameMap["area"]
+      I['area'] extends Element ? I['area'] : HTMLElementTagNameMap['area']
     >,
     GlobalAttributes {}
 export interface HTMLArticleAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["article"] extends Element
-        ? I["article"]
-        : HTMLElementTagNameMap["article"]
+      I['article'] extends Element
+        ? I['article']
+        : HTMLElementTagNameMap['article']
     >,
     GlobalAttributes {}
 export interface HTMLAsideAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["aside"] extends Element ? I["aside"] : HTMLElementTagNameMap["aside"]
+      I['aside'] extends Element ? I['aside'] : HTMLElementTagNameMap['aside']
     >,
     GlobalAttributes {}
 export interface HTMLAudioAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "src"
-      | "crossorigin"
-      | "preload"
-      | "autoplay"
-      | "mediagroup"
-      | "loop"
-      | "muted"
-      | "controls"
+      | 'src'
+      | 'crossorigin'
+      | 'preload'
+      | 'autoplay'
+      | 'mediagroup'
+      | 'loop'
+      | 'muted'
+      | 'controls'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["audio"] extends Element ? I["audio"] : HTMLElementTagNameMap["audio"]
+      I['audio'] extends Element ? I['audio'] : HTMLElementTagNameMap['audio']
     >,
     GlobalAttributes {}
 export interface HTMLBaseAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "href" | "target">,
+  extends Pick<AllAttributes, 'href' | 'target'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["base"] extends Element ? I["base"] : HTMLElementTagNameMap["base"]
+      I['base'] extends Element ? I['base'] : HTMLElementTagNameMap['base']
     >,
     GlobalAttributes {}
 export interface HTMLBAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    GlobalEvents<I["b"] extends Element ? I["b"] : HTMLElementTagNameMap["b"]>,
+    GlobalEvents<I['b'] extends Element ? I['b'] : HTMLElementTagNameMap['b']>,
     GlobalAttributes {}
 export interface HTMLBdiAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["bdi"] extends Element ? I["bdi"] : HTMLElementTagNameMap["bdi"]
+      I['bdi'] extends Element ? I['bdi'] : HTMLElementTagNameMap['bdi']
     >,
     GlobalAttributes {}
 export interface HTMLBdoAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["bdo"] extends Element ? I["bdo"] : HTMLElementTagNameMap["bdo"]
+      I['bdo'] extends Element ? I['bdo'] : HTMLElementTagNameMap['bdo']
     >,
     GlobalAttributes {}
 export interface HTMLBlockquoteAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "cite">,
+  extends Pick<AllAttributes, 'cite'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["blockquote"] extends Element
-        ? I["blockquote"]
-        : HTMLElementTagNameMap["blockquote"]
+      I['blockquote'] extends Element
+        ? I['blockquote']
+        : HTMLElementTagNameMap['blockquote']
     >,
     GlobalAttributes {}
 export interface HTMLBodyAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "alink"
-      | "background"
-      | "bgcolor"
-      | "bottommargin"
-      | "leftmargin"
-      | "link"
-      | "rightmargin"
-      | "text"
-      | "topmargin"
-      | "vlink"
+      | 'alink'
+      | 'background'
+      | 'bgcolor'
+      | 'bottommargin'
+      | 'leftmargin'
+      | 'link'
+      | 'rightmargin'
+      | 'text'
+      | 'topmargin'
+      | 'vlink'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["body"] extends Element ? I["body"] : HTMLElementTagNameMap["body"]
+      I['body'] extends Element ? I['body'] : HTMLElementTagNameMap['body']
     >,
     WindowEvents<
-      I["body"] extends Element ? I["body"] : HTMLElementTagNameMap["body"]
+      I['body'] extends Element ? I['body'] : HTMLElementTagNameMap['body']
     >,
     GlobalAttributes {}
 export interface HTMLBrAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "clear">,
+  extends Pick<AllAttributes, 'clear'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["br"] extends Element ? I["br"] : HTMLElementTagNameMap["br"]
+      I['br'] extends Element ? I['br'] : HTMLElementTagNameMap['br']
     >,
     GlobalAttributes {}
 export interface HTMLButtonAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "autofocus"
-      | "disabled"
-      | "form"
-      | "formaction"
-      | "formenctype"
-      | "formmethod"
-      | "formnovalidate"
-      | "formtarget"
-      | "name"
-      | "value"
-      | "autocomplete"
+      | 'autofocus'
+      | 'disabled'
+      | 'form'
+      | 'formaction'
+      | 'formenctype'
+      | 'formmethod'
+      | 'formnovalidate'
+      | 'formtarget'
+      | 'name'
+      | 'value'
+      | 'autocomplete'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["button"] extends Element
-        ? I["button"]
-        : HTMLElementTagNameMap["button"]
+      I['button'] extends Element
+        ? I['button']
+        : HTMLElementTagNameMap['button']
     >,
     GlobalAttributes {
   /**
@@ -252,316 +252,316 @@ export interface HTMLButtonAttributes<I extends Record<string, {}>>
    * *   `submit`: The button submits the form data to the server. This is the default if the attribute is not specified, or if the attribute is dynamically changed to an empty or invalid value.
    * *   `reset`: The button resets all the controls to their initial values.
    * *   `button`: The button has no default behavior. It can have client-side scripts associated with the element's events, which are triggered when the events occur. */
-  type?: ValueSets["bt"];
+  type?: ValueSets['bt'];
 }
 export interface HTMLCanvasAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "width" | "height" | "moz-opaque">,
+  extends Pick<AllAttributes, 'width' | 'height' | 'moz-opaque'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["canvas"] extends Element
-        ? I["canvas"]
-        : HTMLElementTagNameMap["canvas"]
+      I['canvas'] extends Element
+        ? I['canvas']
+        : HTMLElementTagNameMap['canvas']
     >,
     GlobalAttributes {}
 export interface HTMLCaptionAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "align">,
+  extends Pick<AllAttributes, 'align'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["caption"] extends Element
-        ? I["caption"]
-        : HTMLElementTagNameMap["caption"]
+      I['caption'] extends Element
+        ? I['caption']
+        : HTMLElementTagNameMap['caption']
     >,
     GlobalAttributes {}
 export interface HTMLCiteAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["cite"] extends Element ? I["cite"] : HTMLElementTagNameMap["cite"]
+      I['cite'] extends Element ? I['cite'] : HTMLElementTagNameMap['cite']
     >,
     GlobalAttributes {}
 export interface HTMLCodeAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["code"] extends Element ? I["code"] : HTMLElementTagNameMap["code"]
+      I['code'] extends Element ? I['code'] : HTMLElementTagNameMap['code']
     >,
     GlobalAttributes {}
 export interface HTMLColAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "span" | "align">,
+  extends Pick<AllAttributes, 'span' | 'align'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["col"] extends Element ? I["col"] : HTMLElementTagNameMap["col"]
+      I['col'] extends Element ? I['col'] : HTMLElementTagNameMap['col']
     >,
     GlobalAttributes {}
 export interface HTMLColgroupAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "span" | "align">,
+  extends Pick<AllAttributes, 'span' | 'align'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["colgroup"] extends Element
-        ? I["colgroup"]
-        : HTMLElementTagNameMap["colgroup"]
+      I['colgroup'] extends Element
+        ? I['colgroup']
+        : HTMLElementTagNameMap['colgroup']
     >,
     GlobalAttributes {}
 export interface HTMLDataAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "value">,
+  extends Pick<AllAttributes, 'value'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["data"] extends Element ? I["data"] : HTMLElementTagNameMap["data"]
+      I['data'] extends Element ? I['data'] : HTMLElementTagNameMap['data']
     >,
     GlobalAttributes {}
 export interface HTMLDatalistAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["datalist"] extends Element
-        ? I["datalist"]
-        : HTMLElementTagNameMap["datalist"]
+      I['datalist'] extends Element
+        ? I['datalist']
+        : HTMLElementTagNameMap['datalist']
     >,
     GlobalAttributes {}
 export interface HTMLDdAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "nowrap">,
+  extends Pick<AllAttributes, 'nowrap'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["dd"] extends Element ? I["dd"] : HTMLElementTagNameMap["dd"]
+      I['dd'] extends Element ? I['dd'] : HTMLElementTagNameMap['dd']
     >,
     GlobalAttributes {}
 export interface HTMLDelAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "cite" | "datetime">,
+  extends Pick<AllAttributes, 'cite' | 'datetime'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["del"] extends Element ? I["del"] : HTMLElementTagNameMap["del"]
+      I['del'] extends Element ? I['del'] : HTMLElementTagNameMap['del']
     >,
     GlobalAttributes {}
 export interface HTMLDetailsAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "open">,
+  extends Pick<AllAttributes, 'open'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["details"] extends Element
-        ? I["details"]
-        : HTMLElementTagNameMap["details"]
+      I['details'] extends Element
+        ? I['details']
+        : HTMLElementTagNameMap['details']
     >,
     GlobalAttributes {}
 export interface HTMLDfnAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["dfn"] extends Element ? I["dfn"] : HTMLElementTagNameMap["dfn"]
+      I['dfn'] extends Element ? I['dfn'] : HTMLElementTagNameMap['dfn']
     >,
     GlobalAttributes {}
 export interface HTMLDialogAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["dialog"] extends Element
-        ? I["dialog"]
-        : HTMLElementTagNameMap["dialog"]
+      I['dialog'] extends Element
+        ? I['dialog']
+        : HTMLElementTagNameMap['dialog']
     >,
     GlobalAttributes {
   /**
    * Indicates that the dialog is active and available for interaction. When the `open` attribute is not set, the dialog shouldn't be shown to the user. */
-  open?: ValueSets["default"];
+  open?: ValueSets['default'];
 }
 export interface HTMLDivAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["div"] extends Element ? I["div"] : HTMLElementTagNameMap["div"]
+      I['div'] extends Element ? I['div'] : HTMLElementTagNameMap['div']
     >,
     GlobalAttributes {}
 export interface HTMLDlAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["dl"] extends Element ? I["dl"] : HTMLElementTagNameMap["dl"]
+      I['dl'] extends Element ? I['dl'] : HTMLElementTagNameMap['dl']
     >,
     GlobalAttributes {}
 export interface HTMLDtAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["dt"] extends Element ? I["dt"] : HTMLElementTagNameMap["dt"]
+      I['dt'] extends Element ? I['dt'] : HTMLElementTagNameMap['dt']
     >,
     GlobalAttributes {}
 export interface HTMLEmAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["em"] extends Element ? I["em"] : HTMLElementTagNameMap["em"]
+      I['em'] extends Element ? I['em'] : HTMLElementTagNameMap['em']
     >,
     GlobalAttributes {}
 export interface HTMLEmbedAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "src" | "type" | "width" | "height">,
+  extends Pick<AllAttributes, 'src' | 'type' | 'width' | 'height'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["embed"] extends Element ? I["embed"] : HTMLElementTagNameMap["embed"]
+      I['embed'] extends Element ? I['embed'] : HTMLElementTagNameMap['embed']
     >,
     GlobalAttributes {}
 export interface HTMLFieldsetAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "disabled" | "form" | "name">,
+  extends Pick<AllAttributes, 'disabled' | 'form' | 'name'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["fieldset"] extends Element
-        ? I["fieldset"]
-        : HTMLElementTagNameMap["fieldset"]
+      I['fieldset'] extends Element
+        ? I['fieldset']
+        : HTMLElementTagNameMap['fieldset']
     >,
     GlobalAttributes {}
 export interface HTMLFigcaptionAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["figcaption"] extends Element
-        ? I["figcaption"]
-        : HTMLElementTagNameMap["figcaption"]
+      I['figcaption'] extends Element
+        ? I['figcaption']
+        : HTMLElementTagNameMap['figcaption']
     >,
     GlobalAttributes {}
 export interface HTMLFigureAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["figure"] extends Element
-        ? I["figure"]
-        : HTMLElementTagNameMap["figure"]
+      I['figure'] extends Element
+        ? I['figure']
+        : HTMLElementTagNameMap['figure']
     >,
     GlobalAttributes {}
 export interface HTMLFooterAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["footer"] extends Element
-        ? I["footer"]
-        : HTMLElementTagNameMap["footer"]
+      I['footer'] extends Element
+        ? I['footer']
+        : HTMLElementTagNameMap['footer']
     >,
     GlobalAttributes {}
 export interface HTMLFormAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "accept-charset"
-      | "action"
-      | "autocomplete"
-      | "enctype"
-      | "method"
-      | "name"
-      | "novalidate"
-      | "target"
-      | "accept"
-      | "autocapitalize"
+      | 'accept-charset'
+      | 'action'
+      | 'autocomplete'
+      | 'enctype'
+      | 'method'
+      | 'name'
+      | 'novalidate'
+      | 'target'
+      | 'accept'
+      | 'autocapitalize'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["form"] extends Element ? I["form"] : HTMLElementTagNameMap["form"]
+      I['form'] extends Element ? I['form'] : HTMLElementTagNameMap['form']
     >,
     GlobalAttributes {}
 export interface HTMLH1Attributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["h1"] extends Element ? I["h1"] : HTMLElementTagNameMap["h1"]
+      I['h1'] extends Element ? I['h1'] : HTMLElementTagNameMap['h1']
     >,
     GlobalAttributes {}
 export interface HTMLH2Attributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["h2"] extends Element ? I["h2"] : HTMLElementTagNameMap["h2"]
+      I['h2'] extends Element ? I['h2'] : HTMLElementTagNameMap['h2']
     >,
     GlobalAttributes {}
 export interface HTMLH3Attributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["h3"] extends Element ? I["h3"] : HTMLElementTagNameMap["h3"]
+      I['h3'] extends Element ? I['h3'] : HTMLElementTagNameMap['h3']
     >,
     GlobalAttributes {}
 export interface HTMLH4Attributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["h4"] extends Element ? I["h4"] : HTMLElementTagNameMap["h4"]
+      I['h4'] extends Element ? I['h4'] : HTMLElementTagNameMap['h4']
     >,
     GlobalAttributes {}
 export interface HTMLH5Attributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["h5"] extends Element ? I["h5"] : HTMLElementTagNameMap["h5"]
+      I['h5'] extends Element ? I['h5'] : HTMLElementTagNameMap['h5']
     >,
     GlobalAttributes {}
 export interface HTMLH6Attributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["h6"] extends Element ? I["h6"] : HTMLElementTagNameMap["h6"]
+      I['h6'] extends Element ? I['h6'] : HTMLElementTagNameMap['h6']
     >,
     GlobalAttributes {}
 export interface HTMLHeadAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "profile">,
+  extends Pick<AllAttributes, 'profile'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["head"] extends Element ? I["head"] : HTMLElementTagNameMap["head"]
+      I['head'] extends Element ? I['head'] : HTMLElementTagNameMap['head']
     >,
     GlobalAttributes {}
 export interface HTMLHeaderAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["header"] extends Element
-        ? I["header"]
-        : HTMLElementTagNameMap["header"]
+      I['header'] extends Element
+        ? I['header']
+        : HTMLElementTagNameMap['header']
     >,
     GlobalAttributes {}
 export interface HTMLHgroupAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["hgroup"] extends Element
-        ? I["hgroup"]
-        : HTMLElementTagNameMap["hgroup"]
+      I['hgroup'] extends Element
+        ? I['hgroup']
+        : HTMLElementTagNameMap['hgroup']
     >,
     GlobalAttributes {}
 export interface HTMLHrAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "align" | "color" | "noshade" | "size" | "width">,
+  extends Pick<AllAttributes, 'align' | 'color' | 'noshade' | 'size' | 'width'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["hr"] extends Element ? I["hr"] : HTMLElementTagNameMap["hr"]
+      I['hr'] extends Element ? I['hr'] : HTMLElementTagNameMap['hr']
     >,
     GlobalAttributes {}
 export interface HTMLHtmlAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "manifest" | "version" | "xmlns">,
+  extends Pick<AllAttributes, 'manifest' | 'version' | 'xmlns'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["html"] extends Element ? I["html"] : HTMLElementTagNameMap["html"]
+      I['html'] extends Element ? I['html'] : HTMLElementTagNameMap['html']
     >,
     GlobalAttributes {}
 export interface HTMLIAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    GlobalEvents<I["i"] extends Element ? I["i"] : HTMLElementTagNameMap["i"]>,
+    GlobalEvents<I['i'] extends Element ? I['i'] : HTMLElementTagNameMap['i']>,
     GlobalAttributes {}
 export interface HTMLIframeAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "src"
-      | "srcdoc"
-      | "name"
-      | "sandbox"
-      | "seamless"
-      | "allowfullscreen"
-      | "width"
-      | "height"
-      | "allow"
-      | "allowpaymentrequest"
-      | "allowpaymentrequest"
-      | "csp"
-      | "importance"
-      | "referrerpolicy"
+      | 'src'
+      | 'srcdoc'
+      | 'name'
+      | 'sandbox'
+      | 'seamless'
+      | 'allowfullscreen'
+      | 'width'
+      | 'height'
+      | 'allow'
+      | 'allowpaymentrequest'
+      | 'allowpaymentrequest'
+      | 'csp'
+      | 'importance'
+      | 'referrerpolicy'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["iframe"] extends Element
-        ? I["iframe"]
-        : HTMLElementTagNameMap["iframe"]
+      I['iframe'] extends Element
+        ? I['iframe']
+        : HTMLElementTagNameMap['iframe']
     >,
     GlobalAttributes {}
 export interface HTMLImgAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "alt"
-      | "src"
-      | "srcset"
-      | "crossorigin"
-      | "usemap"
-      | "ismap"
-      | "width"
-      | "height"
-      | "decoding"
-      | "loading"
-      | "sizes"
-      | "importance"
-      | "importance"
-      | "intrinsicsize"
+      | 'alt'
+      | 'src'
+      | 'srcset'
+      | 'crossorigin'
+      | 'usemap'
+      | 'ismap'
+      | 'width'
+      | 'height'
+      | 'decoding'
+      | 'loading'
+      | 'sizes'
+      | 'importance'
+      | 'importance'
+      | 'intrinsicsize'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["img"] extends Element ? I["img"] : HTMLElementTagNameMap["img"]
+      I['img'] extends Element ? I['img'] : HTMLElementTagNameMap['img']
     >,
     GlobalAttributes {
   /**
@@ -572,198 +572,198 @@ export interface HTMLImgAttributes<I extends Record<string, {}>>
    * *   `origin:` The `Referer` header will include the page of origin's scheme, the host, and the port.
    * *   `origin-when-cross-origin:` Navigating to other origins will limit the included referral data to the scheme, the host and the port, while navigating from the same origin will include the referrer's full path.
    * *   `unsafe-url:` The `Referer` header will include the origin and the path, but not the fragment, password, or username. This case is unsafe because it can leak origins and paths from TLS-protected resources to insecure origins. */
-  referrerpolicy?: ValueSets["referrerpolicy"];
+  referrerpolicy?: ValueSets['referrerpolicy'];
 }
 export interface HTMLInputAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "accept"
-      | "alt"
-      | "autofocus"
-      | "checked"
-      | "dirname"
-      | "disabled"
-      | "form"
-      | "formaction"
-      | "formenctype"
-      | "formmethod"
-      | "formnovalidate"
-      | "formtarget"
-      | "height"
-      | "list"
-      | "max"
-      | "maxlength"
-      | "min"
-      | "minlength"
-      | "multiple"
-      | "name"
-      | "pattern"
-      | "placeholder"
-      | "readonly"
-      | "required"
-      | "size"
-      | "src"
-      | "step"
-      | "value"
-      | "width"
+      | 'accept'
+      | 'alt'
+      | 'autofocus'
+      | 'checked'
+      | 'dirname'
+      | 'disabled'
+      | 'form'
+      | 'formaction'
+      | 'formenctype'
+      | 'formmethod'
+      | 'formnovalidate'
+      | 'formtarget'
+      | 'height'
+      | 'list'
+      | 'max'
+      | 'maxlength'
+      | 'min'
+      | 'minlength'
+      | 'multiple'
+      | 'name'
+      | 'pattern'
+      | 'placeholder'
+      | 'readonly'
+      | 'required'
+      | 'size'
+      | 'src'
+      | 'step'
+      | 'value'
+      | 'width'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["input"] extends Element ? I["input"] : HTMLElementTagNameMap["input"]
+      I['input'] extends Element ? I['input'] : HTMLElementTagNameMap['input']
     >,
     GlobalAttributes {
-  autocomplete?: ValueSets["inputautocomplete"];
-  inputmode?: ValueSets["im"];
-  type?: ValueSets["t"];
+  autocomplete?: ValueSets['inputautocomplete'];
+  inputmode?: ValueSets['im'];
+  type?: ValueSets['t'];
 }
 export interface HTMLInsAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "cite" | "datetime">,
+  extends Pick<AllAttributes, 'cite' | 'datetime'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["ins"] extends Element ? I["ins"] : HTMLElementTagNameMap["ins"]
+      I['ins'] extends Element ? I['ins'] : HTMLElementTagNameMap['ins']
     >,
     GlobalAttributes {}
 export interface HTMLKbdAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["kbd"] extends Element ? I["kbd"] : HTMLElementTagNameMap["kbd"]
+      I['kbd'] extends Element ? I['kbd'] : HTMLElementTagNameMap['kbd']
     >,
     GlobalAttributes {}
 export interface HTMLLabelAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "form" | "for">,
+  extends Pick<AllAttributes, 'form' | 'for'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["label"] extends Element ? I["label"] : HTMLElementTagNameMap["label"]
+      I['label'] extends Element ? I['label'] : HTMLElementTagNameMap['label']
     >,
     GlobalAttributes {}
 export interface HTMLLegendAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["legend"] extends Element
-        ? I["legend"]
-        : HTMLElementTagNameMap["legend"]
+      I['legend'] extends Element
+        ? I['legend']
+        : HTMLElementTagNameMap['legend']
     >,
     GlobalAttributes {}
 export interface HTMLLiAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "value" | "type">,
+  extends Pick<AllAttributes, 'value' | 'type'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["li"] extends Element ? I["li"] : HTMLElementTagNameMap["li"]
+      I['li'] extends Element ? I['li'] : HTMLElementTagNameMap['li']
     >,
     GlobalAttributes {}
 export interface HTMLLinkAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "href"
-      | "crossorigin"
-      | "rel"
-      | "media"
-      | "hreflang"
-      | "type"
-      | "sizes"
-      | "as"
-      | "importance"
-      | "importance"
-      | "integrity"
-      | "referrerpolicy"
-      | "title"
+      | 'href'
+      | 'crossorigin'
+      | 'rel'
+      | 'media'
+      | 'hreflang'
+      | 'type'
+      | 'sizes'
+      | 'as'
+      | 'importance'
+      | 'importance'
+      | 'integrity'
+      | 'referrerpolicy'
+      | 'title'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["link"] extends Element ? I["link"] : HTMLElementTagNameMap["link"]
+      I['link'] extends Element ? I['link'] : HTMLElementTagNameMap['link']
     >,
     GlobalAttributes {}
 export interface HTMLMainAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["main"] extends Element ? I["main"] : HTMLElementTagNameMap["main"]
+      I['main'] extends Element ? I['main'] : HTMLElementTagNameMap['main']
     >,
     GlobalAttributes {}
 export interface HTMLMapAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "name">,
+  extends Pick<AllAttributes, 'name'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["map"] extends Element ? I["map"] : HTMLElementTagNameMap["map"]
+      I['map'] extends Element ? I['map'] : HTMLElementTagNameMap['map']
     >,
     GlobalAttributes {}
 export interface HTMLMarkAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["mark"] extends Element ? I["mark"] : HTMLElementTagNameMap["mark"]
+      I['mark'] extends Element ? I['mark'] : HTMLElementTagNameMap['mark']
     >,
     GlobalAttributes {}
 export interface HTMLMenuAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["menu"] extends Element ? I["menu"] : HTMLElementTagNameMap["menu"]
+      I['menu'] extends Element ? I['menu'] : HTMLElementTagNameMap['menu']
     >,
     GlobalAttributes {}
 export interface HTMLMetaAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      "name" | "http-equiv" | "content" | "charset" | "scheme"
+      'name' | 'http-equiv' | 'content' | 'charset' | 'scheme'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["meta"] extends Element ? I["meta"] : HTMLElementTagNameMap["meta"]
+      I['meta'] extends Element ? I['meta'] : HTMLElementTagNameMap['meta']
     >,
     GlobalAttributes {}
 export interface HTMLMeterAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      "value" | "min" | "max" | "low" | "high" | "optimum" | "form"
+      'value' | 'min' | 'max' | 'low' | 'high' | 'optimum' | 'form'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["meter"] extends Element ? I["meter"] : HTMLElementTagNameMap["meter"]
+      I['meter'] extends Element ? I['meter'] : HTMLElementTagNameMap['meter']
     >,
     GlobalAttributes {}
 export interface HTMLNavAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["nav"] extends Element ? I["nav"] : HTMLElementTagNameMap["nav"]
+      I['nav'] extends Element ? I['nav'] : HTMLElementTagNameMap['nav']
     >,
     GlobalAttributes {}
 export interface HTMLNoscriptAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["noscript"] extends Element
-        ? I["noscript"]
-        : HTMLElementTagNameMap["noscript"]
+      I['noscript'] extends Element
+        ? I['noscript']
+        : HTMLElementTagNameMap['noscript']
     >,
     GlobalAttributes {}
 export interface HTMLObjectAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "data"
-      | "type"
-      | "typemustmatch"
-      | "name"
-      | "usemap"
-      | "form"
-      | "width"
-      | "height"
-      | "archive"
-      | "border"
-      | "classid"
-      | "codebase"
-      | "codetype"
-      | "declare"
-      | "standby"
-      | "tabindex"
+      | 'data'
+      | 'type'
+      | 'typemustmatch'
+      | 'name'
+      | 'usemap'
+      | 'form'
+      | 'width'
+      | 'height'
+      | 'archive'
+      | 'border'
+      | 'classid'
+      | 'codebase'
+      | 'codetype'
+      | 'declare'
+      | 'standby'
+      | 'tabindex'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["object"] extends Element
-        ? I["object"]
-        : HTMLElementTagNameMap["object"]
+      I['object'] extends Element
+        ? I['object']
+        : HTMLElementTagNameMap['object']
     >,
     GlobalAttributes {}
 export interface HTMLOlAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "reversed" | "start" | "compact">,
+  extends Pick<AllAttributes, 'reversed' | 'start' | 'compact'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["ol"] extends Element ? I["ol"] : HTMLElementTagNameMap["ol"]
+      I['ol'] extends Element ? I['ol'] : HTMLElementTagNameMap['ol']
     >,
     GlobalAttributes {
   /**
@@ -780,274 +780,274 @@ export interface HTMLOlAttributes<I extends Record<string, {}>>
    * **Note:** This attribute was deprecated in HTML4, but reintroduced in HTML5.
    *
    * Unless the value of the list number matters (e.g. in legal or technical documents where items are to be referenced by their number/letter), the CSS [`list-style-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type "The list-style-type CSS property sets the marker (such as a disc, character, or custom counter style) of a list item element.") property should be used instead. */
-  type?: ValueSets["lt"];
+  type?: ValueSets['lt'];
 }
 export interface HTMLOptgroupAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "disabled" | "label">,
+  extends Pick<AllAttributes, 'disabled' | 'label'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["optgroup"] extends Element
-        ? I["optgroup"]
-        : HTMLElementTagNameMap["optgroup"]
+      I['optgroup'] extends Element
+        ? I['optgroup']
+        : HTMLElementTagNameMap['optgroup']
     >,
     GlobalAttributes {}
 export interface HTMLOptionAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "disabled" | "label" | "selected" | "value">,
+  extends Pick<AllAttributes, 'disabled' | 'label' | 'selected' | 'value'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["option"] extends Element
-        ? I["option"]
-        : HTMLElementTagNameMap["option"]
+      I['option'] extends Element
+        ? I['option']
+        : HTMLElementTagNameMap['option']
     >,
     GlobalAttributes {}
 export interface HTMLOutputAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "for" | "form" | "name">,
+  extends Pick<AllAttributes, 'for' | 'form' | 'name'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["output"] extends Element
-        ? I["output"]
-        : HTMLElementTagNameMap["output"]
+      I['output'] extends Element
+        ? I['output']
+        : HTMLElementTagNameMap['output']
     >,
     GlobalAttributes {}
 export interface HTMLParamAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "name" | "value" | "type" | "valuetype">,
+  extends Pick<AllAttributes, 'name' | 'value' | 'type' | 'valuetype'>,
     DataGlobalAttributes,
-    GlobalEvents<I["param"] extends Element ? I["param"] : HTMLElement>,
+    GlobalEvents<I['param'] extends Element ? I['param'] : HTMLElement>,
     GlobalAttributes {}
 export interface HTMLPAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    GlobalEvents<I["p"] extends Element ? I["p"] : HTMLElementTagNameMap["p"]>,
+    GlobalEvents<I['p'] extends Element ? I['p'] : HTMLElementTagNameMap['p']>,
     GlobalAttributes {}
 export interface HTMLPictureAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["picture"] extends Element
-        ? I["picture"]
-        : HTMLElementTagNameMap["picture"]
+      I['picture'] extends Element
+        ? I['picture']
+        : HTMLElementTagNameMap['picture']
     >,
     GlobalAttributes {}
 export interface HTMLPreAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "cols" | "width" | "wrap">,
+  extends Pick<AllAttributes, 'cols' | 'width' | 'wrap'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["pre"] extends Element ? I["pre"] : HTMLElementTagNameMap["pre"]
+      I['pre'] extends Element ? I['pre'] : HTMLElementTagNameMap['pre']
     >,
     GlobalAttributes {}
 export interface HTMLProgressAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "value" | "max">,
+  extends Pick<AllAttributes, 'value' | 'max'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["progress"] extends Element
-        ? I["progress"]
-        : HTMLElementTagNameMap["progress"]
+      I['progress'] extends Element
+        ? I['progress']
+        : HTMLElementTagNameMap['progress']
     >,
     GlobalAttributes {}
 export interface HTMLQAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "cite">,
+  extends Pick<AllAttributes, 'cite'>,
     DataGlobalAttributes,
-    GlobalEvents<I["q"] extends Element ? I["q"] : HTMLElementTagNameMap["q"]>,
+    GlobalEvents<I['q'] extends Element ? I['q'] : HTMLElementTagNameMap['q']>,
     GlobalAttributes {}
 export interface HTMLRbAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    GlobalEvents<I["rb"] extends Element ? I["rb"] : HTMLElement>,
+    GlobalEvents<I['rb'] extends Element ? I['rb'] : HTMLElement>,
     GlobalAttributes {}
 export interface HTMLRpAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["rp"] extends Element ? I["rp"] : HTMLElementTagNameMap["rp"]
+      I['rp'] extends Element ? I['rp'] : HTMLElementTagNameMap['rp']
     >,
     GlobalAttributes {}
 export interface HTMLRtAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["rt"] extends Element ? I["rt"] : HTMLElementTagNameMap["rt"]
+      I['rt'] extends Element ? I['rt'] : HTMLElementTagNameMap['rt']
     >,
     GlobalAttributes {}
 export interface HTMLRubyAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["ruby"] extends Element ? I["ruby"] : HTMLElementTagNameMap["ruby"]
+      I['ruby'] extends Element ? I['ruby'] : HTMLElementTagNameMap['ruby']
     >,
     GlobalAttributes {}
 export interface HTMLSampAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["samp"] extends Element ? I["samp"] : HTMLElementTagNameMap["samp"]
+      I['samp'] extends Element ? I['samp'] : HTMLElementTagNameMap['samp']
     >,
     GlobalAttributes {}
 export interface HTMLSAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    GlobalEvents<I["s"] extends Element ? I["s"] : HTMLElementTagNameMap["s"]>,
+    GlobalEvents<I['s'] extends Element ? I['s'] : HTMLElementTagNameMap['s']>,
     GlobalAttributes {}
 export interface HTMLScriptAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "src"
-      | "type"
-      | "charset"
-      | "async"
-      | "defer"
-      | "crossorigin"
-      | "nonce"
-      | "integrity"
-      | "nomodule"
-      | "referrerpolicy"
-      | "text"
+      | 'src'
+      | 'type'
+      | 'charset'
+      | 'async'
+      | 'defer'
+      | 'crossorigin'
+      | 'nonce'
+      | 'integrity'
+      | 'nomodule'
+      | 'referrerpolicy'
+      | 'text'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["script"] extends Element
-        ? I["script"]
-        : HTMLElementTagNameMap["script"]
+      I['script'] extends Element
+        ? I['script']
+        : HTMLElementTagNameMap['script']
     >,
     GlobalAttributes {}
 export interface HTMLSectionAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["section"] extends Element
-        ? I["section"]
-        : HTMLElementTagNameMap["section"]
+      I['section'] extends Element
+        ? I['section']
+        : HTMLElementTagNameMap['section']
     >,
     GlobalAttributes {}
 export interface HTMLSelectAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "autofocus"
-      | "disabled"
-      | "form"
-      | "multiple"
-      | "name"
-      | "required"
-      | "size"
+      | 'autofocus'
+      | 'disabled'
+      | 'form'
+      | 'multiple'
+      | 'name'
+      | 'required'
+      | 'size'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["select"] extends Element
-        ? I["select"]
-        : HTMLElementTagNameMap["select"]
+      I['select'] extends Element
+        ? I['select']
+        : HTMLElementTagNameMap['select']
     >,
     GlobalAttributes {
   /**
    * A [`DOMString`](https://developer.mozilla.org/en-US/docs/Web/API/DOMString "DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String.") providing a hint for a [user agent's](https://developer.mozilla.org/en-US/docs/Glossary/user_agent "user agent's: A user agent is a computer program representing a person, for example, a browser in a Web context.") autocomplete feature. See [The HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for a complete list of values and details on how to use autocomplete. */
-  autocomplete?: ValueSets["inputautocomplete"];
+  autocomplete?: ValueSets['inputautocomplete'];
 }
 export interface HTMLSlotAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "name">,
+  extends Pick<AllAttributes, 'name'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["slot"] extends Element ? I["slot"] : HTMLElementTagNameMap["slot"]
+      I['slot'] extends Element ? I['slot'] : HTMLElementTagNameMap['slot']
     >,
     GlobalAttributes {}
 export interface HTMLSmallAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["small"] extends Element ? I["small"] : HTMLElementTagNameMap["small"]
+      I['small'] extends Element ? I['small'] : HTMLElementTagNameMap['small']
     >,
     GlobalAttributes {}
 export interface HTMLSourceAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "src" | "type" | "sizes" | "srcset" | "media">,
+  extends Pick<AllAttributes, 'src' | 'type' | 'sizes' | 'srcset' | 'media'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["source"] extends Element
-        ? I["source"]
-        : HTMLElementTagNameMap["source"]
+      I['source'] extends Element
+        ? I['source']
+        : HTMLElementTagNameMap['source']
     >,
     GlobalAttributes {}
 export interface HTMLSpanAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["span"] extends Element ? I["span"] : HTMLElementTagNameMap["span"]
+      I['span'] extends Element ? I['span'] : HTMLElementTagNameMap['span']
     >,
     GlobalAttributes {}
 export interface HTMLStrongAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["strong"] extends Element
-        ? I["strong"]
-        : HTMLElementTagNameMap["strong"]
+      I['strong'] extends Element
+        ? I['strong']
+        : HTMLElementTagNameMap['strong']
     >,
     GlobalAttributes {}
 export interface HTMLStyleAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "media" | "nonce" | "type" | "scoped" | "title">,
+  extends Pick<AllAttributes, 'media' | 'nonce' | 'type' | 'scoped' | 'title'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["style"] extends Element ? I["style"] : HTMLElementTagNameMap["style"]
+      I['style'] extends Element ? I['style'] : HTMLElementTagNameMap['style']
     >,
     GlobalAttributes {}
 export interface HTMLSubAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["sub"] extends Element ? I["sub"] : HTMLElementTagNameMap["sub"]
+      I['sub'] extends Element ? I['sub'] : HTMLElementTagNameMap['sub']
     >,
     GlobalAttributes {}
 export interface HTMLSummaryAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["summary"] extends Element
-        ? I["summary"]
-        : HTMLElementTagNameMap["summary"]
+      I['summary'] extends Element
+        ? I['summary']
+        : HTMLElementTagNameMap['summary']
     >,
     GlobalAttributes {}
 export interface HTMLSupAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["sup"] extends Element ? I["sup"] : HTMLElementTagNameMap["sup"]
+      I['sup'] extends Element ? I['sup'] : HTMLElementTagNameMap['sup']
     >,
     GlobalAttributes {}
 export interface HTMLTableAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "border" | "align">,
+  extends Pick<AllAttributes, 'border' | 'align'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["table"] extends Element ? I["table"] : HTMLElementTagNameMap["table"]
+      I['table'] extends Element ? I['table'] : HTMLElementTagNameMap['table']
     >,
     GlobalAttributes {}
 export interface HTMLTbodyAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "align">,
+  extends Pick<AllAttributes, 'align'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["tbody"] extends Element ? I["tbody"] : HTMLElementTagNameMap["tbody"]
+      I['tbody'] extends Element ? I['tbody'] : HTMLElementTagNameMap['tbody']
     >,
     GlobalAttributes {}
 export interface HTMLTdAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      "colspan" | "rowspan" | "headers" | "abbr" | "align" | "axis" | "bgcolor"
+      'colspan' | 'rowspan' | 'headers' | 'abbr' | 'align' | 'axis' | 'bgcolor'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["td"] extends Element ? I["td"] : HTMLElementTagNameMap["td"]
+      I['td'] extends Element ? I['td'] : HTMLElementTagNameMap['td']
     >,
     GlobalAttributes {}
 export interface HTMLTemplateAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["template"] extends Element
-        ? I["template"]
-        : HTMLElementTagNameMap["template"]
+      I['template'] extends Element
+        ? I['template']
+        : HTMLElementTagNameMap['template']
     >,
     GlobalAttributes {}
 export interface HTMLTextareaAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "autofocus"
-      | "cols"
-      | "dirname"
-      | "disabled"
-      | "form"
-      | "maxlength"
-      | "minlength"
-      | "name"
-      | "placeholder"
-      | "readonly"
-      | "required"
-      | "rows"
-      | "autocapitalize"
+      | 'autofocus'
+      | 'cols'
+      | 'dirname'
+      | 'disabled'
+      | 'form'
+      | 'maxlength'
+      | 'minlength'
+      | 'name'
+      | 'placeholder'
+      | 'readonly'
+      | 'required'
+      | 'rows'
+      | 'autocapitalize'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["textarea"] extends Element
-        ? I["textarea"]
-        : HTMLElementTagNameMap["textarea"]
+      I['textarea'] extends Element
+        ? I['textarea']
+        : HTMLElementTagNameMap['textarea']
     >,
     GlobalAttributes {
   /**
@@ -1057,8 +1057,8 @@ export interface HTMLTextareaAttributes<I extends Record<string, {}>>
    * *   `on`: The browser can automatically complete the value based on values that the user has entered during previous uses.
    *
    * If the `autocomplete` attribute is not specified on a `<textarea>` element, then the browser uses the `autocomplete` attribute value of the `<textarea>` element's form owner. The form owner is either the [`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form "The HTML <form> element represents a document section that contains interactive controls for submitting information to a web server.") element that this `<textarea>` element is a descendant of or the form element whose `id` is specified by the `form` attribute of the input element. For more information, see the [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-autocomplete) attribute in [`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form "The HTML <form> element represents a document section that contains interactive controls for submitting information to a web server."). */
-  autocomplete?: ValueSets["inputautocomplete"];
-  inputmode?: ValueSets["im"];
+  autocomplete?: ValueSets['inputautocomplete'];
+  inputmode?: ValueSets['im'];
   /**
    * Indicates how the control wraps text. Possible values are:
    *
@@ -1067,108 +1067,108 @@ export interface HTMLTextareaAttributes<I extends Record<string, {}>>
    * *   `off` : Like `soft` but changes appearance to `white-space: pre` so line segments exceeding `cols` are not wrapped and the `<textarea>` becomes horizontally scrollable.
    *
    * If this attribute is not specified, `soft` is its default value. */
-  wrap?: ValueSets["w"];
+  wrap?: ValueSets['w'];
 }
 export interface HTMLTfootAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "align">,
+  extends Pick<AllAttributes, 'align'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["tfoot"] extends Element ? I["tfoot"] : HTMLElementTagNameMap["tfoot"]
+      I['tfoot'] extends Element ? I['tfoot'] : HTMLElementTagNameMap['tfoot']
     >,
     GlobalAttributes {}
 export interface HTMLThAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "colspan"
-      | "rowspan"
-      | "headers"
-      | "scope"
-      | "sorted"
-      | "abbr"
-      | "align"
-      | "axis"
-      | "bgcolor"
+      | 'colspan'
+      | 'rowspan'
+      | 'headers'
+      | 'scope'
+      | 'sorted'
+      | 'abbr'
+      | 'align'
+      | 'axis'
+      | 'bgcolor'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["th"] extends Element ? I["th"] : HTMLElementTagNameMap["th"]
+      I['th'] extends Element ? I['th'] : HTMLElementTagNameMap['th']
     >,
     GlobalAttributes {}
 export interface HTMLTheadAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "align">,
+  extends Pick<AllAttributes, 'align'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["thead"] extends Element ? I["thead"] : HTMLElementTagNameMap["thead"]
+      I['thead'] extends Element ? I['thead'] : HTMLElementTagNameMap['thead']
     >,
     GlobalAttributes {}
 export interface HTMLTimeAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "datetime">,
+  extends Pick<AllAttributes, 'datetime'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["time"] extends Element ? I["time"] : HTMLElementTagNameMap["time"]
+      I['time'] extends Element ? I['time'] : HTMLElementTagNameMap['time']
     >,
     GlobalAttributes {}
 export interface HTMLTitleAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["title"] extends Element ? I["title"] : HTMLElementTagNameMap["title"]
+      I['title'] extends Element ? I['title'] : HTMLElementTagNameMap['title']
     >,
     GlobalAttributes {}
 export interface HTMLTrackAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "default" | "kind" | "label" | "src" | "srclang">,
+  extends Pick<AllAttributes, 'default' | 'kind' | 'label' | 'src' | 'srclang'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["track"] extends Element ? I["track"] : HTMLElementTagNameMap["track"]
+      I['track'] extends Element ? I['track'] : HTMLElementTagNameMap['track']
     >,
     GlobalAttributes {}
 export interface HTMLTrAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "align">,
+  extends Pick<AllAttributes, 'align'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["tr"] extends Element ? I["tr"] : HTMLElementTagNameMap["tr"]
+      I['tr'] extends Element ? I['tr'] : HTMLElementTagNameMap['tr']
     >,
     GlobalAttributes {}
 export interface HTMLUAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    GlobalEvents<I["u"] extends Element ? I["u"] : HTMLElementTagNameMap["u"]>,
+    GlobalEvents<I['u'] extends Element ? I['u'] : HTMLElementTagNameMap['u']>,
     GlobalAttributes {}
 export interface HTMLUlAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, "compact">,
+  extends Pick<AllAttributes, 'compact'>,
     DataGlobalAttributes,
     GlobalEvents<
-      I["ul"] extends Element ? I["ul"] : HTMLElementTagNameMap["ul"]
+      I['ul'] extends Element ? I['ul'] : HTMLElementTagNameMap['ul']
     >,
     GlobalAttributes {}
 export interface HTMLVarAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["var"] extends Element ? I["var"] : HTMLElementTagNameMap["var"]
+      I['var'] extends Element ? I['var'] : HTMLElementTagNameMap['var']
     >,
     GlobalAttributes {}
 export interface HTMLVideoAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | "src"
-      | "crossorigin"
-      | "poster"
-      | "preload"
-      | "autoplay"
-      | "mediagroup"
-      | "loop"
-      | "muted"
-      | "controls"
-      | "width"
-      | "height"
+      | 'src'
+      | 'crossorigin'
+      | 'poster'
+      | 'preload'
+      | 'autoplay'
+      | 'mediagroup'
+      | 'loop'
+      | 'muted'
+      | 'controls'
+      | 'width'
+      | 'height'
     >,
     DataGlobalAttributes,
     GlobalEvents<
-      I["video"] extends Element ? I["video"] : HTMLElementTagNameMap["video"]
+      I['video'] extends Element ? I['video'] : HTMLElementTagNameMap['video']
     >,
     GlobalAttributes {}
 export interface HTMLWbrAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
-      I["wbr"] extends Element ? I["wbr"] : HTMLElementTagNameMap["wbr"]
+      I['wbr'] extends Element ? I['wbr'] : HTMLElementTagNameMap['wbr']
     >,
     GlobalAttributes {}
 export interface HTMLElements<I extends {} = {}> {
