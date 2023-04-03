@@ -1,4 +1,4 @@
-// file generated from @vscode/web-custom-data 0.4.5
+// file generated from @vscode/web-custom-data 0.4.6
 // HTML Data Version 1.1
 import { AllAttributes } from './AllAttributes';
 import { ValueSets } from './ValueSets';
