@@ -42,7 +42,7 @@
   "devDependencies": {
     "@types/node": "18.16.0",
     "@vscode/web-custom-data": "0.4.6",
-    "lint-staged": "13.2.1",
+    "lint-staged": "13.2.2",
     "rome": "12.0.0",
     "simple-git-hooks": "2.8.1",
     "ts-node": "10.9.1",
