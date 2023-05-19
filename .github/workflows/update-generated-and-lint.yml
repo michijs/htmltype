@@ -42,15 +42,9 @@ jobs:
       - name: Push changes to repository
         run: |
           git push origin || echo "No changes to push"
-  format:
-    uses: michijs/.github/.github/workflows/format.yml@main
-    needs: submit-changes
-    name: "Run format"
-    secrets:
-      GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   lint:
     uses: michijs/.github/.github/workflows/lint.yml@main
-    needs: format
+    needs: submit-changes
     name: "Run lint"
     secrets:
       GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
