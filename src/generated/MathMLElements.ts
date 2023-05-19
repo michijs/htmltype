@@ -1,157 +1,157 @@
 // file generated from @michijs/vscode-mathml 1.0.2
 // HTML Data Version 1.1
-import { AllAttributes } from './AllAttributes';
-import { ValueSets } from './ValueSets';
-import { MathMLEvents } from '../Events';
-import { DataGlobalAttributes } from '../types';
+import { AllAttributes } from "./AllAttributes";
+import { ValueSets } from "./ValueSets";
+import { MathMLEvents } from "../Events";
+import { DataGlobalAttributes } from "../types";
 interface GlobalAttributes
   extends Pick<
     AllAttributes,
-    'displaystyle' | 'href' | 'id' | 'mathvariant' | 'scriptlevel'
+    "displaystyle" | "href" | "id" | "mathvariant" | "scriptlevel"
   > {
   /**
    * The text direction. Possible values are either `ltr` (left to right) or `rtl` (right to left).
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute} */
-  dir?: ValueSets['41'];
+  dir?: ValueSets["41"];
 }
 
 export interface MathMLMathAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'display'>,
+  extends Pick<AllAttributes, "display">,
     DataGlobalAttributes,
-    MathMLEvents<I['math'] extends Element ? I['math'] : MathMLElement>,
+    MathMLEvents<I["math"] extends Element ? I["math"] : MathMLElement>,
     GlobalAttributes {
   /**
    * Specifies the URI for the MathML namespace.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute} */
-  xmlns?: ValueSets['43'];
+  xmlns?: ValueSets["43"];
 }
 export interface MathMLMerrorAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['merror'] extends Element ? I['merror'] : MathMLElement>,
+    MathMLEvents<I["merror"] extends Element ? I["merror"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMfracAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'linethickness'>,
+  extends Pick<AllAttributes, "linethickness">,
     DataGlobalAttributes,
-    MathMLEvents<I['mfrac'] extends Element ? I['mfrac'] : MathMLElement>,
+    MathMLEvents<I["mfrac"] extends Element ? I["mfrac"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMiAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['mi'] extends Element ? I['mi'] : MathMLElement>,
+    MathMLEvents<I["mi"] extends Element ? I["mi"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMmultiscriptsAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     MathMLEvents<
-      I['mmultiscripts'] extends Element ? I['mmultiscripts'] : MathMLElement
+      I["mmultiscripts"] extends Element ? I["mmultiscripts"] : MathMLElement
     >,
     GlobalAttributes {}
 export interface MathMLMnAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['mn'] extends Element ? I['mn'] : MathMLElement>,
+    MathMLEvents<I["mn"] extends Element ? I["mn"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMoAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'fence'
-      | 'largeop'
-      | 'lspace'
-      | 'maxsize'
-      | 'minsize'
-      | 'movablelimits'
-      | 'rspace'
-      | 'separator'
-      | 'stretchy'
-      | 'symmetric'
+      | "fence"
+      | "largeop"
+      | "lspace"
+      | "maxsize"
+      | "minsize"
+      | "movablelimits"
+      | "rspace"
+      | "separator"
+      | "stretchy"
+      | "symmetric"
     >,
     DataGlobalAttributes,
-    MathMLEvents<I['mo'] extends Element ? I['mo'] : MathMLElement>,
+    MathMLEvents<I["mo"] extends Element ? I["mo"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMoverAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'accent'>,
+  extends Pick<AllAttributes, "accent">,
     DataGlobalAttributes,
-    MathMLEvents<I['mover'] extends Element ? I['mover'] : MathMLElement>,
+    MathMLEvents<I["mover"] extends Element ? I["mover"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMpaddedAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'depth' | 'height' | 'lspace' | 'voffset' | 'width'
+      "depth" | "height" | "lspace" | "voffset" | "width"
     >,
     DataGlobalAttributes,
-    MathMLEvents<I['mpadded'] extends Element ? I['mpadded'] : MathMLElement>,
+    MathMLEvents<I["mpadded"] extends Element ? I["mpadded"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMphantomAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['mphantom'] extends Element ? I['mphantom'] : MathMLElement>,
+    MathMLEvents<I["mphantom"] extends Element ? I["mphantom"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMrootAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['mroot'] extends Element ? I['mroot'] : MathMLElement>,
+    MathMLEvents<I["mroot"] extends Element ? I["mroot"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMrowAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['mrow'] extends Element ? I['mrow'] : MathMLElement>,
+    MathMLEvents<I["mrow"] extends Element ? I["mrow"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMsAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'lquote' | 'rquote'>,
+  extends Pick<AllAttributes, "lquote" | "rquote">,
     DataGlobalAttributes,
-    MathMLEvents<I['ms'] extends Element ? I['ms'] : MathMLElement>,
+    MathMLEvents<I["ms"] extends Element ? I["ms"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMspaceAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'depth' | 'height' | 'width'>,
+  extends Pick<AllAttributes, "depth" | "height" | "width">,
     DataGlobalAttributes,
-    MathMLEvents<I['mspace'] extends Element ? I['mspace'] : MathMLElement>,
+    MathMLEvents<I["mspace"] extends Element ? I["mspace"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMsqrtAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['msqrt'] extends Element ? I['msqrt'] : MathMLElement>,
+    MathMLEvents<I["msqrt"] extends Element ? I["msqrt"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMstyleAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['mstyle'] extends Element ? I['mstyle'] : MathMLElement>,
+    MathMLEvents<I["mstyle"] extends Element ? I["mstyle"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMsubAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['msub'] extends Element ? I['msub'] : MathMLElement>,
+    MathMLEvents<I["msub"] extends Element ? I["msub"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMsubsupAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['msubsup'] extends Element ? I['msubsup'] : MathMLElement>,
+    MathMLEvents<I["msubsup"] extends Element ? I["msubsup"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMtableAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['mtable'] extends Element ? I['mtable'] : MathMLElement>,
+    MathMLEvents<I["mtable"] extends Element ? I["mtable"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMtdAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'columnspan' | 'rowspan'>,
+  extends Pick<AllAttributes, "columnspan" | "rowspan">,
     DataGlobalAttributes,
-    MathMLEvents<I['mtd'] extends Element ? I['mtd'] : MathMLElement>,
+    MathMLEvents<I["mtd"] extends Element ? I["mtd"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMtextAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['mtext'] extends Element ? I['mtext'] : MathMLElement>,
+    MathMLEvents<I["mtext"] extends Element ? I["mtext"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMtrAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    MathMLEvents<I['mtr'] extends Element ? I['mtr'] : MathMLElement>,
+    MathMLEvents<I["mtr"] extends Element ? I["mtr"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMunderAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'accentunder'>,
+  extends Pick<AllAttributes, "accentunder">,
     DataGlobalAttributes,
-    MathMLEvents<I['munder'] extends Element ? I['munder'] : MathMLElement>,
+    MathMLEvents<I["munder"] extends Element ? I["munder"] : MathMLElement>,
     GlobalAttributes {}
 export interface MathMLMunderoverAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'accent' | 'accentunder'>,
+  extends Pick<AllAttributes, "accent" | "accentunder">,
     DataGlobalAttributes,
     MathMLEvents<
-      I['munderover'] extends Element ? I['munderover'] : MathMLElement
+      I["munderover"] extends Element ? I["munderover"] : MathMLElement
     >,
     GlobalAttributes {}
 export interface MathMLSemanticsAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'encoding'>,
+  extends Pick<AllAttributes, "encoding">,
     DataGlobalAttributes,
     MathMLEvents<
-      I['semantics'] extends Element ? I['semantics'] : MathMLElement
+      I["semantics"] extends Element ? I["semantics"] : MathMLElement
     >,
     GlobalAttributes {}
 export interface MathMLElements<I extends {} = {}> {

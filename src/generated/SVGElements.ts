@@ -1,186 +1,186 @@
 // file generated from @michijs/vscode-svg 2.0.6
 // HTML Data Version 1.1
-import { AllAttributes } from './AllAttributes';
-import { ValueSets } from './ValueSets';
-import { SVGEvents } from '../Events';
-import { DataGlobalAttributes } from '../types';
+import { AllAttributes } from "./AllAttributes";
+import { ValueSets } from "./ValueSets";
+import { SVGEvents } from "../Events";
+import { DataGlobalAttributes } from "../types";
 type GlobalAttributes = Pick<
   AllAttributes,
-  'class' | 'id' | 'lang' | 'style' | 'systemLanguage' | 'tabindex'
+  "class" | "id" | "lang" | "style" | "systemLanguage" | "tabindex"
 >;
 type AnimationAdditionAttributes = Pick<
   AllAttributes,
-  'accumulate' | 'additive'
+  "accumulate" | "additive"
 >;
 type AnimationAttributeTargetAttributes = Pick<
   AllAttributes,
-  'attributeName' | 'attributeType'
+  "attributeName" | "attributeType"
 >;
-type AnimationTargetElementAttributes = Pick<AllAttributes, 'href'>;
+type AnimationTargetElementAttributes = Pick<AllAttributes, "href">;
 type AnimationTimingAttributes = Pick<
   AllAttributes,
-  | 'begin'
-  | 'dur'
-  | 'end'
-  | 'fill'
-  | 'max'
-  | 'min'
-  | 'repeatCount'
-  | 'repeatDur'
-  | 'restart'
+  | "begin"
+  | "dur"
+  | "end"
+  | "fill"
+  | "max"
+  | "min"
+  | "repeatCount"
+  | "repeatDur"
+  | "restart"
 >;
 type AnimationValueAttributes = Pick<
   AllAttributes,
-  'by' | 'calcMode' | 'from' | 'keySplines' | 'keyTimes' | 'to' | 'values'
+  "by" | "calcMode" | "from" | "keySplines" | "keyTimes" | "to" | "values"
 >;
 type AriaAttributes = Pick<
   AllAttributes,
-  | 'aria-activedescendant'
-  | 'aria-atomic'
-  | 'aria-autocomplete'
-  | 'aria-busy'
-  | 'aria-checked'
-  | 'aria-colcount'
-  | 'aria-colindex'
-  | 'aria-colspan'
-  | 'aria-controls'
-  | 'aria-current'
-  | 'aria-describedby'
-  | 'aria-details'
-  | 'aria-disabled'
-  | 'aria-dropeffect'
-  | 'aria-errormessage'
-  | 'aria-expanded'
-  | 'aria-flowto'
-  | 'aria-grabbed'
-  | 'aria-haspopup'
-  | 'aria-hidden'
-  | 'aria-invalid'
-  | 'aria-keyshortcuts'
-  | 'aria-label'
-  | 'aria-labelledby'
-  | 'aria-level'
-  | 'aria-live'
-  | 'aria-modal'
-  | 'aria-multiline'
-  | 'aria-multiselectable'
-  | 'aria-orientation'
-  | 'aria-owns'
-  | 'aria-placeholder'
-  | 'aria-posinset'
-  | 'aria-pressed'
-  | 'aria-readonly'
-  | 'aria-relevant'
-  | 'aria-required'
-  | 'aria-roledescription'
-  | 'aria-rowcount'
-  | 'aria-rowindex'
-  | 'aria-rowspan'
-  | 'aria-selected'
-  | 'aria-setsize'
-  | 'aria-sort'
-  | 'aria-valuemax'
-  | 'aria-valuemin'
-  | 'aria-valuenow'
-  | 'aria-valuetext'
-  | 'role'
+  | "aria-activedescendant"
+  | "aria-atomic"
+  | "aria-autocomplete"
+  | "aria-busy"
+  | "aria-checked"
+  | "aria-colcount"
+  | "aria-colindex"
+  | "aria-colspan"
+  | "aria-controls"
+  | "aria-current"
+  | "aria-describedby"
+  | "aria-details"
+  | "aria-disabled"
+  | "aria-dropeffect"
+  | "aria-errormessage"
+  | "aria-expanded"
+  | "aria-flowto"
+  | "aria-grabbed"
+  | "aria-haspopup"
+  | "aria-hidden"
+  | "aria-invalid"
+  | "aria-keyshortcuts"
+  | "aria-label"
+  | "aria-labelledby"
+  | "aria-level"
+  | "aria-live"
+  | "aria-modal"
+  | "aria-multiline"
+  | "aria-multiselectable"
+  | "aria-orientation"
+  | "aria-owns"
+  | "aria-placeholder"
+  | "aria-posinset"
+  | "aria-pressed"
+  | "aria-readonly"
+  | "aria-relevant"
+  | "aria-required"
+  | "aria-roledescription"
+  | "aria-rowcount"
+  | "aria-rowindex"
+  | "aria-rowspan"
+  | "aria-selected"
+  | "aria-setsize"
+  | "aria-sort"
+  | "aria-valuemax"
+  | "aria-valuemin"
+  | "aria-valuenow"
+  | "aria-valuetext"
+  | "role"
 >;
 type FilterPrimitiveAttributes = Pick<
   AllAttributes,
-  'height' | 'result' | 'width' | 'x' | 'y'
+  "height" | "result" | "width" | "x" | "y"
 >;
 interface PresentationAttributes
   extends Pick<
     AllAttributes,
-    | 'alignment-baseline'
-    | 'baseline-shift'
-    | 'clip-path'
-    | 'clip-rule'
-    | 'color'
-    | 'color-interpolation'
-    | 'color-interpolation-filters'
-    | 'color-profile'
-    | 'color-rendering'
-    | 'cursor'
-    | 'direction'
-    | 'dominant-baseline'
-    | 'fill'
-    | 'fill-opacity'
-    | 'fill-rule'
-    | 'filter'
-    | 'flood-color'
-    | 'flood-opacity'
-    | 'font-family'
-    | 'font-size'
-    | 'font-size-adjust'
-    | 'font-stretch'
-    | 'font-style'
-    | 'font-variant'
-    | 'font-weight'
-    | 'image-rendering'
-    | 'kerning'
-    | 'letter-spacing'
-    | 'lighting-color'
-    | 'marker-end'
-    | 'marker-mid'
-    | 'marker-start'
-    | 'mask'
-    | 'opacity'
-    | 'overflow'
-    | 'pointer-events'
-    | 'shape-rendering'
-    | 'stop-color'
-    | 'stop-opacity'
-    | 'stroke'
-    | 'stroke-dasharray'
-    | 'stroke-dashoffset'
-    | 'stroke-linecap'
-    | 'stroke-linejoin'
-    | 'stroke-miterlimit'
-    | 'stroke-opacity'
-    | 'stroke-width'
-    | 'text-anchor'
-    | 'text-decoration'
-    | 'text-rendering'
-    | 'transform'
-    | 'vector-effect'
-    | 'visibility'
-    | 'word-spacing'
-    | 'writing-mode'
+    | "alignment-baseline"
+    | "baseline-shift"
+    | "clip-path"
+    | "clip-rule"
+    | "color"
+    | "color-interpolation"
+    | "color-interpolation-filters"
+    | "color-profile"
+    | "color-rendering"
+    | "cursor"
+    | "direction"
+    | "dominant-baseline"
+    | "fill"
+    | "fill-opacity"
+    | "fill-rule"
+    | "filter"
+    | "flood-color"
+    | "flood-opacity"
+    | "font-family"
+    | "font-size"
+    | "font-size-adjust"
+    | "font-stretch"
+    | "font-style"
+    | "font-variant"
+    | "font-weight"
+    | "image-rendering"
+    | "kerning"
+    | "letter-spacing"
+    | "lighting-color"
+    | "marker-end"
+    | "marker-mid"
+    | "marker-start"
+    | "mask"
+    | "opacity"
+    | "overflow"
+    | "pointer-events"
+    | "shape-rendering"
+    | "stop-color"
+    | "stop-opacity"
+    | "stroke"
+    | "stroke-dasharray"
+    | "stroke-dashoffset"
+    | "stroke-linecap"
+    | "stroke-linejoin"
+    | "stroke-miterlimit"
+    | "stroke-opacity"
+    | "stroke-width"
+    | "text-anchor"
+    | "text-decoration"
+    | "text-rendering"
+    | "transform"
+    | "vector-effect"
+    | "visibility"
+    | "word-spacing"
+    | "writing-mode"
   > {
   /**
    * The display attribute lets you control the rendering of graphical or container elements.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display} */
-  display?: ValueSets['59'];
+  display?: ValueSets["59"];
 }
 interface TransferFunctionAttributes
   extends Pick<
     AllAttributes,
-    'amplitude' | 'amplitude' | 'exponent' | 'intercept' | 'tableValues'
+    "amplitude" | "amplitude" | "exponent" | "intercept" | "tableValues"
   > {
   /**
    * Is a generic attribute and it has different meaning based on the context in which it's used.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type} */
-  type?: ValueSets['75'];
+  type?: ValueSets["75"];
 }
 export interface SVGAAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'amplitude'
-      | 'amplitude'
-      | 'download'
-      | 'exponent'
-      | 'hreflang'
-      | 'intercept'
-      | 'rel'
-      | 'tableValues'
-      | 'target'
-      | 'type'
+      | "amplitude"
+      | "amplitude"
+      | "download"
+      | "exponent"
+      | "hreflang"
+      | "intercept"
+      | "rel"
+      | "tableValues"
+      | "target"
+      | "type"
     >,
     DataGlobalAttributes,
-    SVGEvents<I['a'] extends Element ? I['a'] : SVGElementTagNameMap['a']>,
+    SVGEvents<I["a"] extends Element ? I["a"] : SVGElementTagNameMap["a"]>,
     AnimationTargetElementAttributes,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -189,14 +189,14 @@ export interface SVGAAttributes<I extends Record<string, {}>>
    * Which referrer to send when fetching the URL.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/referrerpolicy} */
-  referrerpolicy?: ValueSets['referrerpoliciy'];
+  referrerpolicy?: ValueSets["referrerpoliciy"];
 }
 export interface SVGAnimateAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['animate'] extends Element
-        ? I['animate']
-        : SVGElementTagNameMap['animate']
+      I["animate"] extends Element
+        ? I["animate"]
+        : SVGElementTagNameMap["animate"]
     >,
     AnimationAdditionAttributes,
     AnimationAttributeTargetAttributes,
@@ -205,12 +205,12 @@ export interface SVGAnimateAttributes<I extends Record<string, {}>>
     AnimationValueAttributes,
     GlobalAttributes {}
 export interface SVGAnimateMotionAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'keyPoints' | 'path' | 'rotate'>,
+  extends Pick<AllAttributes, "keyPoints" | "path" | "rotate">,
     DataGlobalAttributes,
     SVGEvents<
-      I['animateMotion'] extends Element
-        ? I['animateMotion']
-        : SVGElementTagNameMap['animateMotion']
+      I["animateMotion"] extends Element
+        ? I["animateMotion"]
+        : SVGElementTagNameMap["animateMotion"]
     >,
     AnimationAdditionAttributes,
     AnimationAttributeTargetAttributes,
@@ -221,9 +221,9 @@ export interface SVGAnimateMotionAttributes<I extends Record<string, {}>>
 export interface SVGAnimateTransformAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['animateTransform'] extends Element
-        ? I['animateTransform']
-        : SVGElementTagNameMap['animateTransform']
+      I["animateTransform"] extends Element
+        ? I["animateTransform"]
+        : SVGElementTagNameMap["animateTransform"]
     >,
     AnimationAdditionAttributes,
     AnimationAttributeTargetAttributes,
@@ -232,61 +232,61 @@ export interface SVGAnimateTransformAttributes<I extends Record<string, {}>>
     AnimationValueAttributes,
     GlobalAttributes {}
 export interface SVGCircleAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'cx' | 'cy' | 'pathLength' | 'r'>,
+  extends Pick<AllAttributes, "cx" | "cy" | "pathLength" | "r">,
     DataGlobalAttributes,
     SVGEvents<
-      I['circle'] extends Element ? I['circle'] : SVGElementTagNameMap['circle']
+      I["circle"] extends Element ? I["circle"] : SVGElementTagNameMap["circle"]
     >,
     AriaAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGClipPathAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'clipPathUnits'>,
+  extends Pick<AllAttributes, "clipPathUnits">,
     DataGlobalAttributes,
     SVGEvents<
-      I['clipPath'] extends Element
-        ? I['clipPath']
-        : SVGElementTagNameMap['clipPath']
+      I["clipPath"] extends Element
+        ? I["clipPath"]
+        : SVGElementTagNameMap["clipPath"]
     >,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGDefsAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['defs'] extends Element ? I['defs'] : SVGElementTagNameMap['defs']
+      I["defs"] extends Element ? I["defs"] : SVGElementTagNameMap["defs"]
     >,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGDescAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['desc'] extends Element ? I['desc'] : SVGElementTagNameMap['desc']
+      I["desc"] extends Element ? I["desc"] : SVGElementTagNameMap["desc"]
     >,
     GlobalAttributes {}
 export interface SVGDiscardAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'begin'>,
+  extends Pick<AllAttributes, "begin">,
     DataGlobalAttributes,
-    SVGEvents<I['discard'] extends Element ? I['discard'] : SVGElement>,
+    SVGEvents<I["discard"] extends Element ? I["discard"] : SVGElement>,
     AnimationTargetElementAttributes,
     GlobalAttributes {}
 export interface SVGEllipseAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'cx' | 'cy' | 'pathLength' | 'rx' | 'ry'>,
+  extends Pick<AllAttributes, "cx" | "cy" | "pathLength" | "rx" | "ry">,
     DataGlobalAttributes,
     SVGEvents<
-      I['ellipse'] extends Element
-        ? I['ellipse']
-        : SVGElementTagNameMap['ellipse']
+      I["ellipse"] extends Element
+        ? I["ellipse"]
+        : SVGElementTagNameMap["ellipse"]
     >,
     AriaAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGFeBlendAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'in' | 'in2' | 'mode'>,
+  extends Pick<AllAttributes, "in" | "in2" | "mode">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feBlend'] extends Element
-        ? I['feBlend']
-        : SVGElementTagNameMap['feBlend']
+      I["feBlend"] extends Element
+        ? I["feBlend"]
+        : SVGElementTagNameMap["feBlend"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -294,20 +294,20 @@ export interface SVGFeBlendAttributes<I extends Record<string, {}>>
 export interface SVGFeColorMatrixAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['feColorMatrix'] extends Element
-        ? I['feColorMatrix']
-        : SVGElementTagNameMap['feColorMatrix']
+      I["feColorMatrix"] extends Element
+        ? I["feColorMatrix"]
+        : SVGElementTagNameMap["feColorMatrix"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGFeComponentTransferAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'in'>,
+  extends Pick<AllAttributes, "in">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feComponentTransfer'] extends Element
-        ? I['feComponentTransfer']
-        : SVGElementTagNameMap['feComponentTransfer']
+      I["feComponentTransfer"] extends Element
+        ? I["feComponentTransfer"]
+        : SVGElementTagNameMap["feComponentTransfer"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -315,13 +315,13 @@ export interface SVGFeComponentTransferAttributes<I extends Record<string, {}>>
 export interface SVGFeCompositeAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'in' | 'in2' | 'k1' | 'k2' | 'k3' | 'k4' | 'operator'
+      "in" | "in2" | "k1" | "k2" | "k3" | "k4" | "operator"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['feComposite'] extends Element
-        ? I['feComposite']
-        : SVGElementTagNameMap['feComposite']
+      I["feComposite"] extends Element
+        ? I["feComposite"]
+        : SVGElementTagNameMap["feComposite"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -329,22 +329,22 @@ export interface SVGFeCompositeAttributes<I extends Record<string, {}>>
 export interface SVGFeConvolveMatrixAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'bias'
-      | 'divisor'
-      | 'edgeMode'
-      | 'in'
-      | 'kernelMatrix'
-      | 'kernelUnitLength'
-      | 'order'
-      | 'preserveAlpha'
-      | 'targetX'
-      | 'targetY'
+      | "bias"
+      | "divisor"
+      | "edgeMode"
+      | "in"
+      | "kernelMatrix"
+      | "kernelUnitLength"
+      | "order"
+      | "preserveAlpha"
+      | "targetX"
+      | "targetY"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['feConvolveMatrix'] extends Element
-        ? I['feConvolveMatrix']
-        : SVGElementTagNameMap['feConvolveMatrix']
+      I["feConvolveMatrix"] extends Element
+        ? I["feConvolveMatrix"]
+        : SVGElementTagNameMap["feConvolveMatrix"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -352,13 +352,13 @@ export interface SVGFeConvolveMatrixAttributes<I extends Record<string, {}>>
 export interface SVGFeDiffuseLightingAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'diffuseConstant' | 'in' | 'kernelUnitLength' | 'surfaceScale'
+      "diffuseConstant" | "in" | "kernelUnitLength" | "surfaceScale"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['feDiffuseLighting'] extends Element
-        ? I['feDiffuseLighting']
-        : SVGElementTagNameMap['feDiffuseLighting']
+      I["feDiffuseLighting"] extends Element
+        ? I["feDiffuseLighting"]
+        : SVGElementTagNameMap["feDiffuseLighting"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -366,33 +366,33 @@ export interface SVGFeDiffuseLightingAttributes<I extends Record<string, {}>>
 export interface SVGFeDisplacementMapAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'in' | 'in2' | 'scale' | 'xChannelSelector' | 'yChannelSelector'
+      "in" | "in2" | "scale" | "xChannelSelector" | "yChannelSelector"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['feDisplacementMap'] extends Element
-        ? I['feDisplacementMap']
-        : SVGElementTagNameMap['feDisplacementMap']
+      I["feDisplacementMap"] extends Element
+        ? I["feDisplacementMap"]
+        : SVGElementTagNameMap["feDisplacementMap"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGFeDistantLightAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'azimuth' | 'elevation'>,
+  extends Pick<AllAttributes, "azimuth" | "elevation">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feDistantLight'] extends Element
-        ? I['feDistantLight']
-        : SVGElementTagNameMap['feDistantLight']
+      I["feDistantLight"] extends Element
+        ? I["feDistantLight"]
+        : SVGElementTagNameMap["feDistantLight"]
     >,
     GlobalAttributes {}
 export interface SVGFeDropShadowAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'dx' | 'dy' | 'in' | 'stdDeviation'>,
+  extends Pick<AllAttributes, "dx" | "dy" | "in" | "stdDeviation">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feDropShadow'] extends Element
-        ? I['feDropShadow']
-        : SVGElementTagNameMap['feDropShadow']
+      I["feDropShadow"] extends Element
+        ? I["feDropShadow"]
+        : SVGElementTagNameMap["feDropShadow"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -400,9 +400,9 @@ export interface SVGFeDropShadowAttributes<I extends Record<string, {}>>
 export interface SVGFeFloodAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['feFlood'] extends Element
-        ? I['feFlood']
-        : SVGElementTagNameMap['feFlood']
+      I["feFlood"] extends Element
+        ? I["feFlood"]
+        : SVGElementTagNameMap["feFlood"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -410,57 +410,57 @@ export interface SVGFeFloodAttributes<I extends Record<string, {}>>
 export interface SVGFeFuncAAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['feFuncA'] extends Element
-        ? I['feFuncA']
-        : SVGElementTagNameMap['feFuncA']
+      I["feFuncA"] extends Element
+        ? I["feFuncA"]
+        : SVGElementTagNameMap["feFuncA"]
     >,
     TransferFunctionAttributes,
     GlobalAttributes {}
 export interface SVGFeFuncBAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['feFuncB'] extends Element
-        ? I['feFuncB']
-        : SVGElementTagNameMap['feFuncB']
+      I["feFuncB"] extends Element
+        ? I["feFuncB"]
+        : SVGElementTagNameMap["feFuncB"]
     >,
     TransferFunctionAttributes,
     GlobalAttributes {}
 export interface SVGFeFuncGAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['feFuncG'] extends Element
-        ? I['feFuncG']
-        : SVGElementTagNameMap['feFuncG']
+      I["feFuncG"] extends Element
+        ? I["feFuncG"]
+        : SVGElementTagNameMap["feFuncG"]
     >,
     TransferFunctionAttributes,
     GlobalAttributes {}
 export interface SVGFeFuncRAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['feFuncR'] extends Element
-        ? I['feFuncR']
-        : SVGElementTagNameMap['feFuncR']
+      I["feFuncR"] extends Element
+        ? I["feFuncR"]
+        : SVGElementTagNameMap["feFuncR"]
     >,
     TransferFunctionAttributes,
     GlobalAttributes {}
 export interface SVGFeGaussianBlurAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'edgeMode' | 'in' | 'stdDeviation'>,
+  extends Pick<AllAttributes, "edgeMode" | "in" | "stdDeviation">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feGaussianBlur'] extends Element
-        ? I['feGaussianBlur']
-        : SVGElementTagNameMap['feGaussianBlur']
+      I["feGaussianBlur"] extends Element
+        ? I["feGaussianBlur"]
+        : SVGElementTagNameMap["feGaussianBlur"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGFeImageAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'preserveAspectRatio'>,
+  extends Pick<AllAttributes, "preserveAspectRatio">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feImage'] extends Element
-        ? I['feImage']
-        : SVGElementTagNameMap['feImage']
+      I["feImage"] extends Element
+        ? I["feImage"]
+        : SVGElementTagNameMap["feImage"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -468,67 +468,67 @@ export interface SVGFeImageAttributes<I extends Record<string, {}>>
 export interface SVGFeMergeAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['feMerge'] extends Element
-        ? I['feMerge']
-        : SVGElementTagNameMap['feMerge']
+      I["feMerge"] extends Element
+        ? I["feMerge"]
+        : SVGElementTagNameMap["feMerge"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGFeMergeNodeAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'in'>,
+  extends Pick<AllAttributes, "in">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feMergeNode'] extends Element
-        ? I['feMergeNode']
-        : SVGElementTagNameMap['feMergeNode']
+      I["feMergeNode"] extends Element
+        ? I["feMergeNode"]
+        : SVGElementTagNameMap["feMergeNode"]
     >,
     GlobalAttributes {}
 export interface SVGFeMorphologyAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'in' | 'operator' | 'radius'>,
+  extends Pick<AllAttributes, "in" | "operator" | "radius">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feMorphology'] extends Element
-        ? I['feMorphology']
-        : SVGElementTagNameMap['feMorphology']
+      I["feMorphology"] extends Element
+        ? I["feMorphology"]
+        : SVGElementTagNameMap["feMorphology"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGFeOffsetAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'dx' | 'dy' | 'in'>,
+  extends Pick<AllAttributes, "dx" | "dy" | "in">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feOffset'] extends Element
-        ? I['feOffset']
-        : SVGElementTagNameMap['feOffset']
+      I["feOffset"] extends Element
+        ? I["feOffset"]
+        : SVGElementTagNameMap["feOffset"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGFePointLightAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'result' | 'x' | 'y' | 'z'>,
+  extends Pick<AllAttributes, "result" | "x" | "y" | "z">,
     DataGlobalAttributes,
     SVGEvents<
-      I['fePointLight'] extends Element
-        ? I['fePointLight']
-        : SVGElementTagNameMap['fePointLight']
+      I["fePointLight"] extends Element
+        ? I["fePointLight"]
+        : SVGElementTagNameMap["fePointLight"]
     >,
     GlobalAttributes {}
 export interface SVGFeSpecularLightingAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'in'
-      | 'kernelUnitLength'
-      | 'specularConstant'
-      | 'specularExponent'
-      | 'surfaceScale'
+      | "in"
+      | "kernelUnitLength"
+      | "specularConstant"
+      | "specularExponent"
+      | "surfaceScale"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['feSpecularLighting'] extends Element
-        ? I['feSpecularLighting']
-        : SVGElementTagNameMap['feSpecularLighting']
+      I["feSpecularLighting"] extends Element
+        ? I["feSpecularLighting"]
+        : SVGElementTagNameMap["feSpecularLighting"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -536,27 +536,27 @@ export interface SVGFeSpecularLightingAttributes<I extends Record<string, {}>>
 export interface SVGFeSpotLightAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'limitingConeAngle'
-      | 'pointsAtX'
-      | 'pointsAtY'
-      | 'pointsAtZ'
-      | 'result'
-      | 'x'
-      | 'y'
-      | 'z'
+      | "limitingConeAngle"
+      | "pointsAtX"
+      | "pointsAtY"
+      | "pointsAtZ"
+      | "result"
+      | "x"
+      | "y"
+      | "z"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['feSpotLight'] extends Element
-        ? I['feSpotLight']
-        : SVGElementTagNameMap['feSpotLight']
+      I["feSpotLight"] extends Element
+        ? I["feSpotLight"]
+        : SVGElementTagNameMap["feSpotLight"]
     >,
     GlobalAttributes {}
 export interface SVGFeTileAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'in'>,
+  extends Pick<AllAttributes, "in">,
     DataGlobalAttributes,
     SVGEvents<
-      I['feTile'] extends Element ? I['feTile'] : SVGElementTagNameMap['feTile']
+      I["feTile"] extends Element ? I["feTile"] : SVGElementTagNameMap["feTile"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -564,13 +564,13 @@ export interface SVGFeTileAttributes<I extends Record<string, {}>>
 export interface SVGFeTurbulenceAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'baseFrequency' | 'numOctaves' | 'seed' | 'stitchTiles'
+      "baseFrequency" | "numOctaves" | "seed" | "stitchTiles"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['feTurbulence'] extends Element
-        ? I['feTurbulence']
-        : SVGElementTagNameMap['feTurbulence']
+      I["feTurbulence"] extends Element
+        ? I["feTurbulence"]
+        : SVGElementTagNameMap["feTurbulence"]
     >,
     FilterPrimitiveAttributes,
     PresentationAttributes,
@@ -579,38 +579,38 @@ export interface SVGFeTurbulenceAttributes<I extends Record<string, {}>>
    * Is a generic attribute and it has different meaning based on the context in which it's used.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type} */
-  type?: ValueSets['84'];
+  type?: ValueSets["84"];
 }
 export interface SVGFilterAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'filterUnits' | 'primitiveUnits'>,
+  extends Pick<AllAttributes, "filterUnits" | "primitiveUnits">,
     DataGlobalAttributes,
     SVGEvents<
-      I['filter'] extends Element ? I['filter'] : SVGElementTagNameMap['filter']
+      I["filter"] extends Element ? I["filter"] : SVGElementTagNameMap["filter"]
     >,
     FilterPrimitiveAttributes,
     GlobalAttributes {}
 export interface SVGForeignObjectAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'height' | 'width' | 'x' | 'y'>,
+  extends Pick<AllAttributes, "height" | "width" | "x" | "y">,
     DataGlobalAttributes,
     SVGEvents<
-      I['foreignObject'] extends Element
-        ? I['foreignObject']
-        : SVGElementTagNameMap['foreignObject']
+      I["foreignObject"] extends Element
+        ? I["foreignObject"]
+        : SVGElementTagNameMap["foreignObject"]
     >,
     AriaAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGGAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
-    SVGEvents<I['g'] extends Element ? I['g'] : SVGElementTagNameMap['g']>,
+    SVGEvents<I["g"] extends Element ? I["g"] : SVGElementTagNameMap["g"]>,
     AriaAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGImageAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'crossorigin' | 'preserveAspectRatio'>,
+  extends Pick<AllAttributes, "crossorigin" | "preserveAspectRatio">,
     DataGlobalAttributes,
     SVGEvents<
-      I['image'] extends Element ? I['image'] : SVGElementTagNameMap['image']
+      I["image"] extends Element ? I["image"] : SVGElementTagNameMap["image"]
     >,
     AnimationTargetElementAttributes,
     FilterPrimitiveAttributes,
@@ -619,28 +619,28 @@ export interface SVGImageAttributes<I extends Record<string, {}>>
 export interface SVGLinearGradientAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'gradientTransform'
-      | 'gradientUnits'
-      | 'spreadMethod'
-      | 'x1'
-      | 'x2'
-      | 'y1'
-      | 'y2'
+      | "gradientTransform"
+      | "gradientUnits"
+      | "spreadMethod"
+      | "x1"
+      | "x2"
+      | "y1"
+      | "y2"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['linearGradient'] extends Element
-        ? I['linearGradient']
-        : SVGElementTagNameMap['linearGradient']
+      I["linearGradient"] extends Element
+        ? I["linearGradient"]
+        : SVGElementTagNameMap["linearGradient"]
     >,
     AnimationTargetElementAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGLineAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'pathLength' | 'x1' | 'x2' | 'y1' | 'y2'>,
+  extends Pick<AllAttributes, "pathLength" | "x1" | "x2" | "y1" | "y2">,
     DataGlobalAttributes,
     SVGEvents<
-      I['line'] extends Element ? I['line'] : SVGElementTagNameMap['line']
+      I["line"] extends Element ? I["line"] : SVGElementTagNameMap["line"]
     >,
     AriaAttributes,
     PresentationAttributes,
@@ -648,18 +648,18 @@ export interface SVGLineAttributes<I extends Record<string, {}>>
 export interface SVGMarkerAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'markerHeight'
-      | 'markerUnits'
-      | 'markerWidth'
-      | 'orient'
-      | 'preserveAspectRatio'
-      | 'refX'
-      | 'refY'
-      | 'viewBox'
+      | "markerHeight"
+      | "markerUnits"
+      | "markerWidth"
+      | "orient"
+      | "preserveAspectRatio"
+      | "refX"
+      | "refY"
+      | "viewBox"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['marker'] extends Element ? I['marker'] : SVGElementTagNameMap['marker']
+      I["marker"] extends Element ? I["marker"] : SVGElementTagNameMap["marker"]
     >,
     AriaAttributes,
     PresentationAttributes,
@@ -667,33 +667,33 @@ export interface SVGMarkerAttributes<I extends Record<string, {}>>
 export interface SVGMaskAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'height' | 'maskContentUnits' | 'maskUnits' | 'width' | 'x' | 'y'
+      "height" | "maskContentUnits" | "maskUnits" | "width" | "x" | "y"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['mask'] extends Element ? I['mask'] : SVGElementTagNameMap['mask']
+      I["mask"] extends Element ? I["mask"] : SVGElementTagNameMap["mask"]
     >,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGMetadataAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['metadata'] extends Element
-        ? I['metadata']
-        : SVGElementTagNameMap['metadata']
+      I["metadata"] extends Element
+        ? I["metadata"]
+        : SVGElementTagNameMap["metadata"]
     >,
     GlobalAttributes {}
 export interface SVGMpathAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['mpath'] extends Element ? I['mpath'] : SVGElementTagNameMap['mpath']
+      I["mpath"] extends Element ? I["mpath"] : SVGElementTagNameMap["mpath"]
     >,
     GlobalAttributes {}
 export interface SVGPathAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'd' | 'pathLength'>,
+  extends Pick<AllAttributes, "d" | "pathLength">,
     DataGlobalAttributes,
     SVGEvents<
-      I['path'] extends Element ? I['path'] : SVGElementTagNameMap['path']
+      I["path"] extends Element ? I["path"] : SVGElementTagNameMap["path"]
     >,
     AriaAttributes,
     PresentationAttributes,
@@ -701,43 +701,43 @@ export interface SVGPathAttributes<I extends Record<string, {}>>
 export interface SVGPatternAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'height'
-      | 'patternContentUnits'
-      | 'patternTransform'
-      | 'patternUnits'
-      | 'preserveAspectRatio'
-      | 'viewBox'
-      | 'width'
-      | 'x'
-      | 'y'
+      | "height"
+      | "patternContentUnits"
+      | "patternTransform"
+      | "patternUnits"
+      | "preserveAspectRatio"
+      | "viewBox"
+      | "width"
+      | "x"
+      | "y"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['pattern'] extends Element
-        ? I['pattern']
-        : SVGElementTagNameMap['pattern']
+      I["pattern"] extends Element
+        ? I["pattern"]
+        : SVGElementTagNameMap["pattern"]
     >,
     AnimationTargetElementAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGPolygonAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'pathLength' | 'points'>,
+  extends Pick<AllAttributes, "pathLength" | "points">,
     DataGlobalAttributes,
     SVGEvents<
-      I['polygon'] extends Element
-        ? I['polygon']
-        : SVGElementTagNameMap['polygon']
+      I["polygon"] extends Element
+        ? I["polygon"]
+        : SVGElementTagNameMap["polygon"]
     >,
     AriaAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGPolylineAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'pathLength' | 'points'>,
+  extends Pick<AllAttributes, "pathLength" | "points">,
     DataGlobalAttributes,
     SVGEvents<
-      I['polyline'] extends Element
-        ? I['polyline']
-        : SVGElementTagNameMap['polyline']
+      I["polyline"] extends Element
+        ? I["polyline"]
+        : SVGElementTagNameMap["polyline"]
     >,
     AriaAttributes,
     PresentationAttributes,
@@ -745,22 +745,22 @@ export interface SVGPolylineAttributes<I extends Record<string, {}>>
 export interface SVGRadialGradientAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'cx'
-      | 'cy'
-      | 'fr'
-      | 'fx'
-      | 'fy'
-      | 'gradientTransform'
-      | 'gradientUnits'
-      | 'pathLength'
-      | 'r'
-      | 'spreadMethod'
+      | "cx"
+      | "cy"
+      | "fr"
+      | "fx"
+      | "fy"
+      | "gradientTransform"
+      | "gradientUnits"
+      | "pathLength"
+      | "r"
+      | "spreadMethod"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['radialGradient'] extends Element
-        ? I['radialGradient']
-        : SVGElementTagNameMap['radialGradient']
+      I["radialGradient"] extends Element
+        ? I["radialGradient"]
+        : SVGElementTagNameMap["radialGradient"]
     >,
     AnimationTargetElementAttributes,
     PresentationAttributes,
@@ -768,28 +768,28 @@ export interface SVGRadialGradientAttributes<I extends Record<string, {}>>
 export interface SVGRectAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'height' | 'pathLength' | 'rx' | 'ry' | 'width' | 'x' | 'y'
+      "height" | "pathLength" | "rx" | "ry" | "width" | "x" | "y"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['rect'] extends Element ? I['rect'] : SVGElementTagNameMap['rect']
+      I["rect"] extends Element ? I["rect"] : SVGElementTagNameMap["rect"]
     >,
     AriaAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGScriptAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'crossorigin' | 'type'>,
+  extends Pick<AllAttributes, "crossorigin" | "type">,
     DataGlobalAttributes,
     SVGEvents<
-      I['script'] extends Element ? I['script'] : SVGElementTagNameMap['script']
+      I["script"] extends Element ? I["script"] : SVGElementTagNameMap["script"]
     >,
     AnimationTargetElementAttributes,
     GlobalAttributes {}
 export interface SVGSetAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'to'>,
+  extends Pick<AllAttributes, "to">,
     DataGlobalAttributes,
     SVGEvents<
-      I['set'] extends Element ? I['set'] : SVGElementTagNameMap['set']
+      I["set"] extends Element ? I["set"] : SVGElementTagNameMap["set"]
     >,
     AnimationAttributeTargetAttributes,
     AnimationTimingAttributes,
@@ -797,25 +797,25 @@ export interface SVGSetAttributes<I extends Record<string, {}>>
 export interface SVGStopAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['stop'] extends Element ? I['stop'] : SVGElementTagNameMap['stop']
+      I["stop"] extends Element ? I["stop"] : SVGElementTagNameMap["stop"]
     >,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGStyleAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'media' | 'type'>,
+  extends Pick<AllAttributes, "media" | "type">,
     DataGlobalAttributes,
     SVGEvents<
-      I['style'] extends Element ? I['style'] : SVGElementTagNameMap['style']
+      I["style"] extends Element ? I["style"] : SVGElementTagNameMap["style"]
     >,
     GlobalAttributes {}
 export interface SVGSvgAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'height' | 'preserveAspectRatio' | 'viewBox' | 'width' | 'x' | 'y'
+      "height" | "preserveAspectRatio" | "viewBox" | "width" | "x" | "y"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['svg'] extends Element ? I['svg'] : SVGElementTagNameMap['svg']
+      I["svg"] extends Element ? I["svg"] : SVGElementTagNameMap["svg"]
     >,
     AriaAttributes,
     PresentationAttributes,
@@ -824,30 +824,30 @@ export interface SVGSvgAttributes<I extends Record<string, {}>>
    * Specifies the XML Namespace of the document.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xmlns} */
-  xmlns?: ValueSets['87'];
+  xmlns?: ValueSets["87"];
 }
 export interface SVGSwitchAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['switch'] extends Element ? I['switch'] : SVGElementTagNameMap['switch']
+      I["switch"] extends Element ? I["switch"] : SVGElementTagNameMap["switch"]
     >,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGSymbolAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      | 'height'
-      | 'preserveAspectRatio'
-      | 'refX'
-      | 'refY'
-      | 'viewBox'
-      | 'width'
-      | 'x'
-      | 'y'
+      | "height"
+      | "preserveAspectRatio"
+      | "refX"
+      | "refY"
+      | "viewBox"
+      | "width"
+      | "x"
+      | "y"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['symbol'] extends Element ? I['symbol'] : SVGElementTagNameMap['symbol']
+      I["symbol"] extends Element ? I["symbol"] : SVGElementTagNameMap["symbol"]
     >,
     AriaAttributes,
     PresentationAttributes,
@@ -855,22 +855,22 @@ export interface SVGSymbolAttributes<I extends Record<string, {}>>
 export interface SVGTextAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'dx' | 'dy' | 'lengthAdjust' | 'rotate' | 'textLength' | 'x' | 'y'
+      "dx" | "dy" | "lengthAdjust" | "rotate" | "textLength" | "x" | "y"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['text'] extends Element ? I['text'] : SVGElementTagNameMap['text']
+      I["text"] extends Element ? I["text"] : SVGElementTagNameMap["text"]
     >,
     AriaAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGTextPathAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'lengthAdjust' | 'spacing' | 'textLength'>,
+  extends Pick<AllAttributes, "lengthAdjust" | "spacing" | "textLength">,
     DataGlobalAttributes,
     SVGEvents<
-      I['textPath'] extends Element
-        ? I['textPath']
-        : SVGElementTagNameMap['textPath']
+      I["textPath"] extends Element
+        ? I["textPath"]
+        : SVGElementTagNameMap["textPath"]
     >,
     AnimationTargetElementAttributes,
     AriaAttributes,
@@ -880,41 +880,41 @@ export interface SVGTextPathAttributes<I extends Record<string, {}>>
    * Which method to render individual glyphs along the path.
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/method} */
-  method?: ValueSets['89'];
+  method?: ValueSets["89"];
 }
 export interface SVGTitleAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     SVGEvents<
-      I['title'] extends Element ? I['title'] : SVGElementTagNameMap['title']
+      I["title"] extends Element ? I["title"] : SVGElementTagNameMap["title"]
     >,
     GlobalAttributes {}
 export interface SVGTspanAttributes<I extends Record<string, {}>>
   extends Pick<
       AllAttributes,
-      'dx' | 'dy' | 'lengthAdjust' | 'rotate' | 'textLength' | 'x' | 'y'
+      "dx" | "dy" | "lengthAdjust" | "rotate" | "textLength" | "x" | "y"
     >,
     DataGlobalAttributes,
     SVGEvents<
-      I['tspan'] extends Element ? I['tspan'] : SVGElementTagNameMap['tspan']
+      I["tspan"] extends Element ? I["tspan"] : SVGElementTagNameMap["tspan"]
     >,
     AriaAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGUseAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'height' | 'width' | 'x' | 'y'>,
+  extends Pick<AllAttributes, "height" | "width" | "x" | "y">,
     DataGlobalAttributes,
     SVGEvents<
-      I['use'] extends Element ? I['use'] : SVGElementTagNameMap['use']
+      I["use"] extends Element ? I["use"] : SVGElementTagNameMap["use"]
     >,
     AnimationTargetElementAttributes,
     AriaAttributes,
     PresentationAttributes,
     GlobalAttributes {}
 export interface SVGViewAttributes<I extends Record<string, {}>>
-  extends Pick<AllAttributes, 'preserveAspectRatio' | 'viewBox'>,
+  extends Pick<AllAttributes, "preserveAspectRatio" | "viewBox">,
     DataGlobalAttributes,
     SVGEvents<
-      I['view'] extends Element ? I['view'] : SVGElementTagNameMap['view']
+      I["view"] extends Element ? I["view"] : SVGElementTagNameMap["view"]
     >,
     AriaAttributes,
     GlobalAttributes {}
