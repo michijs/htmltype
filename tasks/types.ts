@@ -9,8 +9,7 @@ export interface AttributeSet {
   [key: string]: IAttributeData[];
 }
 
-export interface JSDocInfo
-  extends Pick<IValueData, "description" | "references"> {}
+export type JSDocInfo = Pick<IValueData, "description" | "references">;
 
 export interface InterfaceFactoryCommonAttrs {
   name: string;
