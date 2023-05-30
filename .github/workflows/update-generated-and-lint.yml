@@ -42,6 +42,8 @@ jobs:
       - name: Push changes to repository
         run: |
           git push origin || echo "No changes to push"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   lint:
     uses: michijs/.github/.github/workflows/lint.yml@main
     needs: submit-changes
