@@ -40,8 +40,7 @@ jobs:
           git commit -m 'chore: updated generated types' || echo "No changes to commit"
       # Push repository changes
       - name: Push changes to repository
-        run: |
-          git push origin || echo "No changes to push"
+        run: git push origin || echo "No changes to push"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   lint:
