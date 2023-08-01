@@ -3,7 +3,7 @@ import { TypedDocumentAndElementEventHandlers } from "./TypedDocumentAndElementE
 import { TypedElementEvent } from "./TypedElementEvent";
 
 // Based on SVGElementEventMap
-export interface SVGEvents<T extends Element>
+export interface SVGEvents<T extends EventTarget>
   extends GlobalEvents<T>,
     TypedElementEvent<T>,
     TypedDocumentAndElementEventHandlers<T> {}

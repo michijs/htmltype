@@ -3,7 +3,7 @@ import { TypedDocumentAndElementEventHandlers } from "./TypedDocumentAndElementE
 import { TypedElementEvent } from "./TypedElementEvent";
 
 // Based on MathMLElementEventMap
-export interface MathMLEvents<T extends Element = MathMLElement>
+export interface MathMLEvents<T extends EventTarget = MathMLElement>
   extends GlobalEvents<T>,
     TypedElementEvent<T>,
     TypedDocumentAndElementEventHandlers<T> {}

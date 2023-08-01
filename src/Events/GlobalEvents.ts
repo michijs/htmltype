@@ -18,7 +18,7 @@ import {
 } from "./TypedEvents";
 import { TypedInputEvent } from "./TypedEvents/TypedInputEvent";
 
-export interface GlobalEvents<T extends Element> {
+export interface GlobalEvents<T extends EventTarget> {
   /**
    * Fires when the user aborts the download.
    * @param ev The event.
