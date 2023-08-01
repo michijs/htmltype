@@ -4,90 +4,91 @@ import { AllAttributes } from "./AllAttributes";
 import { ValueSets } from "./ValueSets";
 import { SVGEvents } from "../Events";
 import { DataGlobalAttributes } from "../types";
-interface GlobalAttributes
-  extends Pick<
-    AllAttributes,
-    "class" | "id" | "lang" | "style" | "systemLanguage" | "tabindex"
-  > {}
-interface AnimationAdditionAttributes
-  extends Pick<AllAttributes, "accumulate" | "additive"> {}
-interface AnimationAttributeTargetAttributes
-  extends Pick<AllAttributes, "attributeName" | "attributeType"> {}
-interface AnimationTargetElementAttributes
-  extends Pick<AllAttributes, "href"> {}
-interface AnimationTimingAttributes
-  extends Pick<
-    AllAttributes,
-    | "begin"
-    | "dur"
-    | "end"
-    | "fill"
-    | "max"
-    | "min"
-    | "repeatCount"
-    | "repeatDur"
-    | "restart"
-  > {}
-interface AnimationValueAttributes
-  extends Pick<
-    AllAttributes,
-    "by" | "calcMode" | "from" | "keySplines" | "keyTimes" | "to" | "values"
-  > {}
-interface AriaAttributes
-  extends Pick<
-    AllAttributes,
-    | "aria-activedescendant"
-    | "aria-atomic"
-    | "aria-autocomplete"
-    | "aria-busy"
-    | "aria-checked"
-    | "aria-colcount"
-    | "aria-colindex"
-    | "aria-colspan"
-    | "aria-controls"
-    | "aria-current"
-    | "aria-describedby"
-    | "aria-details"
-    | "aria-disabled"
-    | "aria-dropeffect"
-    | "aria-errormessage"
-    | "aria-expanded"
-    | "aria-flowto"
-    | "aria-grabbed"
-    | "aria-haspopup"
-    | "aria-hidden"
-    | "aria-invalid"
-    | "aria-keyshortcuts"
-    | "aria-label"
-    | "aria-labelledby"
-    | "aria-level"
-    | "aria-live"
-    | "aria-modal"
-    | "aria-multiline"
-    | "aria-multiselectable"
-    | "aria-orientation"
-    | "aria-owns"
-    | "aria-placeholder"
-    | "aria-posinset"
-    | "aria-pressed"
-    | "aria-readonly"
-    | "aria-relevant"
-    | "aria-required"
-    | "aria-roledescription"
-    | "aria-rowcount"
-    | "aria-rowindex"
-    | "aria-rowspan"
-    | "aria-selected"
-    | "aria-setsize"
-    | "aria-sort"
-    | "aria-valuemax"
-    | "aria-valuemin"
-    | "aria-valuenow"
-    | "aria-valuetext"
-    | "role"
-  > {}
-interface FilterPrimitiveAttributes
-  extends Pick<AllAttributes, "height" | "result" | "width" | "x" | "y"> {}
+type GlobalAttributes = Pick<
+  AllAttributes,
+  "class" | "id" | "lang" | "style" | "systemLanguage" | "tabindex"
+>;
+type AnimationAdditionAttributes = Pick<
+  AllAttributes,
+  "accumulate" | "additive"
+>;
+type AnimationAttributeTargetAttributes = Pick<
+  AllAttributes,
+  "attributeName" | "attributeType"
+>;
+type AnimationTargetElementAttributes = Pick<AllAttributes, "href">;
+type AnimationTimingAttributes = Pick<
+  AllAttributes,
+  | "begin"
+  | "dur"
+  | "end"
+  | "fill"
+  | "max"
+  | "min"
+  | "repeatCount"
+  | "repeatDur"
+  | "restart"
+>;
+type AnimationValueAttributes = Pick<
+  AllAttributes,
+  "by" | "calcMode" | "from" | "keySplines" | "keyTimes" | "to" | "values"
+>;
+type AriaAttributes = Pick<
+  AllAttributes,
+  | "aria-activedescendant"
+  | "aria-atomic"
+  | "aria-autocomplete"
+  | "aria-busy"
+  | "aria-checked"
+  | "aria-colcount"
+  | "aria-colindex"
+  | "aria-colspan"
+  | "aria-controls"
+  | "aria-current"
+  | "aria-describedby"
+  | "aria-details"
+  | "aria-disabled"
+  | "aria-dropeffect"
+  | "aria-errormessage"
+  | "aria-expanded"
+  | "aria-flowto"
+  | "aria-grabbed"
+  | "aria-haspopup"
+  | "aria-hidden"
+  | "aria-invalid"
+  | "aria-keyshortcuts"
+  | "aria-label"
+  | "aria-labelledby"
+  | "aria-level"
+  | "aria-live"
+  | "aria-modal"
+  | "aria-multiline"
+  | "aria-multiselectable"
+  | "aria-orientation"
+  | "aria-owns"
+  | "aria-placeholder"
+  | "aria-posinset"
+  | "aria-pressed"
+  | "aria-readonly"
+  | "aria-relevant"
+  | "aria-required"
+  | "aria-roledescription"
+  | "aria-rowcount"
+  | "aria-rowindex"
+  | "aria-rowspan"
+  | "aria-selected"
+  | "aria-setsize"
+  | "aria-sort"
+  | "aria-valuemax"
+  | "aria-valuemin"
+  | "aria-valuenow"
+  | "aria-valuetext"
+  | "role"
+>;
+type FilterPrimitiveAttributes = Pick<
+  AllAttributes,
+  "height" | "result" | "width" | "x" | "y"
+>;
 interface PresentationAttributes
   extends Pick<
     AllAttributes,
