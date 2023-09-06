@@ -36,7 +36,6 @@ export interface HTMLCodeAttributes<I extends Record<string, {}>> extends DataGl
 export interface HTMLColAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "span" | "align">, DataGlobalAttributes, GlobalEvents<I["col"] extends Element ? I["col"]: HTMLElementTagNameMap['col']>, GlobalAttributes {}
 export interface HTMLColgroupAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "span" | "align">, DataGlobalAttributes, GlobalEvents<I["colgroup"] extends Element ? I["colgroup"]: HTMLElementTagNameMap['colgroup']>, GlobalAttributes {}
 export interface HTMLDataAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "value">, DataGlobalAttributes, GlobalEvents<I["data"] extends Element ? I["data"]: HTMLElementTagNameMap['data']>, GlobalAttributes {}
-export interface HTMLDataAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "value">, DataGlobalAttributes, GlobalEvents<I["data"] extends Element ? I["data"]: HTMLElementTagNameMap['data']>, GlobalAttributes {}
 export interface HTMLDatalistAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["datalist"] extends Element ? I["datalist"]: HTMLElementTagNameMap['datalist']>, GlobalAttributes {}
 export interface HTMLDdAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "nowrap">, DataGlobalAttributes, GlobalEvents<I["dd"] extends Element ? I["dd"]: HTMLElementTagNameMap['dd']>, GlobalAttributes {}
 export interface HTMLDelAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "cite" | "datetime">, DataGlobalAttributes, GlobalEvents<I["del"] extends Element ? I["del"]: HTMLElementTagNameMap['del']>, GlobalAttributes {}
@@ -65,7 +64,6 @@ export interface HTMLH5Attributes<I extends Record<string, {}>> extends DataGlob
 export interface HTMLH6Attributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["h6"] extends Element ? I["h6"]: HTMLElementTagNameMap['h6']>, GlobalAttributes {}
 export interface HTMLHeadAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "profile">, DataGlobalAttributes, GlobalEvents<I["head"] extends Element ? I["head"]: HTMLElementTagNameMap['head']>, GlobalAttributes {}
 export interface HTMLHeaderAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["header"] extends Element ? I["header"]: HTMLElementTagNameMap['header']>, GlobalAttributes {}
-export interface HTMLHgroupAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["hgroup"] extends Element ? I["hgroup"]: HTMLElementTagNameMap['hgroup']>, GlobalAttributes {}
 export interface HTMLHgroupAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["hgroup"] extends Element ? I["hgroup"]: HTMLElementTagNameMap['hgroup']>, GlobalAttributes {}
 export interface HTMLHrAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "align" | "color" | "noshade" | "size" | "width">, DataGlobalAttributes, GlobalEvents<I["hr"] extends Element ? I["hr"]: HTMLElementTagNameMap['hr']>, GlobalAttributes {}
 export interface HTMLHtmlAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "manifest" | "version" | "xmlns">, DataGlobalAttributes, GlobalEvents<I["html"] extends Element ? I["html"]: HTMLElementTagNameMap['html']>, GlobalAttributes {}
@@ -96,7 +94,6 @@ export interface HTMLLinkAttributes<I extends Record<string, {}>> extends Pick<A
 export interface HTMLMainAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["main"] extends Element ? I["main"]: HTMLElementTagNameMap['main']>, GlobalAttributes {}
 export interface HTMLMapAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "name">, DataGlobalAttributes, GlobalEvents<I["map"] extends Element ? I["map"]: HTMLElementTagNameMap['map']>, GlobalAttributes {}
 export interface HTMLMarkAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["mark"] extends Element ? I["mark"]: HTMLElementTagNameMap['mark']>, GlobalAttributes {}
-export interface HTMLMenuAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["menu"] extends Element ? I["menu"]: HTMLElementTagNameMap['menu']>, GlobalAttributes {}
 export interface HTMLMenuAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["menu"] extends Element ? I["menu"]: HTMLElementTagNameMap['menu']>, GlobalAttributes {}
 export interface HTMLMetaAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "name" | "http-equiv" | "content" | "charset" | "scheme">, DataGlobalAttributes, GlobalEvents<I["meta"] extends Element ? I["meta"]: HTMLElementTagNameMap['meta']>, GlobalAttributes {}
 export interface HTMLMeterAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "value" | "min" | "max" | "low" | "high" | "optimum" | "form">, DataGlobalAttributes, GlobalEvents<I["meter"] extends Element ? I["meter"]: HTMLElementTagNameMap['meter']>, GlobalAttributes {}
@@ -142,7 +139,6 @@ export interface HTMLSelectAttributes<I extends Record<string, {}>> extends Pick
 * A [`DOMString`](https://developer.mozilla.org/en-US/docs/Web/API/DOMString "DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String.") providing a hint for a [user agent's](https://developer.mozilla.org/en-US/docs/Glossary/user_agent "user agent's: A user agent is a computer program representing a person, for example, a browser in a Web context.") autocomplete feature. See [The HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for a complete list of values and details on how to use autocomplete. */
 autocomplete?: ValueSets['inputautocomplete'];
     }
-export interface HTMLSlotAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "name">, DataGlobalAttributes, GlobalEvents<I["slot"] extends Element ? I["slot"]: HTMLElementTagNameMap['slot']>, GlobalAttributes {}
 export interface HTMLSlotAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "name">, DataGlobalAttributes, GlobalEvents<I["slot"] extends Element ? I["slot"]: HTMLElementTagNameMap['slot']>, GlobalAttributes {}
 export interface HTMLSmallAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, GlobalEvents<I["small"] extends Element ? I["small"]: HTMLElementTagNameMap['small']>, GlobalAttributes {}
 export interface HTMLSourceAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "src" | "type" | "sizes" | "srcset" | "media">, DataGlobalAttributes, GlobalEvents<I["source"] extends Element ? I["source"]: HTMLElementTagNameMap['source']>, GlobalAttributes {}
@@ -300,9 +296,6 @@ colgroup: HTMLColgroupAttributes<I>;
 * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/data} */
 data: HTMLDataAttributes<I>;
 /**
-* The data element links a given piece of content with a machine-readable translation. */
-data: HTMLDataAttributes<I>;
-/**
 * The datalist element represents a set of option elements that represent predefined options for other controls. In the rendering, the datalist element represents nothing and it, along with its children, should be hidden.
 * 
 * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/datalist} */
@@ -428,9 +421,6 @@ header: HTMLHeaderAttributes<I>;
 * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/hgroup} */
 hgroup: HTMLHgroupAttributes<I>;
 /**
-* The hgroup element represents a heading and related content. It groups a single h1–h6 element with one or more p. */
-hgroup: HTMLHgroupAttributes<I>;
-/**
 * The hr element represents a paragraph-level thematic break, e.g. a scene change in a story, or a transition to another topic within a section of a reference book.
 * 
 * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/hr} */
@@ -509,9 +499,6 @@ mark: HTMLMarkAttributes<I>;
 * The menu element represents an unordered list of interactive items.
 * 
 * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/menu} */
-menu: HTMLMenuAttributes<I>;
-/**
-* The menu element represents an unordered list of interactive items. */
 menu: HTMLMenuAttributes<I>;
 /**
 * The meta element represents various kinds of metadata that cannot be expressed using the title, base, link, style, and script elements.
@@ -637,9 +624,6 @@ select: HTMLSelectAttributes<I>;
 * The slot element is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
 * 
 * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/slot} */
-slot: HTMLSlotAttributes<I>;
-/**
-* The slot element is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together. */
 slot: HTMLSlotAttributes<I>;
 /**
 * The small element represents side comments such as small print.
