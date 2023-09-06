@@ -450,5 +450,21 @@
   {
     "tagName": "menu",
     "elementInterface": "HTMLElementTagNameMap['menu']"
+  },
+  {
+    "tagName": "slot",
+    "elementInterface": "HTMLElementTagNameMap['slot']"
+  },
+  {
+    "tagName": "data",
+    "elementInterface": "HTMLElementTagNameMap['data']"
+  },
+  {
+    "tagName": "hgroup",
+    "elementInterface": "HTMLElementTagNameMap['hgroup']"
+  },
+  {
+    "tagName": "menu",
+    "elementInterface": "HTMLElementTagNameMap['menu']"
   }
 ]

@@ -1073,6 +1073,8 @@ export interface AllAttributes {
    * Color of text for unvisited hypertext links. _This method is non-conforming, use CSS [`color`](https://developer.mozilla.org/en-US/docs/Web/CSS/color "The color CSS property sets the foreground color value of an element's text and text decorations, and sets the currentcolor value.") property in conjunction with the [`:link`](https://developer.mozilla.org/en-US/docs/Web/CSS/:link "The :link CSS pseudo-class represents an element that has not yet been visited. It matches every unvisited <a>, <area>, or <link> element that has an href attribute.") pseudo-class instead._ */
   link?: ValueSets["default"];
   list?: ValueSets["default"];
+  /**
+   * Indicates how the browser should load the image. */
   loading?: ValueSets["loading"];
   loop?: ValueSets["v"];
   /**

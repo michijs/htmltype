@@ -1,88 +1,87 @@
-// file generated from @vscode/web-custom-data 0.4.6
+// file generated from @vscode/web-custom-data 0.4.7
 // HTML Data Version 1.1
 import { AllAttributes } from "./AllAttributes";
 import { ValueSets } from "./ValueSets";
 import { GlobalEvents, WindowEvents } from "../Events";
 import { DataGlobalAttributes } from "../types";
-interface GlobalAttributes
-  extends Pick<
-    AllAttributes,
-    | "accesskey"
-    | "autocapitalize"
-    | "class"
-    | "contenteditable"
-    | "contextmenu"
-    | "dir"
-    | "draggable"
-    | "dropzone"
-    | "exportparts"
-    | "hidden"
-    | "id"
-    | "inputmode"
-    | "is"
-    | "itemid"
-    | "itemprop"
-    | "itemref"
-    | "itemscope"
-    | "itemtype"
-    | "lang"
-    | "part"
-    | "role"
-    | "slot"
-    | "spellcheck"
-    | "style"
-    | "tabindex"
-    | "title"
-    | "translate"
-    | "aria-activedescendant"
-    | "aria-atomic"
-    | "aria-autocomplete"
-    | "aria-busy"
-    | "aria-checked"
-    | "aria-colcount"
-    | "aria-colindex"
-    | "aria-colspan"
-    | "aria-controls"
-    | "aria-current"
-    | "aria-describedby"
-    | "aria-disabled"
-    | "aria-dropeffect"
-    | "aria-errormessage"
-    | "aria-expanded"
-    | "aria-flowto"
-    | "aria-grabbed"
-    | "aria-haspopup"
-    | "aria-hidden"
-    | "aria-invalid"
-    | "aria-label"
-    | "aria-labelledby"
-    | "aria-level"
-    | "aria-live"
-    | "aria-modal"
-    | "aria-multiline"
-    | "aria-multiselectable"
-    | "aria-orientation"
-    | "aria-owns"
-    | "aria-placeholder"
-    | "aria-posinset"
-    | "aria-pressed"
-    | "aria-readonly"
-    | "aria-relevant"
-    | "aria-required"
-    | "aria-roledescription"
-    | "aria-rowcount"
-    | "aria-rowindex"
-    | "aria-rowspan"
-    | "aria-selected"
-    | "aria-setsize"
-    | "aria-sort"
-    | "aria-valuemax"
-    | "aria-valuemin"
-    | "aria-valuenow"
-    | "aria-valuetext"
-    | "aria-details"
-    | "aria-keyshortcuts"
-  > {}
+type GlobalAttributes = Pick<
+  AllAttributes,
+  | "accesskey"
+  | "autocapitalize"
+  | "class"
+  | "contenteditable"
+  | "contextmenu"
+  | "dir"
+  | "draggable"
+  | "dropzone"
+  | "exportparts"
+  | "hidden"
+  | "id"
+  | "inputmode"
+  | "is"
+  | "itemid"
+  | "itemprop"
+  | "itemref"
+  | "itemscope"
+  | "itemtype"
+  | "lang"
+  | "part"
+  | "role"
+  | "slot"
+  | "spellcheck"
+  | "style"
+  | "tabindex"
+  | "title"
+  | "translate"
+  | "aria-activedescendant"
+  | "aria-atomic"
+  | "aria-autocomplete"
+  | "aria-busy"
+  | "aria-checked"
+  | "aria-colcount"
+  | "aria-colindex"
+  | "aria-colspan"
+  | "aria-controls"
+  | "aria-current"
+  | "aria-describedby"
+  | "aria-disabled"
+  | "aria-dropeffect"
+  | "aria-errormessage"
+  | "aria-expanded"
+  | "aria-flowto"
+  | "aria-grabbed"
+  | "aria-haspopup"
+  | "aria-hidden"
+  | "aria-invalid"
+  | "aria-label"
+  | "aria-labelledby"
+  | "aria-level"
+  | "aria-live"
+  | "aria-modal"
+  | "aria-multiline"
+  | "aria-multiselectable"
+  | "aria-orientation"
+  | "aria-owns"
+  | "aria-placeholder"
+  | "aria-posinset"
+  | "aria-pressed"
+  | "aria-readonly"
+  | "aria-relevant"
+  | "aria-required"
+  | "aria-roledescription"
+  | "aria-rowcount"
+  | "aria-rowindex"
+  | "aria-rowspan"
+  | "aria-selected"
+  | "aria-setsize"
+  | "aria-sort"
+  | "aria-valuemax"
+  | "aria-valuemin"
+  | "aria-valuenow"
+  | "aria-valuetext"
+  | "aria-details"
+  | "aria-keyshortcuts"
+>;
 
 export interface HTMLAAttributes<I extends Record<string, {}>>
   extends Pick<
@@ -308,6 +307,13 @@ export interface HTMLDataAttributes<I extends Record<string, {}>>
       I["data"] extends Element ? I["data"] : HTMLElementTagNameMap["data"]
     >,
     GlobalAttributes {}
+export interface HTMLDataAttributes<I extends Record<string, {}>>
+  extends Pick<AllAttributes, "value">,
+    DataGlobalAttributes,
+    GlobalEvents<
+      I["data"] extends Element ? I["data"] : HTMLElementTagNameMap["data"]
+    >,
+    GlobalAttributes {}
 export interface HTMLDatalistAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
@@ -489,6 +495,14 @@ export interface HTMLHeaderAttributes<I extends Record<string, {}>>
       I["header"] extends Element
         ? I["header"]
         : HTMLElementTagNameMap["header"]
+    >,
+    GlobalAttributes {}
+export interface HTMLHgroupAttributes<I extends Record<string, {}>>
+  extends DataGlobalAttributes,
+    GlobalEvents<
+      I["hgroup"] extends Element
+        ? I["hgroup"]
+        : HTMLElementTagNameMap["hgroup"]
     >,
     GlobalAttributes {}
 export interface HTMLHgroupAttributes<I extends Record<string, {}>>
@@ -691,6 +705,12 @@ export interface HTMLMarkAttributes<I extends Record<string, {}>>
   extends DataGlobalAttributes,
     GlobalEvents<
       I["mark"] extends Element ? I["mark"] : HTMLElementTagNameMap["mark"]
+    >,
+    GlobalAttributes {}
+export interface HTMLMenuAttributes<I extends Record<string, {}>>
+  extends DataGlobalAttributes,
+    GlobalEvents<
+      I["menu"] extends Element ? I["menu"] : HTMLElementTagNameMap["menu"]
     >,
     GlobalAttributes {}
 export interface HTMLMenuAttributes<I extends Record<string, {}>>
@@ -932,6 +952,13 @@ export interface HTMLSelectAttributes<I extends Record<string, {}>>
    * A [`DOMString`](https://developer.mozilla.org/en-US/docs/Web/API/DOMString "DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String.") providing a hint for a [user agent's](https://developer.mozilla.org/en-US/docs/Glossary/user_agent "user agent's: A user agent is a computer program representing a person, for example, a browser in a Web context.") autocomplete feature. See [The HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for a complete list of values and details on how to use autocomplete. */
   autocomplete?: ValueSets["inputautocomplete"];
 }
+export interface HTMLSlotAttributes<I extends Record<string, {}>>
+  extends Pick<AllAttributes, "name">,
+    DataGlobalAttributes,
+    GlobalEvents<
+      I["slot"] extends Element ? I["slot"] : HTMLElementTagNameMap["slot"]
+    >,
+    GlobalAttributes {}
 export interface HTMLSlotAttributes<I extends Record<string, {}>>
   extends Pick<AllAttributes, "name">,
     DataGlobalAttributes,
@@ -1279,6 +1306,11 @@ export interface HTMLElements<I extends {} = {}> {
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/colgroup} */
   colgroup: HTMLColgroupAttributes<I>;
   /**
+   * The data element links a given piece of content with a machine-readable translation.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/data} */
+  data: HTMLDataAttributes<I>;
+  /**
    * The data element links a given piece of content with a machine-readable translation. */
   data: HTMLDataAttributes<I>;
   /**
@@ -1402,6 +1434,11 @@ export interface HTMLElements<I extends {} = {}> {
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/header} */
   header: HTMLHeaderAttributes<I>;
   /**
+   * The hgroup element represents a heading and related content. It groups a single h1–h6 element with one or more p.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/hgroup} */
+  hgroup: HTMLHgroupAttributes<I>;
+  /**
    * The hgroup element represents a heading and related content. It groups a single h1–h6 element with one or more p. */
   hgroup: HTMLHgroupAttributes<I>;
   /**
@@ -1479,6 +1516,11 @@ export interface HTMLElements<I extends {} = {}> {
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/mark} */
   mark: HTMLMarkAttributes<I>;
+  /**
+   * The menu element represents an unordered list of interactive items.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/menu} */
+  menu: HTMLMenuAttributes<I>;
   /**
    * The menu element represents an unordered list of interactive items. */
   menu: HTMLMenuAttributes<I>;
@@ -1602,6 +1644,11 @@ export interface HTMLElements<I extends {} = {}> {
    *
    * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/select} */
   select: HTMLSelectAttributes<I>;
+  /**
+   * The slot element is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together.
+   *
+   * [MDN Reference] {@link https://developer.mozilla.org/docs/Web/HTML/Element/slot} */
+  slot: HTMLSlotAttributes<I>;
   /**
    * The slot element is a placeholder inside a web component that you can fill with your own markup, which lets you create separate DOM trees and present them together. */
   slot: HTMLSlotAttributes<I>;
