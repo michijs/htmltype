@@ -1,11 +1,6 @@
 import { ValueSets } from "./ValueSets";
 export interface AllAttributes {
   /**
-   * This attribute contains a short abbreviated description of the cell's content. Some user-agents, such as speech readers, may present this description before the content itself.
-   *
-   * **Note:** Do not use this attribute as it is obsolete in the latest standard. Alternatively, you can put the abbreviated description inside the cell and place the long content in the **title** attribute. */
-  abbr?: ValueSets["default"];
-  /**
    * A `<boolean>` indicating whether the over script should be treated as an accent (i.e. drawn bigger and closer to the base expression).
    *
    * [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/MathML/Attribute} */
