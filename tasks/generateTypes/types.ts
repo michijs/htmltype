@@ -9,6 +9,22 @@ export interface AttributeSet {
   [key: string]: IAttributeData[];
 }
 
+export interface GenerateAttributesAndValueSetsProps {
+  valueSetsTransformer?(valueSets: ValueSetInterfaceFactory): void;
+  valueSetsAdditionalImports?: string[]
+}
+export interface TypesFactoryProps {
+  generatedPath?: string
+}
+export interface GenerateTypesProps {
+  generateAttributesAndValueSetsProps?: GenerateAttributesAndValueSetsProps;
+  typesFactoryProps?: TypesFactoryProps,
+  elements?: {
+    additionalImports?: string[],
+    additionalExtends?: GetAdditionalElementExtendsInterfaces
+  }
+}
+
 export type JSDocInfo = Pick<IValueData, "description" | "references">;
 
 export interface InterfaceFactoryCommonAttrs {
@@ -29,6 +45,13 @@ export interface ValueSetInterfaceFactory extends InterfaceFactoryCommonAttrs {
   attributes: Omit<IAttributeData, "valueSet">[];
 }
 
+export interface GetAdditionalElementExtendsInterfaces {
+  (
+    tag: string,
+    elementInterface: string,
+  ): string[]
+}
+
 export interface AddTypesFromProps {
   attributeSet?: AttributeSet;
   name: string;
@@ -36,9 +59,6 @@ export interface AddTypesFromProps {
   src: string;
   additionalImports?: string[];
   getElementInterface: (tag: string) => string;
-  getAdditionalElementExtendsInterfaces?: (
-    tag: string,
-    elementInterface: string,
-  ) => string[];
+  getAdditionalElementExtendsInterfaces?: GetAdditionalElementExtendsInterfaces;
   getAttributes?: (tag: ITagData) => ITagData["attributes"];
 }

@@ -4,7 +4,9 @@ import { IAttributeData } from "vscode-html-languageservice";
 import {
   AddTypesFromProps,
   AttributeSet,
+  GenerateAttributesAndValueSetsProps,
   InterfaceFactory,
+  TypesFactoryProps,
   ValueSetInterfaceFactory,
 } from "./types";
 
@@ -52,14 +54,16 @@ export const allAttributes: InterfaceFactory = {
 };
 
 export class TypesFactory {
-  constructor() {
-    rmSync("./src/generated", { recursive: true, force: true });
+  generatedPath: string;
+  constructor(props?: TypesFactoryProps) {
+    this.generatedPath = props?.generatedPath ?? './src/generated'
+    rmSync(this.generatedPath, { recursive: true, force: true });
     rmSync("./supported", { recursive: true, force: true });
     mkdirSync("./supported");
     writeFileSync("./supported/index.js", "");
-    mkdirSync("./src/generated");
+    mkdirSync(this.generatedPath);
     writeFileSync(
-      "./src/generated/index.ts",
+      `${this.generatedPath}/index.ts`,
       `export type { ValueSets } from "./ValueSets";
 export type { AllAttributes } from "./AllAttributes";\n`,
     );
@@ -262,7 +266,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     const srcVersion = (await import(`${props.src}/package.json`)).version;
     // Elements file
     writeFileSync(
-      `./src/generated/${props.name}.ts`,
+      `${this.generatedPath}/${props.name}.ts`,
       `// file generated from ${props.src} ${srcVersion}
        // HTML Data Version ${props.documentationSrc.version}
        import { AllAttributes } from './AllAttributes';
@@ -284,22 +288,24 @@ export type { AllAttributes } from "./AllAttributes";\n`,
        ${generateInterface(elements)}`,
     );
     appendFileSync(
-      "./src/generated/index.ts",
+      `${this.generatedPath}/index.ts`,
       `export * from "./${props.name}";\n`,
     );
   }
 
-  generateAttributesAndValueSets() {
+  generateAttributesAndValueSets(props?: GenerateAttributesAndValueSetsProps) {
     // Attributes
     writeFileSync(
-      "./src/generated/AllAttributes.ts",
+      `${this.generatedPath}/AllAttributes.ts`,
       `import { ValueSets } from "./ValueSets"
       ${generateInterface(allAttributes)}`,
     );
+    props?.valueSetsTransformer?.(valueSets)
     // ValueSets
     writeFileSync(
-      "./src/generated/ValueSets.ts",
-      `import { CSSProperties } from '../types'
+      `${this.generatedPath}/ValueSets.ts`,
+      `import { CSSProperties } from '../types';
+      ${props?.valueSetsAdditionalImports?.join("\n") ?? ''}
       ${generateInterface(valueSets)}`,
     );
   }

@@ -4,7 +4,7 @@ import svgDataImport from "@michijs/vscode-svg/dist/svg.json";
 import svgAttributeSet from "@michijs/vscode-svg/dist/attributeSets.json";
 import mathmlDataImport from "@michijs/vscode-mathml/dist/mathml.json";
 import { HTMLDataV1 } from "vscode-html-languageservice";
-import { AttributeSet } from "./types";
+import { AttributeSet, GenerateTypesProps, GetAdditionalElementExtendsInterfaces } from "./types";
 
 const htmlData = htmlDataImport as HTMLDataV1;
 const svgData = svgDataImport as HTMLDataV1;
@@ -33,8 +33,17 @@ htmlData.tags = htmlData.tags!.map((x) => {
   return x;
 });
 
-async function main() {
-  const factory = new TypesFactory();
+export async function generateTypes(props?: GenerateTypesProps) {
+  const factory = new TypesFactory(props?.typesFactoryProps);
+
+  const elementsAdditionalImports = [
+    'import { DataGlobalAttributes } from "../DataGlobalAttributes"',
+    ...(props?.elements?.additionalImports ?? [])
+  ]
+  const elementsAdditionalExtends: GetAdditionalElementExtendsInterfaces = (el, elementInterface) => [
+    'DataGlobalAttributes',
+    ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? [])
+  ]
 
   await factory.addTypesFrom({
     name: "HTMLElements",
@@ -42,7 +51,7 @@ async function main() {
     documentationSrc: htmlData,
     additionalImports: [
       'import { GlobalEvents, WindowEvents } from "../Events"',
-      'import { DataGlobalAttributes } from "../types"',
+      ...elementsAdditionalImports
     ],
     getElementInterface: (el) =>
       ["param", "rb"].includes(el)
@@ -50,7 +59,7 @@ async function main() {
         : `HTMLElementTagNameMap['${el}']`,
     getAdditionalElementExtendsInterfaces: (el, elementInterface) => {
       const attributeSets = [
-        "DataGlobalAttributes",
+        ...elementsAdditionalExtends(el, elementInterface),
         `GlobalEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
       ];
       if (el === "body")
@@ -66,11 +75,11 @@ async function main() {
     documentationSrc: mathmlData,
     additionalImports: [
       'import { MathMLEvents } from "../Events"',
-      'import { DataGlobalAttributes } from "../types"',
+      ...elementsAdditionalImports
     ],
     getElementInterface: () => "MathMLElement",
     getAdditionalElementExtendsInterfaces: (el, elementInterface) => [
-      "DataGlobalAttributes",
+      ...elementsAdditionalExtends(el, elementInterface),
       `MathMLEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
     ],
   });
@@ -81,15 +90,14 @@ async function main() {
     attributeSet: svgAttributeSet as AttributeSet,
     additionalImports: [
       'import { SVGEvents } from "../Events"',
-      'import { DataGlobalAttributes } from "../types"',
+      ...elementsAdditionalImports
     ],
     getElementInterface: (el) =>
       ["discard"].includes(el) ? "SVGElement" : `SVGElementTagNameMap['${el}']`,
     getAdditionalElementExtendsInterfaces: (el, elementInterface) => [
-      "DataGlobalAttributes",
+      ...elementsAdditionalExtends(el, elementInterface),
       `SVGEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
     ],
   });
-  factory.generateAttributesAndValueSets();
+  factory.generateAttributesAndValueSets(props?.generateAttributesAndValueSetsProps);
 }
-main();
