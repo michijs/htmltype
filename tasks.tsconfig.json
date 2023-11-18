@@ -20,8 +20,10 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "target": "esnext",
-    "noUnusedLocals": false,
-    "noUnusedParameters": false
+    "baseUrl": "./",
+    "types" : ["@types/node"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": [
     "tasks"

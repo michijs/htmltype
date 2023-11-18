@@ -1,3 +1,3 @@
-import { generateTypes } from "./generateTypes";
+import { generateTypes } from ".";
 
 generateTypes();
