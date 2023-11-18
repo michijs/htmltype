@@ -1,7 +1,7 @@
 /// <reference lib="esNext" />
 // TODO: fix this
 
-import { IAttributeData, MarkupContent } from "vscode-html-languageservice";
+import type { IAttributeData, MarkupContent } from "vscode-html-languageservice";
 import { InterfaceFactory, JSDocInfo, ValueSetInterfaceFactory } from "./types";
 import { allAttributes } from "./TypesFactory";
 

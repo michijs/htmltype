@@ -1,4 +1,4 @@
-import {
+import type {
   IAttributeData,
   ITagData,
   HTMLDataV1,
