@@ -10,7 +10,8 @@
   },
   "files": [
     "dist/",
-    "supported/"
+    "supported/",
+    "bin/"
   ],
   "main": "dist/index.js",
   "module": "dist/index.js",
