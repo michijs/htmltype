@@ -1,1 +1,1 @@
-export {generateTypes} from './generateTypes'
+export { generateTypes } from "./generateTypes";
