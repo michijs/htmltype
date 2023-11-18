@@ -56,7 +56,7 @@ export const allAttributes: InterfaceFactory = {
 export class TypesFactory {
   generatedPath: string;
   constructor(props?: TypesFactoryProps) {
-    this.generatedPath = props?.generatedPath ?? './src/generated'
+    this.generatedPath = props?.generatedPath ?? "./src/generated";
     rmSync(this.generatedPath, { recursive: true, force: true });
     rmSync("./supported", { recursive: true, force: true });
     mkdirSync("./supported");
@@ -300,12 +300,12 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       `import { ValueSets } from "./ValueSets"
       ${generateInterface(allAttributes)}`,
     );
-    props?.valueSetsTransformer?.(valueSets)
+    props?.valueSetsTransformer?.(valueSets);
     // ValueSets
     writeFileSync(
       `${this.generatedPath}/ValueSets.ts`,
       `import { CSSProperties } from '../types';
-      ${props?.valueSetsAdditionalImports?.join("\n") ?? ''}
+      ${props?.valueSetsAdditionalImports?.join("\n") ?? ""}
       ${generateInterface(valueSets)}`,
     );
   }
