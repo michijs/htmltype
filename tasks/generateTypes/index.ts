@@ -4,7 +4,7 @@ import svgDataImport from "@michijs/vscode-svg/dist/svg.json";
 import svgAttributeSet from "@michijs/vscode-svg/dist/attributeSets.json";
 import mathmlDataImport from "@michijs/vscode-mathml/dist/mathml.json";
 import type { HTMLDataV1 } from "vscode-html-languageservice";
-import {
+import type {
   AttributeSet,
   GenerateTypesProps,
   GetAdditionalElementExtendsInterfaces,
