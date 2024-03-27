@@ -269,8 +269,8 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       `${this.generatedPath}/${props.name}.ts`,
       `// file generated from ${props.src} ${srcVersion}
        // HTML Data Version ${props.documentationSrc.version}
-       import { AllAttributes } from './AllAttributes';
-       import { ValueSets } from "./ValueSets"
+       import type { AllAttributes } from './AllAttributes';
+       import type { ValueSets } from "./ValueSets"
        ${props.additionalImports?.join("\n")}
        ${globalAttributes ? generateInterface(globalAttributes) : ""}
        ${
@@ -297,14 +297,14 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     // Attributes
     writeFileSync(
       `${this.generatedPath}/AllAttributes.ts`,
-      `import { ValueSets } from "./ValueSets"
+      `import type { ValueSets } from "./ValueSets"
       ${generateInterface(allAttributes)}`,
     );
     props?.valueSetsTransformer?.(valueSets);
     // ValueSets
     writeFileSync(
       `${this.generatedPath}/ValueSets.ts`,
-      `import { CSSProperties } from '../types';
+      `import type { CSSProperties } from '../types';
       ${props?.valueSetsAdditionalImports?.join("\n") ?? ""}
       ${generateInterface(valueSets)}`,
     );
