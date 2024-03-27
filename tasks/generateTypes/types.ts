@@ -45,9 +45,10 @@ export interface ValueSetInterfaceFactory extends InterfaceFactoryCommonAttrs {
   attributes: Omit<IAttributeData, "valueSet">[];
 }
 
-export interface GetAdditionalElementExtendsInterfaces {
-  (tag: string, elementInterface: string): string[];
-}
+export type GetAdditionalElementExtendsInterfaces = (
+  tag: string,
+  elementInterface: string,
+) => string[];
 
 export interface AddTypesFromProps {
   attributeSet?: AttributeSet;

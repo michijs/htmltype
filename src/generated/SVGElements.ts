@@ -1,9 +1,9 @@
 // file generated from @michijs/vscode-svg 2.0.7
 // HTML Data Version 1.1
-import { AllAttributes } from "./AllAttributes";
-import { ValueSets } from "./ValueSets";
-import { SVGEvents } from "../Events";
-import { DataGlobalAttributes } from "../DataGlobalAttributes";
+import type { AllAttributes } from "./AllAttributes";
+import type { ValueSets } from "./ValueSets";
+import type { SVGEvents } from "../Events";
+import type { DataGlobalAttributes } from "../DataGlobalAttributes";
 interface GlobalAttributes
   extends Pick<
     AllAttributes,
