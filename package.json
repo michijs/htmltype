@@ -44,7 +44,7 @@
     "typescript"
   ],
   "devDependencies": {
-    "@types/node": "20.11.2",
+    "@types/node": "20.11.30",
     "ts-node": "10.9.2",
     "typescript": "5.4.3",
     "vscode-html-languageservice": "5.2.0"
