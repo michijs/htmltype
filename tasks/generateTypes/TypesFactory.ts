@@ -1,7 +1,7 @@
 import { appendFileSync, mkdirSync, rmSync, writeFileSync } from "fs";
 import { DEFAULT_VALUE_SET, generateInterface, sortByName } from "./shared";
 import type { IAttributeData } from "vscode-html-languageservice";
-import {
+import type {
   AddTypesFromProps,
   AttributeSet,
   GenerateAttributesAndValueSetsProps,

@@ -1,9 +1,9 @@
 // file generated from @vscode/web-custom-data 0.4.9
 // HTML Data Version 1.1
-import { AllAttributes } from "./AllAttributes";
-import { ValueSets } from "./ValueSets";
-import { GlobalEvents, WindowEvents } from "../Events";
-import { DataGlobalAttributes } from "../DataGlobalAttributes";
+import type { AllAttributes } from "./AllAttributes";
+import type { ValueSets } from "./ValueSets";
+import type { GlobalEvents, WindowEvents } from "../Events";
+import type { DataGlobalAttributes } from "../DataGlobalAttributes";
 interface GlobalAttributes
   extends Pick<
     AllAttributes,
