@@ -1,4 +1,4 @@
-import { CSSProperties } from "../types";
+import type { CSSProperties } from "../types";
 
 export interface ValueSets {
   41?: "ltr" | "rtl";
