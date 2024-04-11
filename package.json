@@ -31,11 +31,10 @@
   },
   "description": "Strict TypeScript types for HTML, SVG and MATHML attributes based on MDN data.",
   "scripts": {
-    "start": "ts-node --project tasks.tsconfig.json ./tasks/generateTypes/main.ts",
-    "dist": "tsc && tsc --project tasks.tsconfig.json",
-    "publish-prerelease-version": "npm version prerelease && npm run publish-npm",
-    "publish-npm": "npm run dist && npm publish --access public",
-    "link": "npm run dist && npm link --force && tsc -w && tsc --project tasks.tsconfig.json -w"
+    "start": "bun run ./tasks/generateTypes/main.ts",
+    "dist": "tsc",
+    "test-tsc": "tsc --noEmit --skipLibCheck && tsc --project tasks.tsconfig.json --noEmit --skipLibCheck",
+    "link": "bun run dist && bun link --force && tsc -w && tsc --project tasks.tsconfig.json -w"
   },
   "keywords": [
     "html",
@@ -45,7 +44,6 @@
   ],
   "devDependencies": {
     "@types/node": "20.11.30",
-    "ts-node": "10.9.2",
     "typescript": "5.4.3",
     "vscode-html-languageservice": "5.2.0"
   },
