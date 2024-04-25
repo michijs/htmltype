@@ -49,8 +49,8 @@
   },
   "dependencies": {
     "@vscode/web-custom-data": "0.4.9",
-    "@michijs/vscode-svg": "2.0.7",
-    "@michijs/vscode-mathml": "1.0.3"
+    "@michijs/vscode-svg": "2.0.8",
+    "@michijs/vscode-mathml": "1.0.4"
   },
   "peerDependencies": {
     "csstype": "^3.1.2"
