@@ -1,4 +1,4 @@
-// file generated from @michijs/vscode-mathml 1.0.3
+// file generated from @michijs/vscode-mathml 1.0.4
 // HTML Data Version 1.1
 import type { AllAttributes } from "./AllAttributes";
 import type { ValueSets } from "./ValueSets";
