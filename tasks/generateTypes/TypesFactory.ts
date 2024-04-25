@@ -276,9 +276,9 @@ export type { AllAttributes } from "./AllAttributes";\n`,
        ${
          attributeSets && attributeSets.length > 0
            ? attributeSets
-                .sort(sortByName)
-                .map((x) => generateInterface(x))
-                .join("\n")
+               .sort(sortByName)
+               .map((x) => generateInterface(x))
+               .join("\n")
            : ""
        }
        ${elementsInterfaces
