@@ -1,7 +1,7 @@
 import { appendFileSync, mkdirSync, rmSync, writeFileSync } from "fs";
 import { DEFAULT_VALUE_SET, generateInterface, sortByName } from "./shared";
 import type { IAttributeData } from "vscode-html-languageservice";
-import {
+import type {
   AddTypesFromProps,
   AttributeSet,
   GenerateAttributesAndValueSetsProps,
@@ -269,16 +269,16 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       `${this.generatedPath}/${props.name}.ts`,
       `// file generated from ${props.src} ${srcVersion}
        // HTML Data Version ${props.documentationSrc.version}
-       import { AllAttributes } from './AllAttributes';
-       import { ValueSets } from "./ValueSets"
+       import type { AllAttributes } from './AllAttributes';
+       import type { ValueSets } from "./ValueSets"
        ${props.additionalImports?.join("\n")}
        ${globalAttributes ? generateInterface(globalAttributes) : ""}
        ${
          attributeSets && attributeSets.length > 0
            ? attributeSets
-                .sort(sortByName)
-                .map((x) => generateInterface(x))
-                .join("\n")
+               .sort(sortByName)
+               .map((x) => generateInterface(x))
+               .join("\n")
            : ""
        }
        ${elementsInterfaces
@@ -297,14 +297,14 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     // Attributes
     writeFileSync(
       `${this.generatedPath}/AllAttributes.ts`,
-      `import { ValueSets } from "./ValueSets"
+      `import type { ValueSets } from "./ValueSets"
       ${generateInterface(allAttributes)}`,
     );
     props?.valueSetsTransformer?.(valueSets);
     // ValueSets
     writeFileSync(
       `${this.generatedPath}/ValueSets.ts`,
-      `import { CSSProperties } from '../types';
+      `import type { CSSProperties } from '../types';
       ${props?.valueSetsAdditionalImports?.join("\n") ?? ""}
       ${generateInterface(valueSets)}`,
     );

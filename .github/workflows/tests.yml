@@ -2,11 +2,15 @@ name: "Tests"
 
 on: [push, workflow_dispatch]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   call-workflow:
     strategy:
       matrix:
-        scripts: [{script: dist, name: "Typescript"}]
+        scripts: [{script: test-tsc, name: "Typescript"}]
     uses: michijs/.github/.github/workflows/execute-script.yml@main
     name: "Run ${{matrix.scripts.name}} tests"
     with:

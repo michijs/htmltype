@@ -4,7 +4,7 @@ import svgDataImport from "@michijs/vscode-svg/dist/svg.json";
 import svgAttributeSet from "@michijs/vscode-svg/dist/attributeSets.json";
 import mathmlDataImport from "@michijs/vscode-mathml/dist/mathml.json";
 import type { HTMLDataV1 } from "vscode-html-languageservice";
-import {
+import type {
   AttributeSet,
   GenerateTypesProps,
   GetAdditionalElementExtendsInterfaces,
@@ -41,7 +41,7 @@ export async function generateTypes(props?: GenerateTypesProps) {
   const factory = new TypesFactory(props?.typesFactoryProps);
 
   const elementsAdditionalImports = [
-    'import { DataGlobalAttributes } from "../DataGlobalAttributes"',
+    'import type { DataGlobalAttributes } from "../DataGlobalAttributes"',
     ...(props?.elements?.additionalImports ?? []),
   ];
   const elementsAdditionalExtends: GetAdditionalElementExtendsInterfaces = (
@@ -57,7 +57,7 @@ export async function generateTypes(props?: GenerateTypesProps) {
     src: "@vscode/web-custom-data",
     documentationSrc: htmlData,
     additionalImports: [
-      'import { GlobalEvents, WindowEvents } from "../Events"',
+      'import type { GlobalEvents, WindowEvents } from "../Events"',
       ...elementsAdditionalImports,
     ],
     getElementInterface: (el) =>
@@ -81,7 +81,7 @@ export async function generateTypes(props?: GenerateTypesProps) {
     src: "@michijs/vscode-mathml",
     documentationSrc: mathmlData,
     additionalImports: [
-      'import { MathMLEvents } from "../Events"',
+      'import type { MathMLEvents } from "../Events"',
       ...elementsAdditionalImports,
     ],
     getElementInterface: () => "MathMLElement",
@@ -96,7 +96,7 @@ export async function generateTypes(props?: GenerateTypesProps) {
     documentationSrc: svgData,
     attributeSet: svgAttributeSet as AttributeSet,
     additionalImports: [
-      'import { SVGEvents } from "../Events"',
+      'import type { SVGEvents } from "../Events"',
       ...elementsAdditionalImports,
     ],
     getElementInterface: (el) =>

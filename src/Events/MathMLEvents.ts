@@ -1,6 +1,6 @@
-import { GlobalEvents } from ".";
-import { TypedDocumentAndElementEventHandlers } from "./TypedDocumentAndElementEventHandlers";
-import { TypedElementEvent } from "./TypedElementEvent";
+import type { GlobalEvents } from ".";
+import type { TypedDocumentAndElementEventHandlers } from "./TypedDocumentAndElementEventHandlers";
+import type { TypedElementEvent } from "./TypedElementEvent";
 
 // Based on MathMLElementEventMap
 export interface MathMLEvents<T extends EventTarget = MathMLElement>

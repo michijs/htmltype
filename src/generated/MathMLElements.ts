@@ -1,9 +1,9 @@
-// file generated from @michijs/vscode-mathml 1.0.3
+// file generated from @michijs/vscode-mathml 1.0.4
 // HTML Data Version 1.1
-import { AllAttributes } from "./AllAttributes";
-import { ValueSets } from "./ValueSets";
-import { MathMLEvents } from "../Events";
-import { DataGlobalAttributes } from "../DataGlobalAttributes";
+import type { AllAttributes } from "./AllAttributes";
+import type { ValueSets } from "./ValueSets";
+import type { MathMLEvents } from "../Events";
+import type { DataGlobalAttributes } from "../DataGlobalAttributes";
 interface GlobalAttributes
   extends Pick<
     AllAttributes,
