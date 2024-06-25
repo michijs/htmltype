@@ -33,7 +33,7 @@
   "scripts": {
     "start": "bun run ./tasks/generateTypes/main.ts",
     "dist": "tsc --isolatedDeclarations",
-    "test-tsc": "tsc --skipLibCheck && tsc --project tasks.tsconfig.json --noEmit --skipLibCheck",
+    "test-tsc": "tsc --skipLibCheck --isolatedDeclarations && tsc --project tasks.tsconfig.json --noEmit --skipLibCheck",
     "link": "bun run dist && bun link --force && tsc -w && tsc --project tasks.tsconfig.json -w"
   },
   "keywords": [
