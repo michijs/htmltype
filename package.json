@@ -32,7 +32,7 @@
   "description": "Strict TypeScript types for HTML, SVG and MATHML attributes based on MDN data.",
   "scripts": {
     "start": "bun run ./tasks/generateTypes/main.ts",
-    "dist": "tsc --isolatedDeclarations",
+    "dist": "tsc",
     "test-tsc": "tsc --skipLibCheck --isolatedDeclarations && tsc --project tasks.tsconfig.json --noEmit --skipLibCheck",
     "link": "bun run dist && bun link --force && tsc -w && tsc --project tasks.tsconfig.json -w"
   },
