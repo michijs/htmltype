@@ -86,8 +86,7 @@ export async function generateTypes(props?: GenerateTypesProps) {
       'import type { MathMLEvents } from "../Events"',
       ...elementsAdditionalImports,
     ],
-    getElementInterface: (el) =>
-      `MathMLElementTagNameMap['${el}']`,
+    getElementInterface: (el) => `MathMLElementTagNameMap['${el}']`,
     getAdditionalElementExtendsInterfaces: (el, elementInterface) => [
       ...elementsAdditionalExtends(el, elementInterface),
       `MathMLEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
