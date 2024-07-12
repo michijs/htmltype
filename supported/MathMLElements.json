@@ -1,102 +1,102 @@
 [
   {
     "tagName": "math",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['math']"
   },
   {
     "tagName": "merror",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['merror']"
   },
   {
     "tagName": "mfrac",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mfrac']"
   },
   {
     "tagName": "mi",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mi']"
   },
   {
     "tagName": "mmultiscripts",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mmultiscripts']"
   },
   {
     "tagName": "mn",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mn']"
   },
   {
     "tagName": "mo",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mo']"
   },
   {
     "tagName": "mover",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mover']"
   },
   {
     "tagName": "mpadded",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mpadded']"
   },
   {
     "tagName": "mphantom",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mphantom']"
   },
   {
     "tagName": "mroot",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mroot']"
   },
   {
     "tagName": "mrow",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mrow']"
   },
   {
     "tagName": "ms",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['ms']"
   },
   {
     "tagName": "mspace",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mspace']"
   },
   {
     "tagName": "msqrt",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['msqrt']"
   },
   {
     "tagName": "mstyle",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mstyle']"
   },
   {
     "tagName": "msub",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['msub']"
   },
   {
     "tagName": "msubsup",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['msubsup']"
   },
   {
     "tagName": "mtable",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mtable']"
   },
   {
     "tagName": "mtd",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mtd']"
   },
   {
     "tagName": "mtext",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mtext']"
   },
   {
     "tagName": "mtr",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['mtr']"
   },
   {
     "tagName": "munder",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['munder']"
   },
   {
     "tagName": "munderover",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['munderover']"
   },
   {
     "tagName": "semantics",
-    "elementInterface": "MathMLElement"
+    "elementInterface": "MathMLElementTagNameMap['semantics']"
   }
 ]

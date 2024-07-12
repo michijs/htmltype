@@ -18,6 +18,7 @@ htmlData.tags = htmlData.tags!.map((x) => {
   if (["bdo", "textarea"].includes(x.name))
     return {
       ...x,
+      // We get better types from svgData
       attributes: x.attributes.filter(
         (x) => x.name !== "dir" && x.name !== "spellcheck",
       ),
@@ -76,6 +77,7 @@ export async function generateTypes(props?: GenerateTypesProps) {
       return attributeSets;
     },
   });
+
   await factory.addTypesFrom({
     name: "MathMLElements",
     src: "@michijs/vscode-mathml",
@@ -84,7 +86,8 @@ export async function generateTypes(props?: GenerateTypesProps) {
       'import type { MathMLEvents } from "../Events"',
       ...elementsAdditionalImports,
     ],
-    getElementInterface: () => "MathMLElement",
+    getElementInterface: (el) =>
+      `MathMLElementTagNameMap['${el}']`,
     getAdditionalElementExtendsInterfaces: (el, elementInterface) => [
       ...elementsAdditionalExtends(el, elementInterface),
       `MathMLEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
