@@ -18,7 +18,14 @@ import type {
 } from "./TypedEvents";
 import type { TypedInputEvent } from "./TypedEvents/TypedInputEvent";
 
+const a: HTMLVideoElement;
+
+a.onleavepictureinpicture
+
 export interface GlobalEvents<T extends EventTarget> {
+  // TODO: just do it for HTMLVideoElement
+  enterpictureinpicture?(ev: TypedEvent<T>): unknown;
+  onleavepictureinpicture?(ev: TypedEvent<T>): unknown;
   /**
    * Fires when the user aborts the download.
    * @param ev The event.
