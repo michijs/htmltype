@@ -24,7 +24,7 @@ a.onleavepictureinpicture
 
 export interface GlobalEvents<T extends EventTarget> {
   // TODO: just do it for HTMLVideoElement
-  enterpictureinpicture?(ev: TypedEvent<T>): unknown;
+  onenterpictureinpicture?(ev: TypedEvent<T>): unknown;
   onleavepictureinpicture?(ev: TypedEvent<T>): unknown;
   /**
    * Fires when the user aborts the download.
