@@ -18,10 +18,6 @@ import type {
 } from "./TypedEvents";
 import type { TypedInputEvent } from "./TypedEvents/TypedInputEvent";
 
-const a: HTMLVideoElement;
-
-a.onleavepictureinpicture
-
 export interface GlobalEvents<T extends EventTarget> {
   // TODO: just do it for HTMLVideoElement
   onenterpictureinpicture?(ev: TypedEvent<T>): unknown;
