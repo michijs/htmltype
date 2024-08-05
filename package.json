@@ -32,8 +32,8 @@
   "description": "Strict TypeScript types for HTML, SVG and MATHML attributes based on MDN data.",
   "scripts": {
     "start": "bun run ./tasks/generateTypes/main.ts",
-    "dist": "tsc --isolatedDeclarations && tsc --project tasks.tsconfig.json",
-    "test-tsc": "tsc --skipLibCheck --isolatedDeclarations && tsc --project tasks.tsconfig.json --noEmit --skipLibCheck",
+    "dist": "tsc && tsc --project tasks.tsconfig.json",
+    "test-tsc": "tsc --skipLibCheck --noEmit && tsc --project tasks.tsconfig.json --noEmit --skipLibCheck",
     "link": "bun run dist && bun link --force && tsc -w && tsc --project tasks.tsconfig.json -w"
   },
   "keywords": [
@@ -43,6 +43,7 @@
     "typescript"
   ],
   "devDependencies": {
+    "@michijs/tsconfig": "0.0.3",
     "@types/node": "20.14.11",
     "typescript": "^5.5.3",
     "vscode-html-languageservice": "5.3.0"
