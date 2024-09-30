@@ -46,7 +46,7 @@
     "@michijs/tsconfig": "0.0.3",
     "@types/node": "20.14.11",
     "typescript": "^5.5.3",
-    "vscode-html-languageservice": "5.3.0"
+    "vscode-html-languageservice": "5.3.1"
   },
   "dependencies": {
     "@vscode/web-custom-data": "0.4.12",
