@@ -2,6 +2,8 @@
   "extends": "@michijs/tsconfig/tsconfig.json",
   "compilerOptions": {
     "isolatedDeclarations": true,
+    "checkJs": false,
+    "allowJs": false,
     "outDir": "bin",
     "types" : ["@types/node"]
   },
