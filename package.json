@@ -44,7 +44,7 @@
   ],
   "devDependencies": {
     "@michijs/tsconfig": "0.0.4",
-    "@types/node": "22.7.4",
+    "@types/node": "22.7.7",
     "typescript": "^5.5.3",
     "vscode-html-languageservice": "5.3.1"
   },
