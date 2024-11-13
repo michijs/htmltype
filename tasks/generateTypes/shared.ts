@@ -40,7 +40,7 @@ export const getPropertyName = (property: string | number) =>
 
 export const DEFAULT_VALUE_SET = {
   key: "default",
-  value: ["string", "number", "boolean", 'null'],
+  value: ["string", "number", "boolean", "null"],
 };
 
 export const getExtends = (
