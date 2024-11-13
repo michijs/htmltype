@@ -2,7 +2,7 @@
   "name": "@michijs/htmltype",
   "author": "Lucas M. Segurado",
   "license": "MIT",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "baseUrl": "./src",
   "repository": {
     "type": "git",
@@ -44,7 +44,7 @@
   ],
   "devDependencies": {
     "@michijs/tsconfig": "0.0.4",
-    "@types/node": "22.8.7",
+    "@types/node": "22.9.0",
     "typescript": "^5.5.3",
     "vscode-html-languageservice": "5.3.1"
   },
