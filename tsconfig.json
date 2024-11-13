@@ -2,6 +2,8 @@
   "extends": "@michijs/tsconfig/tsconfig.json",
   "compilerOptions": {
     "isolatedDeclarations": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
     "checkJs": false,
     "allowJs": false,
     "outDir": "./dist",
