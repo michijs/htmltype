@@ -49,7 +49,7 @@
     "vscode-html-languageservice": "5.3.1"
   },
   "dependencies": {
-    "@vscode/web-custom-data": "0.4.12",
+    "@vscode/web-custom-data": "0.4.13",
     "@michijs/vscode-svg": "2.0.8",
     "@michijs/vscode-mathml": "1.0.4"
   },
