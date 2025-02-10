@@ -1,6 +1,6 @@
 name: "Update generated"
 
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -21,7 +21,7 @@ jobs:
 
       - name: Run formatter
         uses: michijs/.github/.github/actions/lint@main
-        with: 
+        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       # Commit changes
