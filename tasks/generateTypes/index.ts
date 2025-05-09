@@ -3,7 +3,7 @@ import htmlDataImport from "@vscode/web-custom-data/data/browsers.html-data.json
 import svgDataImport from "@michijs/vscode-svg/dist/svg.json";
 import svgAttributeSet from "@michijs/vscode-svg/dist/attributeSets.json";
 import mathmlDataImport from "@michijs/vscode-mathml/dist/mathml.json";
-import type { HTMLDataV1 } from "vscode-html-languageservice";
+import { type HTMLDataV1 } from "vscode-html-languageservice";
 import type {
   AttributeSet,
   GenerateTypesProps,
@@ -37,9 +37,9 @@ export async function generateTypes(props?: GenerateTypesProps) {
     el,
     elementInterface,
   ) => [
-    "DataGlobalAttributes",
-    ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
-  ];
+      "DataGlobalAttributes",
+      ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
+    ];
 
   await factory.addTypesFrom({
     name: "HTMLElements",

@@ -1,6 +1,6 @@
 import { appendFileSync, mkdirSync, rmSync, writeFileSync } from "fs";
 import { DEFAULT_VALUE_SET, generateInterface, sortByName } from "./shared";
-import type { IAttributeData } from "vscode-html-languageservice";
+import { type IAttributeData } from "vscode-html-languageservice";
 import type {
   AddTypesFromProps,
   AttributeSet,
@@ -76,6 +76,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
   getValueSet = (property: IAttributeData) => {
     if (property.name === "style") return "style";
     if (property.name === "href") return "href";
+    if (property.name === "open") return "v";
     let valueSetKey = DEFAULT_VALUE_SET.key;
     if (property.valueSet) valueSetKey = property.valueSet;
     else if (property.values && property.values.length > 0) {
@@ -102,12 +103,11 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     return valueSetKey;
   };
 
-  addAttributes(
+  addAttributeSet(
     el: InterfaceFactory,
     attributes: IAttributeData[],
-    attributeSets?: AttributeSet,
+    attributeSets: AttributeSet | undefined,
   ) {
-    // Attribute sets
     let filteredAttributes = attributes;
     if (attributeSets)
       Object.entries(attributeSets).forEach(([name, attributeSet]) => {
@@ -116,7 +116,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
             (x) =>
               x.name === attr.name &&
               (x.valueSet ?? this.getValueSet(x)) ===
-                (attr.valueSet ?? this.getValueSet(attr)),
+              (attr.valueSet ?? this.getValueSet(attr)),
           ),
         );
 
@@ -128,6 +128,13 @@ export type { AllAttributes } from "./AllAttributes";\n`,
           );
         }
       });
+    this.addAttributes(el, filteredAttributes)
+  }
+
+  addAttributes(
+    el: InterfaceFactory,
+    filteredAttributes: IAttributeData[],
+  ) {
     // Removing events
     filteredAttributes
       .filter((x) => !x.name.startsWith("on"))
@@ -179,19 +186,20 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         ...new Map(valueSets.attributes.map((m) => [m.name, m])).values(),
       ];
     }
+
     const attributeSets: InterfaceFactory[] | undefined = props.attributeSet
       ? Object.entries(props.attributeSet).map(([name, attributeSet]) => {
-          const attributeSetInterface = {
-            name,
-            extends: {
-              pickFromAllAttributes: [],
-              otherClasses: [],
-            },
-            attributes: [],
-          };
-          this.addAttributes(attributeSetInterface, attributeSet);
-          return attributeSetInterface;
-        })
+        const attributeSetInterface: InterfaceFactory = {
+          name,
+          extends: {
+            pickFromAllAttributes: [],
+            otherClasses: [],
+          },
+          attributes: []
+        };
+        this.addAttributes(attributeSetInterface, attributeSet);
+        return attributeSetInterface;
+      })
       : undefined;
     // Elements
     const elements: InterfaceFactory = {
@@ -245,7 +253,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         },
         attributes: [],
       };
-      this.addAttributes(elementInterface, x.attributes, props.attributeSet);
+      this.addAttributeSet(elementInterface, x.attributes, props.attributeSet);
 
       if (globalAttributes)
         elementInterface.extends.otherClasses.push(globalAttributes.name);
@@ -278,18 +286,17 @@ export type { AllAttributes } from "./AllAttributes";\n`,
        import type { ValueSets } from "./ValueSets"
        ${props.additionalImports?.join("\n")}
        ${globalAttributes ? generateInterface(globalAttributes) : ""}
-       ${
-         attributeSets && attributeSets.length > 0
-           ? attributeSets
-               .sort(sortByName)
-               .map((x) => generateInterface(x))
-               .join("\n")
-           : ""
-       }
+       ${attributeSets && attributeSets.length > 0
+        ? attributeSets
+          .sort(sortByName)
+          .map((x) => generateInterface(x))
+          .join("\n")
+        : ""
+      }
        ${elementsInterfaces
-         .sort(sortByName)
-         .map((x) => generateInterface(x))
-         .join("\n")}
+        .sort(sortByName)
+        .map((x) => generateInterface(x))
+        .join("\n")}
        ${generateInterface(elements)}`,
     );
     appendFileSync(

@@ -13,24 +13,30 @@ interface AnimationValueAttributes extends Pick<AllAttributes, "by" | "calcMode"
 interface AriaAttributes extends Pick<AllAttributes, "aria-activedescendant" | "aria-atomic" | "aria-autocomplete" | "aria-busy" | "aria-checked" | "aria-colcount" | "aria-colindex" | "aria-colspan" | "aria-controls" | "aria-current" | "aria-describedby" | "aria-details" | "aria-disabled" | "aria-dropeffect" | "aria-errormessage" | "aria-expanded" | "aria-flowto" | "aria-grabbed" | "aria-haspopup" | "aria-hidden" | "aria-invalid" | "aria-keyshortcuts" | "aria-label" | "aria-labelledby" | "aria-level" | "aria-live" | "aria-modal" | "aria-multiline" | "aria-multiselectable" | "aria-orientation" | "aria-owns" | "aria-placeholder" | "aria-posinset" | "aria-pressed" | "aria-readonly" | "aria-relevant" | "aria-required" | "aria-roledescription" | "aria-rowcount" | "aria-rowindex" | "aria-rowspan" | "aria-selected" | "aria-setsize" | "aria-sort" | "aria-valuemax" | "aria-valuemin" | "aria-valuenow" | "aria-valuetext" | "role"> {}
 interface FilterPrimitiveAttributes extends Pick<AllAttributes, "height" | "result" | "width" | "x" | "y"> {}
 interface PresentationAttributes extends Pick<AllAttributes, "alignment-baseline" | "baseline-shift" | "clip-path" | "clip-rule" | "color" | "color-interpolation" | "color-interpolation-filters" | "color-profile" | "color-rendering" | "cursor" | "direction" | "dominant-baseline" | "fill" | "fill-opacity" | "fill-rule" | "filter" | "flood-color" | "flood-opacity" | "font-family" | "font-size" | "font-size-adjust" | "font-stretch" | "font-style" | "font-variant" | "font-weight" | "image-rendering" | "kerning" | "letter-spacing" | "lighting-color" | "marker-end" | "marker-mid" | "marker-start" | "mask" | "opacity" | "overflow" | "pointer-events" | "shape-rendering" | "stop-color" | "stop-opacity" | "stroke" | "stroke-dasharray" | "stroke-dashoffset" | "stroke-linecap" | "stroke-linejoin" | "stroke-miterlimit" | "stroke-opacity" | "stroke-width" | "text-anchor" | "text-decoration" | "text-rendering" | "transform" | "vector-effect" | "visibility" | "word-spacing" | "writing-mode"> {
-  /**
-* The display attribute lets you control the rendering of graphical or container elements.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display} */
+  
+/**
+The display attribute lets you control the rendering of graphical or container elements.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/display)
+*/
 display?: ValueSets['63'];
     }
 interface TransferFunctionAttributes extends Pick<AllAttributes, "amplitude" | "amplitude" | "exponent" | "intercept" | "tableValues"> {
-  /**
-* Is a generic attribute and it has different meaning based on the context in which it's used.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type} */
+  
+/**
+Is a generic attribute and it has different meaning based on the context in which it's used.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type)
+*/
 type?: ValueSets['79'];
     }
        export interface SVGAAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "amplitude" | "amplitude" | "download" | "exponent" | "hreflang" | "intercept" | "rel" | "tableValues" | "target" | "type">, DataGlobalAttributes, SVGEvents<I["a"] extends Element ? I["a"]: SVGElementTagNameMap['a']>, AnimationTargetElementAttributes, FilterPrimitiveAttributes, PresentationAttributes, GlobalAttributes {
-  /**
-* Which referrer to send when fetching the URL.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/referrerpolicy} */
+  
+/**
+Which referrer to send when fetching the URL.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/referrerpolicy)
+*/
 referrerpolicy?: ValueSets['referrerpoliciy'];
     }
 export interface SVGAnimateAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, SVGEvents<I["animate"] extends Element ? I["animate"]: SVGElementTagNameMap['animate']>, AnimationAdditionAttributes, AnimationAttributeTargetAttributes, AnimationTargetElementAttributes, AnimationTimingAttributes, AnimationValueAttributes, GlobalAttributes {}
@@ -67,10 +73,12 @@ export interface SVGFeSpecularLightingAttributes<I extends Record<string, {}>> e
 export interface SVGFeSpotLightAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "limitingConeAngle" | "pointsAtX" | "pointsAtY" | "pointsAtZ" | "result" | "x" | "y" | "z">, DataGlobalAttributes, SVGEvents<I["feSpotLight"] extends Element ? I["feSpotLight"]: SVGElementTagNameMap['feSpotLight']>, GlobalAttributes {}
 export interface SVGFeTileAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "in">, DataGlobalAttributes, SVGEvents<I["feTile"] extends Element ? I["feTile"]: SVGElementTagNameMap['feTile']>, FilterPrimitiveAttributes, PresentationAttributes, GlobalAttributes {}
 export interface SVGFeTurbulenceAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "baseFrequency" | "numOctaves" | "seed" | "stitchTiles">, DataGlobalAttributes, SVGEvents<I["feTurbulence"] extends Element ? I["feTurbulence"]: SVGElementTagNameMap['feTurbulence']>, FilterPrimitiveAttributes, PresentationAttributes, GlobalAttributes {
-  /**
-* Is a generic attribute and it has different meaning based on the context in which it's used.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type} */
+  
+/**
+Is a generic attribute and it has different meaning based on the context in which it's used.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/type)
+*/
 type?: ValueSets['88'];
     }
 export interface SVGFilterAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "filterUnits" | "primitiveUnits">, DataGlobalAttributes, SVGEvents<I["filter"] extends Element ? I["filter"]: SVGElementTagNameMap['filter']>, FilterPrimitiveAttributes, GlobalAttributes {}
@@ -94,20 +102,24 @@ export interface SVGSetAttributes<I extends Record<string, {}>> extends Pick<All
 export interface SVGStopAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, SVGEvents<I["stop"] extends Element ? I["stop"]: SVGElementTagNameMap['stop']>, PresentationAttributes, GlobalAttributes {}
 export interface SVGStyleAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "media" | "type">, DataGlobalAttributes, SVGEvents<I["style"] extends Element ? I["style"]: SVGElementTagNameMap['style']>, GlobalAttributes {}
 export interface SVGSvgAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "height" | "preserveAspectRatio" | "viewBox" | "width" | "x" | "y">, DataGlobalAttributes, SVGEvents<I["svg"] extends Element ? I["svg"]: SVGElementTagNameMap['svg']>, AriaAttributes, PresentationAttributes, GlobalAttributes {
-  /**
-* Specifies the XML Namespace of the document.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xmlns} */
+  
+/**
+Specifies the XML Namespace of the document.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xmlns)
+*/
 xmlns?: ValueSets['91'];
     }
 export interface SVGSwitchAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, SVGEvents<I["switch"] extends Element ? I["switch"]: SVGElementTagNameMap['switch']>, PresentationAttributes, GlobalAttributes {}
 export interface SVGSymbolAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "height" | "preserveAspectRatio" | "refX" | "refY" | "viewBox" | "width" | "x" | "y">, DataGlobalAttributes, SVGEvents<I["symbol"] extends Element ? I["symbol"]: SVGElementTagNameMap['symbol']>, AriaAttributes, PresentationAttributes, GlobalAttributes {}
 export interface SVGTextAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "dx" | "dy" | "lengthAdjust" | "rotate" | "textLength" | "x" | "y">, DataGlobalAttributes, SVGEvents<I["text"] extends Element ? I["text"]: SVGElementTagNameMap['text']>, AriaAttributes, PresentationAttributes, GlobalAttributes {}
 export interface SVGTextPathAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "lengthAdjust" | "spacing" | "textLength">, DataGlobalAttributes, SVGEvents<I["textPath"] extends Element ? I["textPath"]: SVGElementTagNameMap['textPath']>, AnimationTargetElementAttributes, AriaAttributes, PresentationAttributes, GlobalAttributes {
-  /**
-* Which method to render individual glyphs along the path.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/method} */
+  
+/**
+Which method to render individual glyphs along the path.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/method)
+*/
 method?: ValueSets['93'];
     }
 export interface SVGTitleAttributes<I extends Record<string, {}>> extends DataGlobalAttributes, SVGEvents<I["title"] extends Element ? I["title"]: SVGElementTagNameMap['title']>, GlobalAttributes {}
@@ -115,324 +127,452 @@ export interface SVGTspanAttributes<I extends Record<string, {}>> extends Pick<A
 export interface SVGUseAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "height" | "width" | "x" | "y">, DataGlobalAttributes, SVGEvents<I["use"] extends Element ? I["use"]: SVGElementTagNameMap['use']>, AnimationTargetElementAttributes, AriaAttributes, PresentationAttributes, GlobalAttributes {}
 export interface SVGViewAttributes<I extends Record<string, {}>> extends Pick<AllAttributes, "preserveAspectRatio" | "viewBox">, DataGlobalAttributes, SVGEvents<I["view"] extends Element ? I["view"]: SVGElementTagNameMap['view']>, AriaAttributes, GlobalAttributes {}
        export interface SVGElements<I extends {} = {}> {
-  /**
-* The `<a>` SVG element creates a hyperlink to other web pages, files, locations in the same page, email addresses, or any other URL.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a} */
+  
+/**
+The `<a>` SVG element creates a hyperlink to other web pages, files, locations in the same page, email addresses, or any other URL.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a)
+*/
 a: SVGAAttributes<I>;
+
 /**
-* Provides a way to animate an attribute of an element over time.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate} */
+Provides a way to animate an attribute of an element over time.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate)
+*/
 animate: SVGAnimateAttributes<I>;
+
 /**
-* Provides a way to define how an element moves along a motion path.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateMotion} */
+Provides a way to define how an element moves along a motion path.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateMotion)
+*/
 animateMotion: SVGAnimateMotionAttributes<I>;
+
 /**
-* animates a transformation attribute on its target element, thereby allowing animations to control translation, scaling, rotation, and/or skewing.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateTransform} */
+animates a transformation attribute on its target element, thereby allowing animations to control translation, scaling, rotation, and/or skewing.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateTransform)
+*/
 animateTransform: SVGAnimateTransformAttributes<I>;
+
 /**
-* Create circles based on a center point and a radius.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle} */
+Create circles based on a center point and a radius.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle)
+*/
 circle: SVGCircleAttributes<I>;
+
 /**
-* Defines a clipping path. A clipping path is used/referenced using the clip-path property.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath} */
+Defines a clipping path. A clipping path is used/referenced using the clip-path property.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/clipPath)
+*/
 clipPath: SVGClipPathAttributes<I>;
+
 /**
-* Is used to store graphical objects that will be used at a later time.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs} */
+Is used to store graphical objects that will be used at a later time.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs)
+*/
 defs: SVGDefsAttributes<I>;
+
 /**
-* Each container element or graphics element in an SVG drawing can supply a description string using the <desc> element where the description is text-only.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc} */
+Each container element or graphics element in an SVG drawing can supply a description string using the <desc> element where the description is text-only.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/desc)
+*/
 desc: SVGDescAttributes<I>;
+
 /**
-* allows authors to specify the time at which particular elements are to be discarded, thereby reducing the resources required by an SVG user agent. This is particularly useful to help SVG viewers conserve memory while displaying long-running documents.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/discard} */
+allows authors to specify the time at which particular elements are to be discarded, thereby reducing the resources required by an SVG user agent. This is particularly useful to help SVG viewers conserve memory while displaying long-running documents.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/discard)
+*/
 discard: SVGDiscardAttributes<I>;
+
 /**
-* The ellipse element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse} */
+The ellipse element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/ellipse)
+*/
 ellipse: SVGEllipseAttributes<I>;
+
 /**
-* The <feBlend> SVG filter primitive composes two objects together ruled by a certain blending mode.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feBlend} */
+The <feBlend> SVG filter primitive composes two objects together ruled by a certain blending mode.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feBlend)
+*/
 feBlend: SVGFeBlendAttributes<I>;
+
 /**
-* The <feColorMatrix> SVG filter element changes colors based on a transformation matrix. 
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feColorMatrix} */
+The <feColorMatrix> SVG filter element changes colors based on a transformation matrix. 
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feColorMatrix)
+*/
 feColorMatrix: SVGFeColorMatrixAttributes<I>;
+
 /**
-* Th <feComponentTransfer> SVG filter primitive performs color-component-wise remapping of data for each pixel.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feComponentTransfer} */
+Th <feComponentTransfer> SVG filter primitive performs color-component-wise remapping of data for each pixel.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feComponentTransfer)
+*/
 feComponentTransfer: SVGFeComponentTransferAttributes<I>;
+
 /**
-* This filter primitive performs the combination of two input images pixel-wise in image space using one of the Porter-Duff compositing operations: over, in, atop, out, xor and lighter. 
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feComposite} */
+This filter primitive performs the combination of two input images pixel-wise in image space using one of the Porter-Duff compositing operations: over, in, atop, out, xor and lighter. 
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feComposite)
+*/
 feComposite: SVGFeCompositeAttributes<I>;
+
 /**
-* The <feConvolveMatrix> SVG filter primitive applies a matrix convolution filter effect.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feConvolveMatrix} */
+The <feConvolveMatrix> SVG filter primitive applies a matrix convolution filter effect.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feConvolveMatrix)
+*/
 feConvolveMatrix: SVGFeConvolveMatrixAttributes<I>;
+
 /**
-* The <feDiffuseLighting> SVG filter primitive lights an image using the alpha channel as a bump map.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDiffuseLighting} */
+The <feDiffuseLighting> SVG filter primitive lights an image using the alpha channel as a bump map.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDiffuseLighting)
+*/
 feDiffuseLighting: SVGFeDiffuseLightingAttributes<I>;
+
 /**
-* The <feDisplacementMap> SVG filter primitive uses the pixel values from the image from in2 to spatially displace the image from in.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDisplacementMap} */
+The <feDisplacementMap> SVG filter primitive uses the pixel values from the image from in2 to spatially displace the image from in.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDisplacementMap)
+*/
 feDisplacementMap: SVGFeDisplacementMapAttributes<I>;
+
 /**
-* The <feDistantLight> filter primitive defines a distant light source that can be used within a lighting filter primitive: <feDiffuseLighting> or <feSpecularLighting>.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDistantLight} */
+The <feDistantLight> filter primitive defines a distant light source that can be used within a lighting filter primitive: <feDiffuseLighting> or <feSpecularLighting>.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDistantLight)
+*/
 feDistantLight: SVGFeDistantLightAttributes<I>;
+
 /**
-* The <feDropShadow> filter primitive creates a drop shadow of the input image.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDropShadow} */
+The <feDropShadow> filter primitive creates a drop shadow of the input image.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDropShadow)
+*/
 feDropShadow: SVGFeDropShadowAttributes<I>;
+
 /**
-* The <feFlood> SVG filter primitive fills the filter subregion with the color and opacity defined by flood-color and flood-opacity.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFlood} */
+The <feFlood> SVG filter primitive fills the filter subregion with the color and opacity defined by flood-color and flood-opacity.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFlood)
+*/
 feFlood: SVGFeFloodAttributes<I>;
+
 /**
-* The <feFuncA> SVG filter primitive defines the transfer function for the alpha component of the input graphic of its parent <feComponentTransfer> element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncA} */
+The <feFuncA> SVG filter primitive defines the transfer function for the alpha component of the input graphic of its parent <feComponentTransfer> element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncA)
+*/
 feFuncA: SVGFeFuncAAttributes<I>;
+
 /**
-* The <feFuncA> SVG filter primitive defines the transfer function for the blue component of the input graphic of its parent <feComponentTransfer> element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncB} */
+The <feFuncA> SVG filter primitive defines the transfer function for the blue component of the input graphic of its parent <feComponentTransfer> element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncB)
+*/
 feFuncB: SVGFeFuncBAttributes<I>;
+
 /**
-* The <feFuncA> SVG filter primitive defines the transfer function for the green component of the input graphic of its parent <feComponentTransfer> element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncG} */
+The <feFuncA> SVG filter primitive defines the transfer function for the green component of the input graphic of its parent <feComponentTransfer> element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncG)
+*/
 feFuncG: SVGFeFuncGAttributes<I>;
+
 /**
-* The <feFuncA> SVG filter primitive defines the transfer function for the red component of the input graphic of its parent <feComponentTransfer> element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncR} */
+The <feFuncA> SVG filter primitive defines the transfer function for the red component of the input graphic of its parent <feComponentTransfer> element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feFuncR)
+*/
 feFuncR: SVGFeFuncRAttributes<I>;
+
 /**
-* The <feGaussianBlur> SVG filter primitive blurs the input image by the amount specified in stdDeviation, which defines the bell-curve.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feGaussianBlur} */
+The <feGaussianBlur> SVG filter primitive blurs the input image by the amount specified in stdDeviation, which defines the bell-curve.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feGaussianBlur)
+*/
 feGaussianBlur: SVGFeGaussianBlurAttributes<I>;
+
 /**
-* The <feImage> SVG filter primitive fetches image data from an external source and provides the pixel data as output (meaning if the external source is an SVG image, it is rasterized.)
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feImage} */
+The <feImage> SVG filter primitive fetches image data from an external source and provides the pixel data as output (meaning if the external source is an SVG image, it is rasterized.)
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feImage)
+*/
 feImage: SVGFeImageAttributes<I>;
+
 /**
-* The <feMerge> SVG element allows filter effects to be applied concurrently instead of sequentially.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMerge} */
+The <feMerge> SVG element allows filter effects to be applied concurrently instead of sequentially.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMerge)
+*/
 feMerge: SVGFeMergeAttributes<I>;
+
 /**
-* The feMergeNode takes the result of another filter to be processed by its parent <feMerge>.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMergeNode} */
+The feMergeNode takes the result of another filter to be processed by its parent <feMerge>.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMergeNode)
+*/
 feMergeNode: SVGFeMergeNodeAttributes<I>;
+
 /**
-* The <feMorphology> SVG filter primitive is used to erode or dilate the input image.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMorphology} */
+The <feMorphology> SVG filter primitive is used to erode or dilate the input image.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feMorphology)
+*/
 feMorphology: SVGFeMorphologyAttributes<I>;
+
 /**
-* The <feOffset> SVG filter primitive allows to offset the input image.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feOffset} */
+The <feOffset> SVG filter primitive allows to offset the input image.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feOffset)
+*/
 feOffset: SVGFeOffsetAttributes<I>;
+
 /**
-* The <fePointLight> SVG filter primitive allows to create a point light effect.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fePointLight} */
+The <fePointLight> SVG filter primitive allows to create a point light effect.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fePointLight)
+*/
 fePointLight: SVGFePointLightAttributes<I>;
+
 /**
-* The <feSpecularLighting> SVG filter primitive lights a source graphic using the alpha channel as a bump map.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpecularLighting} */
+The <feSpecularLighting> SVG filter primitive lights a source graphic using the alpha channel as a bump map.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpecularLighting)
+*/
 feSpecularLighting: SVGFeSpecularLightingAttributes<I>;
+
 /**
-* The <feSpotLight> SVG filter primitive allows to create a spotlight effect.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpotLight} */
+The <feSpotLight> SVG filter primitive allows to create a spotlight effect.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpotLight)
+*/
 feSpotLight: SVGFeSpotLightAttributes<I>;
+
 /**
-* The <feTile> SVG filter primitive allows to fill a target rectangle with a repeated, tiled pattern of an input image.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTile} */
+The <feTile> SVG filter primitive allows to fill a target rectangle with a repeated, tiled pattern of an input image.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTile)
+*/
 feTile: SVGFeTileAttributes<I>;
+
 /**
-* The <feTurbulence> SVG filter primitive creates an image using the Perlin turbulence function.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTurbulence} */
+The <feTurbulence> SVG filter primitive creates an image using the Perlin turbulence function.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feTurbulence)
+*/
 feTurbulence: SVGFeTurbulenceAttributes<I>;
+
 /**
-* The <filter> SVG element serves as container for atomic filter operations.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter} */
+The <filter> SVG element serves as container for atomic filter operations.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter)
+*/
 filter: SVGFilterAttributes<I>;
+
 /**
-* The <foreignObject> SVG element allows for inclusion of a foreign XML namespace which has its graphical content drawn by a different user agent. The included foreign graphical content is subject to SVG transformations and compositing.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject} */
+The <foreignObject> SVG element allows for inclusion of a foreign XML namespace which has its graphical content drawn by a different user agent. The included foreign graphical content is subject to SVG transformations and compositing.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject)
+*/
 foreignObject: SVGForeignObjectAttributes<I>;
+
 /**
-* The <g> SVG element is a container used to group other SVG elements.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g} */
+The <g> SVG element is a container used to group other SVG elements.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g)
+*/
 g: SVGGAttributes<I>;
+
 /**
-* The <image> SVG element allows a raster image to be included in an SVG document.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image} */
+The <image> SVG element allows a raster image to be included in an SVG document.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image)
+*/
 image: SVGImageAttributes<I>;
+
 /**
-* The <line> element is an SVG basic shape used to create a line connecting two points.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line} */
+The <line> element is an SVG basic shape used to create a line connecting two points.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line)
+*/
 line: SVGLineAttributes<I>;
+
 /**
-* The <linearGradient> SVG element lets authors define linear gradients to fill or stroke graphical elements.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient} */
+The <linearGradient> SVG element lets authors define linear gradients to fill or stroke graphical elements.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient)
+*/
 linearGradient: SVGLinearGradientAttributes<I>;
+
 /**
-* The <marker> element defines the graphics that is to be used for drawing arrowheads or polymarkers on a given <path>, <line>, <polyline> or <polygon> element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker} */
+The <marker> element defines the graphics that is to be used for drawing arrowheads or polymarkers on a given <path>, <line>, <polyline> or <polygon> element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker)
+*/
 marker: SVGMarkerAttributes<I>;
+
 /**
-* The <mask> element defines an alpha mask for compositing the current object into the background. A mask is used/referenced using the mask property.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask} */
+The <mask> element defines an alpha mask for compositing the current object into the background. A mask is used/referenced using the mask property.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask)
+*/
 mask: SVGMaskAttributes<I>;
+
 /**
-* The <metadata> SVG element allows to add metadata to SVG content. Metadata is structured information about data. 
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/metadata} */
+The <metadata> SVG element allows to add metadata to SVG content. Metadata is structured information about data. 
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/metadata)
+*/
 metadata: SVGMetadataAttributes<I>;
+
 /**
-* The <mpath> sub-element for the <animateMotion> element provides the ability to reference an external <path> element as the definition of a motion path.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mpath} */
+The <mpath> sub-element for the <animateMotion> element provides the ability to reference an external <path> element as the definition of a motion path.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mpath)
+*/
 mpath: SVGMpathAttributes<I>;
+
 /**
-* The <path> SVG element is the generic element to define a shape. All the basic shapes can be created with a path element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path} */
+The <path> SVG element is the generic element to define a shape. All the basic shapes can be created with a path element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path)
+*/
 path: SVGPathAttributes<I>;
+
 /**
-* The <pattern> element defines a graphics object which can be redrawn at repeated x and y-coordinate intervals ("tiled") to cover an area. The <pattern> is referenced by the fill and/or stroke attributes on other graphics elements to fill or stroke those elements with the referenced pattern.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern} */
+The <pattern> element defines a graphics object which can be redrawn at repeated x and y-coordinate intervals ("tiled") to cover an area. The <pattern> is referenced by the fill and/or stroke attributes on other graphics elements to fill or stroke those elements with the referenced pattern.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern)
+*/
 pattern: SVGPatternAttributes<I>;
+
 /**
-* The <polygon> element defines a closed shape consisting of a set of connected straight line segments. The last point is connected to the first point. For open shapes see the <polyline> element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon} */
+The <polygon> element defines a closed shape consisting of a set of connected straight line segments. The last point is connected to the first point. For open shapes see the <polyline> element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon)
+*/
 polygon: SVGPolygonAttributes<I>;
+
 /**
-* The <polyline> SVG element is an SVG basic shape that creates straight lines connecting several points. Typically a polyline is used to create open shapes as the last point doesn't have to be connected to the first point. For closed shapes see the <polygon> element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline} */
+The <polyline> SVG element is an SVG basic shape that creates straight lines connecting several points. Typically a polyline is used to create open shapes as the last point doesn't have to be connected to the first point. For closed shapes see the <polygon> element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polyline)
+*/
 polyline: SVGPolylineAttributes<I>;
+
 /**
-* The <radialGradient> SVG element lets authors define radial gradients to fill or stroke graphical elements.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient} */
+The <radialGradient> SVG element lets authors define radial gradients to fill or stroke graphical elements.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient)
+*/
 radialGradient: SVGRadialGradientAttributes<I>;
+
 /**
-* The rect element is an SVG basic shape, used to create rectangles based on the position of a corner and their width and height. It may also be used to create rectangles with rounded corners.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect} */
+The rect element is an SVG basic shape, used to create rectangles based on the position of a corner and their width and height. It may also be used to create rectangles with rounded corners.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect)
+*/
 rect: SVGRectAttributes<I>;
+
 /**
-* A SVG script element is equivalent to the script element in HTML and thus is the place for scripts (e.g., ECMAScript).
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/script} */
+A SVG script element is equivalent to the script element in HTML and thus is the place for scripts (e.g., ECMAScript).
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/script)
+*/
 script: SVGScriptAttributes<I>;
+
 /**
-* The <set> element provides a simple means of just setting the value of an attribute for a specified duration. It supports all attribute types, including those that cannot reasonably be interpolated, such as string and boolean values. The <set> element is non-additive. The additive and accumulate attributes are not allowed, and will be ignored if specified.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/set} */
+The <set> element provides a simple means of just setting the value of an attribute for a specified duration. It supports all attribute types, including those that cannot reasonably be interpolated, such as string and boolean values. The <set> element is non-additive. The additive and accumulate attributes are not allowed, and will be ignored if specified.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/set)
+*/
 set: SVGSetAttributes<I>;
+
 /**
-* The <stop> SVG element defines the ramp of colors to use on a gradient, which is a child element to either the <linearGradient> or the <radialGradient> element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop} */
+The <stop> SVG element defines the ramp of colors to use on a gradient, which is a child element to either the <linearGradient> or the <radialGradient> element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/stop)
+*/
 stop: SVGStopAttributes<I>;
+
 /**
-* The <style> SVG element allows style sheets to be embedded directly within SVG content. SVG's style element has the same attributes as the corresponding element in HTML (see HTML's <style> element).
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style} */
+The <style> SVG element allows style sheets to be embedded directly within SVG content. SVG's style element has the same attributes as the corresponding element in HTML (see HTML's <style> element).
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style)
+*/
 style: SVGStyleAttributes<I>;
+
 /**
-* The svg element can be used to embed an SVG fragment inside the current document (for example, an HTML document). This SVG fragment has its own viewport and coordinate system.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg} */
+The svg element can be used to embed an SVG fragment inside the current document (for example, an HTML document). This SVG fragment has its own viewport and coordinate system.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg)
+*/
 svg: SVGSvgAttributes<I>;
+
 /**
-* The <switch> SVG element evaluates the requiredFeatures, requiredExtensions and systemLanguage attributes on its direct child elements in order, and then processes and renders the first child for which these attributes evaluate to true. All others will be bypassed and therefore not rendered. If the child element is a container element such as a <g>, then the entire subtree is either processed/rendered or bypassed/not rendered.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/switch} */
+The <switch> SVG element evaluates the requiredFeatures, requiredExtensions and systemLanguage attributes on its direct child elements in order, and then processes and renders the first child for which these attributes evaluate to true. All others will be bypassed and therefore not rendered. If the child element is a container element such as a <g>, then the entire subtree is either processed/rendered or bypassed/not rendered.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/switch)
+*/
 switch: SVGSwitchAttributes<I>;
+
 /**
-* The <symbol> element is used to define graphical template objects which can be instantiated by a <use> element. The use of symbol elements for graphics that are used multiple times in the same document adds structure and semantics. Documents that are rich in structure may be rendered graphically, as speech, or as Braille, and thus promote accessibility. Note that a symbol element itself is not rendered. Only instances of a symbol element (i.e., a reference to a symbol by a <use> element) are rendered.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol} */
+The <symbol> element is used to define graphical template objects which can be instantiated by a <use> element. The use of symbol elements for graphics that are used multiple times in the same document adds structure and semantics. Documents that are rich in structure may be rendered graphically, as speech, or as Braille, and thus promote accessibility. Note that a symbol element itself is not rendered. Only instances of a symbol element (i.e., a reference to a symbol by a <use> element) are rendered.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol)
+*/
 symbol: SVGSymbolAttributes<I>;
+
 /**
-* The SVG <text> element defines a graphics element consisting of text. It's possible to apply a gradient, pattern, clipping path, mask, or filter to <text>, just like any other SVG graphics element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text} */
+The SVG <text> element defines a graphics element consisting of text. It's possible to apply a gradient, pattern, clipping path, mask, or filter to <text>, just like any other SVG graphics element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text)
+*/
 text: SVGTextAttributes<I>;
+
 /**
-* In addition to text drawn in a straight line, SVG also includes the ability to place text along the shape of a <path> element. To specify that a block of text is to be rendered along the shape of a <path>, include the given text within a <textPath> element which includes an href attribute with a reference to a <path> element.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textPath} */
+In addition to text drawn in a straight line, SVG also includes the ability to place text along the shape of a <path> element. To specify that a block of text is to be rendered along the shape of a <path>, include the given text within a <textPath> element which includes an href attribute with a reference to a <path> element.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/textPath)
+*/
 textPath: SVGTextPathAttributes<I>;
+
 /**
-* Each container element or graphics element in an SVG drawing can supply a <title> element containing a description string where the description is text-only. When the current SVG document fragment is rendered as SVG on visual media, <title> element is not rendered as part of the graphics. However, some user agents may, for example, display the <title> element as a tooltip. Alternate presentations are possible, both visual and aural, which display the <title> element but do not display path elements or other graphics elements. The <title> element generally improve accessibility of SVG documents
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/title} */
+Each container element or graphics element in an SVG drawing can supply a <title> element containing a description string where the description is text-only. When the current SVG document fragment is rendered as SVG on visual media, <title> element is not rendered as part of the graphics. However, some user agents may, for example, display the <title> element as a tooltip. Alternate presentations are possible, both visual and aural, which display the <title> element but do not display path elements or other graphics elements. The <title> element generally improve accessibility of SVG documents
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/title)
+*/
 title: SVGTitleAttributes<I>;
+
 /**
-* Defines a subtext within a <text> element or another <tspan> element. It allows for adjustment of the style and/or position of that subtext as needed.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan} */
+Defines a subtext within a <text> element or another <tspan> element. It allows for adjustment of the style and/or position of that subtext as needed.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/tspan)
+*/
 tspan: SVGTspanAttributes<I>;
+
 /**
-* The <use> element takes nodes from within the SVG document, and duplicates them somewhere else. The effect is the same as if the nodes were deeply cloned into a non-exposed DOM, and then pasted where the use element is, much like cloned template elements in HTML5. Since the cloned nodes are not exposed, care must be taken when using CSS to style a use element and its hidden descendants. CSS attributes are not guaranteed to be inherited by the hidden, cloned DOM unless you explicitly request it using CSS inheritance.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use} */
+The <use> element takes nodes from within the SVG document, and duplicates them somewhere else. The effect is the same as if the nodes were deeply cloned into a non-exposed DOM, and then pasted where the use element is, much like cloned template elements in HTML5. Since the cloned nodes are not exposed, care must be taken when using CSS to style a use element and its hidden descendants. CSS attributes are not guaranteed to be inherited by the hidden, cloned DOM unless you explicitly request it using CSS inheritance.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
+*/
 use: SVGUseAttributes<I>;
+
 /**
-* A view is a defined way to view the image, like a zoom level or a detail view.
-* 
-* [MDN Reference] {@link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/view} */
+A view is a defined way to view the image, like a zoom level or a detail view.
+
+[MDN Reference](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/view)
+*/
 view: SVGViewAttributes<I>;
     }
