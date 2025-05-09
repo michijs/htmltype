@@ -450,5 +450,17 @@
   {
     "tagName": "menu",
     "elementInterface": "HTMLElementTagNameMap['menu']"
+  },
+  {
+    "tagName": "search",
+    "elementInterface": "HTMLElementTagNameMap['search']"
+  },
+  {
+    "tagName": "fencedframe",
+    "elementInterface": "HTMLElement"
+  },
+  {
+    "tagName": "selectedcontent",
+    "elementInterface": "HTMLElement"
   }
 ]

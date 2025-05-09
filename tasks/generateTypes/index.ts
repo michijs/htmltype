@@ -23,18 +23,6 @@ htmlData.tags = htmlData.tags!.map((x) => {
         (x) => x.name !== "dir" && x.name !== "spellcheck",
       ),
     };
-  if (["button"].includes(x.name))
-    return {
-      ...x,
-      attributes: x.attributes.map((x) =>
-        x.name === "autocomplete"
-          ? {
-              ...x,
-              valueSet: "o",
-            }
-          : x,
-      ),
-    };
   return x;
 });
 
@@ -62,7 +50,8 @@ export async function generateTypes(props?: GenerateTypesProps) {
       ...elementsAdditionalImports,
     ],
     getElementInterface: (el) =>
-      ["param", "rb"].includes(el)
+      // Param is deprecated, "rb", "fencedframe", "selectedcontent" still does not exists
+      ["param", "rb", "fencedframe", "selectedcontent"].includes(el)
         ? "HTMLElement"
         : `HTMLElementTagNameMap['${el}']`,
     getAdditionalElementExtendsInterfaces: (el, elementInterface) => {
