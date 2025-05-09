@@ -25,7 +25,10 @@ export interface GenerateTypesProps {
   };
 }
 
-export type JSDocInfo = Pick<IValueData, "description" | "references">;
+export type JSDocInfo = Pick<
+  IValueData,
+  "description" | "references" | "browsers" | "status"
+>;
 
 export interface InterfaceFactoryCommonAttrs {
   name: string;

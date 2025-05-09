@@ -1,16 +1,16 @@
 import type { CSSProperties } from "../types";
 
 export interface ValueSets {
-  42?: "ltr" | "rtl";
-  43?: "block" | "inline";
-  44?: "http://www.w3.org/1998/Math/MathML";
-  46?: "none" | "sum";
-  47?: "replace" | "sum";
-  48?: "CSS" | "XML" | "auto";
-  49?: "indefinite";
-  50?: "always" | "whenNotActive" | "never";
-  51?: "discrete" | "linear" | "paced" | "spline";
-  52?:
+  45?: "ltr" | "rtl";
+  46?: "block" | "inline";
+  47?: "http://www.w3.org/1998/Math/MathML";
+  49?: "none" | "sum";
+  50?: "replace" | "sum";
+  51?: "CSS" | "XML" | "auto";
+  52?: "indefinite";
+  53?: "always" | "whenNotActive" | "never";
+  54?: "discrete" | "linear" | "paced" | "spline";
+  55?:
     | "none meet"
     | "none slice"
     | "xMinYMin meet"
@@ -31,7 +31,7 @@ export interface ValueSets {
     | "xMidYMax slice"
     | "xMaxYMax meet"
     | "xMaxYMax slice";
-  53?:
+  56?:
     | "auto"
     | "baseline"
     | "before-edge"
@@ -45,11 +45,11 @@ export interface ValueSets {
     | "hanging"
     | "mathematical"
     | "inherit";
-  54?: "nonzero" | "evenodd" | "inherit";
-  55?: "auto" | "sRGB" | "linearRGB" | "inherit";
-  56?: "auto" | "sRGB" | "inherit";
-  57?: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
-  58?:
+  57?: "nonzero" | "evenodd" | "inherit";
+  58?: "auto" | "sRGB" | "linearRGB" | "inherit";
+  59?: "auto" | "sRGB" | "inherit";
+  60?: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
+  61?:
     | "auto"
     | "crosshair"
     | "default"
@@ -66,8 +66,8 @@ export interface ValueSets {
     | "wait"
     | "help"
     | "inherit";
-  59?: "ltr" | "rtl" | "inherit";
-  60?:
+  62?: "ltr" | "rtl" | "inherit";
+  63?:
     | "inline"
     | "block"
     | "list-item"
@@ -86,7 +86,7 @@ export interface ValueSets {
     | "table-caption"
     | "none"
     | "inherit";
-  61?:
+  64?:
     | "auto"
     | "text-bottom"
     | "alphabetic"
@@ -96,7 +96,7 @@ export interface ValueSets {
     | "mathematical"
     | "hanging"
     | "text-top";
-  62?:
+  65?:
     | "normal"
     | "wider"
     | "narrower"
@@ -109,7 +109,7 @@ export interface ValueSets {
     | "extra-expanded"
     | "ultra-expanded"
     | "inherit";
-  63?:
+  66?:
     | "normal"
     | "bold"
     | "bolder"
@@ -124,9 +124,9 @@ export interface ValueSets {
     | "800"
     | "900"
     | "inherit";
-  64?: "auto" | "optimizeSpeed" | "optimizeQuality";
-  65?: "visible" | "hidden" | "scroll" | "auto";
-  66?:
+  67?: "auto" | "optimizeSpeed" | "optimizeQuality";
+  68?: "visible" | "hidden" | "scroll" | "auto";
+  69?:
     | "visiblePainted"
     | "visibleFill"
     | "visibleStroke"
@@ -137,39 +137,39 @@ export interface ValueSets {
     | "all"
     | "none"
     | "inherit";
-  67?: "auto" | "optimizeSpeed" | "crispEdges" | "geometricPrecision";
-  68?: "butt" | "round" | "square";
-  69?: "miter" | "round" | "bevel" | "miter-clip" | "round";
-  70?: "start" | "middle" | "end";
-  71?: "none" | "underline" | "overline" | "line-through" | "blink" | "inherit";
-  72?:
+  70?: "auto" | "optimizeSpeed" | "crispEdges" | "geometricPrecision";
+  71?: "butt" | "round" | "square";
+  72?: "miter" | "round" | "bevel" | "miter-clip" | "round";
+  73?: "start" | "middle" | "end";
+  74?: "none" | "underline" | "overline" | "line-through" | "blink" | "inherit";
+  75?:
     | "auto"
     | "optimizeSpeed"
     | "optimizeLegibility"
     | "geometricPrecision"
     | "inherit";
-  73?:
+  76?:
     | "none"
     | "non-scaling-stroke"
     | "non-scaling-size"
     | "non-rotation"
     | "fixed-position";
-  74?: "visible" | "hidden" | "collapse" | "inherit";
-  75?: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
-  76?: "identity" | "table" | "discrete" | "linear" | "gamma";
-  77?: "userSpaceOnUse" | "objectBoundingBox";
-  78?:
+  77?: "visible" | "hidden" | "collapse" | "inherit";
+  78?: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
+  79?: "identity" | "table" | "discrete" | "linear" | "gamma";
+  80?: "userSpaceOnUse" | "objectBoundingBox";
+  81?:
     | "SourceGraphic"
     | "SourceAlpha"
     | "BackgroundImage"
     | "BackgroundAlpha"
     | "FillPaint"
     | "StrokePaint";
-  79?: "normal" | "multiply" | "screen" | "darken" | "lighten";
-  80?: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
-  81?: "duplicate" | "wrap" | "none";
-  82?: "R" | "G" | "B" | "A";
-  83?:
+  82?: "normal" | "multiply" | "screen" | "darken" | "lighten";
+  83?: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
+  84?: "duplicate" | "wrap" | "none";
+  85?: "R" | "G" | "B" | "A";
+  86?:
     | "none"
     | "xMinYMin meet"
     | "xMinYMin slice"
@@ -189,14 +189,14 @@ export interface ValueSets {
     | "xMaxYMid slice"
     | "xMaxYMax meet"
     | "xMaxYMax slice";
-  84?: "noStitch" | "stitch";
-  85?: "fractalNoise" | "turbulence";
-  86?: "pad" | "reflect" | "repeat";
-  87?: "userSpaceOnUse" | "strokeWidth";
-  88?: "http://www.w3.org/2000/svg";
-  89?: "spacing" | "spacingAndGlyphs";
-  90?: "alignt" | "stretch";
-  91?: "auto" | "exact";
+  87?: "noStitch" | "stitch";
+  88?: "fractalNoise" | "turbulence";
+  89?: "pad" | "reflect" | "repeat";
+  90?: "userSpaceOnUse" | "strokeWidth";
+  91?: "http://www.w3.org/2000/svg";
+  92?: "spacing" | "spacingAndGlyphs";
+  93?: "alignt" | "stretch";
+  94?: "auto" | "exact";
   autocomplete?: "inline" | "list" | "both" | "none";
   b?: "true" | "false";
   bt?: "button" | "submit" | "reset" | "menu";
@@ -205,10 +205,19 @@ export interface ValueSets {
   decoding?: "sync" | "async" | "auto";
   default?: string | number | boolean | null;
   dropeffect?: "copy" | "move" | "link" | "execute" | "popup" | "none";
+  enterkeyhint?:
+    | "enter"
+    | "done"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send";
   et?:
     | "application/x-www-form-urlencoded"
     | "multipart/form-data"
     | "text/plain";
+  fetchpriority?: "high" | "low" | "auto";
   fm?: "get" | "post";
   haspopup?: "false" | "true" | "menu" | "listbox" | "tree" | "grid" | "dialog";
   href?: URL | string;
@@ -310,6 +319,7 @@ export interface ValueSets {
   o?: "on" | "off";
   orientation?: "vertical" | "horizontal" | "undefined";
   pl?: "none" | "metadata" | "auto";
+  popover?: "auto" | "hint" | "manual";
   referrerpoliciy?:
     | "no-referrer"
     | "no-referrer-when-downgrade"
