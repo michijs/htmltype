@@ -1,6 +1,6 @@
 import { appendFileSync, mkdirSync, rmSync, writeFileSync } from "fs";
 import { DEFAULT_VALUE_SET, generateInterface, sortByName } from "./shared";
-import { type IAttributeData } from "vscode-html-languageservice";
+import type { IAttributeData } from "vscode-html-languageservice";
 import type {
   AddTypesFromProps,
   AttributeSet,
@@ -116,7 +116,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
             (x) =>
               x.name === attr.name &&
               (x.valueSet ?? this.getValueSet(x)) ===
-              (attr.valueSet ?? this.getValueSet(attr)),
+                (attr.valueSet ?? this.getValueSet(attr)),
           ),
         );
 
@@ -128,13 +128,10 @@ export type { AllAttributes } from "./AllAttributes";\n`,
           );
         }
       });
-    this.addAttributes(el, filteredAttributes)
+    this.addAttributes(el, filteredAttributes);
   }
 
-  addAttributes(
-    el: InterfaceFactory,
-    filteredAttributes: IAttributeData[],
-  ) {
+  addAttributes(el: InterfaceFactory, filteredAttributes: IAttributeData[]) {
     // Removing events
     filteredAttributes
       .filter((x) => !x.name.startsWith("on"))
@@ -189,17 +186,17 @@ export type { AllAttributes } from "./AllAttributes";\n`,
 
     const attributeSets: InterfaceFactory[] | undefined = props.attributeSet
       ? Object.entries(props.attributeSet).map(([name, attributeSet]) => {
-        const attributeSetInterface: InterfaceFactory = {
-          name,
-          extends: {
-            pickFromAllAttributes: [],
-            otherClasses: [],
-          },
-          attributes: []
-        };
-        this.addAttributes(attributeSetInterface, attributeSet);
-        return attributeSetInterface;
-      })
+          const attributeSetInterface: InterfaceFactory = {
+            name,
+            extends: {
+              pickFromAllAttributes: [],
+              otherClasses: [],
+            },
+            attributes: [],
+          };
+          this.addAttributes(attributeSetInterface, attributeSet);
+          return attributeSetInterface;
+        })
       : undefined;
     // Elements
     const elements: InterfaceFactory = {
@@ -286,17 +283,18 @@ export type { AllAttributes } from "./AllAttributes";\n`,
        import type { ValueSets } from "./ValueSets"
        ${props.additionalImports?.join("\n")}
        ${globalAttributes ? generateInterface(globalAttributes) : ""}
-       ${attributeSets && attributeSets.length > 0
-        ? attributeSets
-          .sort(sortByName)
-          .map((x) => generateInterface(x))
-          .join("\n")
-        : ""
-      }
+       ${
+         attributeSets && attributeSets.length > 0
+           ? attributeSets
+               .sort(sortByName)
+               .map((x) => generateInterface(x))
+               .join("\n")
+           : ""
+       }
        ${elementsInterfaces
-        .sort(sortByName)
-        .map((x) => generateInterface(x))
-        .join("\n")}
+         .sort(sortByName)
+         .map((x) => generateInterface(x))
+         .join("\n")}
        ${generateInterface(elements)}`,
     );
     appendFileSync(
