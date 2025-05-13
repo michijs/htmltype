@@ -1,16 +1,18 @@
 import type { CSSProperties } from "../types";
 
 export interface ValueSets {
-  42?: "ltr" | "rtl";
-  43?: "block" | "inline";
-  44?: "http://www.w3.org/1998/Math/MathML";
-  46?: "none" | "sum";
-  47?: "replace" | "sum";
-  48?: "CSS" | "XML" | "auto";
-  49?: "indefinite";
-  50?: "always" | "whenNotActive" | "never";
-  51?: "discrete" | "linear" | "paced" | "spline";
-  52?:
+  45?: "ltr" | "rtl";
+  46?: "block" | "inline";
+  47?: "http://www.w3.org/1998/Math/MathML";
+  48?: "normal";
+  49?: "prefix" | "infix" | "postfix";
+  51?: "none" | "sum";
+  52?: "replace" | "sum";
+  53?: "CSS" | "XML" | "auto";
+  54?: "indefinite";
+  55?: "always" | "whenNotActive" | "never";
+  56?: "discrete" | "linear" | "paced" | "spline";
+  57?:
     | "none meet"
     | "none slice"
     | "xMinYMin meet"
@@ -31,7 +33,7 @@ export interface ValueSets {
     | "xMidYMax slice"
     | "xMaxYMax meet"
     | "xMaxYMax slice";
-  53?:
+  58?:
     | "auto"
     | "baseline"
     | "before-edge"
@@ -45,11 +47,11 @@ export interface ValueSets {
     | "hanging"
     | "mathematical"
     | "inherit";
-  54?: "nonzero" | "evenodd" | "inherit";
-  55?: "auto" | "sRGB" | "linearRGB" | "inherit";
-  56?: "auto" | "sRGB" | "inherit";
-  57?: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
-  58?:
+  59?: "nonzero" | "evenodd" | "inherit";
+  60?: "auto" | "sRGB" | "linearRGB" | "inherit";
+  61?: "auto" | "sRGB" | "inherit";
+  62?: "auto" | "optimizeSpeed" | "optimizeQuality" | "inherit";
+  63?:
     | "auto"
     | "crosshair"
     | "default"
@@ -66,8 +68,8 @@ export interface ValueSets {
     | "wait"
     | "help"
     | "inherit";
-  59?: "ltr" | "rtl" | "inherit";
-  60?:
+  64?: "ltr" | "rtl" | "inherit";
+  65?:
     | "inline"
     | "block"
     | "list-item"
@@ -86,7 +88,7 @@ export interface ValueSets {
     | "table-caption"
     | "none"
     | "inherit";
-  61?:
+  66?:
     | "auto"
     | "text-bottom"
     | "alphabetic"
@@ -96,7 +98,7 @@ export interface ValueSets {
     | "mathematical"
     | "hanging"
     | "text-top";
-  62?:
+  67?:
     | "normal"
     | "wider"
     | "narrower"
@@ -109,7 +111,7 @@ export interface ValueSets {
     | "extra-expanded"
     | "ultra-expanded"
     | "inherit";
-  63?:
+  68?:
     | "normal"
     | "bold"
     | "bolder"
@@ -124,9 +126,9 @@ export interface ValueSets {
     | "800"
     | "900"
     | "inherit";
-  64?: "auto" | "optimizeSpeed" | "optimizeQuality";
-  65?: "visible" | "hidden" | "scroll" | "auto";
-  66?:
+  69?: "auto" | "optimizeSpeed" | "optimizeQuality";
+  70?: "visible" | "hidden" | "scroll" | "auto";
+  71?:
     | "visiblePainted"
     | "visibleFill"
     | "visibleStroke"
@@ -137,39 +139,40 @@ export interface ValueSets {
     | "all"
     | "none"
     | "inherit";
-  67?: "auto" | "optimizeSpeed" | "crispEdges" | "geometricPrecision";
-  68?: "butt" | "round" | "square";
-  69?: "miter" | "round" | "bevel" | "miter-clip" | "round";
-  70?: "start" | "middle" | "end";
-  71?: "none" | "underline" | "overline" | "line-through" | "blink" | "inherit";
-  72?:
+  72?: "auto" | "optimizeSpeed" | "crispEdges" | "geometricPrecision";
+  73?: "butt" | "round" | "square";
+  74?: "miter" | "round" | "bevel" | "miter-clip" | "round";
+  75?: "start" | "middle" | "end";
+  76?: "none" | "underline" | "overline" | "line-through" | "blink" | "inherit";
+  77?:
     | "auto"
     | "optimizeSpeed"
     | "optimizeLegibility"
     | "geometricPrecision"
     | "inherit";
-  73?:
+  78?:
     | "none"
     | "non-scaling-stroke"
     | "non-scaling-size"
     | "non-rotation"
     | "fixed-position";
-  74?: "visible" | "hidden" | "collapse" | "inherit";
-  75?: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
-  76?: "identity" | "table" | "discrete" | "linear" | "gamma";
-  77?: "userSpaceOnUse" | "objectBoundingBox";
-  78?:
+  79?: "visible" | "hidden" | "collapse" | "inherit";
+  80?: "lr-tb" | "rl-tb" | "tb-rl" | "lr" | "rl" | "tb" | "inherit";
+  81?: "identity" | "table" | "discrete" | "linear" | "gamma";
+  82?: "userSpaceOnUse" | "objectBoundingBox";
+  83?:
     | "SourceGraphic"
     | "SourceAlpha"
     | "BackgroundImage"
     | "BackgroundAlpha"
     | "FillPaint"
     | "StrokePaint";
-  79?: "normal" | "multiply" | "screen" | "darken" | "lighten";
-  80?: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
-  81?: "duplicate" | "wrap" | "none";
-  82?: "R" | "G" | "B" | "A";
-  83?:
+  84?: "normal" | "multiply" | "screen" | "darken" | "lighten";
+  85?: "matrix" | "saturate" | "hueRotate" | "luminanceToAlpha";
+  86?: "over" | "in" | "out" | "atop" | "xor" | "arithmetic";
+  87?: "duplicate" | "wrap" | "none";
+  88?: "R" | "G" | "B" | "A";
+  89?:
     | "none"
     | "xMinYMin meet"
     | "xMinYMin slice"
@@ -189,14 +192,14 @@ export interface ValueSets {
     | "xMaxYMid slice"
     | "xMaxYMax meet"
     | "xMaxYMax slice";
-  84?: "noStitch" | "stitch";
-  85?: "fractalNoise" | "turbulence";
-  86?: "pad" | "reflect" | "repeat";
-  87?: "userSpaceOnUse" | "strokeWidth";
-  88?: "http://www.w3.org/2000/svg";
-  89?: "spacing" | "spacingAndGlyphs";
-  90?: "alignt" | "stretch";
-  91?: "auto" | "exact";
+  90?: "noStitch" | "stitch";
+  91?: "fractalNoise" | "turbulence";
+  92?: "pad" | "reflect" | "repeat";
+  93?: "userSpaceOnUse" | "strokeWidth";
+  94?: "http://www.w3.org/2000/svg";
+  95?: "spacing" | "spacingAndGlyphs";
+  96?: "alignt" | "stretch";
+  97?: "auto" | "exact";
   autocomplete?: "inline" | "list" | "both" | "none";
   b?: "true" | "false";
   bt?: "button" | "submit" | "reset" | "menu";
@@ -205,10 +208,19 @@ export interface ValueSets {
   decoding?: "sync" | "async" | "auto";
   default?: string | number | boolean | null;
   dropeffect?: "copy" | "move" | "link" | "execute" | "popup" | "none";
+  enterkeyhint?:
+    | "enter"
+    | "done"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send";
   et?:
     | "application/x-www-form-urlencoded"
     | "multipart/form-data"
     | "text/plain";
+  fetchpriority?: "high" | "low" | "auto";
   fm?: "get" | "post";
   haspopup?: "false" | "true" | "menu" | "listbox" | "tree" | "grid" | "dialog";
   href?: URL | string;
@@ -310,6 +322,7 @@ export interface ValueSets {
   o?: "on" | "off";
   orientation?: "vertical" | "horizontal" | "undefined";
   pl?: "none" | "metadata" | "auto";
+  popover?: "auto" | "hint" | "manual";
   referrerpoliciy?:
     | "no-referrer"
     | "no-referrer-when-downgrade"

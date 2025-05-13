@@ -1,5 +1,13 @@
 [
   {
+    "tagName": "annotation",
+    "elementInterface": "MathMLElementTagNameMap['annotation']"
+  },
+  {
+    "tagName": "annotation-xml",
+    "elementInterface": "MathMLElementTagNameMap['annotation-xml']"
+  },
+  {
     "tagName": "math",
     "elementInterface": "MathMLElementTagNameMap['math']"
   },
@@ -40,6 +48,10 @@
     "elementInterface": "MathMLElementTagNameMap['mphantom']"
   },
   {
+    "tagName": "mprescripts",
+    "elementInterface": "MathMLElementTagNameMap['mprescripts']"
+  },
+  {
     "tagName": "mroot",
     "elementInterface": "MathMLElementTagNameMap['mroot']"
   },
@@ -70,6 +82,10 @@
   {
     "tagName": "msubsup",
     "elementInterface": "MathMLElementTagNameMap['msubsup']"
+  },
+  {
+    "tagName": "msup",
+    "elementInterface": "MathMLElementTagNameMap['msup']"
   },
   {
     "tagName": "mtable",

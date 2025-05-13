@@ -16,7 +16,7 @@ const getInterfaceHelperName = (
 ) =>
   `${props.name.slice(0, -8)}${elementName
     .charAt(0)
-    .toUpperCase()}${elementName.slice(1)}Attributes`;
+    .toUpperCase()}${elementName.slice(1).replaceAll("-", "")}Attributes`;
 
 export const valueSets: ValueSetInterfaceFactory = {
   name: "ValueSets",
@@ -76,6 +76,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
   getValueSet = (property: IAttributeData) => {
     if (property.name === "style") return "style";
     if (property.name === "href") return "href";
+    if (property.name === "open") return "v";
     let valueSetKey = DEFAULT_VALUE_SET.key;
     if (property.valueSet) valueSetKey = property.valueSet;
     else if (property.values && property.values.length > 0) {
@@ -102,12 +103,11 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     return valueSetKey;
   };
 
-  addAttributes(
+  addAttributeSet(
     el: InterfaceFactory,
     attributes: IAttributeData[],
-    attributeSets?: AttributeSet,
+    attributeSets: AttributeSet | undefined,
   ) {
-    // Attribute sets
     let filteredAttributes = attributes;
     if (attributeSets)
       Object.entries(attributeSets).forEach(([name, attributeSet]) => {
@@ -128,6 +128,10 @@ export type { AllAttributes } from "./AllAttributes";\n`,
           );
         }
       });
+    this.addAttributes(el, filteredAttributes);
+  }
+
+  addAttributes(el: InterfaceFactory, filteredAttributes: IAttributeData[]) {
     // Removing events
     filteredAttributes
       .filter((x) => !x.name.startsWith("on"))
@@ -179,9 +183,10 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         ...new Map(valueSets.attributes.map((m) => [m.name, m])).values(),
       ];
     }
+
     const attributeSets: InterfaceFactory[] | undefined = props.attributeSet
       ? Object.entries(props.attributeSet).map(([name, attributeSet]) => {
-          const attributeSetInterface = {
+          const attributeSetInterface: InterfaceFactory = {
             name,
             extends: {
               pickFromAllAttributes: [],
@@ -245,7 +250,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         },
         attributes: [],
       };
-      this.addAttributes(elementInterface, x.attributes, props.attributeSet);
+      this.addAttributeSet(elementInterface, x.attributes, props.attributeSet);
 
       if (globalAttributes)
         elementInterface.extends.otherClasses.push(globalAttributes.name);
