@@ -2,7 +2,6 @@
 Strict TypeScript types for HTML, SVG and MATHML attributes based on MDN data.
 
 ![npm][version] [![license][github-license]][github-license-url] ![npm][npm-downloads] ![npm][repo-size]
-  [![CodeQL](https://github.com/michijs/htmltype/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/michijs/htmltype/actions/workflows/codeql-analysis.yml)
   [![Tests](https://github.com/michijs/htmltype/actions/workflows/tests.yml/badge.svg)](https://github.com/michijs/htmltype/actions/workflows/tests.yml)
 
 ## License
