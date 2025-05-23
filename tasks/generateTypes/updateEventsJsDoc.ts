@@ -13,6 +13,7 @@ export function updateEventsJsDoc() {
   // @ts-ignore
   const allAttributes: IAttributeData[] =
     htmlDataImport.globalAttributes.concat(
+      // @ts-ignore
       ...htmlDataImport.tags.map((x) => x.attributes as IAttributeData[]),
     );
 
