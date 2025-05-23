@@ -59,7 +59,7 @@ export interface AddTypesFromProps {
   documentationSrc: HTMLDataV1;
   src: string;
   additionalImports?: string[];
-  getElementInterface: (tag: string) => string;
+  getElementInterface(tag: string): string;
   getAdditionalElementExtendsInterfaces?: GetAdditionalElementExtendsInterfaces;
-  getAttributes?: (tag: ITagData) => ITagData["attributes"];
+  getAttributes?(tag: ITagData): ITagData["attributes"];
 }

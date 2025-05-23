@@ -9,6 +9,7 @@ import type {
   GenerateTypesProps,
   GetAdditionalElementExtendsInterfaces,
 } from "./types";
+import { updateEventsJsDoc } from "./updateEventsJsDoc";
 
 const htmlData = htmlDataImport as HTMLDataV1;
 const svgData = svgDataImport as HTMLDataV1;
@@ -20,7 +21,7 @@ htmlData.tags = htmlData.tags!.map((x) => {
       ...x,
       // We get better types from svgData
       attributes: x.attributes.filter(
-        (x) => x.name !== "dir" && x.name !== "spellcheck",
+        (x) => !["dir", "spellcheck"].includes(x.name),
       ),
     };
   return x;
@@ -37,16 +38,16 @@ export async function generateTypes(props?: GenerateTypesProps) {
     el,
     elementInterface,
   ) => [
-    "DataGlobalAttributes",
-    ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
-  ];
+      "DataGlobalAttributes",
+      ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
+    ];
 
   await factory.addTypesFrom({
     name: "HTMLElements",
     src: "@vscode/web-custom-data",
     documentationSrc: htmlData,
     additionalImports: [
-      'import type { GlobalEvents, WindowEvents } from "../Events"',
+      'import type { GlobalEvents, WindowEvents, VideoElementEvents } from "../Events"',
       ...elementsAdditionalImports,
     ],
     getElementInterface: (el) =>
@@ -59,10 +60,18 @@ export async function generateTypes(props?: GenerateTypesProps) {
         ...elementsAdditionalExtends(el, elementInterface),
         `GlobalEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
       ];
-      if (el === "body")
-        attributeSets.push(
-          `WindowEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
-        );
+      switch (el) {
+        case "body":
+          attributeSets.push(
+            `WindowEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
+          )
+          break;
+        case "video":
+          attributeSets.push(
+            `VideoElementEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
+          )
+          break;
+      }
       return attributeSets;
     },
   });
@@ -87,17 +96,30 @@ export async function generateTypes(props?: GenerateTypesProps) {
     documentationSrc: svgData,
     attributeSet: svgAttributeSet as AttributeSet,
     additionalImports: [
-      'import type { SVGEvents } from "../Events"',
+      'import type { SVGEvents, WindowEvents } from "../Events"',
       ...elementsAdditionalImports,
     ],
     getElementInterface: (el) =>
       ["discard"].includes(el) ? "SVGElement" : `SVGElementTagNameMap['${el}']`,
-    getAdditionalElementExtendsInterfaces: (el, elementInterface) => [
-      ...elementsAdditionalExtends(el, elementInterface),
-      `SVGEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
-    ],
+    getAdditionalElementExtendsInterfaces: (el, elementInterface) => {
+      const attributeSets = [
+        ...elementsAdditionalExtends(el, elementInterface),
+        `SVGEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
+      ]
+
+      switch (el) {
+        case "svg":
+          attributeSets.push(
+            `WindowEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
+          )
+          break;
+      }
+      return attributeSets
+    },
   });
   factory.generateAttributesAndValueSets(
     props?.generateAttributesAndValueSetsProps,
   );
 }
+
+updateEventsJsDoc();

@@ -31,7 +31,7 @@ export const getExtends = (
     : "";
 };
 
-const getJSDoc = (attr: IAttributeData) => {
+export const getJSDoc = (attr: IAttributeData) => {
   const docs = generateDocumentation(attr, undefined, true);
   if (docs?.kind === "markdown" && docs.value)
     return `\n/**\n${docs.value}\n*/\n`;

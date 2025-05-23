@@ -57,6 +57,12 @@ export const allAttributes: InterfaceFactory = {
   attributes: [],
 };
 
+const overridenValueSets = {
+  style: "style",
+  href: "href",
+  open: "v"
+} as const
+
 export class TypesFactory {
   generatedPath: string;
   constructor(props?: TypesFactoryProps) {
@@ -73,10 +79,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
     );
   }
 
-  getValueSet = (property: IAttributeData) => {
-    if (property.name === "style") return "style";
-    if (property.name === "href") return "href";
-    if (property.name === "open") return "v";
+  addValueSet(property: IAttributeData){
     let valueSetKey = DEFAULT_VALUE_SET.key;
     if (property.valueSet) valueSetKey = property.valueSet;
     else if (property.values && property.values.length > 0) {
@@ -101,6 +104,10 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       }
     }
     return valueSetKey;
+  }
+
+  getValueSet(property: IAttributeData){
+    return overridenValueSets[property.name] ?? this.addValueSet(property);
   };
 
   addAttributeSet(
