@@ -38,9 +38,9 @@ export async function generateTypes(props?: GenerateTypesProps) {
     el,
     elementInterface,
   ) => [
-      "DataGlobalAttributes",
-      ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
-    ];
+    "DataGlobalAttributes",
+    ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
+  ];
 
   await factory.addTypesFrom({
     name: "HTMLElements",
@@ -64,12 +64,12 @@ export async function generateTypes(props?: GenerateTypesProps) {
         case "body":
           attributeSets.push(
             `WindowEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
-          )
+          );
           break;
         case "video":
           attributeSets.push(
             `VideoElementEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
-          )
+          );
           break;
       }
       return attributeSets;
@@ -105,16 +105,16 @@ export async function generateTypes(props?: GenerateTypesProps) {
       const attributeSets = [
         ...elementsAdditionalExtends(el, elementInterface),
         `SVGEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
-      ]
+      ];
 
       switch (el) {
         case "svg":
           attributeSets.push(
             `WindowEvents<I["${el}"] extends Element ? I["${el}"]: ${elementInterface}>`,
-          )
+          );
           break;
       }
-      return attributeSets
+      return attributeSets;
     },
   });
   factory.generateAttributesAndValueSets(
