@@ -9,7 +9,6 @@ import type {
   GenerateTypesProps,
   GetAdditionalElementExtendsInterfaces,
 } from "./types";
-import { updateEventsJsDoc } from "./updateEventsJsDoc";
 
 const htmlData = htmlDataImport as HTMLDataV1;
 const svgData = svgDataImport as HTMLDataV1;
@@ -121,5 +120,3 @@ export async function generateTypes(props?: GenerateTypesProps) {
     props?.generateAttributesAndValueSetsProps,
   );
 }
-
-updateEventsJsDoc();
