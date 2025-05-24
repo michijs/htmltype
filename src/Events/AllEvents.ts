@@ -16,6 +16,7 @@ import type {
   TypedUIEvent,
   TypedSecurityPolicyViolationEvent,
   TypedClipboardEvent,
+  TypedToggleEvent,
 } from "./TypedEvents";
 import type { TypedInputEvent } from "./TypedEvents/TypedInputEvent";
 import type { TypedBeforeUnloadEvent } from "./TypedEvents/TypedBeforeUnloadEvent";
@@ -338,7 +339,7 @@ Media data loading has been suspended.
 The time indicated by the currentTime attribute has been updated.
 */
   ontimeupdate?(ev: TypedEvent<T>): unknown;
-  ontoggle?(ev: TypedEvent<T>): unknown;
+  ontoggle?(ev: TypedToggleEvent<T>): unknown;
   ontouchcancel?(ev: TypedTouchEvent<T>): unknown;
   ontouchend?(ev: TypedTouchEvent<T>): unknown;
   ontouchmove?(ev: TypedTouchEvent<T>): unknown;
