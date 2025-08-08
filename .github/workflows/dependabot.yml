@@ -10,12 +10,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  call-workflow:
+  run-dependabot:
     uses: michijs/.github/.github/workflows/dependabot.yml@main
     name: "Run dependabot"
     secrets: inherit
   run-tests:
     uses: ./.github/workflows/tests.yml
     secrets: inherit
+    needs: run-dependabot
     with:
       ref: "michijs-dependabot"
