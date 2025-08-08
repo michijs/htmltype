@@ -6,7 +6,6 @@ on:
       - completed
   pull_request_target:
     types: [opened, synchronize]
-    branches: 'master'
   push:
     branches:
       - '*'
@@ -26,9 +25,4 @@ jobs:
     name: "Run ${{matrix.scripts.name}} tests"
     with:
       script-name: ${{ matrix.scripts.script }}
-  deploy:
-    name: Deploy
-    needs: run-tests
-    uses: michijs/.github/.github/workflows/deploy.yml@main
-    secrets: inherit
     
