@@ -1,16 +1,16 @@
 name: "Tests"
 on:
-  workflow_run:
-    workflows: ["Michijs Dependabot"]
-    types:
-      - completed
-  pull_request_target:
-    types: [opened, synchronize]
   push:
     branches:
       - '*'
       - '!production'
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        description: "Branch to run the script"
+        type: string
+        required: false
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -25,4 +25,5 @@ jobs:
     name: "Run ${{matrix.scripts.name}} tests"
     with:
       script-name: ${{ matrix.scripts.script }}
+      ref: ${{ inputs.ref }}
     
