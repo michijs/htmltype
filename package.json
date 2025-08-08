@@ -2,7 +2,7 @@
   "name": "@michijs/htmltype",
   "author": "Lucas M. Segurado",
   "license": "MIT",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "baseUrl": "./src",
   "repository": {
     "type": "git",
@@ -43,13 +43,13 @@
     "typescript"
   ],
   "devDependencies": {
-    "@michijs/tsconfig": "0.0.4",
+    "@michijs/tsconfig": "0.0.5",
     "@types/bun": "^1.2.12",
     "typescript": "^5.8.3",
-    "vscode-html-languageservice": "5.4.0"
+    "vscode-html-languageservice": "5.5.1"
   },
   "dependencies": {
-    "@vscode/web-custom-data": "0.5.2",
+    "@vscode/web-custom-data": "0.6.0",
     "@michijs/vscode-svg": "2.1.0",
     "@michijs/vscode-mathml": "1.1.0"
   },
