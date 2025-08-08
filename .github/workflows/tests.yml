@@ -1,13 +1,21 @@
 name: "Tests"
-
-on: [push, workflow_dispatch]
+on:
+  workflow_run:
+    workflows: ["Michijs Dependabot"]
+    types:
+      - completed
+  push:
+    branches:
+      - '*'
+      - '!production'
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
-  call-workflow:
+  run-tests:
     strategy:
       matrix:
         scripts: [{script: test-tsc, name: "Typescript"}]
@@ -15,3 +23,9 @@ jobs:
     name: "Run ${{matrix.scripts.name}} tests"
     with:
       script-name: ${{ matrix.scripts.script }}
+  deploy:
+    name: Deploy
+    needs: run-tests
+    uses: michijs/.github/.github/workflows/deploy.yml@main
+    secrets: inherit
+    
