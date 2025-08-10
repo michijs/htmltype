@@ -21,6 +21,8 @@ jobs:
     uses: michijs/.github/.github/workflows/run-tests.yml@main
     with:
       scripts: |
-        [{script: test-tsc,name: "Typescript"}]
+        [
+          { "script": "test-tsc", "name": "Typescript" }
+        ]
       ref: ${{ inputs.ref }}
     
