@@ -14,8 +14,6 @@ jobs:
     uses: michijs/.github/.github/workflows/dependabot.yml@main
     name: "Run dependabot"
     secrets: inherit
-    with:
-      tests-workflow: tests
   run-tests:
     uses: ./.github/workflows/tests.yml
     secrets: inherit
