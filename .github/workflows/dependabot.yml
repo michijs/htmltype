@@ -25,4 +25,4 @@ jobs:
     needs: run-tests
     if: ${{ needs.build.result == 'success' }}
     steps:
-      - run: gh pr comment michijs-dependabot --edit-last --body Tests passed!
+      - run: gh pr comment michijs-dependabot --edit-last --body "Tests passed!"
