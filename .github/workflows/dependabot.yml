@@ -16,9 +16,15 @@ jobs:
     secrets: inherit
     with:
       tests-workflow: tests
-  # run-tests:
-  #   uses: ./.github/workflows/tests.yml
-  #   secrets: inherit
-  #   needs: run-dependabot
-  #   with:
-  #     ref: "michijs-dependabot"
+  run-tests:
+    uses: ./.github/workflows/tests.yml
+    secrets: inherit
+    needs: run-dependabot
+    with:
+      ref: "michijs-dependabot"
+  after_build:
+    runs-on: ubuntu-latest
+    needs: run-tests
+    if: ${{ needs.build.result == 'success' }}
+    steps:
+      - run: gh pr comment michijs-dependabot --edit-last --body Tests passed!
