@@ -18,12 +18,14 @@ concurrency:
 
 jobs:
   run-tests:
-    strategy:
-      matrix:
-        scripts: [{script: test-tsc, name: "Typescript"}]
-    uses: michijs/.github/.github/workflows/execute-script.yml@main
-    name: "Run ${{matrix.scripts.name}} tests"
+    uses: michijs/.github/.github/workflows/run-tests.yml@main
     with:
-      script-name: ${{ matrix.scripts.script }}
+      scripts: |
+        [
+          {
+              script: test-tsc, 
+              name: "Typescript"
+          }
+        ]
       ref: ${{ inputs.ref }}
     
