@@ -23,6 +23,6 @@ jobs:
   after_build:
     runs-on: ubuntu-latest
     needs: run-tests
-    if: ${{ needs.build.result == 'success' }}
+    if: ${{ needs.run-tests.result == 'success' }}
     steps:
       - run: gh pr comment michijs-dependabot --edit-last --body "Tests passed!"
