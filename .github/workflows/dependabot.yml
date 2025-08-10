@@ -26,3 +26,5 @@ jobs:
     if: ${{ needs.run-tests.result == 'success' }}
     steps:
       - run: gh pr comment michijs-dependabot --edit-last --body "Tests passed!"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
