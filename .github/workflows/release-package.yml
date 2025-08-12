@@ -20,7 +20,6 @@ on:
       release-notes-path:
         description: "Release notes path"
         type: string
-on:
   workflow_run:
     workflows: ["Tests"]
     branches: [master]
