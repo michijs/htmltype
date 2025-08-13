@@ -16,4 +16,4 @@ jobs:
     secrets: inherit
     needs: lint
     with:
-      ref: ${{ github.head_ref || github.ref_name }}
+      ref: lint/${{ github.head_ref || github.ref_name }}
