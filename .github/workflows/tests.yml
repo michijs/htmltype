@@ -25,4 +25,3 @@ jobs:
           { "script": "test-tsc", "name": "Typescript" }
         ]
       ref: ${{ inputs.ref }}
-    
