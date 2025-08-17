@@ -39,4 +39,5 @@ jobs:
       release-notes-path: ${{ github.event.inputs.release-notes-path }}
       release-type: ${{ github.event.inputs.release-type || 'prerelease' }}
       release-notes: ${{ github.event.inputs.release-notes || 'Automatic release' }}
-    secrets: inherit
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.PAT }}
