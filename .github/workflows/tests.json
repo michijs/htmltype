@@ -1,0 +1,6 @@
+[
+  {
+    "script": "test-tsc",
+    "name": "Typescript tests"
+  }
+]
