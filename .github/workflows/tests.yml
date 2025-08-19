@@ -1,27 +1,20 @@
-name: "Tests"
+name: Tests
 on:
   push:
     branches:
       - '*'
       - '!production'
   workflow_dispatch:
-  workflow_call:
-    inputs:
-      ref:
-        description: "Branch to run the script"
-        type: string
-        required: false
 
 concurrency:
-  group: ${{ github.workflow }}-${{ inputs.ref || github.event.pull_request.number || github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   run-tests:
-    uses: michijs/.github/.github/workflows/run-tests.yml@main
-    with:
-      scripts: |
-        [
-          { "script": "test-tsc", "name": "Typescript" }
-        ]
-      ref: ${{ inputs.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Run tests"
+        uses: michijs/.github/.github/actions/run-tests@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
