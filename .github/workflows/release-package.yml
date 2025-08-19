@@ -30,14 +30,20 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+permissions:
+  id-token: write
+  contents: write
+  packages: write
+
 jobs:
-  call-workflow:
-    name: 'Call Workflow'
+  release-package:
+    runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
-    uses: "michijs/.github/.github/workflows/release-package.yml@main"
-    with:
-      release-notes-path: ${{ github.event.inputs.release-notes-path }}
-      release-type: ${{ github.event.inputs.release-type || 'prerelease' }}
-      release-notes: ${{ github.event.inputs.release-notes || 'Automatic release' }}
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.PAT }}
+    steps:
+      - name: release-package
+        uses: michijs/.github/.github/actions/release-package@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release-notes-path: ${{ github.event.inputs.release-notes-path }}
+          release-type: ${{ github.event.inputs.release-type }}
+          release-notes: ${{ github.event.inputs.release-notes }}
