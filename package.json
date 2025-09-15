@@ -44,7 +44,7 @@
   ],
   "devDependencies": {
     "@michijs/tsconfig": "0.0.5",
-    "@types/bun": "^1.2.20",
+    "@types/bun": "^1.2.22",
     "typescript": "5.9.2",
     "vscode-html-languageservice": "5.5.1"
   },
