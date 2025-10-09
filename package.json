@@ -44,16 +44,16 @@
   ],
   "devDependencies": {
     "@michijs/tsconfig": "0.0.5",
-    "@types/bun": "^1.2.20",
-    "typescript": "5.9.2",
-    "vscode-html-languageservice": "5.5.1"
+    "bun-types": "1.2.20",
+    "typescript": "5.9.3",
+    "vscode-html-languageservice": "5.5.2"
   },
   "dependencies": {
-    "@vscode/web-custom-data": "0.6.0",
+    "@vscode/web-custom-data": "0.6.1",
     "@michijs/vscode-svg": "2.1.0",
     "@michijs/vscode-mathml": "1.1.0"
   },
   "peerDependencies": {
-    "csstype": "^3.1.2"
+    "csstype": "^3.1.3"
   }
 }
