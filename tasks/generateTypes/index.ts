@@ -23,10 +23,10 @@ htmlData.tags = htmlData.tags!.map((x) => {
         (x) => !["dir", "spellcheck"].includes(x.name),
       ),
     };
-  if (x.name === 'details')
+  if (x.name === "details")
     x.attributes.push({
-      name: 'name'
-    })
+      name: "name",
+    });
   return x;
 });
 
@@ -41,9 +41,9 @@ export async function generateTypes(props?: GenerateTypesProps) {
     el,
     elementInterface,
   ) => [
-      "DataGlobalAttributes",
-      ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
-    ];
+    "DataGlobalAttributes",
+    ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
+  ];
 
   await factory.addTypesFrom({
     name: "HTMLElements",
