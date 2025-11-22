@@ -7,13 +7,13 @@ export function updateEventsJsDoc() {
   const FILE_PATH = "./src/Events/AllEvents.ts";
   let content = fs.readFileSync(FILE_PATH, "utf-8");
   // Cleaning comments
-  content = content.replaceAll(`\n`, "");
+  content = content.replaceAll("\n", "");
   content = content.replace(/\/\*\*[\s\S]*?\*\//gm, "");
 
-  // @ts-ignore
+  // @ts-expect-error
   const allAttributes: IAttributeData[] =
     htmlDataImport.globalAttributes.concat(
-      // @ts-ignore
+      // @ts-expect-error
       ...htmlDataImport.tags.map((x) => x.attributes as IAttributeData[]),
     );
 
