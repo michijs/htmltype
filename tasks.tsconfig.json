@@ -5,12 +5,8 @@
     "checkJs": false,
     "allowJs": false,
     "outDir": "bin",
-    "types" : ["@types/node"]
+    "types": ["@types/node"]
   },
-  "include": [
-    "tasks"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["tasks"],
+  "exclude": ["node_modules"]
 }
