@@ -43,6 +43,7 @@
     "typescript"
   ],
   "devDependencies": {
+    "@michijs/shared-configs": "0.0.26",
     "@michijs/tsconfig": "0.0.5",
     "bun-types": "1.2.20",
     "typescript": "5.9.3",
