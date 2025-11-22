@@ -8,12 +8,8 @@
     "allowJs": false,
     "outDir": "./dist",
     "baseUrl": "./",
-    "types" : ["csstype"],
+    "types": ["csstype"]
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
