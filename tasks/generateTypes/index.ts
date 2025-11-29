@@ -41,9 +41,9 @@ export async function generateTypes(props?: GenerateTypesProps) {
     el,
     elementInterface,
   ) => [
-      "DataGlobalAttributes",
-      ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
-    ];
+    "DataGlobalAttributes",
+    ...(props?.elements?.additionalExtends?.(el, elementInterface) ?? []),
+  ];
 
   await factory.addTypesFrom({
     name: "HTMLElements",

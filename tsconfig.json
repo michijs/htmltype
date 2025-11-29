@@ -7,7 +7,7 @@
     "checkJs": false,
     "allowJs": false,
     "outDir": "./dist",
-    "paths": {"*": ["./*"]},
+    "paths": { "*": ["./*"] },
     "types": ["csstype"]
   },
   "include": ["src"],
