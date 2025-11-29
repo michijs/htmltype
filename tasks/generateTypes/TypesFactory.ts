@@ -9,6 +9,7 @@ import type {
   TypesFactoryProps,
   ValueSetInterfaceFactory,
 } from "./types";
+import { existsSync } from "fs";
 
 const getInterfaceHelperName = (
   props: AddTypesFromProps,
@@ -123,7 +124,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
             (x) =>
               x.name === attr.name &&
               (x.valueSet ?? this.getValueSet(x)) ===
-                (attr.valueSet ?? this.getValueSet(attr)),
+              (attr.valueSet ?? this.getValueSet(attr)),
           ),
         );
 
@@ -193,17 +194,17 @@ export type { AllAttributes } from "./AllAttributes";\n`,
 
     const attributeSets: InterfaceFactory[] | undefined = props.attributeSet
       ? Object.entries(props.attributeSet).map(([name, attributeSet]) => {
-          const attributeSetInterface: InterfaceFactory = {
-            name,
-            extends: {
-              pickFromAllAttributes: [],
-              otherClasses: [],
-            },
-            attributes: [],
-          };
-          this.addAttributes(attributeSetInterface, attributeSet);
-          return attributeSetInterface;
-        })
+        const attributeSetInterface: InterfaceFactory = {
+          name,
+          extends: {
+            pickFromAllAttributes: [],
+            otherClasses: [],
+          },
+          attributes: [],
+        };
+        this.addAttributes(attributeSetInterface, attributeSet);
+        return attributeSetInterface;
+      })
       : undefined;
     // Elements
     const elements: InterfaceFactory = {
@@ -264,6 +265,10 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       elementsInterfaces.push(elementInterface);
     });
 
+    if (!existsSync("./generated")) {
+      mkdirSync("./generated", { recursive: true });
+    }
+
     // JSON with supported elements and their interfaces
     writeFileSync(
       `./generated/${props.name}.json`,
@@ -290,18 +295,17 @@ export type { AllAttributes } from "./AllAttributes";\n`,
        import type { ValueSets } from "./ValueSets"
        ${props.additionalImports?.join("\n")}
        ${globalAttributes ? generateInterface(globalAttributes) : ""}
-       ${
-         attributeSets && attributeSets.length > 0
-           ? attributeSets
-               .sort(sortByName)
-               .map((x) => generateInterface(x))
-               .join("\n")
-           : ""
-       }
+       ${attributeSets && attributeSets.length > 0
+        ? attributeSets
+          .sort(sortByName)
+          .map((x) => generateInterface(x))
+          .join("\n")
+        : ""
+      }
        ${elementsInterfaces
-         .sort(sortByName)
-         .map((x) => generateInterface(x))
-         .join("\n")}
+        .sort(sortByName)
+        .map((x) => generateInterface(x))
+        .join("\n")}
        ${generateInterface(elements)}`,
     );
     appendFileSync(
