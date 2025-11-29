@@ -69,8 +69,8 @@ export class TypesFactory {
   constructor(props?: TypesFactoryProps) {
     this.generatedPath = props?.generatedPath ?? "./src/generated";
     rmSync(this.generatedPath, { recursive: true, force: true });
-    rmSync("./supported", { recursive: true, force: true });
-    mkdirSync("./supported");
+    rmSync("./generated", { recursive: true, force: true });
+    mkdirSync("./generated");
     writeFileSync("./generated/index.js", "");
     mkdirSync(this.generatedPath);
     writeFileSync(
@@ -264,10 +264,6 @@ export type { AllAttributes } from "./AllAttributes";\n`,
         elementInterface.extends.otherClasses.push(globalAttributes.name);
       elementsInterfaces.push(elementInterface);
     });
-
-    if (!existsSync("./generated")) {
-      mkdirSync("./generated", { recursive: true });
-    }
 
     // JSON with supported elements and their interfaces
     writeFileSync(
