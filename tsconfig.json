@@ -1,5 +1,5 @@
 {
-  "extends": "@michijs/tsconfig/tsconfig.json",
+  "extends": "@michijs/shared-configs/tsconfig",
   "compilerOptions": {
     "isolatedDeclarations": true,
     "emitDeclarationOnly": true,
@@ -7,7 +7,7 @@
     "checkJs": false,
     "allowJs": false,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "paths": {"*": ["./*"]},
     "types": ["csstype"]
   },
   "include": ["src"],

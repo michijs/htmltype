@@ -1,5 +1,5 @@
 {
-  "extends": "@michijs/tsconfig/tsconfig.json",
+  "extends": "@michijs/shared-configs/tsconfig",
   "compilerOptions": {
     "isolatedDeclarations": false,
     "checkJs": false,

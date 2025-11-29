@@ -10,7 +10,7 @@
   },
   "files": [
     "dist/",
-    "supported/",
+    "generated/",
     "bin/"
   ],
   "main": "dist/index.js",
@@ -21,8 +21,8 @@
       "require": "./dist/index.js"
     },
     "./supported": {
-      "import": "./supported/index.js",
-      "require": "./supported/index.js"
+      "import": "./generated/index.js",
+      "require": "./generated/index.js"
     },
     "./bin": {
       "import": "./bin/index.js",
@@ -43,16 +43,15 @@
     "typescript"
   ],
   "devDependencies": {
-    "@michijs/shared-configs": "0.0.26",
-    "@michijs/tsconfig": "0.0.5",
-    "bun-types": "1.2.20",
+    "@michijs/shared-configs": "0.0.31",
+    "@types/bun": "1.3.3",
     "typescript": "5.9.3",
-    "vscode-html-languageservice": "5.5.2"
+    "vscode-html-languageservice": "5.6.0"
   },
   "dependencies": {
     "@vscode/web-custom-data": "0.6.1",
-    "@michijs/vscode-svg": "2.1.0",
-    "@michijs/vscode-mathml": "1.1.0"
+    "@michijs/vscode-svg": "2.1.2",
+    "@michijs/vscode-mathml": "1.1.1"
   },
   "peerDependencies": {
     "csstype": "^3.1.3"

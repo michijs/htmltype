@@ -32,10 +32,6 @@
     "elementInterface": "SVGElementTagNameMap['desc']"
   },
   {
-    "tagName": "discard",
-    "elementInterface": "SVGElement"
-  },
-  {
     "tagName": "ellipse",
     "elementInterface": "SVGElementTagNameMap['ellipse']"
   },

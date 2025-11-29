@@ -70,7 +70,7 @@ export class TypesFactory {
     rmSync(this.generatedPath, { recursive: true, force: true });
     rmSync("./supported", { recursive: true, force: true });
     mkdirSync("./supported");
-    writeFileSync("./supported/index.js", "");
+    writeFileSync("./generated/index.js", "");
     mkdirSync(this.generatedPath);
     writeFileSync(
       `${this.generatedPath}/index.ts`,
@@ -266,7 +266,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
 
     // JSON with supported elements and their interfaces
     writeFileSync(
-      `./supported/${props.name}.json`,
+      `./generated/${props.name}.json`,
       JSON.stringify(
         props.documentationSrc.tags?.map((el) => ({
           tagName: el.name,
@@ -277,7 +277,7 @@ export type { AllAttributes } from "./AllAttributes";\n`,
       ),
     );
     appendFileSync(
-      "./supported/index.js",
+      "./generated/index.js",
       `exports.supported${props.name} = require("./${props.name}.json");\n`,
     );
     const srcVersion = (await import(`${props.src}/package.json`)).version;
