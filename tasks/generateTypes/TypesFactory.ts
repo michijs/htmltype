@@ -9,7 +9,6 @@ import type {
   TypesFactoryProps,
   ValueSetInterfaceFactory,
 } from "./types";
-import { existsSync } from "fs";
 
 const getInterfaceHelperName = (
   props: AddTypesFromProps,
