@@ -5,6 +5,7 @@
     "checkJs": false,
     "allowJs": false,
     "outDir": "bin",
+    "rootDir": ".",
     "types": ["@types/node"]
   },
   "include": ["tasks"],
