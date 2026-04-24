@@ -43,15 +43,15 @@
     "typescript"
   ],
   "devDependencies": {
-    "@michijs/shared-configs": "0.0.36",
-    "@types/bun": "1.3.11",
-    "typescript": "5.9.3",
+    "@michijs/shared-configs": "0.0.37",
+    "@types/bun": "1.3.13",
+    "typescript": "6.0.3",
     "vscode-html-languageservice": "5.6.2"
   },
   "dependencies": {
     "@vscode/web-custom-data": "0.6.3",
-    "@michijs/vscode-svg": "2.1.5",
-    "@michijs/vscode-mathml": "1.1.3"
+    "@michijs/vscode-svg": "2.1.6",
+    "@michijs/vscode-mathml": "1.1.4"
   },
   "peerDependencies": {
     "csstype": "^3.1.3"
