@@ -6,6 +6,7 @@
     "declaration": true,
     "checkJs": false,
     "allowJs": false,
+    "rootDir": ".",
     "outDir": "./dist",
     "paths": { "*": ["./*"] },
     "types": ["csstype"]
