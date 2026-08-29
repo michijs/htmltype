@@ -9,6 +9,7 @@ import type {
   TypesFactoryProps,
   ValueSetInterfaceFactory,
 } from "./types";
+import path from "path";
 
 const getInterfaceHelperName = (
   props: AddTypesFromProps,
@@ -67,8 +68,8 @@ export class TypesFactory {
   generatedPath: string;
   constructor(props?: TypesFactoryProps) {
     this.generatedPath = props?.generatedPath ?? "./src/generated";
-    rmSync(this.generatedPath, { recursive: true, force: true });
-    rmSync("./generated", { recursive: true, force: true });
+    rmSync(path.resolve(this.generatedPath), { recursive: true, force: true });
+    rmSync(path.resolve("./generated"), { recursive: true, force: true });
     mkdirSync("./generated");
     writeFileSync("./generated/index.js", "");
     mkdirSync(this.generatedPath);
