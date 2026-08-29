@@ -2,7 +2,7 @@
   "name": "@michijs/htmltype",
   "author": "Lucas M. Segurado",
   "license": "MIT",
-  "version": "0.4.12",
+  "version": "0.4.13",
   "baseUrl": "./src",
   "repository": {
     "type": "git",
@@ -50,8 +50,8 @@
   },
   "dependencies": {
     "@vscode/web-custom-data": "0.6.3",
-    "@michijs/vscode-svg": "2.1.7",
-    "@michijs/vscode-mathml": "1.1.5"
+    "@michijs/vscode-svg": "2.1.8",
+    "@michijs/vscode-mathml": "1.1.6"
   },
   "peerDependencies": {
     "csstype": "^3.1.3"
