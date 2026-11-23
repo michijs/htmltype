@@ -1,8 +1,7 @@
-export interface TypedEvent<T>
-  extends Omit<
-    Event,
-    "returnValue" | "target" | "currentTarget" | "srcElement"
-  > {
+export interface TypedEvent<T> extends Omit<
+  Event,
+  "returnValue" | "target" | "currentTarget" | "srcElement"
+> {
   /**
    * Returns the object to which event is dispatched (its target).
    */

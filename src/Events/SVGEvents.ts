@@ -4,6 +4,7 @@ import type { TypedElementEvent } from "./TypedElementEvent";
 
 // Based on SVGElementEventMap
 export interface SVGEvents<T extends EventTarget>
-  extends GlobalEvents<T>,
+  extends
+    GlobalEvents<T>,
     TypedElementEvent<T>,
     TypedDocumentAndElementEventHandlers<T> {}

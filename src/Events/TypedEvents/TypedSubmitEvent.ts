@@ -1,5 +1,4 @@
 import type { TypedEvent } from "./TypedEvent";
 
 export interface TypedSubmitEvent<T>
-  extends TypedEvent<T>,
-    Pick<SubmitEvent, "submitter"> {}
+  extends TypedEvent<T>, Pick<SubmitEvent, "submitter"> {}
